@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+  <html lang="ja">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport"
+  content="width=device-width,
+  initial-scale=1.0">
+      <title>RCCM試験問題集2025</title>
+      <link href="https://cdn.jsdelivr.net/npm/bo
+  otstrap@5.3.0/dist/css/bootstrap.min.css"
+  rel="stylesheet">
+      <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/fo
+  nt-awesome/6.0.0/css/all.min.css">
+      <style>
+          body { background:
+  linear-gradient(135deg, #667eea 0%, #764ba2
+  100%); min-height: 100vh; }
+          .main-container { background: rgba(255,
+   255, 255, 0.95); border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  padding: 2rem; margin: 2rem 0; }
+          .feature-card { border: none;
+  border-radius: 15px; transition: transform 0.3s
+   ease; cursor: pointer; }
+          .feature-card:hover { transform:
+  translateY(-5px); }
+          .btn-primary { background:
+  linear-gradient(45deg, #667eea, #764ba2);
+  border: none; border-radius: 10px; }
+      </style>
+  </head>
+  <body>
+      <div class="container">
+          <div class="main-container">
+              <div class="text-center mb-5">
+                  <h1 class="display-4 fw-bold
+  text-primary mb-3">
+                      <i class="fas
+  fa-graduation-cap me-3"></i>
+                      RCCM試験問題集2025
+                  </h1>
+                  <p class="lead
+  text-muted">GitHub Pages版 - 静的サイト</p>
+                  <div class="badge bg-success
+  me-2">202問収録</div>
+                  <div class="badge bg-primary
+  me-2">8部門対応</div>
+                  <div class="badge
+  bg-info">完全無料</div>
+              </div>
+
+              <div class="row
+  justify-content-center mb-4">
+                  <div class="col-md-6">
+                      <div class="card
+  feature-card">
+                          <div class="card-body
+  text-center">
+                              <h5>学習開始</h5>
+                              <input type="text"
+  id="userName" class="form-control mb-3"
+  placeholder="お名前を入力してください">
+                              <button class="btn
+  btn-primary" onclick="startLearning()">
+                                  <i class="fas
+  fa-play me-2"></i>学習開始
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="text-center">
+                  <p
+  class="text-muted">静的サイト版 -
+  高速・安定・無料</p>
+              </div>
+          </div>
+      </div>
+
+      <script>
+          function startLearning() {
+              const name =
+  document.getElementById('userName').value;
+              if (name) {
+                  alert(`こんにちは、${name}さん
+  ！\n\nRCCM試験問題集へようこそ！\n\n静的サイト
+  版が正常に動作しています。`);
+              } else {
+
+  alert('お名前を入力してください');
+              }
+          }
+      </script>
+  </body>
+  </html>
