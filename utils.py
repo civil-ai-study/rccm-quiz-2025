@@ -416,6 +416,19 @@ def load_rccm_data_files(data_dir: str) -> List[Dict]:
     
     logger.info(f"RCCM統合データ読み込み開始: {data_dir}")
     
+    # 🔍 デバッグ: ディレクトリ存在確認
+    if not os.path.exists(data_dir):
+        logger.error(f"❌ データディレクトリが存在しません: {data_dir}")
+        return get_sample_data_improved()
+    
+    # 🔍 デバッグ: ディレクトリ内容表示
+    try:
+        files_in_dir = os.listdir(data_dir)
+        logger.info(f"📁 データディレクトリ内容: {files_in_dir}")
+    except Exception as e:
+        logger.error(f"❌ ディレクトリ読み取りエラー: {e}")
+        return get_sample_data_improved()
+    
     all_questions = []
     file_count = 0
     
@@ -434,11 +447,18 @@ def load_rccm_data_files(data_dir: str) -> List[Dict]:
             file_count += 1
             logger.info(f"4-1基礎データ読み込み完了: {len(basic_questions)}問")
         except Exception as e:
-            logger.warning(f"4-1基礎データ読み込みエラー: {e}")
+            logger.error(f"❌ 4-1基礎データ読み込みエラー: {e}")
+            logger.error(f"🔍 ファイルパス: {basic_file}")
+            logger.error(f"🔍 ファイル存在: {os.path.exists(basic_file)}")
+            if os.path.exists(basic_file):
+                logger.error(f"🔍 ファイルサイズ: {os.path.getsize(basic_file)}")
+                logger.error(f"🔍 ファイル権限: {oct(os.stat(basic_file).st_mode)}")
+    else:
+        logger.error(f"❌ 4-1.csv が見つかりません: {basic_file}")
     
     # 4-2専門データファイル読み込み（年度別）
     specialist_years = []
-    for year in range(2008, 2019):  # 2008-2019年の範囲で確認
+    for year in range(2008, 2019):  # 2008-2018年の範囲で確認
         specialist_file = os.path.join(data_dir, f'4-2_{year}.csv')
         if os.path.exists(specialist_file):
             try:
@@ -457,7 +477,13 @@ def load_rccm_data_files(data_dir: str) -> List[Dict]:
                 file_count += 1
                 logger.info(f"4-2専門データ{year}年読み込み完了: {len(year_questions)}問")
             except Exception as e:
-                logger.warning(f"4-2専門データ{year}年読み込みエラー: {e}")
+                logger.error(f"❌ 4-2専門データ{year}年読み込みエラー: {e}")
+                logger.error(f"🔍 ファイルパス: {specialist_file}")
+                if os.path.exists(specialist_file):
+                    logger.error(f"🔍 ファイルサイズ: {os.path.getsize(specialist_file)}")
+                    logger.error(f"🔍 ファイル権限: {oct(os.stat(specialist_file).st_mode)}")
+                else:
+                    logger.error(f"🔍 ファイルが存在しません: {specialist_file}")
     
     # 注: 旧questions.csvファイル（レガシーデータ）は使用しません
     # RCCM試験データは4-1.csvと4-2_*.csvから読み込まれます
@@ -472,8 +498,13 @@ def load_rccm_data_files(data_dir: str) -> List[Dict]:
         cache_manager_instance._global_questions_cache = all_questions
         logger.info("🚀 企業環境最適化: データキャッシュ完了 - 次回読み込み高速化")
     
+    # 🔍 最終結果のデバッグ出力
     logger.info(f"RCCM統合データ読み込み完了: {file_count}ファイル, 総計{len(all_questions)}問")
     logger.info(f"4-2専門データ対象年度: {specialist_years}")
+    
+    if len(all_questions) == 0:
+        logger.error("❌❌❌ 全てのCSVファイル読み込みが失敗しました - サンプルデータにフォールバック")
+        return get_sample_data_improved()
     
     return all_questions
 
