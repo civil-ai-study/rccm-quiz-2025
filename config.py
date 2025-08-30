@@ -154,6 +154,15 @@ class RCCMConfig:
             'description': '農業基盤整備に関する専門技術',
             'icon': '🌾',
             'color': '#CDDC39'
+        },
+        # ULTRA SYNC FIX: Add 'env' alias for 'construction_env' to fix broken URLs
+        'env': {
+            'id': 'env',
+            'name': '建設環境',
+            'full_name': '建設部門：建設環境',
+            'description': '建設環境、環境保全に関する専門技術',
+            'icon': '🌱',
+            'color': '#4CAF50'
         }
     }
     
