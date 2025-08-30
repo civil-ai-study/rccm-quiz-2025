@@ -893,8 +893,8 @@ def get_mixed_questions(user_session, all_questions, requested_category='全体'
 def before_request():
     """リクエスト前の処理（企業環境最適化版）"""
     # ULTRA SYNC DEBUG: before_request確認
-    if request.endpoint == 'question_types':
-        logger.info(f"🔍 ULTRA SYNC DEBUG: before_request for question_types, path: {request.path}")
+    if request.endpoint == 'question_types' or '/dept_types/' in request.path:
+        logger.info(f"🔍 ULTRA SYNC DEBUG: before_request for question_types, path: {request.path}, endpoint: {request.endpoint}")
     
     session.permanent = True
     
@@ -2244,9 +2244,9 @@ def select_department(department_id):
         logger.error(f"部門選択エラー: {e}")
         return render_template('error.html', error="部門選択中にエラーが発生しました。")
 
-@app.route('/departments/<department_id>/types')
+@app.route('/dept_types/<department_id>')
 def question_types(department_id):
-    """問題種別選択画面（4-1基礎 / 4-2専門）"""
+    """問題種別選択画面（4-1基礎 / 4-2専門）- ULTRA SYNC競合回避テスト"""
     try:
         # ULTRA SYNC DEBUG: 関数呼び出し確認
         logger.info(f"🔍 ULTRA SYNC DEBUG: question_types called with department_id='{department_id}'")
