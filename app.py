@@ -2237,8 +2237,9 @@ def select_department(department_id):
         
         logger.info(f"部門選択: {department_id} ({RCCMConfig.DEPARTMENTS[department_id]['name']})")
         
-        # 問題種別選択画面にリダイレクト
-        return redirect(url_for('question_types', department_id=department_id))
+        # 問題種別選択画面にリダイレクト - ULTRA SYNC 修正
+        logger.info(f"🔧 ULTRA SYNC: Redirecting to new route /dept_types/{department_id}")
+        return redirect(f'/dept_types/{department_id}')
         
     except Exception as e:
         logger.error(f"部門選択エラー: {e}")
