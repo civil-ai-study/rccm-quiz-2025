@@ -2245,6 +2245,11 @@ def select_department(department_id):
         logger.error(f"部門選択エラー: {e}")
         return render_template('error.html', error="部門選択中にエラーが発生しました。")
 
+@app.route('/ultra_sync_test')
+def ultra_sync_test():
+    """ULTRA SYNC Flask動作確認テスト"""
+    return "✅ ULTRA SYNC SUCCESS: Flask application is working correctly!"
+
 @app.route('/dept_types/<department_id>')
 def question_types(department_id):
     """問題種別選択画面（4-1基礎 / 4-2専門）- ULTRA SYNC競合回避テスト"""
