@@ -893,7 +893,7 @@ def get_mixed_questions(user_session, all_questions, requested_category='全体'
 def before_request():
     """リクエスト前の処理（企業環境最適化版）"""
     # ULTRA SYNC DEBUG: before_request確認
-    if request.endpoint == 'question_types' or '/dept_types/' in request.path:
+    if request.endpoint == 'question_types' or '/departments/' in request.path and '/types' in request.path:
         logger.info(f"🔍 ULTRA SYNC DEBUG: before_request for question_types, path: {request.path}, endpoint: {request.endpoint}")
     
     session.permanent = True
@@ -2238,8 +2238,8 @@ def select_department(department_id):
         logger.info(f"部門選択: {department_id} ({RCCMConfig.DEPARTMENTS[department_id]['name']})")
         
         # 問題種別選択画面にリダイレクト - ULTRA SYNC 修正
-        logger.info(f"🔧 ULTRA SYNC: Redirecting to new route /dept_types/{department_id}")
-        return redirect(f'/dept_types/{department_id}')
+        logger.info(f"🔧 ULTRA SYNC: Redirecting to original route /departments/{department_id}/types")
+        return redirect(f'/departments/{department_id}/types')
         
     except Exception as e:
         logger.error(f"部門選択エラー: {e}")
@@ -2250,7 +2250,7 @@ def ultra_sync_test():
     """ULTRA SYNC Flask動作確認テスト"""
     return "✅ ULTRA SYNC SUCCESS: Flask application is working correctly!"
 
-@app.route('/dept_types/<department_id>')
+@app.route('/departments/<department_id>/types')
 def question_types(department_id):
     """問題種別選択画面（4-1基礎 / 4-2専門）- ULTRA SYNC競合回避テスト"""
     try:
@@ -2287,44 +2287,14 @@ def question_types(department_id):
         logger.info(f"🔍 ULTRA SYNC DEBUG: department_info content: {department_info}")
         logger.info(f"🔍 ULTRA SYNC DEBUG: About to call render_template - this should return HTML page, not redirect")
         
-        # ULTRA SYNC EMERGENCY TEST: テンプレートを使わず直接HTMLを返す
-        logger.info(f"🔍 ULTRA SYNC EMERGENCY: Testing direct HTML return instead of template")
+        # ULTRA SYNC STAGE 8: 正式にテンプレート描画を復旧
+        logger.info(f"✅ ULTRA SYNC STAGE 8: Attempting template rendering with question_types.html")
         
-        simple_html = f"""
-        <!DOCTYPE html>
-        <html lang="ja">
-        <head>
-            <title>ULTRA SYNC TEST - 問題種別選択</title>
-            <meta charset="utf-8">
-        </head>
-        <body>
-            <h1>🎯 ULTRA SYNC テスト成功</h1>
-            <h2>部門: {department_info['name']}</h2>
-            <p>このページが表示されれば、question_types関数が正常に動作しています。</p>
-            <ul>
-                <li><strong>部門ID:</strong> {department_id}</li>
-                <li><strong>部門名:</strong> {department_info['name']}</li>
-                <li><strong>説明:</strong> {department_info['description']}</li>
-            </ul>
-            <h3>利用可能な問題種別:</h3>
-            <ul>
-        """
-        
-        for type_id, type_info in RCCMConfig.QUESTION_TYPES.items():
-            simple_html += f"""
-                <li><a href="/exam?department={department_id}&question_type={type_id}&category=all">
-                    {type_info['name']} - {type_info['description']}</a></li>
-            """
-        
-        simple_html += """
-            </ul>
-            <p><a href="/departments">← 部門選択に戻る</a></p>
-        </body>
-        </html>
-        """
-        
-        logger.info(f"✅ ULTRA SYNC DEBUG: Returning simple HTML directly (no template)")
-        return simple_html
+        return render_template('question_types.html',
+            department=department_info,
+            question_types=RCCMConfig.QUESTION_TYPES,
+            type_progress=type_progress
+        )
         
     except Exception as e:
         logger.error(f"問題種別選択エラー: {e}")
