@@ -892,6 +892,10 @@ def get_mixed_questions(user_session, all_questions, requested_category='全体'
 @app.before_request
 def before_request():
     """リクエスト前の処理（企業環境最適化版）"""
+    # ULTRA SYNC DEBUG: before_request確認
+    if request.endpoint == 'question_types':
+        logger.info(f"🔍 ULTRA SYNC DEBUG: before_request for question_types, path: {request.path}")
+    
     session.permanent = True
     
     # セッションIDの取得（簡素化）
@@ -2244,7 +2248,12 @@ def select_department(department_id):
 def question_types(department_id):
     """問題種別選択画面（4-1基礎 / 4-2専門）"""
     try:
+        # ULTRA SYNC DEBUG: 関数呼び出し確認
+        logger.info(f"🔍 ULTRA SYNC DEBUG: question_types called with department_id='{department_id}'")
+        
         if department_id not in RCCMConfig.DEPARTMENTS:
+            logger.error(f"🚨 ULTRA SYNC DEBUG: department_id '{department_id}' not found in RCCMConfig.DEPARTMENTS")
+            logger.info(f"🔍 ULTRA SYNC DEBUG: Available departments: {list(RCCMConfig.DEPARTMENTS.keys())}")
             return render_template('error.html', error="指定された部門が見つかりません。")
         
         department_info = RCCMConfig.DEPARTMENTS[department_id]
@@ -2265,6 +2274,10 @@ def question_types(department_id):
                 'correct_count': correct_count,
                 'accuracy': (correct_count / total_answered * 100) if total_answered > 0 else 0.0
             }
+        
+        # ULTRA SYNC DEBUG: テンプレート描画前確認
+        logger.info(f"✅ ULTRA SYNC DEBUG: Rendering question_types.html for department '{department_id}' ({department_info['name']})")
+        logger.info(f"🔍 ULTRA SYNC DEBUG: Available question types: {list(RCCMConfig.QUESTION_TYPES.keys())}")
         
         return render_template(
             'question_types.html',
