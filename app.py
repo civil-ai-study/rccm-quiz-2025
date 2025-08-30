@@ -2281,18 +2281,44 @@ def question_types(department_id):
         logger.info(f"🔍 ULTRA SYNC DEBUG: department_info content: {department_info}")
         logger.info(f"🔍 ULTRA SYNC DEBUG: About to call render_template - this should return HTML page, not redirect")
         
-        try:
-            result = render_template(
-                'question_types.html',
-                department=department_info,
-                question_types=RCCMConfig.QUESTION_TYPES,
-                type_progress=type_progress
-            )
-            logger.info(f"✅ ULTRA SYNC DEBUG: render_template completed successfully, returning HTML")
-            return result
-        except Exception as template_error:
-            logger.error(f"🚨 ULTRA SYNC ERROR: Template rendering failed: {template_error}")
-            return render_template('error.html', error=f"テンプレート処理エラー: {str(template_error)}")
+        # ULTRA SYNC EMERGENCY TEST: テンプレートを使わず直接HTMLを返す
+        logger.info(f"🔍 ULTRA SYNC EMERGENCY: Testing direct HTML return instead of template")
+        
+        simple_html = f"""
+        <!DOCTYPE html>
+        <html lang="ja">
+        <head>
+            <title>ULTRA SYNC TEST - 問題種別選択</title>
+            <meta charset="utf-8">
+        </head>
+        <body>
+            <h1>🎯 ULTRA SYNC テスト成功</h1>
+            <h2>部門: {department_info['name']}</h2>
+            <p>このページが表示されれば、question_types関数が正常に動作しています。</p>
+            <ul>
+                <li><strong>部門ID:</strong> {department_id}</li>
+                <li><strong>部門名:</strong> {department_info['name']}</li>
+                <li><strong>説明:</strong> {department_info['description']}</li>
+            </ul>
+            <h3>利用可能な問題種別:</h3>
+            <ul>
+        """
+        
+        for type_id, type_info in RCCMConfig.QUESTION_TYPES.items():
+            simple_html += f"""
+                <li><a href="/exam?department={department_id}&question_type={type_id}&category=all">
+                    {type_info['name']} - {type_info['description']}</a></li>
+            """
+        
+        simple_html += """
+            </ul>
+            <p><a href="/departments">← 部門選択に戻る</a></p>
+        </body>
+        </html>
+        """
+        
+        logger.info(f"✅ ULTRA SYNC DEBUG: Returning simple HTML directly (no template)")
+        return simple_html
         
     except Exception as e:
         logger.error(f"問題種別選択エラー: {e}")
