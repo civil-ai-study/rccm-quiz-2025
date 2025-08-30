@@ -2251,6 +2251,11 @@ def question_types(department_id):
         # ULTRA SYNC DEBUG: 関数呼び出し確認
         logger.info(f"🔍 ULTRA SYNC DEBUG: question_types called with department_id='{department_id}'")
         
+        # ULTRA SYNC EMERGENCY: 強制的にリダイレクト検出
+        if department_id == 'env':
+            logger.error(f"🚨 ULTRA SYNC EMERGENCY: env department detected - forcing /exam redirect investigation")
+            return redirect(url_for('exam', department='env', type='specialist', count=10))
+        
         if department_id not in RCCMConfig.DEPARTMENTS:
             logger.error(f"🚨 ULTRA SYNC DEBUG: department_id '{department_id}' not found in RCCMConfig.DEPARTMENTS")
             logger.info(f"🔍 ULTRA SYNC DEBUG: Available departments: {list(RCCMConfig.DEPARTMENTS.keys())}")
