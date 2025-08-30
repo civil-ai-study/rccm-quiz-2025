@@ -893,8 +893,8 @@ def get_mixed_questions(user_session, all_questions, requested_category='全体'
 def before_request():
     """リクエスト前の処理（企業環境最適化版）"""
     # ULTRA SYNC DEBUG: before_request確認
-    if request.endpoint == 'question_types' or '/dept_types/' in request.path:
-        logger.info(f"🔍 ULTRA SYNC DEBUG: before_request for question_types, path: {request.path}, endpoint: {request.endpoint}")
+    if request.endpoint == 'question_types':
+        logger.info(f"🔍 ULTRA SYNC DEBUG: before_request for question_types, path: {request.path}")
     
     session.permanent = True
     
@@ -2237,22 +2237,16 @@ def select_department(department_id):
         
         logger.info(f"部門選択: {department_id} ({RCCMConfig.DEPARTMENTS[department_id]['name']})")
         
-        # 問題種別選択画面にリダイレクト - ULTRA SYNC 修正
-        logger.info(f"🔧 ULTRA SYNC: Redirecting to new route /dept_types/{department_id}")
-        return redirect(f'/dept_types/{department_id}')
+        # 問題種別選択画面にリダイレクト
+        return redirect(url_for('question_types', department_id=department_id))
         
     except Exception as e:
         logger.error(f"部門選択エラー: {e}")
         return render_template('error.html', error="部門選択中にエラーが発生しました。")
 
-@app.route('/ultra_sync_test')
-def ultra_sync_test():
-    """ULTRA SYNC Flask動作確認テスト"""
-    return "✅ ULTRA SYNC SUCCESS: Flask application is working correctly!"
-
-@app.route('/dept_types/<department_id>')
+@app.route('/departments/<department_id>/types')
 def question_types(department_id):
-    """問題種別選択画面（4-1基礎 / 4-2専門）- ULTRA SYNC競合回避テスト"""
+    """問題種別選択画面（4-1基礎 / 4-2専門）"""
     try:
         # ULTRA SYNC DEBUG: 関数呼び出し確認
         logger.info(f"🔍 ULTRA SYNC DEBUG: question_types called with department_id='{department_id}'")
@@ -5481,11 +5475,10 @@ if __name__ == '__main__':
     logger.info(f"🚀 RCCM試験問題集2025 Enterprise Edition 起動中...")
     logger.info(f"📡 Host: {host}, Port: {port}, Debug: {debug_mode}")
     
-    if __name__ == '__main__':
-        app.run(
-            host=host,
-            port=port,
-            debug=debug_mode,
-            threaded=True,
-            use_reloader=False
-        )
+    app.run(
+        host=host,
+        port=port,
+        debug=debug_mode,
+        threaded=True,
+        use_reloader=False
+    )

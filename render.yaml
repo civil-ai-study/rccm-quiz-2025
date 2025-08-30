@@ -3,12 +3,14 @@ services:
     name: rccm-quiz-2025
     env: python
     plan: free
-    buildCommand: pip install -r requirements.txt
-    startCommand: python app.py
+    buildCommand: pip install -r requirements.txt gunicorn
+    startCommand: gunicorn --bind 0.0.0.0:$PORT --workers 1 --timeout 180 app:app
     envVars:
       - key: FLASK_ENV
         value: production
       - key: SECRET_KEY
         generateValue: true
+      - key: PYTHONPATH
+        value: .
     autoDeploy: true
     branch: main
