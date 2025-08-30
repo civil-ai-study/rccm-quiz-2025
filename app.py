@@ -2251,11 +2251,6 @@ def question_types(department_id):
         # ULTRA SYNC DEBUG: 関数呼び出し確認
         logger.info(f"🔍 ULTRA SYNC DEBUG: question_types called with department_id='{department_id}'")
         
-        # ULTRA SYNC EMERGENCY: 強制的にリダイレクト検出
-        if department_id == 'env':
-            logger.error(f"🚨 ULTRA SYNC EMERGENCY: env department detected - forcing /exam redirect investigation")
-            return redirect(url_for('exam', department='env', type='specialist', count=10))
-        
         if department_id not in RCCMConfig.DEPARTMENTS:
             logger.error(f"🚨 ULTRA SYNC DEBUG: department_id '{department_id}' not found in RCCMConfig.DEPARTMENTS")
             logger.info(f"🔍 ULTRA SYNC DEBUG: Available departments: {list(RCCMConfig.DEPARTMENTS.keys())}")
@@ -2283,13 +2278,21 @@ def question_types(department_id):
         # ULTRA SYNC DEBUG: テンプレート描画前確認
         logger.info(f"✅ ULTRA SYNC DEBUG: Rendering question_types.html for department '{department_id}' ({department_info['name']})")
         logger.info(f"🔍 ULTRA SYNC DEBUG: Available question types: {list(RCCMConfig.QUESTION_TYPES.keys())}")
+        logger.info(f"🔍 ULTRA SYNC DEBUG: department_info content: {department_info}")
+        logger.info(f"🔍 ULTRA SYNC DEBUG: About to call render_template - this should return HTML page, not redirect")
         
-        return render_template(
-            'question_types.html',
-            department=department_info,
-            question_types=RCCMConfig.QUESTION_TYPES,
-            type_progress=type_progress
-        )
+        try:
+            result = render_template(
+                'question_types.html',
+                department=department_info,
+                question_types=RCCMConfig.QUESTION_TYPES,
+                type_progress=type_progress
+            )
+            logger.info(f"✅ ULTRA SYNC DEBUG: render_template completed successfully, returning HTML")
+            return result
+        except Exception as template_error:
+            logger.error(f"🚨 ULTRA SYNC ERROR: Template rendering failed: {template_error}")
+            return render_template('error.html', error=f"テンプレート処理エラー: {str(template_error)}")
         
     except Exception as e:
         logger.error(f"問題種別選択エラー: {e}")
