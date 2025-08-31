@@ -2272,6 +2272,26 @@ def select_department(department_id):
         
         logger.info(f"部門選択: {department_id} ({RCCMConfig.DEPARTMENTS[department_id]['name']})")
         
+        # 🚨 ULTRA SYNC DEBUG: 道路部門の場合は直接緊急テストを実行
+        if department_id == 'road':
+            logger.info("🔥 ULTRA SYNC: Road department - DIRECT emergency test from select_department")
+            return """<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ULTRA SYNC Emergency Test - Direct Route</title>
+    <style>body { font-family: Arial; padding: 20px; background: #e6ffe6; }</style>
+</head>
+<body>
+    <h1>🔥 ULTRA SYNC Emergency Test - DIRECT ROUTE</h1>
+    <div>✅ This is executed from select_department route</div>
+    <div>✅ department_id = 'road' detected</div>
+    <div>⚠️ This bypasses question_types route entirely</div>
+    <div>🔍 Proves routing system works but question_types may have issues</div>
+    <p><a href="/departments">← Back</a></p>
+</body>
+</html>"""
+        
         # 問題種別選択画面にリダイレクト - ULTRA SYNC 修正
         logger.info(f"🔧 ULTRA SYNC: Redirecting to original route /departments/{department_id}/types")
         return redirect(f'/departments/{department_id}/types')
