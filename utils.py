@@ -448,9 +448,8 @@ def load_rccm_data_files(data_dir: str) -> List[Dict]:
                     q['year'] = year
                     # カテゴリから部門を推定
                     q['department'] = map_category_to_department(q.get('category', ''))
-                    # 専門科目であることを明確に標記
-                    if not q.get('category'):
-                        q['category'] = '専門科目'
+                    # カテゴリ情報を保持（上書きしない）
+                    # 元のカテゴリ情報（道路、トンネル等）をそのまま保持
                 
                 all_questions.extend(year_questions)
                 specialist_years.append(year)
