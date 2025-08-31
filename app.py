@@ -2285,6 +2285,36 @@ def ultra_sync_test():
     """ULTRA SYNC Flask動作確認テスト"""
     return "✅ ULTRA SYNC SUCCESS: Flask application is working correctly!"
 
+@app.route('/ultra_sync_road_debug')
+def ultra_sync_road_debug():
+    """🚨 ULTRA SYNC 道路部門デバッグ専用ルート - 副作用なし"""
+    from datetime import datetime
+    
+    debug_html = """<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ULTRA SYNC Road Debug Route</title>
+    <style>
+        body { font-family: monospace; padding: 20px; background: #fff3cd; }
+        .debug { color: #856404; margin: 5px 0; }
+    </style>
+</head>
+<body>
+    <h1>🚨 ULTRA SYNC Road Debug Route Active</h1>
+    <div class="debug">✅ This route is definitely executing</div>
+    <div class="debug">✅ Flask routing system is functional</div>
+    <div class="debug">⚠️ URL: /ultra_sync_road_debug</div>
+    <div class="debug">🔍 Timestamp: {timestamp}</div>
+    <hr>
+    <p><strong>DEBUG PURPOSE:</strong> Verify Flask routing system works</p>
+    <p><strong>NEXT STEP:</strong> If this works, investigate /departments/road/types routing conflict</p>
+    <p><a href="/departments/road/types">Test Problem Route</a></p>
+</body>
+</html>""".format(timestamp=datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+    
+    return debug_html
+
 @app.route('/departments/<department_id>/types')
 def question_types(department_id):
     """問題種別選択画面（4-1基礎 / 4-2専門）- ULTRA SYNC強制表示版"""
