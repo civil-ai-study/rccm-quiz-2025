@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-08-31 07:41:22",
+  "url": "/departments/road/types",
+  "status_code": 302,
+  "redirect_location": "/exam?department=road&type=specialist&count=10",
+  "content_length": 295,
+  "server_header": "cloudflare",
+  "render_server": "gunicorn"
+}
