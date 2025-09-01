@@ -2010,11 +2010,7 @@ def exam():
                 logger.info(f"通常セッション完了: current_no({current_no}) >= len({len(exam_question_ids)}) - resultにリダイレクト")
                 return redirect(url_for('result'))
 
-        # 現在の問題を取得（配列境界チェック追加）
-        if current_no >= len(exam_question_ids):
-            logger.error(f"配列インデックスエラー: current_no={current_no} >= len(exam_question_ids)={len(exam_question_ids)}")
-            return render_template('error.html', error="無効な問題IDです。", error_type="index_out_of_bounds")
-        
+        # 現在の問題を取得（上記の境界チェック通過済み）
         current_question_id = exam_question_ids[current_no]
         logger.info(f"問題ID取得: current_no={current_no}, question_id={current_question_id}")
         question = next((q for q in all_questions if int(q.get('id', 0)) == current_question_id), None)
