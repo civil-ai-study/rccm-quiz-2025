@@ -1110,23 +1110,27 @@ def exam():
                                      error="無効な回答が選択されました。",
                                      error_type="invalid_input")
             
-            # 問題IDの検証
+            # 問題IDの検証 - CRITICAL FIX: デバッグログ追加
+            logger.info(f"QID DEBUG: Received qid='{qid}' (type: {type(qid)})")
             try:
                 qid = int(qid)
-            except (ValueError, TypeError):
+                logger.info(f"QID DEBUG: Converted qid={qid} (type: {type(qid)})")
+            except (ValueError, TypeError) as e:
+                logger.error(f"QID DEBUG: Conversion failed - qid='{qid}', error={e}")
                 return render_template('error.html', 
                                      error="無効な問題IDです。",
                                      error_type="invalid_question")
 
             if not answer or not qid:
-                logger.warning("不完全な回答データ")
+                logger.warning(f"不完全な回答データ - answer='{answer}', qid='{qid}'")
                 return render_template('error.html', error="回答データが不完全です。")
 
-            try:
-                qid = int(qid)
-            except ValueError:
-                logger.error(f"無効な問題ID: {qid}")
-                return render_template('error.html', error="問題IDが無効です。")
+            # CRITICAL FIX: 重複したint()変換を削除
+            # try:
+            #     qid = int(qid)
+            # except ValueError:
+            #     logger.error(f"無効な問題ID: {qid}")
+            #     return render_template('error.html', error="問題IDが無効です。")
 
             # 問題を検索
             question = next((q for q in all_questions if int(q.get('id', 0)) == qid), None)
@@ -2032,6 +2036,7 @@ def exam():
             'total_questions': display_total,
             'current_no': display_current,
             'current_question_number': display_current,
+            'qid': current_question_id,  # CRITICAL FIX: Add qid for template
             'srs_info': question_srs,
             'is_review_question': question_srs.get('total_attempts', 0) > 0
         }
