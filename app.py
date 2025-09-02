@@ -2347,37 +2347,8 @@ def question_types(department_id):
         # 🚨 ULTRA SYNC CRITICAL: 強制実行確認
         logger.info(f"🔥 ULTRA SYNC FORCE: question_types route EXECUTED for department_id='{department_id}'")
         
-        # 🚨 ULTRA SYNC CRITICAL: 完全独立緊急テスト - 混在防止
-        if department_id == 'road':
-            logger.info("🔥 ULTRA SYNC EMERGENCY: Road department ISOLATED test activated")
-            # 🔥 CRITICAL: 即座に return してすべての後続処理をスキップ
-            emergency_html = """<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <title>ULTRA SYNC Emergency Test - Road Department</title>
-    <style>
-        body { font-family: Arial; padding: 20px; background: #f0f8ff; }
-        .success { color: #28a745; font-size: 24px; }
-        .info { color: #007bff; margin: 10px 0; }
-    </style>
-</head>
-<body>
-    <h1 class="success">🔥 ULTRA SYNC Emergency Test SUCCESS!</h1>
-    <div class="info">✅ question_types route is executing correctly</div>
-    <div class="info">✅ department_id = 'road' detected properly</div>
-    <div class="info">✅ Emergency bypass working as expected</div>
-    <div class="info">⚠️ This proves the route itself is functional</div>
-    <hr>
-    <p><strong>Test Timestamp:</strong> {timestamp}</p>
-    <p><a href="/departments">← Back to Departments</a></p>
-    <p><strong>ULTRA SYNC Status:</strong> Route isolation confirmed</p>
-</body>
-</html>""".format(timestamp=datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-            
-            # 🔥 ULTRA CRITICAL: Immediate return - prevent any further processing
-            logger.info("🔥 ULTRA SYNC: Emergency HTML generated, returning immediately")
-            return emergency_html
+        # CRITICAL FIX: 緊急テストコードを削除 - 正常な道路部門アクセスを復旧
+        # 道路部門も他の部門と同じ正常な処理フローで動作させる
         
         if department_id not in RCCMConfig.DEPARTMENTS:
             logger.error(f"🚨 ULTRA SYNC DEBUG: department_id '{department_id}' not found in RCCMConfig.DEPARTMENTS")
