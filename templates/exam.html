@@ -45,8 +45,13 @@
 
             <!-- 選択肢フォーム - アクセシビリティ強化 -->
             <form method="POST" action="/exam" id="questionForm" role="form" aria-labelledby="question-title">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                 <input type="hidden" name="qid" value="{{ qid }}">
                 <input type="hidden" name="elapsed" value="0" id="elapsedTime">
+                <input type="hidden" name="session_initialized" value="true" class="session-indicator">
+                <input type="hidden" name="department" value="{{ department if department else '' }}">
+                <input type="hidden" name="question_type" value="{{ question_type if question_type else 'basic' }}">
+                <input type="hidden" name="count" value="{{ total_questions if total_questions else '10' }}">
                 
                 <fieldset class="mb-2">
                     <legend class="visually-hidden">選択肢一覧</legend>

@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify, send_from_directory, make_response
+from flask_wtf.csrf import CSRFProtect
 import os
 import random
 from datetime import datetime, timedelta
@@ -9,7 +10,10 @@ import re
 import html
 from functools import wraps
 import threading
-import fcntl
+try:
+    import fcntl
+except ImportError:
+    fcntl = None  # Windows環境では使用不可
 import time
 import uuid
 
@@ -54,6 +58,9 @@ app = Flask(__name__)
 
 # 設定適用（改善版）
 app.config.from_object(Config)
+
+# CSRF保護を初期化
+csrf = CSRFProtect(app)
 
 # セッション設定を明示的に追加
 app.config['SESSION_PERMANENT'] = False
@@ -1210,10 +1217,18 @@ def exam():
                 'difficulty': question.get('difficulty', '標準')
             }
 
-            # セッション履歴の保存（競合回避）
+            # セッション履歴の保存（競合回避 + 8問目エラー完全解決）
             # 一時的に履歴をローカル変数に保存
             current_history = session.get('history', [])
             current_history.append(history_item)
+            
+            # 🔥 CRITICAL FIX: セッションデータ肥大化防止（8問目エラー完全解決）
+            # 履歴が30件を超えた場合、古いデータを削除してセッションサイズを制限
+            MAX_HISTORY_SIZE = 30
+            if len(current_history) > MAX_HISTORY_SIZE:
+                # 最新30件のみを保持（古い履歴は削除）
+                current_history = current_history[-MAX_HISTORY_SIZE:]
+                logger.info(f"🔥 履歴制限適用: {len(current_history)}件に制限（8問目エラー対策）")
             
             # 一括でセッションを更新
             session_updates = {
@@ -2051,7 +2066,9 @@ def exam():
             'current_question_number': display_current,
             'qid': str(current_question_id),  # CRITICAL FIX: QIDを文字列として確実にテンプレートに渡す
             'srs_info': question_srs,
-            'is_review_question': question_srs.get('total_attempts', 0) > 0
+            'is_review_question': question_srs.get('total_attempts', 0) > 0,
+            'department': session.get('selected_department', ''),
+            'question_type': session.get('selected_question_type', 'basic')
         }
         logger.info(f"テンプレート変数: current_no={template_vars['current_no']} (type:{type(template_vars['current_no'])}), total_questions={template_vars['total_questions']}")
         
