@@ -1110,13 +1110,26 @@ def exam():
                                      error="無効な回答が選択されました。",
                                      error_type="invalid_input")
             
-            # 問題IDの検証 - CRITICAL FIX: デバッグログ追加
-            logger.info(f"QID DEBUG: Received qid='{qid}' (type: {type(qid)})")
+            # 問題IDの検証 - CRITICAL FIX: 堅牢なQID処理
+            logger.info(f"QID DEBUG: Received qid='{qid}' (type: {type(qid)}, repr: {repr(qid)})")
             try:
-                qid = int(qid)
+                # より堅牢なQID処理：不可視文字を除去し、空白をトリム
+                qid_clean = str(qid).strip()
+                # 数字以外の文字を除去（マイナス記号は保持）
+                qid_clean = re.sub(r'[^\d\-]', '', qid_clean)
+                
+                if not qid_clean:
+                    raise ValueError("QID is empty after cleaning")
+                
+                qid = int(qid_clean)
                 logger.info(f"QID DEBUG: Converted qid={qid} (type: {type(qid)})")
+                
+                # 有効範囲チェック
+                if qid <= 0:
+                    raise ValueError(f"QID must be positive: {qid}")
+                    
             except (ValueError, TypeError) as e:
-                logger.error(f"QID DEBUG: Conversion failed - qid='{qid}', error={e}")
+                logger.error(f"QID DEBUG: Conversion failed - original='{qid}', cleaned='{qid_clean if 'qid_clean' in locals() else 'N/A'}', error={e}")
                 return render_template('error.html', 
                                      error="無効な問題IDです。",
                                      error_type="invalid_question")
@@ -1355,7 +1368,7 @@ def exam():
                             else:
                                 # 最低限の復習セッションを作成
                                 logger.warning(f"復習問題データ不足のため、現在問題のみの最小復習セッション作成")
-                                minimal_review = [qid]
+                                minimal_review = [int(qid)]  # CRITICAL FIX: QIDを確実に整数として保存
                                 session['exam_question_ids'] = minimal_review
                                 session['exam_current'] = 0
                                 session['selected_question_type'] = 'review'
@@ -1534,13 +1547,13 @@ def exam():
                             all_questions = load_questions()
                             
                             # 問題IDを中心とした最小セッション作成
-                            session['exam_question_ids'] = [qid]
+                            session['exam_question_ids'] = [int(qid)]  # CRITICAL FIX: QIDを確実に整数として保存
                             session['exam_current'] = 0
                             session['selected_question_type'] = 'emergency'
                             session['exam_category'] = '緊急復旧'
                             session.modified = True
                             
-                            exam_question_ids = [qid]
+                            exam_question_ids = [int(qid)]  # CRITICAL FIX: QIDを確実に整数として保存
                             current_no = 0
                             
                             logger.info(f"緊急セッション作成成功: 問題ID {qid}")
@@ -1556,7 +1569,7 @@ def exam():
                 if not exam_question_ids:
                     logger.error(f"ウルトラシンク再構築後もexam_question_idsが空です")
                     # 緊急最小セッション作成
-                    exam_question_ids = [qid]
+                    exam_question_ids = [int(qid)]  # CRITICAL FIX: QIDを確実に整数として保存
                     current_no = 0
                     session['exam_question_ids'] = exam_question_ids
                     session['exam_current'] = current_no
@@ -2036,7 +2049,7 @@ def exam():
             'total_questions': display_total,
             'current_no': display_current,
             'current_question_number': display_current,
-            'qid': current_question_id,  # CRITICAL FIX: Add qid for template
+            'qid': str(current_question_id),  # CRITICAL FIX: QIDを文字列として確実にテンプレートに渡す
             'srs_info': question_srs,
             'is_review_question': question_srs.get('total_attempts', 0) > 0
         }
