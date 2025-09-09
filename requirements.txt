@@ -1,5 +1,4 @@
 Flask==3.0.3
-Flask-WTF==1.2.1
 Werkzeug==3.0.3
 Jinja2==3.1.4
 MarkupSafe==2.1.5
@@ -7,3 +6,5 @@ itsdangerous==2.2.0
 click==8.1.7
 python-dateutil==2.9.0
 chardet==5.2.0
+marshmallow==3.22.0
+flask-marshmallow==1.2.1
