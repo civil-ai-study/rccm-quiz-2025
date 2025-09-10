@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify, send_from_directory, make_response
+from flask_wtf.csrf import CSRFProtect
 import os
 import random
 from datetime import datetime, timedelta
@@ -64,8 +65,8 @@ app = Flask(__name__)
 # 設定適用（改善版）
 app.config.from_object(Config)
 
-# 🚨 CRITICAL ROLLBACK: CSRF保護を無効化（副作用により緊急削除）
-# csrf = CSRFProtect(app)  # 副作用でPOST処理が破壊されるため削除
+# 🔧 ULTRA SYNC FIX: CSRF保護を慎重に有効化
+csrf = CSRFProtect(app)
 
 # セッション設定を明示的に追加
 app.config['SESSION_PERMANENT'] = False

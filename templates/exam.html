@@ -44,8 +44,9 @@
             </div>
 
             <!-- 選択肢フォーム - アクセシビリティ強化 -->
-            <!-- 🚨 CRITICAL ROLLBACK: CSRFフィールド削除 -->
+            <!-- 🔧 ULTRA SYNC FIX: CSRFフィールド復旧 -->
             <form method="POST" action="/exam" id="questionForm" role="form" aria-labelledby="question-title">
+                {{ csrf_token() }}
                 <input type="hidden" name="qid" value="{{ qid }}">
                 <input type="hidden" name="elapsed" value="0" id="elapsedTime">
                 
