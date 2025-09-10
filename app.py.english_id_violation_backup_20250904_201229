@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify, send_from_directory, make_response
-from flask_wtf.csrf import CSRFProtect
 import os
 import random
 from datetime import datetime, timedelta
@@ -17,18 +16,14 @@ except ImportError:
 import time
 import uuid
 
-# 🚨 PHASE 1: Session State Lock Mechanism for Race Condition Resolution
-session_locks = {}
-session_lock = threading.Lock()
-
 # 新しいファイルからインポート
 from config import Config, ExamConfig, SRSConfig, DataConfig, RCCMConfig
 # 🚨 ULTRA SYNC FIX: データ混合防止のため統一インポート
 from utils import DataLoadError, DataValidationError, get_sample_data_improved, load_rccm_data_files
 
-# ULTRA SYNC STAGE 6: Parameter Validation (PHASE 1 Task B2) - TEMPORARILY DISABLED
-# from marshmallow import ValidationError
-# from schemas.validation_schemas import validate_exam_parameters, validate_department_parameter
+# ULTRA SYNC STAGE 6: Parameter Validation (PHASE 1 Task B2)
+from marshmallow import ValidationError
+from schemas.validation_schemas import validate_exam_parameters, validate_department_parameter
 
 # 企業環境最適化: 遅延インポートで重複読み込み防止
 gamification_manager = None
@@ -65,8 +60,8 @@ app = Flask(__name__)
 # 設定適用（改善版）
 app.config.from_object(Config)
 
-# 🔧 ULTRA SYNC FIX: CSRF保護を慎重に有効化
-csrf = CSRFProtect(app)
+# 🚨 CRITICAL ROLLBACK: CSRF保護を無効化（副作用により緊急削除）
+# csrf = CSRFProtect(app)  # 副作用でPOST処理が破壊されるため削除
 
 # セッション設定を明示的に追加
 app.config['SESSION_PERMANENT'] = False
@@ -484,55 +479,6 @@ def validate_question_data_integrity(questions):
     
     return valid_questions
 
-# 🚨 PHASE 1: Session State Management Functions (Critical Race Condition Fix)
-def acquire_session_lock(session_id):
-    """セッション状態の排他制御を取得"""
-    global session_locks, session_lock
-    
-    with session_lock:
-        if session_id not in session_locks:
-            session_locks[session_id] = threading.Lock()
-    
-    # セッション固有のロックを取得
-    return session_locks[session_id]
-
-def get_current_session_state():
-    """セッション状態の安全な読み取り（Single Source of Truth）"""
-    session_id = session.get('session_id', str(uuid.uuid4()))
-    
-    with acquire_session_lock(session_id):
-        return {
-            'session_id': session_id,
-            'exam_question_ids': session.get('exam_question_ids', []),
-            'exam_current': session.get('exam_current', 0),
-            'exam_category': session.get('exam_category', '全体'),
-            'selected_question_type': session.get('selected_question_type', ''),
-            'selected_department': session.get('selected_department', ''),
-            'selected_year': session.get('selected_year', ''),
-            'timestamp': time.time()
-        }
-
-def update_session_state(state_dict, force_modified=True):
-    """セッション状態の安全な更新（Race Condition Prevention）"""
-    session_id = session.get('session_id', str(uuid.uuid4()))
-    
-    with acquire_session_lock(session_id):
-        # セッション状態を安全に更新
-        for key, value in state_dict.items():
-            if key != 'session_id':  # session_idは更新しない
-                session[key] = value
-        
-        # セッションIDが設定されていない場合は設定
-        if 'session_id' not in session:
-            session['session_id'] = session_id
-            
-        if force_modified:
-            session.modified = True
-            
-        # デバッグ用ログ（重要な変更のみ）
-        if 'exam_question_ids' in state_dict:
-            logger.info(f"🔒 Session State Updated: {len(state_dict['exam_question_ids'])} questions, current: {state_dict.get('exam_current', 'N/A')}")
-
 def load_questions():
     """
     RCCM統合問題データの読み込み（4-1基礎・4-2専門対応）
@@ -576,7 +522,7 @@ def load_questions():
             # レガシーデータに部門・問題種別情報を追加
             for q in questions:
                 if 'department' not in q:
-                    q['department'] = '道路'  # ✅ CLAUDE.md準拠: 日本語部門名使用
+                    q['department'] = 'road'  # デフォルト部門
                 if 'question_type' not in q:
                     q['question_type'] = 'basic'  # デフォルト問題種別
             
@@ -829,34 +775,25 @@ def get_mixed_questions(user_session, all_questions, requested_category='全体'
         
         # 専門科目で部門指定がある場合のみ部門フィルタ適用
         if question_type == 'specialist' and department:
-            # ✅ CLAUDE.md準拠: 英語IDマッピング完全削除
-            # 日本語部門名を直接使用（英語変換は絶対禁止）
-            # department パラメータは既に日本語で受け取っているはず
-            
-            # 🔥 CRITICAL FIX: 英語部門名を日本語カテゴリに変換（「無効な問題ID」エラー根本原因修正）
-            # URLパラメータで受け取る英語department名をCSVの日本語categoryに変換
-            english_to_japanese_mapping = {
+            # 英語部門キーを日本語カテゴリに変換するマッピング
+            # ✅ CSVファイル統一化により簡素化されたマッピング
+            department_to_category_mapping = {
                 'road': '道路',
-                'river': '河川、砂防及び海岸・海洋',
-                'urban': '都市計画及び地方計画',
-                'tunnel': 'トンネル',
+                'tunnel': 'トンネル', 
+                'civil_planning': '河川、砂防及び海岸・海洋',
+                'urban_planning': '都市計画及び地方計画',
                 'landscape': '造園',
-                'construction_environment': '建設環境',
+                'construction_env': '建設環境',
                 'steel_concrete': '鋼構造及びコンクリート',
                 'soil_foundation': '土質及び基礎',
                 'construction_planning': '施工計画、施工設備及び積算',
                 'water_supply': '上水道及び工業用水道',
-                'forest_engineering': '森林土木',
-                'agricultural_engineering': '農業土木'
+                'forestry': '森林土木',
+                'agriculture': '農業土木'
             }
             
-            # 英語→日本語変換を適用
-            if department in english_to_japanese_mapping:
-                target_categories = english_to_japanese_mapping[department]
-                logger.info(f"CRITICAL FIX: 英語部門名変換 {department} → {target_categories}")
-            else:
-                # 既に日本語の場合はそのまま使用
-                target_categories = department
+            # 英語キーから日本語カテゴリに変換
+            target_categories = department_to_category_mapping.get(department, department)
             logger.info(f"部門フィルタリング: {department} → {target_categories}")
             
             # 日本語カテゴリでマッチング（category フィールドを使用）
@@ -944,16 +881,13 @@ def before_request():
     
     # データロード済みフラグの確認（競合回避）
     if 'data_loaded' not in session:
-        # 🚨 PHASE 1: セッション初期化をthread-safeに変更
-        initial_state = {
-            'data_loaded': True,
-            'exam_question_ids': [],
-            'exam_current': 0,
-            'history': [],
-            'bookmarks': [],
-            'srs_data': {}
-        }
-        update_session_state(initial_state)
+        # 軽量化: 基本的なセッション初期化のみ
+        session['data_loaded'] = True
+        session['exam_question_ids'] = []
+        session['exam_current'] = 0
+        session['history'] = []
+        session['bookmarks'] = []
+        session['srs_data'] = {}
         
         # 企業環境用データロードは必要時のみ実行
         fast_mode = os.environ.get('RCCM_FAST_MODE', 'true').lower() == 'true'
@@ -1291,22 +1225,14 @@ def exam():
                 session['category_stats'][cat]['correct'] += 1
             session.modified = True  # カテゴリ統計変更も保存
 
-            # ゲーミフィケーション更新（Null安全チェック）
-            current_streak = 0
-            new_badges = []
-            if gamification_manager is not None:
-                try:
-                    current_streak, streak_badges = gamification_manager.update_streak(session)
-                    session_performance = {
-                        'accuracy': 1.0 if is_correct else 0.0,
-                        'questions': 1
-                    }
-                    new_badges = gamification_manager.check_badges(session, session_performance)
-                    new_badges.extend(streak_badges)
-                except Exception as e:
-                    logger.warning(f"⚠️ ゲーミフィケーション機能スキップ: {e}")
-                    current_streak = 0
-                    new_badges = []
+            # ゲーミフィケーション更新
+            current_streak, streak_badges = gamification_manager.update_streak(session)
+            session_performance = {
+                'accuracy': 1.0 if is_correct else 0.0,
+                'questions': 1
+            }
+            new_badges = gamification_manager.check_badges(session, session_performance)
+            new_badges.extend(streak_badges)
             
             # リアルタイム難易度調整（5問ごとに実行）
             difficulty_adjustment = {'adjusted': False}
@@ -1408,15 +1334,13 @@ def exam():
                                 except ValueError:
                                     current_index = 0  # 見つからない場合は最初から
                                 
-                                # 🚨 PHASE 1: セッション状態をthread-safe更新
-                                review_state = {
-                                    'exam_question_ids': review_question_ids,
-                                    'exam_current': current_index,
-                                    'selected_question_type': 'review',
-                                    'exam_category': f'復習問題（再構築{len(review_question_ids)}問）',
-                                    'review_session_restored': True
-                                }
-                                update_session_state(review_state)
+                                # セッション状態を確実に更新
+                                session['exam_question_ids'] = review_question_ids
+                                session['exam_current'] = current_index
+                                session['selected_question_type'] = 'review'
+                                session['exam_category'] = f'復習問題（再構築{len(review_question_ids)}問）'
+                                session['review_session_restored'] = True  # 復習セッション復旧フラグ
+                                session.modified = True
                                 
                                 exam_question_ids = review_question_ids
                                 current_no = current_index
@@ -1463,13 +1387,26 @@ def exam():
                         specialist_questions = [q for q in all_questions 
                                               if q.get('question_type') == 'specialist']
                         
-                        # ✅ CLAUDE.md準拠: 部門フィルタリング（日本語直接マッチング）
+                        # 部門フィルタリング（実際のカテゴリも考慮）
                         if department:
-                            # 英語IDマッピング完全削除 - 日本語部門名直接使用
-                            target_category = department  # 既に日本語で受け取っているはず
+                            department_to_category_mapping = {
+                                'road': '道路',
+                                'tunnel': 'トンネル', 
+                                'civil_planning': '河川砂防海岸',
+                                'urban_planning': '都市計画地方計画',
+                                'landscape': '造園',
+                                'construction_env': '建設環境',
+                                'steel_concrete': '鋼構造及びコンクリート',
+                                'soil_foundation': '土質及び基礎',
+                                'construction_planning': '施工計画施工設備積算',
+                                'water_supply': '上水道及び工業用水道',
+                                'forestry': '森林土木',
+                                'agriculture': '農業土木'
+                            }
+                            target_category = department_to_category_mapping.get(department, department)
                             
-                            # カテゴリマッチング（鋼構造部門の特別処理含む）
-                            if department == '鋼構造及びコンクリート':
+                            # 🔥 カテゴリマッチング（鋼構造部門の特別処理含む）
+                            if department == 'steel_concrete':
                                 specialist_questions = [q for q in specialist_questions 
                                                       if q.get('category') in ['鋼構造及びコンクリート', '鋼構造コンクリート']]
                             else:
@@ -1592,14 +1529,11 @@ def exam():
                             all_questions = load_questions()
                             
                             # 問題IDを中心とした最小セッション作成
-                            # 🚨 PHASE 1: 緊急セッションもthread-safe更新
-                            emergency_state = {
-                                'exam_question_ids': [int(qid)],  # CRITICAL FIX: QIDを確実に整数として保存
-                                'exam_current': 0,
-                                'selected_question_type': 'emergency',
-                                'exam_category': '緊急復旧'
-                            }
-                            update_session_state(emergency_state)
+                            session['exam_question_ids'] = [int(qid)]  # CRITICAL FIX: QIDを確実に整数として保存
+                            session['exam_current'] = 0
+                            session['selected_question_type'] = 'emergency'
+                            session['exam_category'] = '緊急復旧'
+                            session.modified = True
                             
                             exam_question_ids = [int(qid)]  # CRITICAL FIX: QIDを確実に整数として保存
                             current_no = 0
@@ -1727,14 +1661,6 @@ def exam():
             # フィードバック画面の重要な変数をログ出力
             logger.info(f"フィードバック変数: is_last_question={feedback_data['is_last_question']}, next_question_index={feedback_data['next_question_index']}, current_question_number={feedback_data['current_question_number']}, total_questions={feedback_data['total_questions']}")
 
-            # 🚨 PHASE 1: POST処理完了後、次の問題への進行をthread-safe保存（最重要）
-            if not feedback_data['is_last_question']:
-                progress_state = {
-                    'exam_current': next_no  # 次の問題インデックスを保存
-                }
-                update_session_state(progress_state)
-                logger.info(f"🔒 POST Progress Saved: next_no={next_no}")
-
             return render_template('exam_feedback.html', **feedback_data)
 
         # GET処理（問題表示）
@@ -1835,7 +1761,7 @@ def exam():
                 logger.info(f"専門科目専用モード: question_type=specialist, department={requested_department}")
             
             # カテゴリ選択時の問題種別自動判定
-            if requested_category and requested_category != '全体' and (not requested_question_type or requested_question_type == 'basic'):
+            if requested_category and requested_category != '全体' and not requested_question_type:
                 if requested_category == '共通':
                     requested_question_type = 'basic'
                     requested_department = ''
@@ -1843,11 +1769,20 @@ def exam():
                 else:
                     # 道路、土質及び基礎等の専門部門カテゴリ
                     requested_question_type = 'specialist'
-                    # ✅ CLAUDE.md準拠: 英語ID変換完全禁止 - 日本語カテゴリ直接使用
-                    # ❌ 削除: 英語変換マッピング（分野混在問題の根本原因）
-                    if requested_category in ['道路', '土質及び基礎', '河川、砂防及び海岸・海洋', '鋼構造及びコンクリート', '農業土木', '施工計画、施工設備及び積算', '森林土木', 'トンネル', '建設環境', '造園', '都市計画及び地方計画', '上水道及び工業用水道']:
-                        # ✅ CLAUDE.md準拠: 日本語カテゴリをそのまま部門として使用（英語変換禁止）
-                        requested_department = requested_category
+                    # カテゴリから部門を推定
+                    category_to_dept = {
+                        '道路': 'road',
+                        '土質及び基礎': 'soil_foundation',
+                        '河川砂防': 'civil_planning',
+                        '鋼構造及びコンクリート': 'steel_concrete',
+                        '農業土木': 'agriculture',
+                        '施工計画・施工設備及び積算': 'construction_planning',
+                        '森林土木': 'forestry',
+                        'トンネル': 'tunnel',
+                        '建設環境': 'construction_env'
+                    }
+                    if requested_category in category_to_dept:
+                        requested_department = category_to_dept[requested_category]
                     logger.info(f"専門カテゴリ: {requested_category} -> question_type=specialist, department={requested_department}")
         
         # 年度パラメータの取得とサニタイズ
@@ -1912,13 +1847,10 @@ def exam():
                     return render_template('error.html', error=f"指定された問題が見つかりません (ID: {specific_qid})。")
 
                 # この問題を単独セッションとして設定
-                # 🚨 PHASE 1: 単独問題セッションもthread-safe更新
-                single_question_state = {
-                    'exam_question_ids': [specific_qid],
-                    'exam_current': 0,
-                    'exam_category': question.get('category', '全体')
-                }
-                update_session_state(single_question_state)
+                session['exam_question_ids'] = [specific_qid]
+                session['exam_current'] = 0
+                session['exam_category'] = question.get('category', '全体')
+                session.modified = True
 
                 # SRS情報を取得
                 srs_data = session.get('srs_data', {})
@@ -2012,20 +1944,17 @@ def exam():
             logger.info(f"問題選択詳細: requested_size={session_size}, selected_count={len(selected_questions)}, question_ids_count={len(question_ids)}")
             logger.info(f"問題ID一覧: {question_ids}")
 
-            # 🚨 PHASE 1: 新規セッション作成をthread-safe更新（最重要）
-            new_session_state = {
-                'exam_question_ids': question_ids,
-                'exam_current': 0,
-                'exam_category': requested_category
-            }
+            # セッション情報を新規作成（古い情報は完全削除済み）
+            session['exam_question_ids'] = question_ids
+            session['exam_current'] = 0
+            session['exam_category'] = requested_category
             if requested_department:
-                new_session_state['selected_department'] = requested_department
+                session['selected_department'] = requested_department
             if requested_question_type:
-                new_session_state['selected_question_type'] = requested_question_type
+                session['selected_question_type'] = requested_question_type
             if requested_year:
-                new_session_state['selected_year'] = requested_year
-            
-            update_session_state(new_session_state)
+                session['selected_year'] = requested_year
+            session.modified = True
 
             exam_question_ids = question_ids
             current_no = 0
@@ -2125,15 +2054,13 @@ def exam():
 @app.route('/exam/next')
 def exam_next():
     """次の問題に進む"""
-    # 🚨 PHASE 1: セッション状態をthread-safe読み取り
-    session_state = get_current_session_state()
-    current_no = session_state['exam_current']
-    exam_question_ids = session_state['exam_question_ids']
+    current_no = session.get('exam_current', 0)
+    exam_question_ids = session.get('exam_question_ids', [])
     
     if current_no >= len(exam_question_ids):
         return redirect(url_for('result'))
     
-    category = session_state['exam_category']
+    category = session.get('exam_category', '全体')
     return redirect(url_for('exam', category=category))
 
 @app.route('/result')
@@ -2359,7 +2286,7 @@ def select_department(department_id):
         logger.info(f"部門選択: {department_id} ({RCCMConfig.DEPARTMENTS[department_id]['name']})")
         
         # 🚨 ULTRA SYNC DEBUG: 道路部門の場合は直接緊急テストを実行
-        if department_id == '道路':
+        if department_id == 'road':
             logger.info("🔥 ULTRA SYNC: Road department - DIRECT emergency test from select_department")
             return """<!DOCTYPE html>
 <html lang="en">
@@ -2371,7 +2298,7 @@ def select_department(department_id):
 <body>
     <h1>🔥 ULTRA SYNC Emergency Test - DIRECT ROUTE</h1>
     <div>✅ This is executed from select_department route</div>
-    <div>✅ department_id = '道路' detected</div>
+    <div>✅ department_id = 'road' detected</div>
     <div>⚠️ This bypasses question_types route entirely</div>
     <div>🔍 Proves routing system works but question_types may have issues</div>
     <p><a href="/departments">← Back</a></p>

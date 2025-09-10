@@ -1,0 +1,2128 @@
+2025-09-03 20:19:51,395 - utils - INFO - RCCM“‡ƒf[ƒ^“Ç‚İ‚İŠJn: data
+2025-09-03 20:19:51,396 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: data\4-1.csv
+2025-09-03 20:19:51,397 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 92424 bytes
+2025-09-03 20:19:51,418 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-03 20:19:51,418 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 202s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-03 20:19:51,419 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 202–â
+2025-09-03 20:19:51,419 - utils - INFO - 4-1Šî‘bƒf[ƒ^“Ç‚İ‚İŠ®—¹: 202–â
+2025-09-03 20:19:51,419 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: data\4-2_2008.csv
+2025-09-03 20:19:51,420 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 201176 bytes
+2025-09-03 20:19:51,443 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-03 20:19:51,443 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 360s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-03 20:19:51,445 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 360–â
+2025-09-03 20:19:51,446 - utils - INFO - 4-2ê–åƒf[ƒ^2008”N“Ç‚İ‚İŠ®—¹: 360–â
+2025-09-03 20:19:51,446 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: data\4-2_2009.csv
+2025-09-03 20:19:51,446 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 207651 bytes
+2025-09-03 20:19:51,464 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-03 20:19:51,464 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 359s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-03 20:19:51,467 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 359–â
+2025-09-03 20:19:51,469 - utils - INFO - 4-2ê–åƒf[ƒ^2009”N“Ç‚İ‚İŠ®—¹: 359–â
+2025-09-03 20:19:51,469 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: data\4-2_2010.csv
+2025-09-03 20:19:51,470 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 157895 bytes
+2025-09-03 20:19:51,488 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-03 20:19:51,489 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 239s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-03 20:19:51,492 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 239–â
+2025-09-03 20:19:51,493 - utils - INFO - 4-2ê–åƒf[ƒ^2010”N“Ç‚İ‚İŠ®—¹: 239–â
+2025-09-03 20:19:51,493 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: data\4-2_2011.csv
+2025-09-03 20:19:51,494 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 237300 bytes
+2025-09-03 20:19:51,510 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-03 20:19:51,510 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 360s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-03 20:19:51,513 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 360–â
+2025-09-03 20:19:51,515 - utils - INFO - 4-2ê–åƒf[ƒ^2011”N“Ç‚İ‚İŠ®—¹: 360–â
+2025-09-03 20:19:51,516 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: data\4-2_2012.csv
+2025-09-03 20:19:51,516 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 199154 bytes
+2025-09-03 20:19:51,534 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-03 20:19:51,534 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 307s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-03 20:19:51,535 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 307–â
+2025-09-03 20:19:51,536 - utils - INFO - 4-2ê–åƒf[ƒ^2012”N“Ç‚İ‚İŠ®—¹: 307–â
+2025-09-03 20:19:51,537 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: data\4-2_2013.csv
+2025-09-03 20:19:51,537 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 182989 bytes
+2025-09-03 20:19:51,550 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-03 20:19:51,550 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 300s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-03 20:19:51,551 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 300–â
+2025-09-03 20:19:51,553 - utils - INFO - 4-2ê–åƒf[ƒ^2013”N“Ç‚İ‚İŠ®—¹: 300–â
+2025-09-03 20:19:51,554 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: data\4-2_2014.csv
+2025-09-03 20:19:51,554 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 153257 bytes
+2025-09-03 20:19:51,574 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-03 20:19:51,575 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 240s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-03 20:19:51,576 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 240–â
+2025-09-03 20:19:51,577 - utils - INFO - 4-2ê–åƒf[ƒ^2014”N“Ç‚İ‚İŠ®—¹: 240–â
+2025-09-03 20:19:51,577 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: data\4-2_2015.csv
+2025-09-03 20:19:51,577 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 273998 bytes
+2025-09-03 20:19:51,599 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-03 20:19:51,599 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 358s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-03 20:19:51,601 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 358–â
+2025-09-03 20:19:51,603 - utils - INFO - 4-2ê–åƒf[ƒ^2015”N“Ç‚İ‚İŠ®—¹: 358–â
+2025-09-03 20:19:51,604 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: data\4-2_2016.csv
+2025-09-03 20:19:51,604 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 291672 bytes
+2025-09-03 20:19:51,626 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-03 20:19:51,627 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 361s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-03 20:19:51,629 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 361–â
+2025-09-03 20:19:51,631 - utils - INFO - 4-2ê–åƒf[ƒ^2016”N“Ç‚İ‚İŠ®—¹: 361–â
+2025-09-03 20:19:51,632 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: data\4-2_2017.csv
+2025-09-03 20:19:51,632 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 382964 bytes
+2025-09-03 20:19:51,657 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-03 20:19:51,657 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 440s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-03 20:19:51,663 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 440–â
+2025-09-03 20:19:51,665 - utils - INFO - 4-2ê–åƒf[ƒ^2017”N“Ç‚İ‚İŠ®—¹: 440–â
+2025-09-03 20:19:51,666 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: data\4-2_2018.csv
+2025-09-03 20:19:51,666 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 309809 bytes
+2025-09-03 20:19:51,686 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-03 20:19:51,686 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 357s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-03 20:19:51,688 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 357–â
+2025-09-03 20:19:51,690 - utils - INFO - 4-2ê–åƒf[ƒ^2018”N“Ç‚İ‚İŠ®—¹: 357–â
+2025-09-03 20:19:51,693 - utils - INFO - IDÕ“Ë‰ğŒˆ: Šî‘b=202–â, ê–å=3681–â, ‚»‚Ì‘¼=0–â
+2025-09-03 20:19:51,708 - utils - INFO - RCCM“‡ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 12ƒtƒ@ƒCƒ‹, ‘Œv3883–â
+2025-09-03 20:19:51,708 - utils - INFO - 4-2ê–åƒf[ƒ^‘ÎÛ”N“x: [2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018]
+2025-09-03 20:22:06,250 - app - INFO - ƒz[ƒ€‰æ–Ê: ƒZƒbƒVƒ‡ƒ“î•ñƒNƒŠƒA - ['exam_question_ids', 'exam_current']
+2025-09-03 20:22:06,251 - app - INFO - ƒz[ƒ€ƒy[ƒWƒAƒNƒZƒX - –¢”FØƒ†[ƒU[
+2025-09-03 20:22:06,347 - utils - INFO - RCCM“‡ƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data
+2025-09-03 20:22:06,347 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-1.csv
+2025-09-03 20:22:06,347 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 92424 bytes
+2025-09-03 20:22:06,349 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-03 20:22:06,350 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 202s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-03 20:22:06,350 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 202–â
+2025-09-03 20:22:06,350 - utils - INFO - 4-1Šî‘bƒf[ƒ^“Ç‚İ‚İŠ®—¹: 202–â
+2025-09-03 20:22:06,351 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2008.csv
+2025-09-03 20:22:06,351 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 201176 bytes
+2025-09-03 20:22:06,357 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-03 20:22:06,357 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 360s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-03 20:22:06,361 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 360–â
+2025-09-03 20:22:06,363 - utils - INFO - 4-2ê–åƒf[ƒ^2008”N“Ç‚İ‚İŠ®—¹: 360–â
+2025-09-03 20:22:06,363 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2009.csv
+2025-09-03 20:22:06,363 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 207651 bytes
+2025-09-03 20:22:06,369 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-03 20:22:06,369 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 359s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-03 20:22:06,372 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 359–â
+2025-09-03 20:22:06,373 - utils - INFO - 4-2ê–åƒf[ƒ^2009”N“Ç‚İ‚İŠ®—¹: 359–â
+2025-09-03 20:22:06,374 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2010.csv
+2025-09-03 20:22:06,374 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 157895 bytes
+2025-09-03 20:22:06,377 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-03 20:22:06,377 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 239s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-03 20:22:06,378 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 239–â
+2025-09-03 20:22:06,378 - utils - INFO - 4-2ê–åƒf[ƒ^2010”N“Ç‚İ‚İŠ®—¹: 239–â
+2025-09-03 20:22:06,379 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2011.csv
+2025-09-03 20:22:06,379 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 237300 bytes
+2025-09-03 20:22:06,383 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-03 20:22:06,383 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 360s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-03 20:22:06,384 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 360–â
+2025-09-03 20:22:06,385 - utils - INFO - 4-2ê–åƒf[ƒ^2011”N“Ç‚İ‚İŠ®—¹: 360–â
+2025-09-03 20:22:06,385 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2012.csv
+2025-09-03 20:22:06,386 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 199154 bytes
+2025-09-03 20:22:06,390 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-03 20:22:06,390 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 307s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-03 20:22:06,391 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 307–â
+2025-09-03 20:22:06,392 - utils - INFO - 4-2ê–åƒf[ƒ^2012”N“Ç‚İ‚İŠ®—¹: 307–â
+2025-09-03 20:22:06,392 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2013.csv
+2025-09-03 20:22:06,393 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 182989 bytes
+2025-09-03 20:22:06,399 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-03 20:22:06,399 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 300s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-03 20:22:06,400 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 300–â
+2025-09-03 20:22:06,406 - utils - INFO - 4-2ê–åƒf[ƒ^2013”N“Ç‚İ‚İŠ®—¹: 300–â
+2025-09-03 20:22:06,407 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2014.csv
+2025-09-03 20:22:06,409 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 153257 bytes
+2025-09-03 20:22:06,413 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-03 20:22:06,414 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 240s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-03 20:22:06,415 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 240–â
+2025-09-03 20:22:06,416 - utils - INFO - 4-2ê–åƒf[ƒ^2014”N“Ç‚İ‚İŠ®—¹: 240–â
+2025-09-03 20:22:06,417 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2015.csv
+2025-09-03 20:22:06,417 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 273998 bytes
+2025-09-03 20:22:06,427 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-03 20:22:06,427 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 358s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-03 20:22:06,431 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 358–â
+2025-09-03 20:22:06,434 - utils - INFO - 4-2ê–åƒf[ƒ^2015”N“Ç‚İ‚İŠ®—¹: 358–â
+2025-09-03 20:22:06,434 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2016.csv
+2025-09-03 20:22:06,434 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 291672 bytes
+2025-09-03 20:22:06,447 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-03 20:22:06,447 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 361s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-03 20:22:06,449 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 361–â
+2025-09-03 20:22:06,451 - utils - INFO - 4-2ê–åƒf[ƒ^2016”N“Ç‚İ‚İŠ®—¹: 361–â
+2025-09-03 20:22:06,451 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2017.csv
+2025-09-03 20:22:06,451 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 382964 bytes
+2025-09-03 20:22:06,461 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-03 20:22:06,461 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 440s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-03 20:22:06,465 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 440–â
+2025-09-03 20:22:06,467 - utils - INFO - 4-2ê–åƒf[ƒ^2017”N“Ç‚İ‚İŠ®—¹: 440–â
+2025-09-03 20:22:06,468 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2018.csv
+2025-09-03 20:22:06,468 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 309809 bytes
+2025-09-03 20:22:06,478 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-03 20:22:06,478 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 357s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-03 20:22:06,480 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 357–â
+2025-09-03 20:22:06,481 - utils - INFO - 4-2ê–åƒf[ƒ^2018”N“Ç‚İ‚İŠ®—¹: 357–â
+2025-09-03 20:22:06,484 - utils - INFO - IDÕ“Ë‰ğŒˆ: Šî‘b=202–â, ê–å=3681–â, ‚»‚Ì‘¼=0–â
+2025-09-03 20:22:06,579 - utils - INFO - RCCM“‡ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 12ƒtƒ@ƒCƒ‹, ‘Œv3883–â
+2025-09-03 20:22:06,579 - utils - INFO - 4-2ê–åƒf[ƒ^‘ÎÛ”N“x: [2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018]
+2025-09-03 20:22:06,579 - app - ERROR - quizŠÖ”‚ÅƒGƒ‰[: validate_exam_parameters() takes 0 positional arguments but 2 were given
+2025-09-03 20:25:20,393 - app - INFO - ƒz[ƒ€‰æ–Ê: ƒZƒbƒVƒ‡ƒ“î•ñƒNƒŠƒA - ['exam_question_ids', 'exam_current']
+2025-09-03 20:25:20,393 - app - INFO - ƒz[ƒ€ƒy[ƒWƒAƒNƒZƒX - –¢”FØƒ†[ƒU[
+2025-09-03 20:25:20,421 - app - INFO - •”–å‘I‘ğ: road (“¹˜H)
+2025-09-03 20:25:20,449 - utils - INFO - RCCM“‡ƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data
+2025-09-03 20:25:20,449 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-1.csv
+2025-09-03 20:25:20,450 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 92424 bytes
+2025-09-03 20:25:20,452 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-03 20:25:20,453 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 202s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-03 20:25:20,454 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 202–â
+2025-09-03 20:25:20,454 - utils - INFO - 4-1Šî‘bƒf[ƒ^“Ç‚İ‚İŠ®—¹: 202–â
+2025-09-03 20:25:20,454 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2008.csv
+2025-09-03 20:25:20,455 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 201176 bytes
+2025-09-03 20:25:20,459 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-03 20:25:20,460 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 360s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-03 20:25:20,461 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 360–â
+2025-09-03 20:25:20,462 - utils - INFO - 4-2ê–åƒf[ƒ^2008”N“Ç‚İ‚İŠ®—¹: 360–â
+2025-09-03 20:25:20,462 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2009.csv
+2025-09-03 20:25:20,463 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 207651 bytes
+2025-09-03 20:25:20,466 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-03 20:25:20,466 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 359s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-03 20:25:20,468 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 359–â
+2025-09-03 20:25:20,469 - utils - INFO - 4-2ê–åƒf[ƒ^2009”N“Ç‚İ‚İŠ®—¹: 359–â
+2025-09-03 20:25:20,469 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2010.csv
+2025-09-03 20:25:20,469 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 157895 bytes
+2025-09-03 20:25:20,473 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-03 20:25:20,473 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 239s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-03 20:25:20,474 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 239–â
+2025-09-03 20:25:20,475 - utils - INFO - 4-2ê–åƒf[ƒ^2010”N“Ç‚İ‚İŠ®—¹: 239–â
+2025-09-03 20:25:20,475 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2011.csv
+2025-09-03 20:25:20,475 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 237300 bytes
+2025-09-03 20:25:20,479 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-03 20:25:20,479 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 360s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-03 20:25:20,480 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 360–â
+2025-09-03 20:25:20,481 - utils - INFO - 4-2ê–åƒf[ƒ^2011”N“Ç‚İ‚İŠ®—¹: 360–â
+2025-09-03 20:25:20,482 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2012.csv
+2025-09-03 20:25:20,482 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 199154 bytes
+2025-09-03 20:25:20,485 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-03 20:25:20,485 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 307s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-03 20:25:20,486 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 307–â
+2025-09-03 20:25:20,487 - utils - INFO - 4-2ê–åƒf[ƒ^2012”N“Ç‚İ‚İŠ®—¹: 307–â
+2025-09-03 20:25:20,487 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2013.csv
+2025-09-03 20:25:20,488 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 182989 bytes
+2025-09-03 20:25:20,500 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-03 20:25:20,500 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 300s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-03 20:25:20,501 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 300–â
+2025-09-03 20:25:20,502 - utils - INFO - 4-2ê–åƒf[ƒ^2013”N“Ç‚İ‚İŠ®—¹: 300–â
+2025-09-03 20:25:20,503 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2014.csv
+2025-09-03 20:25:20,503 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 153257 bytes
+2025-09-03 20:25:20,506 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-03 20:25:20,508 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 240s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-03 20:25:20,509 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 240–â
+2025-09-03 20:25:20,510 - utils - INFO - 4-2ê–åƒf[ƒ^2014”N“Ç‚İ‚İŠ®—¹: 240–â
+2025-09-03 20:25:20,510 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2015.csv
+2025-09-03 20:25:20,510 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 273998 bytes
+2025-09-03 20:25:20,515 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-03 20:25:20,515 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 358s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-03 20:25:20,516 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 358–â
+2025-09-03 20:25:20,517 - utils - INFO - 4-2ê–åƒf[ƒ^2015”N“Ç‚İ‚İŠ®—¹: 358–â
+2025-09-03 20:25:20,517 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2016.csv
+2025-09-03 20:25:20,518 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 291672 bytes
+2025-09-03 20:25:20,523 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-03 20:25:20,523 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 361s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-03 20:25:20,526 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 361–â
+2025-09-03 20:25:20,529 - utils - INFO - 4-2ê–åƒf[ƒ^2016”N“Ç‚İ‚İŠ®—¹: 361–â
+2025-09-03 20:25:20,530 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2017.csv
+2025-09-03 20:25:20,530 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 382964 bytes
+2025-09-03 20:25:20,536 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-03 20:25:20,536 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 440s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-03 20:25:20,539 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 440–â
+2025-09-03 20:25:20,543 - utils - INFO - 4-2ê–åƒf[ƒ^2017”N“Ç‚İ‚İŠ®—¹: 440–â
+2025-09-03 20:25:20,544 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2018.csv
+2025-09-03 20:25:20,544 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 309809 bytes
+2025-09-03 20:25:20,548 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-03 20:25:20,548 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 357s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-03 20:25:20,550 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 357–â
+2025-09-03 20:25:20,551 - utils - INFO - 4-2ê–åƒf[ƒ^2018”N“Ç‚İ‚İŠ®—¹: 357–â
+2025-09-03 20:25:20,553 - utils - INFO - IDÕ“Ë‰ğŒˆ: Šî‘b=202–â, ê–å=3681–â, ‚»‚Ì‘¼=0–â
+2025-09-03 20:25:20,555 - utils - INFO - RCCM“‡ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 12ƒtƒ@ƒCƒ‹, ‘Œv3883–â
+2025-09-03 20:25:20,555 - utils - INFO - 4-2ê–åƒf[ƒ^‘ÎÛ”N“x: [2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018]
+2025-09-03 20:25:20,555 - app - ERROR - quizŠÖ”‚ÅƒGƒ‰[: validate_exam_parameters() takes 0 positional arguments but 2 were given
+2025-09-03 20:25:20,561 - app - ERROR - quizŠÖ”‚ÅƒGƒ‰[: validate_exam_parameters() takes 0 positional arguments but 2 were given
+2025-09-03 20:25:20,564 - app - ERROR - quizŠÖ”‚ÅƒGƒ‰[: validate_exam_parameters() takes 0 positional arguments but 2 were given
+2025-09-03 20:25:20,567 - app - ERROR - quizŠÖ”‚ÅƒGƒ‰[: validate_exam_parameters() takes 0 positional arguments but 2 were given
+2025-09-04 16:21:11,352 - __main__ - INFO - RCCMŒ±–â‘èWƒAƒvƒŠƒP[ƒVƒ‡ƒ“‹N“®’†...
+2025-09-04 16:21:11,353 - __main__ - INFO - ƒAƒNƒZƒXURL: http://172.18.44.152:5003
+2025-09-04 16:21:11,353 - __main__ - INFO - ƒAƒNƒZƒXURL: http://localhost:5003
+2025-09-04 16:21:11,546 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5003
+ * Running on http://192.168.0.69:5003
+2025-09-04 16:21:11,547 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-09-04 16:24:04,799 - __main__ - INFO - ƒz[ƒ€‰æ–Ê: ƒZƒbƒVƒ‡ƒ“î•ñƒNƒŠƒA - ['exam_question_ids', 'exam_current']
+2025-09-04 16:24:04,800 - __main__ - INFO - ƒz[ƒ€ƒy[ƒWƒAƒNƒZƒX - –¢”FØƒ†[ƒU[
+2025-09-04 16:24:04,824 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:24:04] "GET / HTTP/1.1" 200 -
+2025-09-04 16:24:06,854 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:24:06,855 - utils - INFO - RCCM“‡ƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data
+2025-09-04 16:24:06,856 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-1.csv
+2025-09-04 16:24:06,856 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 92424 bytes
+2025-09-04 16:24:06,862 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-04 16:24:06,862 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 202s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-04 16:24:06,865 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 202–â
+2025-09-04 16:24:06,866 - utils - INFO - 4-1Šî‘bƒf[ƒ^“Ç‚İ‚İŠ®—¹: 202–â
+2025-09-04 16:24:06,866 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2008.csv
+2025-09-04 16:24:06,867 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 201176 bytes
+2025-09-04 16:24:06,878 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-04 16:24:06,878 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 360s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-04 16:24:06,884 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 360–â
+2025-09-04 16:24:06,888 - utils - INFO - 4-2ê–åƒf[ƒ^2008”N“Ç‚İ‚İŠ®—¹: 360–â
+2025-09-04 16:24:06,888 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2009.csv
+2025-09-04 16:24:06,889 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 207651 bytes
+2025-09-04 16:24:06,896 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-04 16:24:06,897 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 359s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-04 16:24:06,901 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 359–â
+2025-09-04 16:24:06,903 - utils - INFO - 4-2ê–åƒf[ƒ^2009”N“Ç‚İ‚İŠ®—¹: 359–â
+2025-09-04 16:24:06,903 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2010.csv
+2025-09-04 16:24:06,903 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 157895 bytes
+2025-09-04 16:24:06,908 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-04 16:24:06,909 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 239s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-04 16:24:06,910 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 239–â
+2025-09-04 16:24:06,911 - utils - INFO - 4-2ê–åƒf[ƒ^2010”N“Ç‚İ‚İŠ®—¹: 239–â
+2025-09-04 16:24:06,911 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2011.csv
+2025-09-04 16:24:06,911 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 237300 bytes
+2025-09-04 16:24:06,916 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-04 16:24:06,916 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 360s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-04 16:24:06,917 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 360–â
+2025-09-04 16:24:06,918 - utils - INFO - 4-2ê–åƒf[ƒ^2011”N“Ç‚İ‚İŠ®—¹: 360–â
+2025-09-04 16:24:06,919 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2012.csv
+2025-09-04 16:24:06,919 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 199154 bytes
+2025-09-04 16:24:06,923 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-04 16:24:06,923 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 307s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-04 16:24:06,924 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 307–â
+2025-09-04 16:24:06,925 - utils - INFO - 4-2ê–åƒf[ƒ^2012”N“Ç‚İ‚İŠ®—¹: 307–â
+2025-09-04 16:24:06,925 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2013.csv
+2025-09-04 16:24:06,925 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 182989 bytes
+2025-09-04 16:24:06,929 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-04 16:24:06,930 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 300s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-04 16:24:06,933 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 300–â
+2025-09-04 16:24:06,935 - utils - INFO - 4-2ê–åƒf[ƒ^2013”N“Ç‚İ‚İŠ®—¹: 300–â
+2025-09-04 16:24:06,935 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2014.csv
+2025-09-04 16:24:06,936 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 153257 bytes
+2025-09-04 16:24:06,941 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-04 16:24:06,941 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 240s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-04 16:24:06,942 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 240–â
+2025-09-04 16:24:06,943 - utils - INFO - 4-2ê–åƒf[ƒ^2014”N“Ç‚İ‚İŠ®—¹: 240–â
+2025-09-04 16:24:06,943 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2015.csv
+2025-09-04 16:24:06,943 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 273998 bytes
+2025-09-04 16:24:06,952 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-04 16:24:06,952 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 358s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-04 16:24:06,959 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 358–â
+2025-09-04 16:24:06,961 - utils - INFO - 4-2ê–åƒf[ƒ^2015”N“Ç‚İ‚İŠ®—¹: 358–â
+2025-09-04 16:24:06,961 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2016.csv
+2025-09-04 16:24:06,961 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 291672 bytes
+2025-09-04 16:24:06,972 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-04 16:24:06,972 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 361s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-04 16:24:06,974 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 361–â
+2025-09-04 16:24:06,976 - utils - INFO - 4-2ê–åƒf[ƒ^2016”N“Ç‚İ‚İŠ®—¹: 361–â
+2025-09-04 16:24:06,977 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2017.csv
+2025-09-04 16:24:06,977 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 382964 bytes
+2025-09-04 16:24:06,989 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-04 16:24:06,990 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 440s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-04 16:24:06,992 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 440–â
+2025-09-04 16:24:06,994 - utils - INFO - 4-2ê–åƒf[ƒ^2017”N“Ç‚İ‚İŠ®—¹: 440–â
+2025-09-04 16:24:06,995 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2018.csv
+2025-09-04 16:24:06,995 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 309809 bytes
+2025-09-04 16:24:07,004 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-04 16:24:07,004 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 357s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-04 16:24:07,005 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 357–â
+2025-09-04 16:24:07,006 - utils - INFO - 4-2ê–åƒf[ƒ^2018”N“Ç‚İ‚İŠ®—¹: 357–â
+2025-09-04 16:24:07,009 - utils - INFO - IDÕ“Ë‰ğŒˆ: Šî‘b=202–â, ê–å=3681–â, ‚»‚Ì‘¼=0–â
+2025-09-04 16:24:07,233 - utils - INFO - RCCM“‡ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 12ƒtƒ@ƒCƒ‹, ‘Œv3883–â
+2025-09-04 16:24:07,234 - utils - INFO - 4-2ê–åƒf[ƒ^‘ÎÛ”N“x: [2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018]
+2025-09-04 16:24:07,236 - __main__ - ERROR - quizŠÖ”‚ÅƒGƒ‰[: validate_exam_parameters() takes 0 positional arguments but 2 were given
+2025-09-04 16:24:07,239 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:24:07] "GET /exam?department=road&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:24:10,285 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:24:10,287 - __main__ - ERROR - quizŠÖ”‚ÅƒGƒ‰[: validate_exam_parameters() takes 0 positional arguments but 2 were given
+2025-09-04 16:24:10,288 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:24:10] "GET /exam?department=road&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:24:13,357 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:24:13,369 - __main__ - ERROR - quizŠÖ”‚ÅƒGƒ‰[: validate_exam_parameters() takes 0 positional arguments but 2 were given
+2025-09-04 16:24:13,376 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:24:13] "GET /exam?department=road&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:24:18,444 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:24:18,448 - __main__ - ERROR - quizŠÖ”‚ÅƒGƒ‰[: validate_exam_parameters() takes 0 positional arguments but 2 were given
+2025-09-04 16:24:18,452 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:24:18] "GET /exam?department=river&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:24:21,492 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:24:21,498 - __main__ - ERROR - quizŠÖ”‚ÅƒGƒ‰[: validate_exam_parameters() takes 0 positional arguments but 2 were given
+2025-09-04 16:24:21,502 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:24:21] "GET /exam?department=river&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:24:24,549 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:24:24,565 - __main__ - ERROR - quizŠÖ”‚ÅƒGƒ‰[: validate_exam_parameters() takes 0 positional arguments but 2 were given
+2025-09-04 16:24:24,569 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:24:24] "GET /exam?department=river&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:24:29,651 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:24:29,652 - __main__ - ERROR - quizŠÖ”‚ÅƒGƒ‰[: validate_exam_parameters() takes 0 positional arguments but 2 were given
+2025-09-04 16:24:29,653 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:24:29] "GET /exam?department=urban_planning&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:24:32,709 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:24:32,715 - __main__ - ERROR - quizŠÖ”‚ÅƒGƒ‰[: validate_exam_parameters() takes 0 positional arguments but 2 were given
+2025-09-04 16:24:32,718 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:24:32] "GET /exam?department=urban_planning&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:24:35,811 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:24:35,813 - __main__ - ERROR - quizŠÖ”‚ÅƒGƒ‰[: validate_exam_parameters() takes 0 positional arguments but 2 were given
+2025-09-04 16:24:35,814 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:24:35] "GET /exam?department=urban_planning&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:24:40,885 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:24:40,895 - __main__ - ERROR - quizŠÖ”‚ÅƒGƒ‰[: validate_exam_parameters() takes 0 positional arguments but 2 were given
+2025-09-04 16:24:40,904 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:24:40] "GET /exam?department=tunnel&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:24:43,965 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:24:43,973 - __main__ - ERROR - quizŠÖ”‚ÅƒGƒ‰[: validate_exam_parameters() takes 0 positional arguments but 2 were given
+2025-09-04 16:24:43,978 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:24:43] "GET /exam?department=tunnel&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:24:47,037 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:24:47,054 - __main__ - ERROR - quizŠÖ”‚ÅƒGƒ‰[: validate_exam_parameters() takes 0 positional arguments but 2 were given
+2025-09-04 16:24:47,057 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:24:47] "GET /exam?department=tunnel&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:24:52,108 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:24:52,124 - __main__ - ERROR - quizŠÖ”‚ÅƒGƒ‰[: validate_exam_parameters() takes 0 positional arguments but 2 were given
+2025-09-04 16:24:52,128 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:24:52] "GET /exam?department=garden&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:24:55,184 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:24:55,186 - __main__ - ERROR - quizŠÖ”‚ÅƒGƒ‰[: validate_exam_parameters() takes 0 positional arguments but 2 were given
+2025-09-04 16:24:55,187 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:24:55] "GET /exam?department=garden&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:24:58,240 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:24:58,245 - __main__ - ERROR - quizŠÖ”‚ÅƒGƒ‰[: validate_exam_parameters() takes 0 positional arguments but 2 were given
+2025-09-04 16:24:58,247 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:24:58] "GET /exam?department=garden&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:25:03,288 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:25:03,292 - __main__ - ERROR - quizŠÖ”‚ÅƒGƒ‰[: validate_exam_parameters() takes 0 positional arguments but 2 were given
+2025-09-04 16:25:03,294 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:25:03] "GET /exam?department=construction_environment&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:25:06,354 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:25:06,359 - __main__ - ERROR - quizŠÖ”‚ÅƒGƒ‰[: validate_exam_parameters() takes 0 positional arguments but 2 were given
+2025-09-04 16:25:06,361 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:25:06] "GET /exam?department=construction_environment&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:25:09,408 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:25:09,412 - __main__ - ERROR - quizŠÖ”‚ÅƒGƒ‰[: validate_exam_parameters() takes 0 positional arguments but 2 were given
+2025-09-04 16:25:09,413 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:25:09] "GET /exam?department=construction_environment&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:25:14,475 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:25:14,478 - __main__ - ERROR - quizŠÖ”‚ÅƒGƒ‰[: validate_exam_parameters() takes 0 positional arguments but 2 were given
+2025-09-04 16:25:14,480 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:25:14] "GET /exam?department=steel_concrete&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:25:17,533 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:25:17,538 - __main__ - ERROR - quizŠÖ”‚ÅƒGƒ‰[: validate_exam_parameters() takes 0 positional arguments but 2 were given
+2025-09-04 16:25:17,541 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:25:17] "GET /exam?department=steel_concrete&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:25:20,603 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:25:20,611 - __main__ - ERROR - quizŠÖ”‚ÅƒGƒ‰[: validate_exam_parameters() takes 0 positional arguments but 2 were given
+2025-09-04 16:25:20,616 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:25:20] "GET /exam?department=steel_concrete&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:25:25,711 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:25:25,722 - __main__ - ERROR - quizŠÖ”‚ÅƒGƒ‰[: validate_exam_parameters() takes 0 positional arguments but 2 were given
+2025-09-04 16:25:25,724 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:25:25] "GET /exam?department=soil_foundation&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:25:28,766 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:25:28,773 - __main__ - ERROR - quizŠÖ”‚ÅƒGƒ‰[: validate_exam_parameters() takes 0 positional arguments but 2 were given
+2025-09-04 16:25:28,775 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:25:28] "GET /exam?department=soil_foundation&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:25:31,828 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:25:31,831 - __main__ - ERROR - quizŠÖ”‚ÅƒGƒ‰[: validate_exam_parameters() takes 0 positional arguments but 2 were given
+2025-09-04 16:25:31,832 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:25:31] "GET /exam?department=soil_foundation&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:25:36,883 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:25:36,891 - __main__ - ERROR - quizŠÖ”‚ÅƒGƒ‰[: validate_exam_parameters() takes 0 positional arguments but 2 were given
+2025-09-04 16:25:36,893 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:25:36] "GET /exam?department=construction_planning&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:25:39,941 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:25:39,944 - __main__ - ERROR - quizŠÖ”‚ÅƒGƒ‰[: validate_exam_parameters() takes 0 positional arguments but 2 were given
+2025-09-04 16:25:39,945 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:25:39] "GET /exam?department=construction_planning&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:25:43,004 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:25:43,013 - __main__ - ERROR - quizŠÖ”‚ÅƒGƒ‰[: validate_exam_parameters() takes 0 positional arguments but 2 were given
+2025-09-04 16:25:43,023 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:25:43] "GET /exam?department=construction_planning&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:25:48,098 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:25:48,108 - __main__ - ERROR - quizŠÖ”‚ÅƒGƒ‰[: validate_exam_parameters() takes 0 positional arguments but 2 were given
+2025-09-04 16:25:48,110 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:25:48] "GET /exam?department=water_supply&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:25:51,155 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:25:51,158 - __main__ - ERROR - quizŠÖ”‚ÅƒGƒ‰[: validate_exam_parameters() takes 0 positional arguments but 2 were given
+2025-09-04 16:25:51,159 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:25:51] "GET /exam?department=water_supply&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:25:54,209 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:25:54,215 - __main__ - ERROR - quizŠÖ”‚ÅƒGƒ‰[: validate_exam_parameters() takes 0 positional arguments but 2 were given
+2025-09-04 16:25:54,221 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:25:54] "GET /exam?department=water_supply&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:25:59,258 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:25:59,264 - __main__ - ERROR - quizŠÖ”‚ÅƒGƒ‰[: validate_exam_parameters() takes 0 positional arguments but 2 were given
+2025-09-04 16:25:59,266 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:25:59] "GET /exam?department=forest&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:41:44,812 - __main__ - INFO - RCCMŒ±–â‘èWƒAƒvƒŠƒP[ƒVƒ‡ƒ“‹N“®’†...
+2025-09-04 16:41:44,812 - __main__ - INFO - ƒAƒNƒZƒXURL: http://172.18.44.152:5003
+2025-09-04 16:41:44,813 - __main__ - INFO - ƒAƒNƒZƒXURL: http://localhost:5003
+2025-09-04 16:41:44,910 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5003
+ * Running on http://192.168.0.69:5003
+2025-09-04 16:41:44,910 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-09-04 16:41:53,027 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:41:53,028 - utils - INFO - RCCM“‡ƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data
+2025-09-04 16:41:53,030 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-1.csv
+2025-09-04 16:41:53,031 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 92424 bytes
+2025-09-04 16:41:53,046 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-04 16:41:53,047 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 202s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-04 16:41:53,049 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 202–â
+2025-09-04 16:41:53,049 - utils - INFO - 4-1Šî‘bƒf[ƒ^“Ç‚İ‚İŠ®—¹: 202–â
+2025-09-04 16:41:53,050 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2008.csv
+2025-09-04 16:41:53,051 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 201176 bytes
+2025-09-04 16:41:53,059 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-04 16:41:53,059 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 360s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-04 16:41:53,061 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 360–â
+2025-09-04 16:41:53,065 - utils - INFO - 4-2ê–åƒf[ƒ^2008”N“Ç‚İ‚İŠ®—¹: 360–â
+2025-09-04 16:41:53,066 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2009.csv
+2025-09-04 16:41:53,066 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 207651 bytes
+2025-09-04 16:41:53,074 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-04 16:41:53,075 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 359s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-04 16:41:53,077 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 359–â
+2025-09-04 16:41:53,081 - utils - INFO - 4-2ê–åƒf[ƒ^2009”N“Ç‚İ‚İŠ®—¹: 359–â
+2025-09-04 16:41:53,081 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2010.csv
+2025-09-04 16:41:53,082 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 157895 bytes
+2025-09-04 16:41:53,087 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-04 16:41:53,087 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 239s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-04 16:41:53,088 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 239–â
+2025-09-04 16:41:53,089 - utils - INFO - 4-2ê–åƒf[ƒ^2010”N“Ç‚İ‚İŠ®—¹: 239–â
+2025-09-04 16:41:53,089 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2011.csv
+2025-09-04 16:41:53,089 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 237300 bytes
+2025-09-04 16:41:53,093 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-04 16:41:53,094 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 360s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-04 16:41:53,096 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 360–â
+2025-09-04 16:41:53,099 - utils - INFO - 4-2ê–åƒf[ƒ^2011”N“Ç‚İ‚İŠ®—¹: 360–â
+2025-09-04 16:41:53,099 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2012.csv
+2025-09-04 16:41:53,100 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 199154 bytes
+2025-09-04 16:41:53,104 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-04 16:41:53,104 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 307s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-04 16:41:53,106 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 307–â
+2025-09-04 16:41:53,107 - utils - INFO - 4-2ê–åƒf[ƒ^2012”N“Ç‚İ‚İŠ®—¹: 307–â
+2025-09-04 16:41:53,107 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2013.csv
+2025-09-04 16:41:53,107 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 182989 bytes
+2025-09-04 16:41:53,111 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-04 16:41:53,112 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 300s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-04 16:41:53,113 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 300–â
+2025-09-04 16:41:53,114 - utils - INFO - 4-2ê–åƒf[ƒ^2013”N“Ç‚İ‚İŠ®—¹: 300–â
+2025-09-04 16:41:53,114 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2014.csv
+2025-09-04 16:41:53,114 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 153257 bytes
+2025-09-04 16:41:53,117 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-04 16:41:53,117 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 240s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-04 16:41:53,118 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 240–â
+2025-09-04 16:41:53,119 - utils - INFO - 4-2ê–åƒf[ƒ^2014”N“Ç‚İ‚İŠ®—¹: 240–â
+2025-09-04 16:41:53,119 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2015.csv
+2025-09-04 16:41:53,119 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 273998 bytes
+2025-09-04 16:41:53,124 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-04 16:41:53,124 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 358s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-04 16:41:53,126 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 358–â
+2025-09-04 16:41:53,127 - utils - INFO - 4-2ê–åƒf[ƒ^2015”N“Ç‚İ‚İŠ®—¹: 358–â
+2025-09-04 16:41:53,129 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2016.csv
+2025-09-04 16:41:53,129 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 291672 bytes
+2025-09-04 16:41:53,140 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-04 16:41:53,141 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 361s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-04 16:41:53,142 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 361–â
+2025-09-04 16:41:53,143 - utils - INFO - 4-2ê–åƒf[ƒ^2016”N“Ç‚İ‚İŠ®—¹: 361–â
+2025-09-04 16:41:53,143 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2017.csv
+2025-09-04 16:41:53,143 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 382964 bytes
+2025-09-04 16:41:53,155 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-04 16:41:53,155 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 440s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-04 16:41:53,156 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 440–â
+2025-09-04 16:41:53,158 - utils - INFO - 4-2ê–åƒf[ƒ^2017”N“Ç‚İ‚İŠ®—¹: 440–â
+2025-09-04 16:41:53,158 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2018.csv
+2025-09-04 16:41:53,158 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 309809 bytes
+2025-09-04 16:41:53,168 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-04 16:41:53,168 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 357s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-04 16:41:53,169 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 357–â
+2025-09-04 16:41:53,170 - utils - INFO - 4-2ê–åƒf[ƒ^2018”N“Ç‚İ‚İŠ®—¹: 357–â
+2025-09-04 16:41:53,172 - utils - INFO - IDÕ“Ë‰ğŒˆ: Šî‘b=202–â, ê–å=3681–â, ‚»‚Ì‘¼=0–â
+2025-09-04 16:41:53,177 - utils - INFO - RCCM“‡ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 12ƒtƒ@ƒCƒ‹, ‘Œv3883–â
+2025-09-04 16:41:53,177 - utils - INFO - 4-2ê–åƒf[ƒ^‘ÎÛ”N“x: [2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018]
+2025-09-04 16:41:53,178 - __main__ - INFO - Parameter normalization (fallback): question_type=specialist
+2025-09-04 16:41:53,178 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-04 16:41:53,178 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-04 16:41:53,178 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-04 16:41:53,179 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-04 16:41:53,179 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-04 16:41:53,181 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=None, department=road
+2025-09-04 16:41:53,181 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-04 16:41:53,181 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=True, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-04 16:41:53,182 - __main__ - INFO - need_reset = True
+2025-09-04 16:41:53,182 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-04 16:41:53,183 - __main__ - INFO - ê–å‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 3681–â
+2025-09-04 16:41:53,183 - __main__ - INFO - •”–åƒtƒBƒ‹ƒ^ƒŠƒ“ƒO: road ¨ “¹˜H
+2025-09-04 16:41:53,184 - __main__ - INFO - ê–å‰È–Ú•”–åƒ}ƒbƒ`ƒ“ƒO¬Œ÷: 310–â
+2025-09-04 16:41:53,184 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K10–â, ƒtƒBƒ‹ƒ^:[•”–å:“¹˜H, í•Ê:4-2 ‘I‘ğ‰È–Ú]
+2025-09-04 16:41:53,184 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=10, question_ids_count=10
+2025-09-04 16:41:53,184 - __main__ - INFO - –â‘èIDˆê——: [1723, 3181, 1721, 2930, 3540, 3188, 3913, 3172, 1025, 1024]
+2025-09-04 16:41:53,185 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 10–â, ƒtƒBƒ‹ƒ^: •”–å:“¹˜H, í•Ê:4-2 ‘I‘ğ‰È–Ú
+2025-09-04 16:41:53,185 - __main__ - INFO - –â‘èIDæ“¾: current_no=0, question_id=1723
+2025-09-04 16:41:53,185 - __main__ - INFO - –â‘è•\¦: 1/10 (“à•”: current_no=0, total_ids=10)
+2025-09-04 16:41:53,185 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=1 (type:<class 'int'>), total_questions=10
+2025-09-04 16:41:53,209 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:41:53] "GET /exam?department=road&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:44:06,727 - __main__ - INFO - ƒz[ƒ€‰æ–Ê: ƒZƒbƒVƒ‡ƒ“î•ñƒNƒŠƒA - ['exam_question_ids', 'exam_current']
+2025-09-04 16:44:06,727 - __main__ - INFO - ƒz[ƒ€ƒy[ƒWƒAƒNƒZƒX - –¢”FØƒ†[ƒU[
+2025-09-04 16:44:06,738 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:44:06] "GET / HTTP/1.1" 200 -
+2025-09-04 16:44:08,770 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:44:08,775 - __main__ - INFO - Parameter normalization (fallback): question_type=specialist
+2025-09-04 16:44:08,776 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-04 16:44:08,776 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-04 16:44:08,776 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-04 16:44:08,778 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-04 16:44:08,779 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-04 16:44:08,779 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=None, department=road
+2025-09-04 16:44:08,780 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-04 16:44:08,780 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=True, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-04 16:44:08,781 - __main__ - INFO - need_reset = True
+2025-09-04 16:44:08,782 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-04 16:44:08,786 - __main__ - INFO - ê–å‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 3681–â
+2025-09-04 16:44:08,786 - __main__ - INFO - •”–åƒtƒBƒ‹ƒ^ƒŠƒ“ƒO: road ¨ “¹˜H
+2025-09-04 16:44:08,787 - __main__ - INFO - ê–å‰È–Ú•”–åƒ}ƒbƒ`ƒ“ƒO¬Œ÷: 310–â
+2025-09-04 16:44:08,788 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K10–â, ƒtƒBƒ‹ƒ^:[•”–å:“¹˜H, í•Ê:4-2 ‘I‘ğ‰È–Ú]
+2025-09-04 16:44:08,788 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=10, question_ids_count=10
+2025-09-04 16:44:08,788 - __main__ - INFO - –â‘èIDˆê——: [1020, 2940, 3549, 2646, 4326, 2927, 4337, 1986, 3547, 1968]
+2025-09-04 16:44:08,789 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 10–â, ƒtƒBƒ‹ƒ^: •”–å:“¹˜H, í•Ê:4-2 ‘I‘ğ‰È–Ú
+2025-09-04 16:44:08,789 - __main__ - INFO - –â‘èIDæ“¾: current_no=0, question_id=1020
+2025-09-04 16:44:08,789 - __main__ - INFO - –â‘è•\¦: 1/10 (“à•”: current_no=0, total_ids=10)
+2025-09-04 16:44:08,789 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=1 (type:<class 'int'>), total_questions=10
+2025-09-04 16:44:08,797 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:44:08] "GET /exam?department=road&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:44:11,848 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:44:11,853 - __main__ - INFO - Parameter normalization (fallback): question_type=specialist
+2025-09-04 16:44:11,854 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-04 16:44:11,854 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-04 16:44:11,855 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-04 16:44:11,855 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-04 16:44:11,855 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-04 16:44:11,856 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=None, department=road
+2025-09-04 16:44:11,856 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-04 16:44:11,856 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=True, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-04 16:44:11,856 - __main__ - INFO - need_reset = True
+2025-09-04 16:44:11,857 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-04 16:44:11,858 - __main__ - INFO - ê–å‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 3681–â
+2025-09-04 16:44:11,858 - __main__ - INFO - •”–åƒtƒBƒ‹ƒ^ƒŠƒ“ƒO: road ¨ “¹˜H
+2025-09-04 16:44:11,858 - __main__ - INFO - ê–å‰È–Ú•”–åƒ}ƒbƒ`ƒ“ƒO¬Œ÷: 310–â
+2025-09-04 16:44:11,859 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K10–â, ƒtƒBƒ‹ƒ^:[•”–å:“¹˜H, í•Ê:4-2 ‘I‘ğ‰È–Ú]
+2025-09-04 16:44:11,859 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=10, question_ids_count=10
+2025-09-04 16:44:11,860 - __main__ - INFO - –â‘èIDˆê——: [2630, 3897, 3925, 2334, 1725, 1011, 3194, 1361, 3885, 3917]
+2025-09-04 16:44:11,860 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 10–â, ƒtƒBƒ‹ƒ^: •”–å:“¹˜H, í•Ê:4-2 ‘I‘ğ‰È–Ú
+2025-09-04 16:44:11,860 - __main__ - INFO - –â‘èIDæ“¾: current_no=0, question_id=2630
+2025-09-04 16:44:11,860 - __main__ - INFO - –â‘è•\¦: 1/10 (“à•”: current_no=0, total_ids=10)
+2025-09-04 16:44:11,861 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=1 (type:<class 'int'>), total_questions=10
+2025-09-04 16:44:11,867 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:44:11] "GET /exam?department=road&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:44:14,907 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:44:14,917 - __main__ - INFO - Parameter normalization (fallback): question_type=specialist
+2025-09-04 16:44:14,918 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-04 16:44:14,918 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-04 16:44:14,919 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-04 16:44:14,919 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-04 16:44:14,920 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-04 16:44:14,922 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=None, department=road
+2025-09-04 16:44:14,922 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-04 16:44:14,923 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=True, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-04 16:44:14,923 - __main__ - INFO - need_reset = True
+2025-09-04 16:44:14,924 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-04 16:44:14,926 - __main__ - INFO - ê–å‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 3681–â
+2025-09-04 16:44:14,926 - __main__ - INFO - •”–åƒtƒBƒ‹ƒ^ƒŠƒ“ƒO: road ¨ “¹˜H
+2025-09-04 16:44:14,928 - __main__ - INFO - ê–å‰È–Ú•”–åƒ}ƒbƒ`ƒ“ƒO¬Œ÷: 310–â
+2025-09-04 16:44:14,931 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K10–â, ƒtƒBƒ‹ƒ^:[•”–å:“¹˜H, í•Ê:4-2 ‘I‘ğ‰È–Ú]
+2025-09-04 16:44:14,933 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=10, question_ids_count=10
+2025-09-04 16:44:14,935 - __main__ - INFO - –â‘èIDˆê——: [3540, 2943, 1721, 3899, 1015, 3544, 1732, 2635, 4338, 1731]
+2025-09-04 16:44:14,935 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 10–â, ƒtƒBƒ‹ƒ^: •”–å:“¹˜H, í•Ê:4-2 ‘I‘ğ‰È–Ú
+2025-09-04 16:44:14,936 - __main__ - INFO - –â‘èIDæ“¾: current_no=0, question_id=3540
+2025-09-04 16:44:14,937 - __main__ - INFO - –â‘è•\¦: 1/10 (“à•”: current_no=0, total_ids=10)
+2025-09-04 16:44:14,938 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=1 (type:<class 'int'>), total_questions=10
+2025-09-04 16:44:14,943 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:44:14] "GET /exam?department=road&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:44:20,000 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:44:20,004 - __main__ - INFO - Parameter normalization (fallback): question_type=specialist
+2025-09-04 16:44:20,005 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-04 16:44:20,005 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-04 16:44:20,005 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-04 16:44:20,006 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-04 16:44:20,006 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-04 16:44:20,006 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=None, department=river
+2025-09-04 16:44:20,006 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-04 16:44:20,006 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=True, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-04 16:44:20,006 - __main__ - INFO - need_reset = True
+2025-09-04 16:44:20,007 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-04 16:44:20,008 - __main__ - INFO - ê–å‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 3681–â
+2025-09-04 16:44:20,008 - __main__ - INFO - •”–åƒtƒBƒ‹ƒ^ƒŠƒ“ƒO: river ¨ river
+2025-09-04 16:44:20,009 - __main__ - WARNING - ê–å‰È–Ú•”–åƒ}ƒbƒ`ƒ“ƒO¸”s: river ‚ÉŠY“–‚·‚é–â‘è‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñ
+2025-09-04 16:44:20,012 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K10–â, ƒtƒBƒ‹ƒ^:[•”–å:river, í•Ê:4-2 ‘I‘ğ‰È–Ú]
+2025-09-04 16:44:20,012 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=10, question_ids_count=10
+2025-09-04 16:44:20,012 - __main__ - INFO - –â‘èIDˆê——: [1756, 1129, 4675, 2537, 3278, 2232, 1285, 2577, 1896, 2667]
+2025-09-04 16:44:20,013 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 10–â, ƒtƒBƒ‹ƒ^: •”–å:river, í•Ê:4-2 ‘I‘ğ‰È–Ú
+2025-09-04 16:44:20,013 - __main__ - INFO - –â‘èIDæ“¾: current_no=0, question_id=1756
+2025-09-04 16:44:20,013 - __main__ - INFO - –â‘è•\¦: 1/10 (“à•”: current_no=0, total_ids=10)
+2025-09-04 16:44:20,014 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=1 (type:<class 'int'>), total_questions=10
+2025-09-04 16:44:20,018 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:44:20] "GET /exam?department=river&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:44:23,088 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:44:23,091 - __main__ - INFO - Parameter normalization (fallback): question_type=specialist
+2025-09-04 16:44:23,091 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-04 16:44:23,091 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-04 16:44:23,091 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-04 16:44:23,091 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-04 16:44:23,092 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-04 16:44:23,092 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=None, department=river
+2025-09-04 16:44:23,092 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-04 16:44:23,092 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=True, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-04 16:44:23,092 - __main__ - INFO - need_reset = True
+2025-09-04 16:44:23,092 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-04 16:44:23,093 - __main__ - INFO - ê–å‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 3681–â
+2025-09-04 16:44:23,093 - __main__ - INFO - •”–åƒtƒBƒ‹ƒ^ƒŠƒ“ƒO: river ¨ river
+2025-09-04 16:44:23,094 - __main__ - WARNING - ê–å‰È–Ú•”–åƒ}ƒbƒ`ƒ“ƒO¸”s: river ‚ÉŠY“–‚·‚é–â‘è‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñ
+2025-09-04 16:44:23,097 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K10–â, ƒtƒBƒ‹ƒ^:[•”–å:river, í•Ê:4-2 ‘I‘ğ‰È–Ú]
+2025-09-04 16:44:23,097 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=10, question_ids_count=10
+2025-09-04 16:44:23,097 - __main__ - INFO - –â‘èIDˆê——: [1705, 3126, 3449, 1886, 1532, 1240, 3117, 4679, 4445, 3868]
+2025-09-04 16:44:23,097 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 10–â, ƒtƒBƒ‹ƒ^: •”–å:river, í•Ê:4-2 ‘I‘ğ‰È–Ú
+2025-09-04 16:44:23,098 - __main__ - INFO - –â‘èIDæ“¾: current_no=0, question_id=1705
+2025-09-04 16:44:23,098 - __main__ - INFO - –â‘è•\¦: 1/10 (“à•”: current_no=0, total_ids=10)
+2025-09-04 16:44:23,098 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=1 (type:<class 'int'>), total_questions=10
+2025-09-04 16:44:23,105 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:44:23] "GET /exam?department=river&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:44:26,145 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:44:26,152 - __main__ - INFO - Parameter normalization (fallback): question_type=specialist
+2025-09-04 16:44:26,152 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-04 16:44:26,153 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-04 16:44:26,154 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-04 16:44:26,155 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-04 16:44:26,155 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-04 16:44:26,156 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=None, department=river
+2025-09-04 16:44:26,156 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-04 16:44:26,156 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=True, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-04 16:44:26,156 - __main__ - INFO - need_reset = True
+2025-09-04 16:44:26,157 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-04 16:44:26,158 - __main__ - INFO - ê–å‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 3681–â
+2025-09-04 16:44:26,158 - __main__ - INFO - •”–åƒtƒBƒ‹ƒ^ƒŠƒ“ƒO: river ¨ river
+2025-09-04 16:44:26,159 - __main__ - WARNING - ê–å‰È–Ú•”–åƒ}ƒbƒ`ƒ“ƒO¸”s: river ‚ÉŠY“–‚·‚é–â‘è‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñ
+2025-09-04 16:44:26,162 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K10–â, ƒtƒBƒ‹ƒ^:[•”–å:river, í•Ê:4-2 ‘I‘ğ‰È–Ú]
+2025-09-04 16:44:26,162 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=10, question_ids_count=10
+2025-09-04 16:44:26,162 - __main__ - INFO - –â‘èIDˆê——: [2809, 3516, 1471, 3425, 2948, 3813, 1437, 3266, 1228, 1811]
+2025-09-04 16:44:26,163 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 10–â, ƒtƒBƒ‹ƒ^: •”–å:river, í•Ê:4-2 ‘I‘ğ‰È–Ú
+2025-09-04 16:44:26,163 - __main__ - INFO - –â‘èIDæ“¾: current_no=0, question_id=2809
+2025-09-04 16:44:26,163 - __main__ - INFO - –â‘è•\¦: 1/10 (“à•”: current_no=0, total_ids=10)
+2025-09-04 16:44:26,163 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=1 (type:<class 'int'>), total_questions=10
+2025-09-04 16:44:26,168 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:44:26] "GET /exam?department=river&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:44:31,211 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:44:31,232 - __main__ - INFO - Parameter normalization (fallback): question_type=specialist
+2025-09-04 16:44:31,233 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-04 16:44:31,233 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-04 16:44:31,234 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-04 16:44:31,234 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-04 16:44:31,237 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-04 16:44:31,237 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=None, department=urban_planning
+2025-09-04 16:44:31,238 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-04 16:44:31,238 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=True, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-04 16:44:31,238 - __main__ - INFO - need_reset = True
+2025-09-04 16:44:31,239 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-04 16:44:31,243 - __main__ - INFO - ê–å‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 3681–â
+2025-09-04 16:44:31,244 - __main__ - INFO - •”–åƒtƒBƒ‹ƒ^ƒŠƒ“ƒO: urban_planning ¨ “ssŒv‰æ‹y‚Ñ’n•ûŒv‰æ
+2025-09-04 16:44:31,245 - __main__ - INFO - ê–å‰È–Ú•”–åƒ}ƒbƒ`ƒ“ƒO¬Œ÷: 315–â
+2025-09-04 16:44:31,246 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K10–â, ƒtƒBƒ‹ƒ^:[•”–å:“ssŒv‰æ‹y‚Ñ’n•ûŒv‰æ, í•Ê:4-2 ‘I‘ğ‰È–Ú]
+2025-09-04 16:44:31,247 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=10, question_ids_count=10
+2025-09-04 16:44:31,247 - __main__ - INFO - –â‘èIDˆê——: [2864, 3796, 3137, 2863, 4512, 1937, 4183, 1639, 1649, 4525]
+2025-09-04 16:44:31,247 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 10–â, ƒtƒBƒ‹ƒ^: •”–å:“ssŒv‰æ‹y‚Ñ’n•ûŒv‰æ, í•Ê:4-2 ‘I‘ğ‰È–Ú
+2025-09-04 16:44:31,248 - __main__ - INFO - –â‘èIDæ“¾: current_no=0, question_id=2864
+2025-09-04 16:44:31,249 - __main__ - INFO - –â‘è•\¦: 1/10 (“à•”: current_no=0, total_ids=10)
+2025-09-04 16:44:31,249 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=1 (type:<class 'int'>), total_questions=10
+2025-09-04 16:44:31,255 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:44:31] "GET /exam?department=urban_planning&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:44:34,304 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:44:34,306 - __main__ - INFO - Parameter normalization (fallback): question_type=specialist
+2025-09-04 16:44:34,306 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-04 16:44:34,306 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-04 16:44:34,307 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-04 16:44:34,307 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-04 16:44:34,307 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-04 16:44:34,307 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=None, department=urban_planning
+2025-09-04 16:44:34,307 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-04 16:44:34,307 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=True, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-04 16:44:34,307 - __main__ - INFO - need_reset = True
+2025-09-04 16:44:34,307 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-04 16:44:34,308 - __main__ - INFO - ê–å‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 3681–â
+2025-09-04 16:44:34,308 - __main__ - INFO - •”–åƒtƒBƒ‹ƒ^ƒŠƒ“ƒO: urban_planning ¨ “ssŒv‰æ‹y‚Ñ’n•ûŒv‰æ
+2025-09-04 16:44:34,308 - __main__ - INFO - ê–å‰È–Ú•”–åƒ}ƒbƒ`ƒ“ƒO¬Œ÷: 315–â
+2025-09-04 16:44:34,308 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K10–â, ƒtƒBƒ‹ƒ^:[•”–å:“ssŒv‰æ‹y‚Ñ’n•ûŒv‰æ, í•Ê:4-2 ‘I‘ğ‰È–Ú]
+2025-09-04 16:44:34,309 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=10, question_ids_count=10
+2025-09-04 16:44:34,309 - __main__ - INFO - –â‘èIDˆê——: [1934, 3425, 4525, 3814, 2242, 4216, 2230, 2855, 1282, 1284]
+2025-09-04 16:44:34,309 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 10–â, ƒtƒBƒ‹ƒ^: •”–å:“ssŒv‰æ‹y‚Ñ’n•ûŒv‰æ, í•Ê:4-2 ‘I‘ğ‰È–Ú
+2025-09-04 16:44:34,309 - __main__ - INFO - –â‘èIDæ“¾: current_no=0, question_id=1934
+2025-09-04 16:44:34,309 - __main__ - INFO - –â‘è•\¦: 1/10 (“à•”: current_no=0, total_ids=10)
+2025-09-04 16:44:34,309 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=1 (type:<class 'int'>), total_questions=10
+2025-09-04 16:44:34,312 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:44:34] "GET /exam?department=urban_planning&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:44:37,357 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:44:37,359 - __main__ - INFO - Parameter normalization (fallback): question_type=specialist
+2025-09-04 16:44:37,359 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-04 16:44:37,360 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-04 16:44:37,360 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-04 16:44:37,360 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-04 16:44:37,360 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-04 16:44:37,360 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=None, department=urban_planning
+2025-09-04 16:44:37,360 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-04 16:44:37,360 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=True, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-04 16:44:37,361 - __main__ - INFO - need_reset = True
+2025-09-04 16:44:37,361 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-04 16:44:37,362 - __main__ - INFO - ê–å‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 3681–â
+2025-09-04 16:44:37,362 - __main__ - INFO - •”–åƒtƒBƒ‹ƒ^ƒŠƒ“ƒO: urban_planning ¨ “ssŒv‰æ‹y‚Ñ’n•ûŒv‰æ
+2025-09-04 16:44:37,362 - __main__ - INFO - ê–å‰È–Ú•”–åƒ}ƒbƒ`ƒ“ƒO¬Œ÷: 315–â
+2025-09-04 16:44:37,363 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K10–â, ƒtƒBƒ‹ƒ^:[•”–å:“ssŒv‰æ‹y‚Ñ’n•ûŒv‰æ, í•Ê:4-2 ‘I‘ğ‰È–Ú]
+2025-09-04 16:44:37,363 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=10, question_ids_count=10
+2025-09-04 16:44:37,363 - __main__ - INFO - –â‘èIDˆê——: [4187, 1291, 4214, 3817, 2588, 4524, 3798, 3142, 3814, 1652]
+2025-09-04 16:44:37,363 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 10–â, ƒtƒBƒ‹ƒ^: •”–å:“ssŒv‰æ‹y‚Ñ’n•ûŒv‰æ, í•Ê:4-2 ‘I‘ğ‰È–Ú
+2025-09-04 16:44:37,363 - __main__ - INFO - –â‘èIDæ“¾: current_no=0, question_id=4187
+2025-09-04 16:44:37,364 - __main__ - INFO - –â‘è•\¦: 1/10 (“à•”: current_no=0, total_ids=10)
+2025-09-04 16:44:37,364 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=1 (type:<class 'int'>), total_questions=10
+2025-09-04 16:44:37,367 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:44:37] "GET /exam?department=urban_planning&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:44:42,427 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:44:42,444 - __main__ - INFO - Parameter normalization (fallback): question_type=specialist
+2025-09-04 16:44:42,445 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-04 16:44:42,446 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-04 16:44:42,448 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-04 16:44:42,449 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-04 16:44:42,449 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-04 16:44:42,449 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=None, department=tunnel
+2025-09-04 16:44:42,450 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-04 16:44:42,450 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=True, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-04 16:44:42,450 - __main__ - INFO - need_reset = True
+2025-09-04 16:44:42,451 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-04 16:44:42,452 - __main__ - INFO - ê–å‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 3681–â
+2025-09-04 16:44:42,452 - __main__ - INFO - •”–åƒtƒBƒ‹ƒ^ƒŠƒ“ƒO: tunnel ¨ ƒgƒ“ƒlƒ‹
+2025-09-04 16:44:42,453 - __main__ - INFO - ê–å‰È–Ú•”–åƒ}ƒbƒ`ƒ“ƒO¬Œ÷: 310–â
+2025-09-04 16:44:42,454 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K10–â, ƒtƒBƒ‹ƒ^:[•”–å:ƒgƒ“ƒlƒ‹, í•Ê:4-2 ‘I‘ğ‰È–Ú]
+2025-09-04 16:44:42,454 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=10, question_ids_count=10
+2025-09-04 16:44:42,454 - __main__ - INFO - –â‘èIDˆê——: [2793, 2193, 2191, 3763, 1580, 3762, 3369, 3752, 4125, 3371]
+2025-09-04 16:44:42,455 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 10–â, ƒtƒBƒ‹ƒ^: •”–å:ƒgƒ“ƒlƒ‹, í•Ê:4-2 ‘I‘ğ‰È–Ú
+2025-09-04 16:44:42,455 - __main__ - INFO - –â‘èIDæ“¾: current_no=0, question_id=2793
+2025-09-04 16:44:42,457 - __main__ - INFO - –â‘è•\¦: 1/10 (“à•”: current_no=0, total_ids=10)
+2025-09-04 16:44:42,458 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=1 (type:<class 'int'>), total_questions=10
+2025-09-04 16:44:42,463 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:44:42] "GET /exam?department=tunnel&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:44:45,505 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:44:45,508 - __main__ - INFO - Parameter normalization (fallback): question_type=specialist
+2025-09-04 16:44:45,508 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-04 16:44:45,508 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-04 16:44:45,508 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-04 16:44:45,508 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-04 16:44:45,508 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-04 16:44:45,509 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=None, department=tunnel
+2025-09-04 16:44:45,509 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-04 16:44:45,509 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=True, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-04 16:44:45,509 - __main__ - INFO - need_reset = True
+2025-09-04 16:44:45,509 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-04 16:44:45,510 - __main__ - INFO - ê–å‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 3681–â
+2025-09-04 16:44:45,510 - __main__ - INFO - •”–åƒtƒBƒ‹ƒ^ƒŠƒ“ƒO: tunnel ¨ ƒgƒ“ƒlƒ‹
+2025-09-04 16:44:45,510 - __main__ - INFO - ê–å‰È–Ú•”–åƒ}ƒbƒ`ƒ“ƒO¬Œ÷: 310–â
+2025-09-04 16:44:45,510 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K10–â, ƒtƒBƒ‹ƒ^:[•”–å:ƒgƒ“ƒlƒ‹, í•Ê:4-2 ‘I‘ğ‰È–Ú]
+2025-09-04 16:44:45,511 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=10, question_ids_count=10
+2025-09-04 16:44:45,511 - __main__ - INFO - –â‘èIDˆê——: [4152, 3369, 1229, 1907, 3753, 4134, 3752, 1914, 1212, 1217]
+2025-09-04 16:44:45,511 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 10–â, ƒtƒBƒ‹ƒ^: •”–å:ƒgƒ“ƒlƒ‹, í•Ê:4-2 ‘I‘ğ‰È–Ú
+2025-09-04 16:44:45,511 - __main__ - INFO - –â‘èIDæ“¾: current_no=0, question_id=4152
+2025-09-04 16:44:45,511 - __main__ - INFO - –â‘è•\¦: 1/10 (“à•”: current_no=0, total_ids=10)
+2025-09-04 16:44:45,512 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=1 (type:<class 'int'>), total_questions=10
+2025-09-04 16:44:45,514 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:44:45] "GET /exam?department=tunnel&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:44:48,581 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:44:48,587 - __main__ - INFO - Parameter normalization (fallback): question_type=specialist
+2025-09-04 16:44:48,588 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-04 16:44:48,588 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-04 16:44:48,589 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-04 16:44:48,589 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-04 16:44:48,590 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-04 16:44:48,590 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=None, department=tunnel
+2025-09-04 16:44:48,590 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-04 16:44:48,591 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=True, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-04 16:44:48,592 - __main__ - INFO - need_reset = True
+2025-09-04 16:44:48,592 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-04 16:44:48,594 - __main__ - INFO - ê–å‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 3681–â
+2025-09-04 16:44:48,595 - __main__ - INFO - •”–åƒtƒBƒ‹ƒ^ƒŠƒ“ƒO: tunnel ¨ ƒgƒ“ƒlƒ‹
+2025-09-04 16:44:48,597 - __main__ - INFO - ê–å‰È–Ú•”–åƒ}ƒbƒ`ƒ“ƒO¬Œ÷: 310–â
+2025-09-04 16:44:48,598 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K10–â, ƒtƒBƒ‹ƒ^:[•”–å:ƒgƒ“ƒlƒ‹, í•Ê:4-2 ‘I‘ğ‰È–Ú]
+2025-09-04 16:44:48,598 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=10, question_ids_count=10
+2025-09-04 16:44:48,599 - __main__ - INFO - –â‘èIDˆê——: [1240, 2544, 4135, 2176, 3374, 1581, 1578, 1592, 3355, 1586]
+2025-09-04 16:44:48,599 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 10–â, ƒtƒBƒ‹ƒ^: •”–å:ƒgƒ“ƒlƒ‹, í•Ê:4-2 ‘I‘ğ‰È–Ú
+2025-09-04 16:44:48,600 - __main__ - INFO - –â‘èIDæ“¾: current_no=0, question_id=1240
+2025-09-04 16:44:48,600 - __main__ - INFO - –â‘è•\¦: 1/10 (“à•”: current_no=0, total_ids=10)
+2025-09-04 16:44:48,601 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=1 (type:<class 'int'>), total_questions=10
+2025-09-04 16:44:48,610 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:44:48] "GET /exam?department=tunnel&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:44:53,684 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:44:53,704 - __main__ - INFO - Parameter normalization (fallback): question_type=specialist
+2025-09-04 16:44:53,705 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-04 16:44:53,705 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-04 16:44:53,706 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-04 16:44:53,706 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-04 16:44:53,707 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-04 16:44:53,708 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=None, department=garden
+2025-09-04 16:44:53,708 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-04 16:44:53,709 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=True, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-04 16:44:53,709 - __main__ - INFO - need_reset = True
+2025-09-04 16:44:53,710 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-04 16:44:53,715 - __main__ - INFO - ê–å‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 3681–â
+2025-09-04 16:44:53,715 - __main__ - INFO - •”–åƒtƒBƒ‹ƒ^ƒŠƒ“ƒO: garden ¨ garden
+2025-09-04 16:44:53,717 - __main__ - WARNING - ê–å‰È–Ú•”–åƒ}ƒbƒ`ƒ“ƒO¸”s: garden ‚ÉŠY“–‚·‚é–â‘è‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñ
+2025-09-04 16:44:53,721 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K10–â, ƒtƒBƒ‹ƒ^:[•”–å:garden, í•Ê:4-2 ‘I‘ğ‰È–Ú]
+2025-09-04 16:44:53,721 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=10, question_ids_count=10
+2025-09-04 16:44:53,721 - __main__ - INFO - –â‘èIDˆê——: [1328, 1535, 3813, 3252, 4639, 1385, 4095, 4078, 4016, 1657]
+2025-09-04 16:44:53,721 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 10–â, ƒtƒBƒ‹ƒ^: •”–å:garden, í•Ê:4-2 ‘I‘ğ‰È–Ú
+2025-09-04 16:44:53,722 - __main__ - INFO - –â‘èIDæ“¾: current_no=0, question_id=1328
+2025-09-04 16:44:53,722 - __main__ - INFO - –â‘è•\¦: 1/10 (“à•”: current_no=0, total_ids=10)
+2025-09-04 16:44:53,722 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=1 (type:<class 'int'>), total_questions=10
+2025-09-04 16:44:53,727 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:44:53] "GET /exam?department=garden&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:44:56,772 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:44:56,780 - __main__ - INFO - Parameter normalization (fallback): question_type=specialist
+2025-09-04 16:44:56,781 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-04 16:44:56,781 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-04 16:44:56,782 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-04 16:44:56,783 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-04 16:44:56,783 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-04 16:44:56,784 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=None, department=garden
+2025-09-04 16:44:56,784 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-04 16:44:56,784 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=True, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-04 16:44:56,785 - __main__ - INFO - need_reset = True
+2025-09-04 16:44:56,786 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-04 16:44:56,787 - __main__ - INFO - ê–å‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 3681–â
+2025-09-04 16:44:56,788 - __main__ - INFO - •”–åƒtƒBƒ‹ƒ^ƒŠƒ“ƒO: garden ¨ garden
+2025-09-04 16:44:56,788 - __main__ - WARNING - ê–å‰È–Ú•”–åƒ}ƒbƒ`ƒ“ƒO¸”s: garden ‚ÉŠY“–‚·‚é–â‘è‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñ
+2025-09-04 16:44:56,790 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K10–â, ƒtƒBƒ‹ƒ^:[•”–å:garden, í•Ê:4-2 ‘I‘ğ‰È–Ú]
+2025-09-04 16:44:56,791 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=10, question_ids_count=10
+2025-09-04 16:44:56,791 - __main__ - INFO - –â‘èIDˆê——: [3744, 2035, 2365, 3712, 2976, 2732, 3315, 2132, 3775, 2427]
+2025-09-04 16:44:56,791 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 10–â, ƒtƒBƒ‹ƒ^: •”–å:garden, í•Ê:4-2 ‘I‘ğ‰È–Ú
+2025-09-04 16:44:56,791 - __main__ - INFO - –â‘èIDæ“¾: current_no=0, question_id=3744
+2025-09-04 16:44:56,792 - __main__ - INFO - –â‘è•\¦: 1/10 (“à•”: current_no=0, total_ids=10)
+2025-09-04 16:44:56,792 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=1 (type:<class 'int'>), total_questions=10
+2025-09-04 16:44:56,797 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:44:56] "GET /exam?department=garden&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:44:59,851 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:44:59,856 - __main__ - INFO - Parameter normalization (fallback): question_type=specialist
+2025-09-04 16:44:59,856 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-04 16:44:59,857 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-04 16:44:59,857 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-04 16:44:59,857 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-04 16:44:59,858 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-04 16:44:59,858 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=None, department=garden
+2025-09-04 16:44:59,858 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-04 16:44:59,859 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=True, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-04 16:44:59,859 - __main__ - INFO - need_reset = True
+2025-09-04 16:44:59,859 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-04 16:44:59,860 - __main__ - INFO - ê–å‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 3681–â
+2025-09-04 16:44:59,860 - __main__ - INFO - •”–åƒtƒBƒ‹ƒ^ƒŠƒ“ƒO: garden ¨ garden
+2025-09-04 16:44:59,861 - __main__ - WARNING - ê–å‰È–Ú•”–åƒ}ƒbƒ`ƒ“ƒO¸”s: garden ‚ÉŠY“–‚·‚é–â‘è‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñ
+2025-09-04 16:44:59,869 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K10–â, ƒtƒBƒ‹ƒ^:[•”–å:garden, í•Ê:4-2 ‘I‘ğ‰È–Ú]
+2025-09-04 16:44:59,870 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=10, question_ids_count=10
+2025-09-04 16:44:59,870 - __main__ - INFO - –â‘èIDˆê——: [4012, 1191, 4282, 1525, 1497, 3112, 4679, 2193, 4446, 3064]
+2025-09-04 16:44:59,870 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 10–â, ƒtƒBƒ‹ƒ^: •”–å:garden, í•Ê:4-2 ‘I‘ğ‰È–Ú
+2025-09-04 16:44:59,870 - __main__ - INFO - –â‘èIDæ“¾: current_no=0, question_id=4012
+2025-09-04 16:44:59,871 - __main__ - INFO - –â‘è•\¦: 1/10 (“à•”: current_no=0, total_ids=10)
+2025-09-04 16:44:59,871 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=1 (type:<class 'int'>), total_questions=10
+2025-09-04 16:44:59,874 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:44:59] "GET /exam?department=garden&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:45:04,926 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:45:04,937 - __main__ - INFO - Parameter normalization (fallback): question_type=specialist
+2025-09-04 16:45:04,937 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-04 16:45:04,938 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-04 16:45:04,938 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-04 16:45:04,939 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-04 16:45:04,939 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-04 16:45:04,939 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=None, department=construction_environment
+2025-09-04 16:45:04,940 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-04 16:45:04,940 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=True, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-04 16:45:04,940 - __main__ - INFO - need_reset = True
+2025-09-04 16:45:04,940 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-04 16:45:04,942 - __main__ - INFO - ê–å‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 3681–â
+2025-09-04 16:45:04,942 - __main__ - INFO - •”–åƒtƒBƒ‹ƒ^ƒŠƒ“ƒO: construction_environment ¨ construction_environment
+2025-09-04 16:45:04,942 - __main__ - WARNING - ê–å‰È–Ú•”–åƒ}ƒbƒ`ƒ“ƒO¸”s: construction_environment ‚ÉŠY“–‚·‚é–â‘è‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñ
+2025-09-04 16:45:04,950 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K10–â, ƒtƒBƒ‹ƒ^:[•”–å:construction_environment, í•Ê:4-2 ‘I‘ğ‰È–Ú]
+2025-09-04 16:45:04,951 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=10, question_ids_count=10
+2025-09-04 16:45:04,951 - __main__ - INFO - –â‘èIDˆê——: [1277, 2756, 4293, 2033, 4123, 3320, 3925, 4245, 1715, 2588]
+2025-09-04 16:45:04,952 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 10–â, ƒtƒBƒ‹ƒ^: •”–å:construction_environment, í•Ê:4-2 ‘I‘ğ‰È–Ú
+2025-09-04 16:45:04,952 - __main__ - INFO - –â‘èIDæ“¾: current_no=0, question_id=1277
+2025-09-04 16:45:04,952 - __main__ - INFO - –â‘è•\¦: 1/10 (“à•”: current_no=0, total_ids=10)
+2025-09-04 16:45:04,952 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=1 (type:<class 'int'>), total_questions=10
+2025-09-04 16:45:04,957 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:45:04] "GET /exam?department=construction_environment&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:45:07,994 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:45:07,996 - __main__ - INFO - Parameter normalization (fallback): question_type=specialist
+2025-09-04 16:45:07,996 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-04 16:45:07,996 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-04 16:45:07,996 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-04 16:45:07,996 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-04 16:45:07,997 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-04 16:45:07,997 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=None, department=construction_environment
+2025-09-04 16:45:07,997 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-04 16:45:07,997 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=True, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-04 16:45:07,997 - __main__ - INFO - need_reset = True
+2025-09-04 16:45:07,998 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-04 16:45:08,000 - __main__ - INFO - ê–å‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 3681–â
+2025-09-04 16:45:08,000 - __main__ - INFO - •”–åƒtƒBƒ‹ƒ^ƒŠƒ“ƒO: construction_environment ¨ construction_environment
+2025-09-04 16:45:08,001 - __main__ - WARNING - ê–å‰È–Ú•”–åƒ}ƒbƒ`ƒ“ƒO¸”s: construction_environment ‚ÉŠY“–‚·‚é–â‘è‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñ
+2025-09-04 16:45:08,006 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K10–â, ƒtƒBƒ‹ƒ^:[•”–å:construction_environment, í•Ê:4-2 ‘I‘ğ‰È–Ú]
+2025-09-04 16:45:08,007 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=10, question_ids_count=10
+2025-09-04 16:45:08,007 - __main__ - INFO - –â‘èIDˆê——: [1780, 1255, 1263, 3747, 3503, 4237, 4467, 4017, 2582, 3571]
+2025-09-04 16:45:08,007 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 10–â, ƒtƒBƒ‹ƒ^: •”–å:construction_environment, í•Ê:4-2 ‘I‘ğ‰È–Ú
+2025-09-04 16:45:08,007 - __main__ - INFO - –â‘èIDæ“¾: current_no=0, question_id=1780
+2025-09-04 16:45:08,008 - __main__ - INFO - –â‘è•\¦: 1/10 (“à•”: current_no=0, total_ids=10)
+2025-09-04 16:45:08,008 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=1 (type:<class 'int'>), total_questions=10
+2025-09-04 16:45:08,011 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:45:08] "GET /exam?department=construction_environment&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:45:11,068 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:45:11,071 - __main__ - INFO - Parameter normalization (fallback): question_type=specialist
+2025-09-04 16:45:11,071 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-04 16:45:11,071 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-04 16:45:11,071 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-04 16:45:11,071 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-04 16:45:11,071 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-04 16:45:11,072 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=None, department=construction_environment
+2025-09-04 16:45:11,072 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-04 16:45:11,072 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=True, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-04 16:45:11,072 - __main__ - INFO - need_reset = True
+2025-09-04 16:45:11,072 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-04 16:45:11,073 - __main__ - INFO - ê–å‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 3681–â
+2025-09-04 16:45:11,073 - __main__ - INFO - •”–åƒtƒBƒ‹ƒ^ƒŠƒ“ƒO: construction_environment ¨ construction_environment
+2025-09-04 16:45:11,074 - __main__ - WARNING - ê–å‰È–Ú•”–åƒ}ƒbƒ`ƒ“ƒO¸”s: construction_environment ‚ÉŠY“–‚·‚é–â‘è‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñ
+2025-09-04 16:45:11,076 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K10–â, ƒtƒBƒ‹ƒ^:[•”–å:construction_environment, í•Ê:4-2 ‘I‘ğ‰È–Ú]
+2025-09-04 16:45:11,077 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=10, question_ids_count=10
+2025-09-04 16:45:11,077 - __main__ - INFO - –â‘èIDˆê——: [4316, 2692, 3627, 4155, 4561, 3903, 4370, 2214, 1123, 3965]
+2025-09-04 16:45:11,077 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 10–â, ƒtƒBƒ‹ƒ^: •”–å:construction_environment, í•Ê:4-2 ‘I‘ğ‰È–Ú
+2025-09-04 16:45:11,077 - __main__ - INFO - –â‘èIDæ“¾: current_no=0, question_id=4316
+2025-09-04 16:45:11,078 - __main__ - INFO - –â‘è•\¦: 1/10 (“à•”: current_no=0, total_ids=10)
+2025-09-04 16:45:11,078 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=1 (type:<class 'int'>), total_questions=10
+2025-09-04 16:45:11,080 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:45:11] "GET /exam?department=construction_environment&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:45:16,129 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:45:16,136 - __main__ - INFO - Parameter normalization (fallback): question_type=specialist
+2025-09-04 16:45:16,137 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-04 16:45:16,137 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-04 16:45:16,138 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-04 16:45:16,138 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-04 16:45:16,139 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-04 16:45:16,140 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=None, department=steel_concrete
+2025-09-04 16:45:16,140 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-04 16:45:16,141 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=True, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-04 16:45:16,141 - __main__ - INFO - need_reset = True
+2025-09-04 16:45:16,142 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-04 16:45:16,144 - __main__ - INFO - ê–å‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 3681–â
+2025-09-04 16:45:16,145 - __main__ - INFO - •”–åƒtƒBƒ‹ƒ^ƒŠƒ“ƒO: steel_concrete ¨ |\‘¢‹y‚ÑƒRƒ“ƒNƒŠ[ƒg
+2025-09-04 16:45:16,145 - __main__ - INFO - ê–å‰È–Ú•”–åƒ}ƒbƒ`ƒ“ƒO¬Œ÷: 272–â
+2025-09-04 16:45:16,146 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K10–â, ƒtƒBƒ‹ƒ^:[•”–å:|\‘¢‹y‚ÑƒRƒ“ƒNƒŠ[ƒg, í•Ê:4-2 ‘I‘ğ‰È–Ú]
+2025-09-04 16:45:16,146 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=10, question_ids_count=10
+2025-09-04 16:45:16,146 - __main__ - INFO - –â‘èIDˆê——: [4018, 4019, 3015, 3628, 1833, 2470, 2060, 1831, 3620, 2050]
+2025-09-04 16:45:16,147 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 10–â, ƒtƒBƒ‹ƒ^: •”–å:|\‘¢‹y‚ÑƒRƒ“ƒNƒŠ[ƒg, í•Ê:4-2 ‘I‘ğ‰È–Ú
+2025-09-04 16:45:16,147 - __main__ - INFO - –â‘èIDæ“¾: current_no=0, question_id=4018
+2025-09-04 16:45:16,148 - __main__ - INFO - –â‘è•\¦: 1/10 (“à•”: current_no=0, total_ids=10)
+2025-09-04 16:45:16,148 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=1 (type:<class 'int'>), total_questions=10
+2025-09-04 16:45:16,152 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:45:16] "GET /exam?department=steel_concrete&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:45:19,226 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:45:19,232 - __main__ - INFO - Parameter normalization (fallback): question_type=specialist
+2025-09-04 16:45:19,232 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-04 16:45:19,233 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-04 16:45:19,233 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-04 16:45:19,233 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-04 16:45:19,234 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-04 16:45:19,235 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=None, department=steel_concrete
+2025-09-04 16:45:19,240 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-04 16:45:19,241 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=True, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-04 16:45:19,242 - __main__ - INFO - need_reset = True
+2025-09-04 16:45:19,243 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-04 16:45:19,253 - __main__ - INFO - ê–å‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 3681–â
+2025-09-04 16:45:19,253 - __main__ - INFO - •”–åƒtƒBƒ‹ƒ^ƒŠƒ“ƒO: steel_concrete ¨ |\‘¢‹y‚ÑƒRƒ“ƒNƒŠ[ƒg
+2025-09-04 16:45:19,256 - __main__ - INFO - ê–å‰È–Ú•”–åƒ}ƒbƒ`ƒ“ƒO¬Œ÷: 272–â
+2025-09-04 16:45:19,257 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K10–â, ƒtƒBƒ‹ƒ^:[•”–å:|\‘¢‹y‚ÑƒRƒ“ƒNƒŠ[ƒg, í•Ê:4-2 ‘I‘ğ‰È–Ú]
+2025-09-04 16:45:19,257 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=10, question_ids_count=10
+2025-09-04 16:45:19,258 - __main__ - INFO - –â‘èIDˆê——: [1469, 1833, 3247, 1451, 4431, 1822, 2053, 3235, 3629, 2060]
+2025-09-04 16:45:19,258 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 10–â, ƒtƒBƒ‹ƒ^: •”–å:|\‘¢‹y‚ÑƒRƒ“ƒNƒŠ[ƒg, í•Ê:4-2 ‘I‘ğ‰È–Ú
+2025-09-04 16:45:19,258 - __main__ - INFO - –â‘èIDæ“¾: current_no=0, question_id=1469
+2025-09-04 16:45:19,258 - __main__ - INFO - –â‘è•\¦: 1/10 (“à•”: current_no=0, total_ids=10)
+2025-09-04 16:45:19,258 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=1 (type:<class 'int'>), total_questions=10
+2025-09-04 16:45:19,262 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:45:19] "GET /exam?department=steel_concrete&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:45:22,327 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:45:22,333 - __main__ - INFO - Parameter normalization (fallback): question_type=specialist
+2025-09-04 16:45:22,333 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-04 16:45:22,334 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-04 16:45:22,334 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-04 16:45:22,335 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-04 16:45:22,335 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-04 16:45:22,336 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=None, department=steel_concrete
+2025-09-04 16:45:22,337 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-04 16:45:22,339 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=True, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-04 16:45:22,340 - __main__ - INFO - need_reset = True
+2025-09-04 16:45:22,341 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-04 16:45:22,347 - __main__ - INFO - ê–å‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 3681–â
+2025-09-04 16:45:22,348 - __main__ - INFO - •”–åƒtƒBƒ‹ƒ^ƒŠƒ“ƒO: steel_concrete ¨ |\‘¢‹y‚ÑƒRƒ“ƒNƒŠ[ƒg
+2025-09-04 16:45:22,350 - __main__ - INFO - ê–å‰È–Ú•”–åƒ}ƒbƒ`ƒ“ƒO¬Œ÷: 272–â
+2025-09-04 16:45:22,351 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K10–â, ƒtƒBƒ‹ƒ^:[•”–å:|\‘¢‹y‚ÑƒRƒ“ƒNƒŠ[ƒg, í•Ê:4-2 ‘I‘ğ‰È–Ú]
+2025-09-04 16:45:22,351 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=10, question_ids_count=10
+2025-09-04 16:45:22,351 - __main__ - INFO - –â‘èIDˆê——: [1095, 3226, 1468, 2456, 2067, 2461, 1476, 2078, 2070, 2466]
+2025-09-04 16:45:22,351 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 10–â, ƒtƒBƒ‹ƒ^: •”–å:|\‘¢‹y‚ÑƒRƒ“ƒNƒŠ[ƒg, í•Ê:4-2 ‘I‘ğ‰È–Ú
+2025-09-04 16:45:22,352 - __main__ - INFO - –â‘èIDæ“¾: current_no=0, question_id=1095
+2025-09-04 16:45:22,352 - __main__ - INFO - –â‘è•\¦: 1/10 (“à•”: current_no=0, total_ids=10)
+2025-09-04 16:45:22,352 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=1 (type:<class 'int'>), total_questions=10
+2025-09-04 16:45:22,361 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:45:22] "GET /exam?department=steel_concrete&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:45:27,409 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:45:27,413 - __main__ - INFO - Parameter normalization (fallback): question_type=specialist
+2025-09-04 16:45:27,414 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-04 16:45:27,414 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-04 16:45:27,414 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-04 16:45:27,414 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-04 16:45:27,415 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-04 16:45:27,415 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=None, department=soil_foundation
+2025-09-04 16:45:27,415 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-04 16:45:27,415 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=True, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-04 16:45:27,415 - __main__ - INFO - need_reset = True
+2025-09-04 16:45:27,415 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-04 16:45:27,416 - __main__ - INFO - ê–å‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 3681–â
+2025-09-04 16:45:27,416 - __main__ - INFO - •”–åƒtƒBƒ‹ƒ^ƒŠƒ“ƒO: soil_foundation ¨ “y¿‹y‚ÑŠî‘b
+2025-09-04 16:45:27,417 - __main__ - INFO - ê–å‰È–Ú•”–åƒ}ƒbƒ`ƒ“ƒO¬Œ÷: 297–â
+2025-09-04 16:45:27,417 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K10–â, ƒtƒBƒ‹ƒ^:[•”–å:“y¿‹y‚ÑŠî‘b, í•Ê:4-2 ‘I‘ğ‰È–Ú]
+2025-09-04 16:45:27,417 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=10, question_ids_count=10
+2025-09-04 16:45:27,417 - __main__ - INFO - –â‘èIDˆê——: [3938, 1996, 3968, 3969, 2008, 1039, 4355, 3944, 3556, 2954]
+2025-09-04 16:45:27,417 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 10–â, ƒtƒBƒ‹ƒ^: •”–å:“y¿‹y‚ÑŠî‘b, í•Ê:4-2 ‘I‘ğ‰È–Ú
+2025-09-04 16:45:27,417 - __main__ - INFO - –â‘èIDæ“¾: current_no=0, question_id=3938
+2025-09-04 16:45:27,418 - __main__ - INFO - –â‘è•\¦: 1/10 (“à•”: current_no=0, total_ids=10)
+2025-09-04 16:45:27,418 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=1 (type:<class 'int'>), total_questions=10
+2025-09-04 16:45:27,421 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:45:27] "GET /exam?department=soil_foundation&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:45:30,481 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:45:30,492 - __main__ - INFO - Parameter normalization (fallback): question_type=specialist
+2025-09-04 16:45:30,493 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-04 16:45:30,493 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-04 16:45:30,494 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-04 16:45:30,495 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-04 16:45:30,495 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-04 16:45:30,496 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=None, department=soil_foundation
+2025-09-04 16:45:30,496 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-04 16:45:30,496 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=True, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-04 16:45:30,496 - __main__ - INFO - need_reset = True
+2025-09-04 16:45:30,497 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-04 16:45:30,498 - __main__ - INFO - ê–å‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 3681–â
+2025-09-04 16:45:30,498 - __main__ - INFO - •”–åƒtƒBƒ‹ƒ^ƒŠƒ“ƒO: soil_foundation ¨ “y¿‹y‚ÑŠî‘b
+2025-09-04 16:45:30,499 - __main__ - INFO - ê–å‰È–Ú•”–åƒ}ƒbƒ`ƒ“ƒO¬Œ÷: 297–â
+2025-09-04 16:45:30,499 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K10–â, ƒtƒBƒ‹ƒ^:[•”–å:“y¿‹y‚ÑŠî‘b, í•Ê:4-2 ‘I‘ğ‰È–Ú]
+2025-09-04 16:45:30,499 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=10, question_ids_count=10
+2025-09-04 16:45:30,500 - __main__ - INFO - –â‘èIDˆê——: [1412, 1747, 1036, 1033, 3564, 4367, 3965, 3200, 2965, 3939]
+2025-09-04 16:45:30,500 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 10–â, ƒtƒBƒ‹ƒ^: •”–å:“y¿‹y‚ÑŠî‘b, í•Ê:4-2 ‘I‘ğ‰È–Ú
+2025-09-04 16:45:30,500 - __main__ - INFO - –â‘èIDæ“¾: current_no=0, question_id=1412
+2025-09-04 16:45:30,500 - __main__ - INFO - –â‘è•\¦: 1/10 (“à•”: current_no=0, total_ids=10)
+2025-09-04 16:45:30,501 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=1 (type:<class 'int'>), total_questions=10
+2025-09-04 16:45:30,504 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:45:30] "GET /exam?department=soil_foundation&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:45:33,563 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:45:33,572 - __main__ - INFO - Parameter normalization (fallback): question_type=specialist
+2025-09-04 16:45:33,572 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-04 16:45:33,573 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-04 16:45:33,573 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-04 16:45:33,574 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-04 16:45:33,575 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-04 16:45:33,576 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=None, department=soil_foundation
+2025-09-04 16:45:33,576 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-04 16:45:33,576 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=True, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-04 16:45:33,577 - __main__ - INFO - need_reset = True
+2025-09-04 16:45:33,577 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-04 16:45:33,579 - __main__ - INFO - ê–å‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 3681–â
+2025-09-04 16:45:33,579 - __main__ - INFO - •”–åƒtƒBƒ‹ƒ^ƒŠƒ“ƒO: soil_foundation ¨ “y¿‹y‚ÑŠî‘b
+2025-09-04 16:45:33,581 - __main__ - INFO - ê–å‰È–Ú•”–åƒ}ƒbƒ`ƒ“ƒO¬Œ÷: 297–â
+2025-09-04 16:45:33,582 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K10–â, ƒtƒBƒ‹ƒ^:[•”–å:“y¿‹y‚ÑŠî‘b, í•Ê:4-2 ‘I‘ğ‰È–Ú]
+2025-09-04 16:45:33,583 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=10, question_ids_count=10
+2025-09-04 16:45:33,583 - __main__ - INFO - –â‘èIDˆê——: [3980, 2351, 3557, 2958, 1412, 3964, 2952, 3966, 1039, 1408]
+2025-09-04 16:45:33,583 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 10–â, ƒtƒBƒ‹ƒ^: •”–å:“y¿‹y‚ÑŠî‘b, í•Ê:4-2 ‘I‘ğ‰È–Ú
+2025-09-04 16:45:33,584 - __main__ - INFO - –â‘èIDæ“¾: current_no=0, question_id=3980
+2025-09-04 16:45:33,584 - __main__ - INFO - –â‘è•\¦: 1/10 (“à•”: current_no=0, total_ids=10)
+2025-09-04 16:45:33,585 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=1 (type:<class 'int'>), total_questions=10
+2025-09-04 16:45:33,590 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:45:33] "GET /exam?department=soil_foundation&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:45:38,649 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:45:38,655 - __main__ - INFO - Parameter normalization (fallback): question_type=specialist
+2025-09-04 16:45:38,655 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-04 16:45:38,656 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-04 16:45:38,656 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-04 16:45:38,657 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-04 16:45:38,657 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-04 16:45:38,658 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=None, department=construction_planning
+2025-09-04 16:45:38,658 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-04 16:45:38,659 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=True, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-04 16:45:38,660 - __main__ - INFO - need_reset = True
+2025-09-04 16:45:38,660 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-04 16:45:38,665 - __main__ - INFO - ê–å‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 3681–â
+2025-09-04 16:45:38,665 - __main__ - INFO - •”–åƒtƒBƒ‹ƒ^ƒŠƒ“ƒO: construction_planning ¨ {HŒv‰æA{Hİ”õ‹y‚ÑÏZ
+2025-09-04 16:45:38,667 - __main__ - INFO - ê–å‰È–Ú•”–åƒ}ƒbƒ`ƒ“ƒO¬Œ÷: 308–â
+2025-09-04 16:45:38,668 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K10–â, ƒtƒBƒ‹ƒ^:[•”–å:{HŒv‰æA{Hİ”õ‹y‚ÑÏZ, í•Ê:4-2 ‘I‘ğ‰È–Ú]
+2025-09-04 16:45:38,669 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=10, question_ids_count=10
+2025-09-04 16:45:38,671 - __main__ - INFO - –â‘èIDˆê——: [1862, 3294, 1537, 1538, 3287, 2117, 2493, 3693, 3090, 3092]
+2025-09-04 16:45:38,671 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 10–â, ƒtƒBƒ‹ƒ^: •”–å:{HŒv‰æA{Hİ”õ‹y‚ÑÏZ, í•Ê:4-2 ‘I‘ğ‰È–Ú
+2025-09-04 16:45:38,672 - __main__ - INFO - –â‘èIDæ“¾: current_no=0, question_id=1862
+2025-09-04 16:45:38,672 - __main__ - INFO - –â‘è•\¦: 1/10 (“à•”: current_no=0, total_ids=10)
+2025-09-04 16:45:38,673 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=1 (type:<class 'int'>), total_questions=10
+2025-09-04 16:45:38,682 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:45:38] "GET /exam?department=construction_planning&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:45:41,748 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:45:41,751 - __main__ - INFO - Parameter normalization (fallback): question_type=specialist
+2025-09-04 16:45:41,751 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-04 16:45:41,751 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-04 16:45:41,752 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-04 16:45:41,752 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-04 16:45:41,752 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-04 16:45:41,752 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=None, department=construction_planning
+2025-09-04 16:45:41,752 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-04 16:45:41,752 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=True, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-04 16:45:41,753 - __main__ - INFO - need_reset = True
+2025-09-04 16:45:41,753 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-04 16:45:41,753 - __main__ - INFO - ê–å‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 3681–â
+2025-09-04 16:45:41,754 - __main__ - INFO - •”–åƒtƒBƒ‹ƒ^ƒŠƒ“ƒO: construction_planning ¨ {HŒv‰æA{Hİ”õ‹y‚ÑÏZ
+2025-09-04 16:45:41,754 - __main__ - INFO - ê–å‰È–Ú•”–åƒ}ƒbƒ`ƒ“ƒO¬Œ÷: 308–â
+2025-09-04 16:45:41,754 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K10–â, ƒtƒBƒ‹ƒ^:[•”–å:{HŒv‰æA{Hİ”õ‹y‚ÑÏZ, í•Ê:4-2 ‘I‘ğ‰È–Ú]
+2025-09-04 16:45:41,754 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=10, question_ids_count=10
+2025-09-04 16:45:41,755 - __main__ - INFO - –â‘èIDˆê——: [4596, 4065, 1173, 1172, 4606, 2723, 4081, 4086, 4610, 1513]
+2025-09-04 16:45:41,755 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 10–â, ƒtƒBƒ‹ƒ^: •”–å:{HŒv‰æA{Hİ”õ‹y‚ÑÏZ, í•Ê:4-2 ‘I‘ğ‰È–Ú
+2025-09-04 16:45:41,755 - __main__ - INFO - –â‘èIDæ“¾: current_no=0, question_id=4596
+2025-09-04 16:45:41,756 - __main__ - INFO - –â‘è•\¦: 1/10 (“à•”: current_no=0, total_ids=10)
+2025-09-04 16:45:41,756 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=1 (type:<class 'int'>), total_questions=10
+2025-09-04 16:45:41,762 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:45:41] "GET /exam?department=construction_planning&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:45:44,830 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:45:44,836 - __main__ - INFO - Parameter normalization (fallback): question_type=specialist
+2025-09-04 16:45:44,837 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-04 16:45:44,837 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-04 16:45:44,837 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-04 16:45:44,838 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-04 16:45:44,838 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-04 16:45:44,838 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=None, department=construction_planning
+2025-09-04 16:45:44,838 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-04 16:45:44,839 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=True, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-04 16:45:44,839 - __main__ - INFO - need_reset = True
+2025-09-04 16:45:44,839 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-04 16:45:44,842 - __main__ - INFO - ê–å‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 3681–â
+2025-09-04 16:45:44,842 - __main__ - INFO - •”–åƒtƒBƒ‹ƒ^ƒŠƒ“ƒO: construction_planning ¨ {HŒv‰æA{Hİ”õ‹y‚ÑÏZ
+2025-09-04 16:45:44,844 - __main__ - INFO - ê–å‰È–Ú•”–åƒ}ƒbƒ`ƒ“ƒO¬Œ÷: 308–â
+2025-09-04 16:45:44,849 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K10–â, ƒtƒBƒ‹ƒ^:[•”–å:{HŒv‰æA{Hİ”õ‹y‚ÑÏZ, í•Ê:4-2 ‘I‘ğ‰È–Ú]
+2025-09-04 16:45:44,849 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=10, question_ids_count=10
+2025-09-04 16:45:44,850 - __main__ - INFO - –â‘èIDˆê——: [2735, 1535, 3299, 2505, 2738, 4607, 2718, 4065, 2722, 2117]
+2025-09-04 16:45:44,850 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 10–â, ƒtƒBƒ‹ƒ^: •”–å:{HŒv‰æA{Hİ”õ‹y‚ÑÏZ, í•Ê:4-2 ‘I‘ğ‰È–Ú
+2025-09-04 16:45:44,850 - __main__ - INFO - –â‘èIDæ“¾: current_no=0, question_id=2735
+2025-09-04 16:45:44,851 - __main__ - INFO - –â‘è•\¦: 1/10 (“à•”: current_no=0, total_ids=10)
+2025-09-04 16:45:44,851 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=1 (type:<class 'int'>), total_questions=10
+2025-09-04 16:45:44,855 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:45:44] "GET /exam?department=construction_planning&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:45:49,904 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:45:49,907 - __main__ - INFO - Parameter normalization (fallback): question_type=specialist
+2025-09-04 16:45:49,908 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-04 16:45:49,908 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-04 16:45:49,908 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-04 16:45:49,908 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-04 16:45:49,909 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-04 16:45:49,909 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=None, department=water_supply
+2025-09-04 16:45:49,909 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-04 16:45:49,909 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=True, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-04 16:45:49,909 - __main__ - INFO - need_reset = True
+2025-09-04 16:45:49,910 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-04 16:45:49,911 - __main__ - INFO - ê–å‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 3681–â
+2025-09-04 16:45:49,911 - __main__ - INFO - •”–åƒtƒBƒ‹ƒ^ƒŠƒ“ƒO: water_supply ¨ ã…“¹‹y‚ÑH‹Æ—p…“¹
+2025-09-04 16:45:49,912 - __main__ - INFO - ê–å‰È–Ú•”–åƒ}ƒbƒ`ƒ“ƒO¬Œ÷: 318–â
+2025-09-04 16:45:49,912 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K10–â, ƒtƒBƒ‹ƒ^:[•”–å:ã…“¹‹y‚ÑH‹Æ—p…“¹, í•Ê:4-2 ‘I‘ğ‰È–Ú]
+2025-09-04 16:45:49,912 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=10, question_ids_count=10
+2025-09-04 16:45:49,913 - __main__ - INFO - –â‘èIDˆê——: [2264, 3849, 4650, 4252, 4248, 3438, 1674, 4256, 3029, 3439]
+2025-09-04 16:45:49,913 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 10–â, ƒtƒBƒ‹ƒ^: •”–å:ã…“¹‹y‚ÑH‹Æ—p…“¹, í•Ê:4-2 ‘I‘ğ‰È–Ú
+2025-09-04 16:45:49,913 - __main__ - INFO - –â‘èIDæ“¾: current_no=0, question_id=2264
+2025-09-04 16:45:49,914 - __main__ - INFO - –â‘è•\¦: 1/10 (“à•”: current_no=0, total_ids=10)
+2025-09-04 16:45:49,915 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=1 (type:<class 'int'>), total_questions=10
+2025-09-04 16:45:49,919 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:45:49] "GET /exam?department=water_supply&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:45:53,006 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:45:53,023 - __main__ - INFO - Parameter normalization (fallback): question_type=specialist
+2025-09-04 16:45:53,023 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-04 16:45:53,024 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-04 16:45:53,024 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-04 16:45:53,025 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-04 16:45:53,026 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-04 16:45:53,027 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=None, department=water_supply
+2025-09-04 16:45:53,027 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-04 16:45:53,028 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=True, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-04 16:45:53,029 - __main__ - INFO - need_reset = True
+2025-09-04 16:45:53,029 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-04 16:45:53,032 - __main__ - INFO - ê–å‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 3681–â
+2025-09-04 16:45:53,032 - __main__ - INFO - •”–åƒtƒBƒ‹ƒ^ƒŠƒ“ƒO: water_supply ¨ ã…“¹‹y‚ÑH‹Æ—p…“¹
+2025-09-04 16:45:53,033 - __main__ - INFO - ê–å‰È–Ú•”–åƒ}ƒbƒ`ƒ“ƒO¬Œ÷: 318–â
+2025-09-04 16:45:53,034 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K10–â, ƒtƒBƒ‹ƒ^:[•”–å:ã…“¹‹y‚ÑH‹Æ—p…“¹, í•Ê:4-2 ‘I‘ğ‰È–Ú]
+2025-09-04 16:45:53,034 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=10, question_ids_count=10
+2025-09-04 16:45:53,035 - __main__ - INFO - –â‘èIDˆê——: [2885, 3456, 1330, 4641, 3839, 1316, 2270, 4645, 2280, 1689]
+2025-09-04 16:45:53,036 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 10–â, ƒtƒBƒ‹ƒ^: •”–å:ã…“¹‹y‚ÑH‹Æ—p…“¹, í•Ê:4-2 ‘I‘ğ‰È–Ú
+2025-09-04 16:45:53,036 - __main__ - INFO - –â‘èIDæ“¾: current_no=0, question_id=2885
+2025-09-04 16:45:53,038 - __main__ - INFO - –â‘è•\¦: 1/10 (“à•”: current_no=0, total_ids=10)
+2025-09-04 16:45:53,039 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=1 (type:<class 'int'>), total_questions=10
+2025-09-04 16:45:53,044 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:45:53] "GET /exam?department=water_supply&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:45:56,111 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:45:56,120 - __main__ - INFO - Parameter normalization (fallback): question_type=specialist
+2025-09-04 16:45:56,121 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-04 16:45:56,121 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-04 16:45:56,121 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-04 16:45:56,122 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-04 16:45:56,123 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-04 16:45:56,123 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=None, department=water_supply
+2025-09-04 16:45:56,123 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-04 16:45:56,124 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=True, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-04 16:45:56,124 - __main__ - INFO - need_reset = True
+2025-09-04 16:45:56,124 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-04 16:45:56,126 - __main__ - INFO - ê–å‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 3681–â
+2025-09-04 16:45:56,126 - __main__ - INFO - •”–åƒtƒBƒ‹ƒ^ƒŠƒ“ƒO: water_supply ¨ ã…“¹‹y‚ÑH‹Æ—p…“¹
+2025-09-04 16:45:56,127 - __main__ - INFO - ê–å‰È–Ú•”–åƒ}ƒbƒ`ƒ“ƒO¬Œ÷: 318–â
+2025-09-04 16:45:56,128 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K10–â, ƒtƒBƒ‹ƒ^:[•”–å:ã…“¹‹y‚ÑH‹Æ—p…“¹, í•Ê:4-2 ‘I‘ğ‰È–Ú]
+2025-09-04 16:45:56,128 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=10, question_ids_count=10
+2025-09-04 16:45:56,128 - __main__ - INFO - –â‘èIDˆê——: [1760, 2886, 4642, 4237, 1775, 3832, 1308, 4250, 2895, 2268]
+2025-09-04 16:45:56,129 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 10–â, ƒtƒBƒ‹ƒ^: •”–å:ã…“¹‹y‚ÑH‹Æ—p…“¹, í•Ê:4-2 ‘I‘ğ‰È–Ú
+2025-09-04 16:45:56,129 - __main__ - INFO - –â‘èIDæ“¾: current_no=0, question_id=1760
+2025-09-04 16:45:56,129 - __main__ - INFO - –â‘è•\¦: 1/10 (“à•”: current_no=0, total_ids=10)
+2025-09-04 16:45:56,129 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=1 (type:<class 'int'>), total_questions=10
+2025-09-04 16:45:56,137 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:45:56] "GET /exam?department=water_supply&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 16:46:01,188 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 16:46:01,193 - __main__ - INFO - Parameter normalization (fallback): question_type=specialist
+2025-09-04 16:46:01,193 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-04 16:46:01,193 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-04 16:46:01,193 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-04 16:46:01,194 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-04 16:46:01,194 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-04 16:46:01,194 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=None, department=forest
+2025-09-04 16:46:01,194 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-04 16:46:01,195 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=True, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-04 16:46:01,195 - __main__ - INFO - need_reset = True
+2025-09-04 16:46:01,196 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-04 16:46:01,198 - __main__ - INFO - ê–å‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 3681–â
+2025-09-04 16:46:01,198 - __main__ - INFO - •”–åƒtƒBƒ‹ƒ^ƒŠƒ“ƒO: forest ¨ forest
+2025-09-04 16:46:01,199 - __main__ - WARNING - ê–å‰È–Ú•”–åƒ}ƒbƒ`ƒ“ƒO¸”s: forest ‚ÉŠY“–‚·‚é–â‘è‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñ
+2025-09-04 16:46:01,205 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K10–â, ƒtƒBƒ‹ƒ^:[•”–å:forest, í•Ê:4-2 ‘I‘ğ‰È–Ú]
+2025-09-04 16:46:01,205 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=10, question_ids_count=10
+2025-09-04 16:46:01,206 - __main__ - INFO - –â‘èIDˆê——: [3444, 1700, 2873, 4272, 3606, 4191, 1672, 1785, 3759, 2391]
+2025-09-04 16:46:01,206 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 10–â, ƒtƒBƒ‹ƒ^: •”–å:forest, í•Ê:4-2 ‘I‘ğ‰È–Ú
+2025-09-04 16:46:01,206 - __main__ - INFO - –â‘èIDæ“¾: current_no=0, question_id=3444
+2025-09-04 16:46:01,207 - __main__ - INFO - –â‘è•\¦: 1/10 (“à•”: current_no=0, total_ids=10)
+2025-09-04 16:46:01,208 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=1 (type:<class 'int'>), total_questions=10
+2025-09-04 16:46:01,212 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 16:46:01] "GET /exam?department=forest&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-04 20:13:34,493 - __main__ - INFO - ƒz[ƒ€‰æ–Ê: ƒZƒbƒVƒ‡ƒ“î•ñƒNƒŠƒA - ['exam_question_ids', 'exam_current']
+2025-09-04 20:13:34,495 - __main__ - INFO - ƒz[ƒ€ƒy[ƒWƒAƒNƒZƒX - –¢”FØƒ†[ƒU[
+2025-09-04 20:13:34,510 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 20:13:34] "GET / HTTP/1.1" 200 -
+2025-09-04 20:14:27,387 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 20:14:27,478 - __main__ - INFO - Parameter normalization (fallback): question_type=specialist
+2025-09-04 20:14:27,478 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-04 20:14:27,479 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-04 20:14:27,479 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-04 20:14:27,480 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-04 20:14:27,480 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-04 20:14:27,483 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-04 20:14:27,484 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=True, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-04 20:14:27,484 - __main__ - INFO - need_reset = True
+2025-09-04 20:14:27,484 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-04 20:14:27,495 - __main__ - INFO - ê–å‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 3681–â
+2025-09-04 20:14:27,516 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=10, question_ids_count=10
+2025-09-04 20:14:27,516 - __main__ - INFO - –â‘èIDˆê——: [2337, 1768, 4598, 3513, 2144, 3866, 2726, 4009, 1003, 2343]
+2025-09-04 20:14:27,518 - __main__ - INFO - –â‘èIDæ“¾: current_no=0, question_id=2337
+2025-09-04 20:14:27,519 - __main__ - INFO - –â‘è•\¦: 1/10 (“à•”: current_no=0, total_ids=10)
+2025-09-04 20:14:27,520 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=1 (type:<class 'int'>), total_questions=10
+2025-09-04 20:16:12,590 - __main__ - INFO - ƒz[ƒ€‰æ–Ê: ƒZƒbƒVƒ‡ƒ“î•ñƒNƒŠƒA - ['exam_question_ids', 'exam_current']
+2025-09-04 20:16:12,591 - __main__ - INFO - ƒz[ƒ€ƒy[ƒWƒAƒNƒZƒX - –¢”FØƒ†[ƒU[
+2025-09-04 20:16:12,593 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 20:16:12] "GET / HTTP/1.1" 200 -
+2025-09-04 20:16:45,031 - __main__ - INFO - ƒz[ƒ€‰æ–Ê: ƒZƒbƒVƒ‡ƒ“î•ñƒNƒŠƒA - ['exam_question_ids', 'exam_current']
+2025-09-04 20:16:45,031 - __main__ - INFO - ƒz[ƒ€ƒy[ƒWƒAƒNƒZƒX - –¢”FØƒ†[ƒU[
+2025-09-04 20:16:45,033 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 20:16:45] "GET / HTTP/1.1" 200 -
+2025-09-04 20:16:51,874 - __main__ - INFO - RCCM“‡–â‘èƒf[ƒ^‚Ì“Ç‚İ‚İŠJn
+2025-09-04 20:16:51,936 - __main__ - INFO - RCCM“‡ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 3883–â (ŒŸØÏ‚İ)
+2025-09-04 20:16:51,985 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 20:16:51] "GET /categories HTTP/1.1" 200 -
+2025-09-04 20:18:32,437 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 20:18:32] "GET /categories HTTP/1.1" 200 -
+2025-09-04 20:19:55,470 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 20:19:55,473 - __main__ - INFO - Parameter normalization (fallback): question_type=basic
+2025-09-04 20:19:55,473 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: “¹˜H
+2025-09-04 20:19:55,473 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-04 20:19:55,474 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-04 20:19:55,474 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=basic, session_question_type=None, department=
+2025-09-04 20:19:55,474 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=“¹˜H, session_category=‘S‘Ì
+2025-09-04 20:19:55,474 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=False, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-04 20:19:55,474 - __main__ - INFO - need_reset = True
+2025-09-04 20:19:55,475 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-04 20:19:55,475 - __main__ - INFO - Šî‘b‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 202–â
+2025-09-04 20:19:55,476 - __main__ - WARNING - ³Šm‚ÈƒJƒeƒSƒŠƒ}ƒbƒ`¸”s: “¹˜H, •”•ªƒ}ƒbƒ`‚ğs
+2025-09-04 20:19:55,476 - __main__ - INFO - ƒJƒeƒSƒŠƒtƒBƒ‹ƒ^“K—p: “¹˜H, 202 ¨ 0–â
+2025-09-04 20:19:55,476 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K0–â, ƒtƒBƒ‹ƒ^:[í•Ê:4-1 •K{‰È–Ú, ƒJƒeƒSƒŠ:“¹˜H]
+2025-09-04 20:19:55,477 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=0, question_ids_count=0
+2025-09-04 20:19:55,477 - __main__ - INFO - –â‘èIDˆê——: []
+2025-09-04 20:19:55,477 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 0–â, ƒtƒBƒ‹ƒ^: í•Ê:4-1 •K{‰È–Ú, ƒJƒeƒSƒŠ:“¹˜H
+2025-09-04 20:19:55,477 - __main__ - INFO - ’ÊíƒZƒbƒVƒ‡ƒ“Š®—¹: current_no(0) >= len(0) - result‚ÉƒŠƒ_ƒCƒŒƒNƒg
+2025-09-04 20:19:55,479 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 20:19:55] "[32mGET /exam?category=“¹˜H HTTP/1.1[0m" 302 -
+2025-09-04 20:20:01,308 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 20:20:01,315 - __main__ - INFO - Parameter normalization (fallback): question_type=basic
+2025-09-04 20:20:01,321 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-04 20:20:01,322 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-04 20:20:01,322 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=basic, session_question_type=None, department=
+2025-09-04 20:20:01,325 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=False, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-04 20:20:01,326 - __main__ - INFO - need_reset = True
+2025-09-04 20:20:01,326 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-04 20:20:01,327 - __main__ - INFO - Šî‘b‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 202–â
+2025-09-04 20:20:01,340 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=0, question_ids_count=0
+2025-09-04 20:20:01,340 - __main__ - INFO - –â‘èIDˆê——: []
+2025-09-04 20:20:01,342 - __main__ - INFO - ’ÊíƒZƒbƒVƒ‡ƒ“Š®—¹: current_no(0) >= len(0) - result‚ÉƒŠƒ_ƒCƒŒƒNƒg
+2025-09-04 20:23:30,064 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 20:23:30,067 - __main__ - INFO - Parameter normalization (fallback): question_type=basic
+2025-09-04 20:23:30,077 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-04 20:23:30,077 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-04 20:23:30,077 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=basic, session_question_type=None, department=
+2025-09-04 20:23:30,079 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=False, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-04 20:23:30,080 - __main__ - INFO - need_reset = True
+2025-09-04 20:23:30,080 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-04 20:23:30,081 - __main__ - INFO - Šî‘b‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 202–â
+2025-09-04 20:23:30,088 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=0, question_ids_count=0
+2025-09-04 20:23:30,088 - __main__ - INFO - –â‘èIDˆê——: []
+2025-09-04 20:23:30,092 - __main__ - INFO - ’ÊíƒZƒbƒVƒ‡ƒ“Š®—¹: current_no(0) >= len(0) - result‚ÉƒŠƒ_ƒCƒŒƒNƒg
+2025-09-04 20:23:47,352 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 20:23:47,354 - __main__ - INFO - Parameter normalization (fallback): question_type=basic
+2025-09-04 20:23:47,355 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: “¹˜H
+2025-09-04 20:23:47,355 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-04 20:23:47,355 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-04 20:23:47,355 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=basic, session_question_type=None, department=
+2025-09-04 20:23:47,355 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=“¹˜H, session_category=‘S‘Ì
+2025-09-04 20:23:47,356 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=False, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-04 20:23:47,356 - __main__ - INFO - need_reset = True
+2025-09-04 20:23:47,356 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-04 20:23:47,357 - __main__ - INFO - Šî‘b‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 202–â
+2025-09-04 20:23:47,357 - __main__ - WARNING - ³Šm‚ÈƒJƒeƒSƒŠƒ}ƒbƒ`¸”s: “¹˜H, •”•ªƒ}ƒbƒ`‚ğs
+2025-09-04 20:23:47,357 - __main__ - INFO - ƒJƒeƒSƒŠƒtƒBƒ‹ƒ^“K—p: “¹˜H, 202 ¨ 0–â
+2025-09-04 20:23:47,358 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K0–â, ƒtƒBƒ‹ƒ^:[í•Ê:4-1 •K{‰È–Ú, ƒJƒeƒSƒŠ:“¹˜H]
+2025-09-04 20:23:47,358 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=0, question_ids_count=0
+2025-09-04 20:23:47,358 - __main__ - INFO - –â‘èIDˆê——: []
+2025-09-04 20:23:47,358 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 0–â, ƒtƒBƒ‹ƒ^: í•Ê:4-1 •K{‰È–Ú, ƒJƒeƒSƒŠ:“¹˜H
+2025-09-04 20:23:47,358 - __main__ - INFO - ’ÊíƒZƒbƒVƒ‡ƒ“Š®—¹: current_no(0) >= len(0) - result‚ÉƒŠƒ_ƒCƒŒƒNƒg
+2025-09-04 20:23:47,359 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 20:23:47] "[32mGET /exam?category=“¹˜H HTTP/1.1[0m" 302 -
+2025-09-04 20:24:26,523 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 20:24:26,525 - __main__ - INFO - Parameter normalization (fallback): question_type=basic
+2025-09-04 20:24:26,526 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: “¹˜H
+2025-09-04 20:24:26,526 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-04 20:24:26,526 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-04 20:24:26,527 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=basic, session_question_type=None, department=
+2025-09-04 20:24:26,527 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=“¹˜H, session_category=‘S‘Ì
+2025-09-04 20:24:26,527 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=False, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-04 20:24:26,528 - __main__ - INFO - need_reset = True
+2025-09-04 20:24:26,528 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-04 20:24:26,529 - __main__ - INFO - Šî‘b‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 202–â
+2025-09-04 20:24:26,529 - __main__ - WARNING - ³Šm‚ÈƒJƒeƒSƒŠƒ}ƒbƒ`¸”s: “¹˜H, •”•ªƒ}ƒbƒ`‚ğs
+2025-09-04 20:24:26,531 - __main__ - INFO - ƒJƒeƒSƒŠƒtƒBƒ‹ƒ^“K—p: “¹˜H, 202 ¨ 0–â
+2025-09-04 20:24:26,531 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K0–â, ƒtƒBƒ‹ƒ^:[í•Ê:4-1 •K{‰È–Ú, ƒJƒeƒSƒŠ:“¹˜H]
+2025-09-04 20:24:26,532 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=0, question_ids_count=0
+2025-09-04 20:24:26,532 - __main__ - INFO - –â‘èIDˆê——: []
+2025-09-04 20:24:26,532 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 0–â, ƒtƒBƒ‹ƒ^: í•Ê:4-1 •K{‰È–Ú, ƒJƒeƒSƒŠ:“¹˜H
+2025-09-04 20:24:26,532 - __main__ - INFO - ’ÊíƒZƒbƒVƒ‡ƒ“Š®—¹: current_no(0) >= len(0) - result‚ÉƒŠƒ_ƒCƒŒƒNƒg
+2025-09-04 20:24:26,533 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 20:24:26] "[32mGET /exam?category=“¹˜H HTTP/1.1[0m" 302 -
+2025-09-04 20:24:55,075 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 20:24:55,077 - __main__ - INFO - Parameter normalization (fallback): question_type=basic
+2025-09-04 20:24:55,077 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: “¹˜H
+2025-09-04 20:24:55,078 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-04 20:24:55,078 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-04 20:24:55,078 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=basic, session_question_type=None, department=
+2025-09-04 20:24:55,078 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=“¹˜H, session_category=‘S‘Ì
+2025-09-04 20:24:55,079 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=False, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-04 20:24:55,079 - __main__ - INFO - need_reset = True
+2025-09-04 20:24:55,080 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-04 20:24:55,081 - __main__ - INFO - Šî‘b‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 202–â
+2025-09-04 20:24:55,081 - __main__ - WARNING - ³Šm‚ÈƒJƒeƒSƒŠƒ}ƒbƒ`¸”s: “¹˜H, •”•ªƒ}ƒbƒ`‚ğs
+2025-09-04 20:24:55,082 - __main__ - INFO - ƒJƒeƒSƒŠƒtƒBƒ‹ƒ^“K—p: “¹˜H, 202 ¨ 0–â
+2025-09-04 20:24:55,082 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K0–â, ƒtƒBƒ‹ƒ^:[í•Ê:4-1 •K{‰È–Ú, ƒJƒeƒSƒŠ:“¹˜H]
+2025-09-04 20:24:55,082 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=0, question_ids_count=0
+2025-09-04 20:24:55,082 - __main__ - INFO - –â‘èIDˆê——: []
+2025-09-04 20:24:55,082 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 0–â, ƒtƒBƒ‹ƒ^: í•Ê:4-1 •K{‰È–Ú, ƒJƒeƒSƒŠ:“¹˜H
+2025-09-04 20:24:55,083 - __main__ - INFO - ’ÊíƒZƒbƒVƒ‡ƒ“Š®—¹: current_no(0) >= len(0) - result‚ÉƒŠƒ_ƒCƒŒƒNƒg
+2025-09-04 20:24:55,086 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 20:24:55] "[32mGET /exam?category=“¹˜H HTTP/1.1[0m" 302 -
+2025-09-04 20:32:39,229 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 20:32:39,290 - __main__ - INFO - Parameter normalization (fallback): question_type=basic
+2025-09-04 20:32:39,290 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: “¹˜H
+2025-09-04 20:32:39,291 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-04 20:32:39,292 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-04 20:32:39,292 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=basic, session_question_type=None, department=
+2025-09-04 20:32:39,292 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=“¹˜H, session_category=‘S‘Ì
+2025-09-04 20:32:39,293 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=False, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-04 20:32:39,293 - __main__ - INFO - need_reset = True
+2025-09-04 20:32:39,293 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-04 20:32:39,294 - __main__ - INFO - Šî‘b‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 202–â
+2025-09-04 20:32:39,294 - __main__ - WARNING - ³Šm‚ÈƒJƒeƒSƒŠƒ}ƒbƒ`¸”s: “¹˜H, •”•ªƒ}ƒbƒ`‚ğs
+2025-09-04 20:32:39,295 - __main__ - INFO - ƒJƒeƒSƒŠƒtƒBƒ‹ƒ^“K—p: “¹˜H, 202 ¨ 0–â
+2025-09-04 20:32:39,296 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K0–â, ƒtƒBƒ‹ƒ^:[í•Ê:4-1 •K{‰È–Ú, ƒJƒeƒSƒŠ:“¹˜H]
+2025-09-04 20:32:39,296 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=0, question_ids_count=0
+2025-09-04 20:32:39,296 - __main__ - INFO - –â‘èIDˆê——: []
+2025-09-04 20:32:39,297 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 0–â, ƒtƒBƒ‹ƒ^: í•Ê:4-1 •K{‰È–Ú, ƒJƒeƒSƒŠ:“¹˜H
+2025-09-04 20:32:39,297 - __main__ - INFO - ’ÊíƒZƒbƒVƒ‡ƒ“Š®—¹: current_no(0) >= len(0) - result‚ÉƒŠƒ_ƒCƒŒƒNƒg
+2025-09-04 20:32:39,298 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 20:32:39] "[32mGET /exam?category=“¹˜H HTTP/1.1[0m" 302 -
+2025-09-04 20:33:40,587 - __main__ - INFO - RCCMŒ±–â‘èWƒAƒvƒŠƒP[ƒVƒ‡ƒ“‹N“®’†...
+2025-09-04 20:33:40,587 - __main__ - INFO - ƒAƒNƒZƒXURL: http://172.18.44.152:5003
+2025-09-04 20:33:40,588 - __main__ - INFO - ƒAƒNƒZƒXURL: http://localhost:5003
+2025-09-04 20:33:40,679 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5003
+ * Running on http://192.168.0.69:5003
+2025-09-04 20:33:40,679 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-09-04 20:33:54,412 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-04 20:33:54,425 - utils - INFO - RCCM“‡ƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data
+2025-09-04 20:33:54,425 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-1.csv
+2025-09-04 20:33:54,426 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 92424 bytes
+2025-09-04 20:33:54,437 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-04 20:33:54,437 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 202s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-04 20:33:54,443 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 202–â
+2025-09-04 20:33:54,443 - utils - INFO - 4-1Šî‘bƒf[ƒ^“Ç‚İ‚İŠ®—¹: 202–â
+2025-09-04 20:33:54,444 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2008.csv
+2025-09-04 20:33:54,444 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 201176 bytes
+2025-09-04 20:33:54,456 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-04 20:33:54,456 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 360s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-04 20:33:54,459 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 360–â
+2025-09-04 20:33:54,460 - utils - INFO - 4-2ê–åƒf[ƒ^2008”N“Ç‚İ‚İŠ®—¹: 360–â
+2025-09-04 20:33:54,461 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2009.csv
+2025-09-04 20:33:54,462 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 207651 bytes
+2025-09-04 20:33:54,474 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-04 20:33:54,475 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 359s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-04 20:33:54,477 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 359–â
+2025-09-04 20:33:54,479 - utils - INFO - 4-2ê–åƒf[ƒ^2009”N“Ç‚İ‚İŠ®—¹: 359–â
+2025-09-04 20:33:54,485 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2010.csv
+2025-09-04 20:33:54,485 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 157895 bytes
+2025-09-04 20:33:54,490 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-04 20:33:54,490 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 239s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-04 20:33:54,492 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 239–â
+2025-09-04 20:33:54,493 - utils - INFO - 4-2ê–åƒf[ƒ^2010”N“Ç‚İ‚İŠ®—¹: 239–â
+2025-09-04 20:33:54,494 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2011.csv
+2025-09-04 20:33:54,494 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 237300 bytes
+2025-09-04 20:33:54,505 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-04 20:33:54,505 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 360s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-04 20:33:54,509 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 360–â
+2025-09-04 20:33:54,512 - utils - INFO - 4-2ê–åƒf[ƒ^2011”N“Ç‚İ‚İŠ®—¹: 360–â
+2025-09-04 20:33:54,512 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2012.csv
+2025-09-04 20:33:54,514 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 199154 bytes
+2025-09-04 20:33:54,521 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-04 20:33:54,521 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 307s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-04 20:33:54,523 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 307–â
+2025-09-04 20:33:54,525 - utils - INFO - 4-2ê–åƒf[ƒ^2012”N“Ç‚İ‚İŠ®—¹: 307–â
+2025-09-04 20:33:54,526 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2013.csv
+2025-09-04 20:33:54,526 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 182989 bytes
+2025-09-04 20:33:54,533 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-04 20:33:54,534 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 300s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-04 20:33:54,537 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 300–â
+2025-09-04 20:33:54,538 - utils - INFO - 4-2ê–åƒf[ƒ^2013”N“Ç‚İ‚İŠ®—¹: 300–â
+2025-09-04 20:33:54,539 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2014.csv
+2025-09-04 20:33:54,539 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 153257 bytes
+2025-09-04 20:33:54,545 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-04 20:33:54,545 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 240s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-04 20:33:54,554 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 240–â
+2025-09-04 20:33:54,555 - utils - INFO - 4-2ê–åƒf[ƒ^2014”N“Ç‚İ‚İŠ®—¹: 240–â
+2025-09-04 20:33:54,555 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2015.csv
+2025-09-04 20:33:54,556 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 273998 bytes
+2025-09-04 20:33:54,571 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-04 20:33:54,571 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 358s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-04 20:33:54,575 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 358–â
+2025-09-04 20:33:54,578 - utils - INFO - 4-2ê–åƒf[ƒ^2015”N“Ç‚İ‚İŠ®—¹: 358–â
+2025-09-04 20:33:54,579 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2016.csv
+2025-09-04 20:33:54,622 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 291672 bytes
+2025-09-04 20:33:54,638 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-04 20:33:54,638 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 361s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-04 20:33:54,641 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 361–â
+2025-09-04 20:33:54,643 - utils - INFO - 4-2ê–åƒf[ƒ^2016”N“Ç‚İ‚İŠ®—¹: 361–â
+2025-09-04 20:33:54,643 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2017.csv
+2025-09-04 20:33:54,644 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 382964 bytes
+2025-09-04 20:33:54,707 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-04 20:33:54,708 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 440s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-04 20:33:54,711 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 440–â
+2025-09-04 20:33:54,716 - utils - INFO - 4-2ê–åƒf[ƒ^2017”N“Ç‚İ‚İŠ®—¹: 440–â
+2025-09-04 20:33:54,717 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2018.csv
+2025-09-04 20:33:54,717 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 309809 bytes
+2025-09-04 20:33:54,726 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-04 20:33:54,726 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 357s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-04 20:33:54,729 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 357–â
+2025-09-04 20:33:54,733 - utils - INFO - 4-2ê–åƒf[ƒ^2018”N“Ç‚İ‚İŠ®—¹: 357–â
+2025-09-04 20:33:54,737 - utils - INFO - IDÕ“Ë‰ğŒˆ: Šî‘b=202–â, ê–å=3681–â, ‚»‚Ì‘¼=0–â
+2025-09-04 20:33:54,760 - utils - INFO - RCCM“‡ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 12ƒtƒ@ƒCƒ‹, ‘Œv3883–â
+2025-09-04 20:33:54,760 - utils - INFO - 4-2ê–åƒf[ƒ^‘ÎÛ”N“x: [2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018]
+2025-09-04 20:33:54,761 - __main__ - INFO - Parameter normalization (fallback): question_type=basic
+2025-09-04 20:33:54,761 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: “¹˜H
+2025-09-04 20:33:54,761 - __main__ - INFO - ê–åƒJƒeƒSƒŠ: “¹˜H -> question_type=specialist, department=“¹˜H
+2025-09-04 20:33:54,761 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-04 20:33:54,761 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-04 20:33:54,762 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=None, department=“¹˜H
+2025-09-04 20:33:54,762 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=“¹˜H, session_category=‘S‘Ì
+2025-09-04 20:33:54,762 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=False, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-04 20:33:54,762 - __main__ - INFO - need_reset = True
+2025-09-04 20:33:54,762 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-04 20:33:54,765 - __main__ - INFO - ê–å‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 3681–â
+2025-09-04 20:33:54,765 - __main__ - INFO - •”–åƒtƒBƒ‹ƒ^ƒŠƒ“ƒO: “¹˜H ¨ “¹˜H
+2025-09-04 20:33:54,766 - __main__ - INFO - ê–å‰È–Ú•”–åƒ}ƒbƒ`ƒ“ƒO¬Œ÷: 310–â
+2025-09-04 20:33:54,766 - __main__ - INFO - ƒJƒeƒSƒŠƒtƒBƒ‹ƒ^“K—p: “¹˜H, 310 ¨ 310–â
+2025-09-04 20:33:54,767 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K10–â, ƒtƒBƒ‹ƒ^:[•”–å:“¹˜H, í•Ê:4-2 ‘I‘ğ‰È–Ú, ƒJƒeƒSƒŠ:“¹˜H]
+2025-09-04 20:33:54,767 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=10, question_ids_count=10
+2025-09-04 20:33:54,767 - __main__ - INFO - –â‘èIDˆê——: [4352, 1024, 2332, 2943, 1030, 1025, 3907, 1727, 1962, 3170]
+2025-09-04 20:33:54,767 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 10–â, ƒtƒBƒ‹ƒ^: •”–å:“¹˜H, í•Ê:4-2 ‘I‘ğ‰È–Ú, ƒJƒeƒSƒŠ:“¹˜H
+2025-09-04 20:33:54,768 - __main__ - INFO - –â‘èIDæ“¾: current_no=0, question_id=4352
+2025-09-04 20:33:54,769 - __main__ - INFO - –â‘è•\¦: 1/10 (“à•”: current_no=0, total_ids=10)
+2025-09-04 20:33:54,769 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=1 (type:<class 'int'>), total_questions=10
+2025-09-04 20:33:54,805 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 20:33:54] "GET /exam?category=“¹˜H HTTP/1.1" 200 -
+2025-09-05 06:29:40,014 - __main__ - INFO - RCCMŒ±–â‘èWƒAƒvƒŠƒP[ƒVƒ‡ƒ“‹N“®’†...
+2025-09-05 06:29:40,014 - __main__ - INFO - ƒAƒNƒZƒXURL: http://172.18.44.152:5003
+2025-09-05 06:29:40,014 - __main__ - INFO - ƒAƒNƒZƒXURL: http://localhost:5003
+2025-09-05 06:29:40,175 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5003
+ * Running on http://192.168.0.69:5003
+2025-09-05 06:29:40,175 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-09-05 06:32:57,293 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-05 06:32:57,293 - utils - INFO - RCCM“‡ƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data
+2025-09-05 06:32:57,294 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-1.csv
+2025-09-05 06:32:57,295 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 92424 bytes
+2025-09-05 06:32:57,318 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-05 06:32:57,318 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 202s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-05 06:32:57,319 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 202–â
+2025-09-05 06:32:57,319 - utils - INFO - 4-1Šî‘bƒf[ƒ^“Ç‚İ‚İŠ®—¹: 202–â
+2025-09-05 06:32:57,320 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2008.csv
+2025-09-05 06:32:57,320 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 201176 bytes
+2025-09-05 06:32:57,342 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-05 06:32:57,342 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 360s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-05 06:32:57,343 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 360–â
+2025-09-05 06:32:57,344 - utils - INFO - 4-2ê–åƒf[ƒ^2008”N“Ç‚İ‚İŠ®—¹: 360–â
+2025-09-05 06:32:57,344 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2009.csv
+2025-09-05 06:32:57,345 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 207651 bytes
+2025-09-05 06:32:57,363 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-05 06:32:57,363 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 359s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-05 06:32:57,364 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 359–â
+2025-09-05 06:32:57,366 - utils - INFO - 4-2ê–åƒf[ƒ^2009”N“Ç‚İ‚İŠ®—¹: 359–â
+2025-09-05 06:32:57,367 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2010.csv
+2025-09-05 06:32:57,367 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 157895 bytes
+2025-09-05 06:32:57,383 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-05 06:32:57,384 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 239s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-05 06:32:57,384 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 239–â
+2025-09-05 06:32:57,385 - utils - INFO - 4-2ê–åƒf[ƒ^2010”N“Ç‚İ‚İŠ®—¹: 239–â
+2025-09-05 06:32:57,385 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2011.csv
+2025-09-05 06:32:57,386 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 237300 bytes
+2025-09-05 06:32:57,405 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-05 06:32:57,405 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 360s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-05 06:32:57,407 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 360–â
+2025-09-05 06:32:57,409 - utils - INFO - 4-2ê–åƒf[ƒ^2011”N“Ç‚İ‚İŠ®—¹: 360–â
+2025-09-05 06:32:57,409 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2012.csv
+2025-09-05 06:32:57,409 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 199154 bytes
+2025-09-05 06:32:57,424 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-05 06:32:57,424 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 307s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-05 06:32:57,425 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 307–â
+2025-09-05 06:32:57,426 - utils - INFO - 4-2ê–åƒf[ƒ^2012”N“Ç‚İ‚İŠ®—¹: 307–â
+2025-09-05 06:32:57,426 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2013.csv
+2025-09-05 06:32:57,427 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 182989 bytes
+2025-09-05 06:32:57,441 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-05 06:32:57,441 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 300s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-05 06:32:57,442 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 300–â
+2025-09-05 06:32:57,443 - utils - INFO - 4-2ê–åƒf[ƒ^2013”N“Ç‚İ‚İŠ®—¹: 300–â
+2025-09-05 06:32:57,443 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2014.csv
+2025-09-05 06:32:57,443 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 153257 bytes
+2025-09-05 06:32:57,464 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-05 06:32:57,464 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 240s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-05 06:32:57,467 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 240–â
+2025-09-05 06:32:57,468 - utils - INFO - 4-2ê–åƒf[ƒ^2014”N“Ç‚İ‚İŠ®—¹: 240–â
+2025-09-05 06:32:57,468 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2015.csv
+2025-09-05 06:32:57,468 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 273998 bytes
+2025-09-05 06:32:57,486 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-05 06:32:57,486 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 358s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-05 06:32:57,488 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 358–â
+2025-09-05 06:32:57,489 - utils - INFO - 4-2ê–åƒf[ƒ^2015”N“Ç‚İ‚İŠ®—¹: 358–â
+2025-09-05 06:32:57,489 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2016.csv
+2025-09-05 06:32:57,489 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 291672 bytes
+2025-09-05 06:32:57,509 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-05 06:32:57,510 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 361s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-05 06:32:57,511 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 361–â
+2025-09-05 06:32:57,512 - utils - INFO - 4-2ê–åƒf[ƒ^2016”N“Ç‚İ‚İŠ®—¹: 361–â
+2025-09-05 06:32:57,512 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2017.csv
+2025-09-05 06:32:57,512 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 382964 bytes
+2025-09-05 06:32:57,535 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-05 06:32:57,535 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 440s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-05 06:32:57,538 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 440–â
+2025-09-05 06:32:57,540 - utils - INFO - 4-2ê–åƒf[ƒ^2017”N“Ç‚İ‚İŠ®—¹: 440–â
+2025-09-05 06:32:57,541 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2018.csv
+2025-09-05 06:32:57,541 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 309809 bytes
+2025-09-05 06:32:57,559 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-05 06:32:57,559 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 357s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-05 06:32:57,560 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 357–â
+2025-09-05 06:32:57,561 - utils - INFO - 4-2ê–åƒf[ƒ^2018”N“Ç‚İ‚İŠ®—¹: 357–â
+2025-09-05 06:32:57,563 - utils - INFO - IDÕ“Ë‰ğŒˆ: Šî‘b=202–â, ê–å=3681–â, ‚»‚Ì‘¼=0–â
+2025-09-05 06:32:57,709 - utils - INFO - RCCM“‡ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 12ƒtƒ@ƒCƒ‹, ‘Œv3883–â
+2025-09-05 06:32:57,709 - utils - INFO - 4-2ê–åƒf[ƒ^‘ÎÛ”N“x: [2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018]
+2025-09-05 06:32:57,709 - __main__ - INFO - Parameter normalization (fallback): question_type=basic
+2025-09-05 06:32:57,709 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-05 06:32:57,709 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-05 06:32:57,709 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-05 06:32:57,710 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-05 06:32:57,710 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-05 06:32:57,710 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=basic, session_question_type=None, department=road
+2025-09-05 06:32:57,710 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-05 06:32:57,710 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=True, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-05 06:32:57,710 - __main__ - INFO - need_reset = True
+2025-09-05 06:32:57,710 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-05 06:32:57,711 - __main__ - INFO - Šî‘b‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 202–â
+2025-09-05 06:32:57,711 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K10–â, ƒtƒBƒ‹ƒ^:[•”–å:“¹˜H, í•Ê:4-1 •K{‰È–Ú]
+2025-09-05 06:32:57,711 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=10, question_ids_count=10
+2025-09-05 06:32:57,711 - __main__ - INFO - –â‘èIDˆê——: [93, 96, 49, 79, 137, 139, 14, 37, 164, 82]
+2025-09-05 06:32:57,711 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 10–â, ƒtƒBƒ‹ƒ^: •”–å:“¹˜H, í•Ê:4-1 •K{‰È–Ú
+2025-09-05 06:32:57,711 - __main__ - INFO - –â‘èIDæ“¾: current_no=0, question_id=93
+2025-09-05 06:32:57,711 - __main__ - INFO - –â‘è•\¦: 1/10 (“à•”: current_no=0, total_ids=10)
+2025-09-05 06:32:57,712 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=1 (type:<class 'int'>), total_questions=10
+2025-09-05 06:32:57,868 - werkzeug - INFO - 127.0.0.1 - - [05/Sep/2025 06:32:57] "GET /exam?department=road&question_type=basic&count=10 HTTP/1.1" 200 -
+2025-09-05 06:33:16,131 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-05 06:33:16,141 - __main__ - INFO - === POSTˆ—ŠJn - ƒZƒbƒVƒ‡ƒ“ó‘ÔƒfƒoƒbƒO ===
+2025-09-05 06:33:16,142 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“ƒL[: ['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history']
+2025-09-05 06:33:16,142 - __main__ - INFO - exam_question_ids: MISSING
+2025-09-05 06:33:16,143 - __main__ - INFO - exam_current: MISSING
+2025-09-05 06:33:16,143 - __main__ - INFO - exam_category: MISSING
+2025-09-05 06:33:16,143 - __main__ - INFO - selected_question_type: MISSING
+2025-09-05 06:33:16,144 - __main__ - INFO - selected_department: MISSING
+2025-09-05 06:33:16,144 - __main__ - INFO - session_id: 7b43d19634ec57599a6673cb49b8d66a
+2025-09-05 06:33:16,144 - __main__ - INFO - data_loaded: True
+2025-09-05 06:33:16,145 - __main__ - INFO - ==========================================
+2025-09-05 06:33:16,151 - __main__ - INFO - QID DEBUG: Received qid='93' (type: <class 'str'>, repr: '93')
+2025-09-05 06:33:16,151 - __main__ - INFO - QID DEBUG: Converted qid=93 (type: <class 'int'>)
+2025-09-05 06:33:16,152 - __main__ - INFO - SRSXV: –â‘è93 - ³‰ğ:0, ŠÔˆá‚¢:1, “ïˆÕ“x:6.0, ƒ}ƒXƒ^[:False
+2025-09-05 06:33:16,155 - __main__ - INFO - SRSXV: –â‘è93 - ³‰ğ:0, ŠÔˆá‚¢:2, “ïˆÕ“x:7.0, ƒ}ƒXƒ^[:False
+2025-09-05 06:33:16,155 - __main__ - INFO - —š—ğ•Û‘¶: –â‘è93, ‡Œv—š—ğ1Œ, ’¼ŒãŠm”F1Œ
+2025-09-05 06:33:16,156 - __main__ - ERROR - quizŠÖ”‚ÅƒGƒ‰[: 'NoneType' object has no attribute 'update_streak'
+2025-09-05 06:33:16,185 - werkzeug - INFO - 127.0.0.1 - - [05/Sep/2025 06:33:16] "POST /exam HTTP/1.1" 200 -
+2025-09-05 06:44:17,296 - __main__ - INFO - RCCMŒ±–â‘èWƒAƒvƒŠƒP[ƒVƒ‡ƒ“‹N“®’†...
+2025-09-05 06:44:17,297 - __main__ - INFO - ƒAƒNƒZƒXURL: http://172.18.44.152:5003
+2025-09-05 06:44:17,297 - __main__ - INFO - ƒAƒNƒZƒXURL: http://localhost:5003
+2025-09-05 06:44:17,373 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5003
+ * Running on http://192.168.0.69:5003
+2025-09-05 06:44:17,373 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-09-05 06:48:46,030 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-05 06:48:46,031 - utils - INFO - RCCM“‡ƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data
+2025-09-05 06:48:46,031 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-1.csv
+2025-09-05 06:48:46,032 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 92424 bytes
+2025-09-05 06:48:46,036 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-05 06:48:46,037 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 202s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-05 06:48:46,039 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 202–â
+2025-09-05 06:48:46,040 - utils - INFO - 4-1Šî‘bƒf[ƒ^“Ç‚İ‚İŠ®—¹: 202–â
+2025-09-05 06:48:46,041 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2008.csv
+2025-09-05 06:48:46,041 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 201176 bytes
+2025-09-05 06:48:46,048 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-05 06:48:46,049 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 360s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-05 06:48:46,051 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 360–â
+2025-09-05 06:48:46,053 - utils - INFO - 4-2ê–åƒf[ƒ^2008”N“Ç‚İ‚İŠ®—¹: 360–â
+2025-09-05 06:48:46,053 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2009.csv
+2025-09-05 06:48:46,053 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 207651 bytes
+2025-09-05 06:48:46,064 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-05 06:48:46,065 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 359s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-05 06:48:46,069 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 359–â
+2025-09-05 06:48:46,073 - utils - INFO - 4-2ê–åƒf[ƒ^2009”N“Ç‚İ‚İŠ®—¹: 359–â
+2025-09-05 06:48:46,073 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2010.csv
+2025-09-05 06:48:46,074 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 157895 bytes
+2025-09-05 06:48:46,077 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-05 06:48:46,077 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 239s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-05 06:48:46,078 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 239–â
+2025-09-05 06:48:46,079 - utils - INFO - 4-2ê–åƒf[ƒ^2010”N“Ç‚İ‚İŠ®—¹: 239–â
+2025-09-05 06:48:46,079 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2011.csv
+2025-09-05 06:48:46,080 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 237300 bytes
+2025-09-05 06:48:46,084 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-05 06:48:46,085 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 360s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-05 06:48:46,086 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 360–â
+2025-09-05 06:48:46,088 - utils - INFO - 4-2ê–åƒf[ƒ^2011”N“Ç‚İ‚İŠ®—¹: 360–â
+2025-09-05 06:48:46,089 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2012.csv
+2025-09-05 06:48:46,090 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 199154 bytes
+2025-09-05 06:48:46,095 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-05 06:48:46,096 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 307s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-05 06:48:46,098 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 307–â
+2025-09-05 06:48:46,100 - utils - INFO - 4-2ê–åƒf[ƒ^2012”N“Ç‚İ‚İŠ®—¹: 307–â
+2025-09-05 06:48:46,101 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2013.csv
+2025-09-05 06:48:46,101 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 182989 bytes
+2025-09-05 06:48:46,107 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-05 06:48:46,107 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 300s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-05 06:48:46,108 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 300–â
+2025-09-05 06:48:46,110 - utils - INFO - 4-2ê–åƒf[ƒ^2013”N“Ç‚İ‚İŠ®—¹: 300–â
+2025-09-05 06:48:46,110 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2014.csv
+2025-09-05 06:48:46,110 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 153257 bytes
+2025-09-05 06:48:46,114 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-05 06:48:46,114 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 240s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-05 06:48:46,115 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 240–â
+2025-09-05 06:48:46,116 - utils - INFO - 4-2ê–åƒf[ƒ^2014”N“Ç‚İ‚İŠ®—¹: 240–â
+2025-09-05 06:48:46,116 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2015.csv
+2025-09-05 06:48:46,116 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 273998 bytes
+2025-09-05 06:48:46,123 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-05 06:48:46,124 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 358s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-05 06:48:46,127 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 358–â
+2025-09-05 06:48:46,129 - utils - INFO - 4-2ê–åƒf[ƒ^2015”N“Ç‚İ‚İŠ®—¹: 358–â
+2025-09-05 06:48:46,129 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2016.csv
+2025-09-05 06:48:46,129 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 291672 bytes
+2025-09-05 06:48:46,144 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-05 06:48:46,145 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 361s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-05 06:48:46,148 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 361–â
+2025-09-05 06:48:46,149 - utils - INFO - 4-2ê–åƒf[ƒ^2016”N“Ç‚İ‚İŠ®—¹: 361–â
+2025-09-05 06:48:46,149 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2017.csv
+2025-09-05 06:48:46,149 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 382964 bytes
+2025-09-05 06:48:46,157 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-05 06:48:46,158 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 440s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-05 06:48:46,159 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 440–â
+2025-09-05 06:48:46,160 - utils - INFO - 4-2ê–åƒf[ƒ^2017”N“Ç‚İ‚İŠ®—¹: 440–â
+2025-09-05 06:48:46,161 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2018.csv
+2025-09-05 06:48:46,161 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 309809 bytes
+2025-09-05 06:48:46,167 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-05 06:48:46,167 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 357s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-05 06:48:46,168 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 357–â
+2025-09-05 06:48:46,169 - utils - INFO - 4-2ê–åƒf[ƒ^2018”N“Ç‚İ‚İŠ®—¹: 357–â
+2025-09-05 06:48:46,173 - utils - INFO - IDÕ“Ë‰ğŒˆ: Šî‘b=202–â, ê–å=3681–â, ‚»‚Ì‘¼=0–â
+2025-09-05 06:48:46,181 - utils - INFO - RCCM“‡ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 12ƒtƒ@ƒCƒ‹, ‘Œv3883–â
+2025-09-05 06:48:46,181 - utils - INFO - 4-2ê–åƒf[ƒ^‘ÎÛ”N“x: [2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018]
+2025-09-05 06:48:46,181 - __main__ - INFO - === POSTˆ—ŠJn - ƒZƒbƒVƒ‡ƒ“ó‘ÔƒfƒoƒbƒO ===
+2025-09-05 06:48:46,181 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“ƒL[: ['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history']
+2025-09-05 06:48:46,182 - __main__ - INFO - exam_question_ids: MISSING
+2025-09-05 06:48:46,182 - __main__ - INFO - exam_current: MISSING
+2025-09-05 06:48:46,182 - __main__ - INFO - exam_category: MISSING
+2025-09-05 06:48:46,182 - __main__ - INFO - selected_question_type: MISSING
+2025-09-05 06:48:46,182 - __main__ - INFO - selected_department: MISSING
+2025-09-05 06:48:46,182 - __main__ - INFO - session_id: 9967777f4ded2312e0ecc02fcccfcf69
+2025-09-05 06:48:46,182 - __main__ - INFO - data_loaded: True
+2025-09-05 06:48:46,182 - __main__ - INFO - ==========================================
+2025-09-05 06:48:46,184 - __main__ - INFO - QID DEBUG: Received qid='93' (type: <class 'str'>, repr: '93')
+2025-09-05 06:48:46,185 - __main__ - INFO - QID DEBUG: Converted qid=93 (type: <class 'int'>)
+2025-09-05 06:48:46,185 - __main__ - INFO - SRSXV: –â‘è93 - ³‰ğ:0, ŠÔˆá‚¢:1, “ïˆÕ“x:6.0, ƒ}ƒXƒ^[:False
+2025-09-05 06:48:46,188 - __main__ - INFO - SRSXV: –â‘è93 - ³‰ğ:0, ŠÔˆá‚¢:2, “ïˆÕ“x:7.0, ƒ}ƒXƒ^[:False
+2025-09-05 06:48:46,188 - __main__ - INFO - —š—ğ•Û‘¶: –â‘è93, ‡Œv—š—ğ1Œ, ’¼ŒãŠm”F1Œ
+2025-09-05 06:48:46,188 - __main__ - WARNING - POSTˆ—: exam_question_ids‚ª‹ó‚Å‚·BƒZƒbƒVƒ‡ƒ“Ä\’z‚ğsB–â‘èID: 93
+2025-09-05 06:48:46,189 - __main__ - INFO - RCCM“‡–â‘èƒf[ƒ^‚Ì“Ç‚İ‚İŠJn
+2025-09-05 06:48:46,201 - __main__ - INFO - RCCM“‡ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 3883–â (ŒŸØÏ‚İ)
+2025-09-05 06:48:46,201 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ä\’zŠJn: –â‘èID=93, í•Ê=basic, •”–å=
+2025-09-05 06:48:46,201 - __main__ - INFO - –â‘è“Á’è: ID=93, ÀÛ‚Ìí•Ê=basic, ƒJƒeƒSƒŠ=‹¤’Ê, ”N“x=None
+2025-09-05 06:48:46,202 - __main__ - INFO - Šî‘b‰È–ÚƒZƒbƒVƒ‡ƒ“Ä\’z¬Œ÷: 202–â, Œ»İˆÊ’u92
+2025-09-05 06:48:46,202 - __main__ - INFO - === ‰ñ“šˆ—ƒfƒoƒbƒOî•ñ ===
+2025-09-05 06:48:46,202 - __main__ - INFO - –â‘èID: 93, ‰ñ“š: A, ³”Û: False
+2025-09-05 06:48:46,202 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“ó‘Ô: current_no=92, next_no=93
+2025-09-05 06:48:46,202 - __main__ - INFO - ˆÀ‘S’l: safe_current_no=92, safe_next_no=93
+2025-09-05 06:48:46,203 - __main__ - INFO - –â‘èƒŠƒXƒg: ’·‚³=202, IDs=[1, 2, 3]...
+2025-09-05 06:48:46,203 - __main__ - INFO - ÅI”»’è: is_last=False, next_index=93
+2025-09-05 06:48:46,203 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“ƒL[: ['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history', 'advanced_srs', 'last_history_update', 'category_stats', 'exam_question_ids', 'exam_current', 'selected_question_type', 'exam_category']
+2025-09-05 06:48:46,203 - __main__ - INFO - =========================
+2025-09-05 06:48:46,203 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“•Û‘¶Šm”F: exam_current = 93 (safe_next_no = 93)
+2025-09-05 06:48:46,203 - __main__ - INFO - ‰ñ“šˆ—Š®—¹: –â‘è93, ³“šFalse, ƒŒƒxƒ‹0, ƒXƒgƒŠ[ƒN0“ú
+2025-09-05 06:48:46,203 - __main__ - INFO - ƒtƒB[ƒhƒoƒbƒN•Ï”: is_last_question=False, next_question_index=93, current_question_number=93, total_questions=202
+2025-09-05 06:48:46,302 - werkzeug - INFO - 127.0.0.1 - - [05/Sep/2025 06:48:46] "POST /exam HTTP/1.1" 200 -
+2025-09-05 06:58:14,166 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-05 06:58:14,168 - __main__ - INFO - Parameter normalization (fallback): question_type=specialist
+2025-09-05 06:58:14,169 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-05 06:58:14,169 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-05 06:58:14,169 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-05 06:58:14,169 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-05 06:58:14,170 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-05 06:58:14,171 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=None, department=road
+2025-09-05 06:58:14,171 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-05 06:58:14,171 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=True, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-05 06:58:14,171 - __main__ - INFO - need_reset = True
+2025-09-05 06:58:14,171 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-05 06:58:14,172 - __main__ - INFO - ê–å‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 3681–â
+2025-09-05 06:58:14,173 - __main__ - INFO - •”–åƒtƒBƒ‹ƒ^ƒŠƒ“ƒO: road ¨ road
+2025-09-05 06:58:14,173 - __main__ - WARNING - ê–å‰È–Ú•”–åƒ}ƒbƒ`ƒ“ƒO¸”s: road ‚ÉŠY“–‚·‚é–â‘è‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñ
+2025-09-05 06:58:14,177 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K10–â, ƒtƒBƒ‹ƒ^:[•”–å:“¹˜H, í•Ê:4-2 ‘I‘ğ‰È–Ú]
+2025-09-05 06:58:14,178 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=10, question_ids_count=10
+2025-09-05 06:58:14,179 - __main__ - INFO - –â‘èIDˆê——: [1484, 2987, 3891, 2636, 1794, 2212, 1712, 2065, 3631, 2253]
+2025-09-05 06:58:14,179 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 10–â, ƒtƒBƒ‹ƒ^: •”–å:“¹˜H, í•Ê:4-2 ‘I‘ğ‰È–Ú
+2025-09-05 06:58:14,179 - __main__ - INFO - –â‘èIDæ“¾: current_no=0, question_id=1484
+2025-09-05 06:58:14,180 - __main__ - INFO - –â‘è•\¦: 1/10 (“à•”: current_no=0, total_ids=10)
+2025-09-05 06:58:14,180 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=1 (type:<class 'int'>), total_questions=10
+2025-09-05 06:58:14,205 - werkzeug - INFO - 127.0.0.1 - - [05/Sep/2025 06:58:14] "GET /exam?department=road&question_type=specialist&count=10 HTTP/1.1" 200 -
+2025-09-05 06:58:36,962 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-05 06:58:36,965 - __main__ - INFO - Parameter normalization (fallback): question_type=specialist
+2025-09-05 06:58:36,965 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-05 06:58:36,965 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-05 06:58:36,965 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-05 06:58:36,965 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-05 06:58:36,966 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-05 06:58:36,966 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=None, department=road
+2025-09-05 06:58:36,967 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-05 06:58:36,967 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=True, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-05 06:58:36,968 - __main__ - INFO - need_reset = True
+2025-09-05 06:58:36,968 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-05 06:58:36,970 - __main__ - INFO - ê–å‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 3681–â
+2025-09-05 06:58:36,970 - __main__ - INFO - •”–åƒtƒBƒ‹ƒ^ƒŠƒ“ƒO: road ¨ road
+2025-09-05 06:58:36,971 - __main__ - WARNING - ê–å‰È–Ú•”–åƒ}ƒbƒ`ƒ“ƒO¸”s: road ‚ÉŠY“–‚·‚é–â‘è‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñ
+2025-09-05 06:58:36,978 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K10–â, ƒtƒBƒ‹ƒ^:[•”–å:“¹˜H, í•Ê:4-2 ‘I‘ğ‰È–Ú]
+2025-09-05 06:58:36,979 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=10, question_ids_count=10
+2025-09-05 06:58:36,979 - __main__ - INFO - –â‘èIDˆê——: [3692, 1364, 3747, 1157, 3249, 1110, 2287, 2045, 2897, 4204]
+2025-09-05 06:58:36,979 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 10–â, ƒtƒBƒ‹ƒ^: •”–å:“¹˜H, í•Ê:4-2 ‘I‘ğ‰È–Ú
+2025-09-05 06:58:36,979 - __main__ - INFO - –â‘èIDæ“¾: current_no=0, question_id=3692
+2025-09-05 06:58:36,981 - __main__ - INFO - –â‘è•\¦: 1/10 (“à•”: current_no=0, total_ids=10)
+2025-09-05 06:58:36,981 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=1 (type:<class 'int'>), total_questions=10
+2025-09-05 06:58:36,995 - werkzeug - INFO - 127.0.0.1 - - [05/Sep/2025 06:58:36] "GET /exam?department=road&question_type=specialist&count=10 HTTP/1.1" 200 -
+2025-09-05 07:01:48,949 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-05 07:01:48,951 - __main__ - INFO - === POSTˆ—ŠJn - ƒZƒbƒVƒ‡ƒ“ó‘ÔƒfƒoƒbƒO ===
+2025-09-05 07:01:48,951 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“ƒL[: ['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history']
+2025-09-05 07:01:48,951 - __main__ - INFO - exam_question_ids: MISSING
+2025-09-05 07:01:48,951 - __main__ - INFO - exam_current: MISSING
+2025-09-05 07:01:48,951 - __main__ - INFO - exam_category: MISSING
+2025-09-05 07:01:48,952 - __main__ - INFO - selected_question_type: MISSING
+2025-09-05 07:01:48,952 - __main__ - INFO - selected_department: MISSING
+2025-09-05 07:01:48,952 - __main__ - INFO - session_id: 3aebc628767e20dcdd1b570774730785
+2025-09-05 07:01:48,952 - __main__ - INFO - data_loaded: True
+2025-09-05 07:01:48,952 - __main__ - INFO - ==========================================
+2025-09-05 07:01:48,953 - __main__ - INFO - QID DEBUG: Received qid='3692' (type: <class 'str'>, repr: '3692')
+2025-09-05 07:01:48,953 - __main__ - INFO - QID DEBUG: Converted qid=3692 (type: <class 'int'>)
+2025-09-05 07:01:48,954 - __main__ - INFO - SRSXV: –â‘è3692 - ³‰ğ:0, ŠÔˆá‚¢:1, “ïˆÕ“x:6.0, ƒ}ƒXƒ^[:False
+2025-09-05 07:01:48,957 - __main__ - INFO - SRSXV: –â‘è3692 - ³‰ğ:0, ŠÔˆá‚¢:2, “ïˆÕ“x:7.0, ƒ}ƒXƒ^[:False
+2025-09-05 07:01:48,958 - __main__ - INFO - —š—ğ•Û‘¶: –â‘è3692, ‡Œv—š—ğ1Œ, ’¼ŒãŠm”F1Œ
+2025-09-05 07:01:48,958 - __main__ - WARNING - POSTˆ—: exam_question_ids‚ª‹ó‚Å‚·BƒZƒbƒVƒ‡ƒ“Ä\’z‚ğsB–â‘èID: 3692
+2025-09-05 07:01:48,959 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ä\’zŠJn: –â‘èID=3692, í•Ê=basic, •”–å=
+2025-09-05 07:01:48,961 - __main__ - INFO - –â‘è“Á’è: ID=3692, ÀÛ‚Ìí•Ê=specialist, ƒJƒeƒSƒŠ={HŒv‰æA{Hİ”õ‹y‚ÑÏZ, ”N“x=2016
+2025-09-05 07:01:48,962 - __main__ - INFO - Šî‘b‰È–ÚƒZƒbƒVƒ‡ƒ“Ä\’z¬Œ÷: 202–â, Œ»İˆÊ’u0
+2025-09-05 07:01:48,963 - __main__ - WARNING - –â‘èID 3692 ‚ªexam_question_ids“à‚ÉŒ©‚Â‚©‚è‚Ü‚¹‚ñBæ“ª‚Éİ’è‚µ‚Ü‚·B
+2025-09-05 07:01:48,963 - __main__ - INFO - === ‰ñ“šˆ—ƒfƒoƒbƒOî•ñ ===
+2025-09-05 07:01:48,963 - __main__ - INFO - –â‘èID: 3692, ‰ñ“š: A, ³”Û: False
+2025-09-05 07:01:48,963 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“ó‘Ô: current_no=0, next_no=1
+2025-09-05 07:01:48,963 - __main__ - INFO - ˆÀ‘S’l: safe_current_no=0, safe_next_no=1
+2025-09-05 07:01:48,963 - __main__ - INFO - –â‘èƒŠƒXƒg: ’·‚³=203, IDs=[3692, 1, 2]...
+2025-09-05 07:01:48,964 - __main__ - INFO - ÅI”»’è: is_last=False, next_index=1
+2025-09-05 07:01:48,964 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“ƒL[: ['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history', 'advanced_srs', 'last_history_update', 'category_stats', 'exam_question_ids', 'exam_current', 'selected_question_type', 'exam_category']
+2025-09-05 07:01:48,964 - __main__ - INFO - =========================
+2025-09-05 07:01:48,964 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“•Û‘¶Šm”F: exam_current = 1 (safe_next_no = 1)
+2025-09-05 07:01:48,964 - __main__ - INFO - ‰ñ“šˆ—Š®—¹: –â‘è3692, ³“šFalse, ƒŒƒxƒ‹0, ƒXƒgƒŠ[ƒN0“ú
+2025-09-05 07:01:48,964 - __main__ - INFO - ƒtƒB[ƒhƒoƒbƒN•Ï”: is_last_question=False, next_question_index=1, current_question_number=1, total_questions=203
+2025-09-05 07:01:48,966 - werkzeug - INFO - 127.0.0.1 - - [05/Sep/2025 07:01:48] "POST /exam HTTP/1.1" 200 -
+2025-09-05 07:02:51,473 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-05 07:02:51,476 - __main__ - INFO - Parameter normalization (fallback): question_type=basic
+2025-09-05 07:02:51,477 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-05 07:02:51,477 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-05 07:02:51,477 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-05 07:02:51,477 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-05 07:02:51,478 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-05 07:02:51,478 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=basic, session_question_type=None, department=
+2025-09-05 07:02:51,478 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-05 07:02:51,478 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=True, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-05 07:02:51,479 - __main__ - INFO - need_reset = True
+2025-09-05 07:02:51,479 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-05 07:02:51,480 - __main__ - INFO - Šî‘b‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 202–â
+2025-09-05 07:02:51,480 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K10–â, ƒtƒBƒ‹ƒ^:[í•Ê:4-1 •K{‰È–Ú]
+2025-09-05 07:02:51,481 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=10, question_ids_count=10
+2025-09-05 07:02:51,481 - __main__ - INFO - –â‘èIDˆê——: [103, 94, 140, 53, 15, 194, 98, 144, 135, 119]
+2025-09-05 07:02:51,481 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 10–â, ƒtƒBƒ‹ƒ^: í•Ê:4-1 •K{‰È–Ú
+2025-09-05 07:02:51,481 - __main__ - INFO - –â‘èIDæ“¾: current_no=0, question_id=103
+2025-09-05 07:02:51,481 - __main__ - INFO - –â‘è•\¦: 1/10 (“à•”: current_no=0, total_ids=10)
+2025-09-05 07:02:51,481 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=1 (type:<class 'int'>), total_questions=10
+2025-09-05 07:02:51,484 - werkzeug - INFO - 127.0.0.1 - - [05/Sep/2025 07:02:51] "GET /exam HTTP/1.1" 200 -
+2025-09-05 07:02:59,057 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-05 07:02:59,059 - __main__ - INFO - Parameter normalization (fallback): question_type=basic
+2025-09-05 07:02:59,060 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-05 07:02:59,060 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-05 07:02:59,061 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-05 07:02:59,062 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-05 07:02:59,062 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-05 07:02:59,062 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=basic, session_question_type=None, department=
+2025-09-05 07:02:59,062 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-05 07:02:59,063 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=True, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-05 07:02:59,063 - __main__ - INFO - need_reset = True
+2025-09-05 07:02:59,063 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-05 07:02:59,064 - __main__ - INFO - Šî‘b‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 202–â
+2025-09-05 07:02:59,065 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K10–â, ƒtƒBƒ‹ƒ^:[í•Ê:4-1 •K{‰È–Ú]
+2025-09-05 07:02:59,065 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=10, question_ids_count=10
+2025-09-05 07:02:59,065 - __main__ - INFO - –â‘èIDˆê——: [38, 116, 131, 19, 170, 114, 27, 30, 127, 5]
+2025-09-05 07:02:59,065 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 10–â, ƒtƒBƒ‹ƒ^: í•Ê:4-1 •K{‰È–Ú
+2025-09-05 07:02:59,065 - __main__ - INFO - –â‘èIDæ“¾: current_no=0, question_id=38
+2025-09-05 07:02:59,065 - __main__ - INFO - –â‘è•\¦: 1/10 (“à•”: current_no=0, total_ids=10)
+2025-09-05 07:02:59,065 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=1 (type:<class 'int'>), total_questions=10
+2025-09-05 07:02:59,068 - werkzeug - INFO - 127.0.0.1 - - [05/Sep/2025 07:02:59] "GET /exam HTTP/1.1" 200 -
+2025-09-09 21:02:19,995 - __main__ - INFO - RCCMŒ±–â‘èWƒAƒvƒŠƒP[ƒVƒ‡ƒ“‹N“®’†...
+2025-09-09 21:02:19,996 - __main__ - INFO - ƒAƒNƒZƒXURL: http://172.18.44.152:5003
+2025-09-09 21:02:19,996 - __main__ - INFO - ƒAƒNƒZƒXURL: http://localhost:5003
+2025-09-09 21:02:20,162 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5003
+ * Running on http://192.168.0.69:5003
+2025-09-09 21:02:20,162 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-09-10 07:39:14,894 - __main__ - INFO - RCCMŒ±–â‘èWƒAƒvƒŠƒP[ƒVƒ‡ƒ“‹N“®’†...
+2025-09-10 07:39:14,895 - __main__ - INFO - ƒAƒNƒZƒXURL: http://172.18.44.152:5003
+2025-09-10 07:39:14,895 - __main__ - INFO - ƒAƒNƒZƒXURL: http://localhost:5003
+2025-09-10 07:39:15,068 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5003
+ * Running on http://192.168.0.69:5003
+2025-09-10 07:39:15,068 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-09-10 07:41:31,058 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-10 07:41:31,059 - utils - INFO - RCCM“‡ƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data
+2025-09-10 07:41:31,060 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-1.csv
+2025-09-10 07:41:31,060 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 92424 bytes
+2025-09-10 07:41:31,080 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-10 07:41:31,080 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 202s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-10 07:41:31,081 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 202–â
+2025-09-10 07:41:31,081 - utils - INFO - 4-1Šî‘bƒf[ƒ^“Ç‚İ‚İŠ®—¹: 202–â
+2025-09-10 07:41:31,082 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2008.csv
+2025-09-10 07:41:31,082 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 201176 bytes
+2025-09-10 07:41:31,104 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-10 07:41:31,104 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 360s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-10 07:41:31,107 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 360–â
+2025-09-10 07:41:31,109 - utils - INFO - 4-2ê–åƒf[ƒ^2008”N“Ç‚İ‚İŠ®—¹: 360–â
+2025-09-10 07:41:31,110 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2009.csv
+2025-09-10 07:41:31,110 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 207651 bytes
+2025-09-10 07:41:31,136 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-10 07:41:31,136 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 359s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-10 07:41:31,139 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 359–â
+2025-09-10 07:41:31,141 - utils - INFO - 4-2ê–åƒf[ƒ^2009”N“Ç‚İ‚İŠ®—¹: 359–â
+2025-09-10 07:41:31,141 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2010.csv
+2025-09-10 07:41:31,141 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 157895 bytes
+2025-09-10 07:41:31,157 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-10 07:41:31,158 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 239s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-10 07:41:31,159 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 239–â
+2025-09-10 07:41:31,159 - utils - INFO - 4-2ê–åƒf[ƒ^2010”N“Ç‚İ‚İŠ®—¹: 239–â
+2025-09-10 07:41:31,160 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2011.csv
+2025-09-10 07:41:31,160 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 237300 bytes
+2025-09-10 07:41:31,184 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-10 07:41:31,185 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 360s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-10 07:41:31,188 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 360–â
+2025-09-10 07:41:31,190 - utils - INFO - 4-2ê–åƒf[ƒ^2011”N“Ç‚İ‚İŠ®—¹: 360–â
+2025-09-10 07:41:31,190 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2012.csv
+2025-09-10 07:41:31,191 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 199154 bytes
+2025-09-10 07:41:31,213 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-10 07:41:31,213 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 307s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-10 07:41:31,216 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 307–â
+2025-09-10 07:41:31,218 - utils - INFO - 4-2ê–åƒf[ƒ^2012”N“Ç‚İ‚İŠ®—¹: 307–â
+2025-09-10 07:41:31,218 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2013.csv
+2025-09-10 07:41:31,219 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 182989 bytes
+2025-09-10 07:41:31,241 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-10 07:41:31,242 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 300s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-10 07:41:31,244 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 300–â
+2025-09-10 07:41:31,246 - utils - INFO - 4-2ê–åƒf[ƒ^2013”N“Ç‚İ‚İŠ®—¹: 300–â
+2025-09-10 07:41:31,246 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2014.csv
+2025-09-10 07:41:31,246 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 153257 bytes
+2025-09-10 07:41:31,264 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-10 07:41:31,264 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 240s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-10 07:41:31,265 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 240–â
+2025-09-10 07:41:31,266 - utils - INFO - 4-2ê–åƒf[ƒ^2014”N“Ç‚İ‚İŠ®—¹: 240–â
+2025-09-10 07:41:31,266 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2015.csv
+2025-09-10 07:41:31,267 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 273998 bytes
+2025-09-10 07:41:31,290 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-10 07:41:31,290 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 358s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-10 07:41:31,291 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 358–â
+2025-09-10 07:41:31,292 - utils - INFO - 4-2ê–åƒf[ƒ^2015”N“Ç‚İ‚İŠ®—¹: 358–â
+2025-09-10 07:41:31,292 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2016.csv
+2025-09-10 07:41:31,293 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 291672 bytes
+2025-09-10 07:41:31,333 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-10 07:41:31,333 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 361s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-10 07:41:31,336 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 361–â
+2025-09-10 07:41:31,337 - utils - INFO - 4-2ê–åƒf[ƒ^2016”N“Ç‚İ‚İŠ®—¹: 361–â
+2025-09-10 07:41:31,338 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2017.csv
+2025-09-10 07:41:31,338 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 382964 bytes
+2025-09-10 07:41:31,367 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-10 07:41:31,367 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 440s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-10 07:41:31,370 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 440–â
+2025-09-10 07:41:31,372 - utils - INFO - 4-2ê–åƒf[ƒ^2017”N“Ç‚İ‚İŠ®—¹: 440–â
+2025-09-10 07:41:31,373 - utils - INFO - –â‘èƒf[ƒ^“Ç‚İ‚İŠJn: C:\Users\ABC\Desktop\rccm-quiz-app-production\data\4-2_2018.csv
+2025-09-10 07:41:31,373 - utils - INFO - ƒtƒ@ƒCƒ‹ƒTƒCƒY: 309809 bytes
+2025-09-10 07:41:31,399 - utils - INFO - “Ç‚İ‚İ¬Œ÷: utf-8 ƒGƒ“ƒR[ƒfƒBƒ“ƒO
+2025-09-10 07:41:31,400 - utils - INFO - ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 357s, ƒGƒ“ƒR[ƒfƒBƒ“ƒO: utf-8
+2025-09-10 07:41:31,407 - utils - INFO - —LŒø‚È–â‘èƒf[ƒ^: 357–â
+2025-09-10 07:41:31,409 - utils - INFO - 4-2ê–åƒf[ƒ^2018”N“Ç‚İ‚İŠ®—¹: 357–â
+2025-09-10 07:41:31,412 - utils - INFO - IDÕ“Ë‰ğŒˆ: Šî‘b=202–â, ê–å=3681–â, ‚»‚Ì‘¼=0–â
+2025-09-10 07:41:31,416 - utils - INFO - RCCM“‡ƒf[ƒ^“Ç‚İ‚İŠ®—¹: 12ƒtƒ@ƒCƒ‹, ‘Œv3883–â
+2025-09-10 07:41:31,416 - utils - INFO - 4-2ê–åƒf[ƒ^‘ÎÛ”N“x: [2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018]
+2025-09-10 07:41:31,416 - __main__ - INFO - Parameter normalization (fallback): question_type=specialist
+2025-09-10 07:41:31,416 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-10 07:41:31,416 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-10 07:41:31,417 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-10 07:41:31,417 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-10 07:41:31,417 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-10 07:41:31,417 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=None, department=road
+2025-09-10 07:41:31,417 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-10 07:41:31,418 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=True, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-10 07:41:31,418 - __main__ - INFO - need_reset = True
+2025-09-10 07:41:31,418 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-10 07:41:31,419 - __main__ - INFO - ê–å‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 3681–â
+2025-09-10 07:41:31,419 - __main__ - INFO - •”–åƒtƒBƒ‹ƒ^ƒŠƒ“ƒO: road ¨ road
+2025-09-10 07:41:31,420 - __main__ - WARNING - ê–å‰È–Ú•”–åƒ}ƒbƒ`ƒ“ƒO¸”s: road ‚ÉŠY“–‚·‚é–â‘è‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñ
+2025-09-10 07:41:31,423 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K10–â, ƒtƒBƒ‹ƒ^:[•”–å:“¹˜H, í•Ê:4-2 ‘I‘ğ‰È–Ú]
+2025-09-10 07:41:31,423 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=10, question_ids_count=10
+2025-09-10 07:41:31,423 - __main__ - INFO - –â‘èIDˆê——: [3279, 4273, 3197, 2865, 4495, 4179, 2565, 1405, 3254, 3826]
+2025-09-10 07:41:31,426 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 10–â, ƒtƒBƒ‹ƒ^: •”–å:“¹˜H, í•Ê:4-2 ‘I‘ğ‰È–Ú
+2025-09-10 07:41:31,426 - __main__ - INFO - –â‘èIDæ“¾: current_no=0, question_id=3279
+2025-09-10 07:41:31,427 - __main__ - INFO - –â‘è•\¦: 1/10 (“à•”: current_no=0, total_ids=10)
+2025-09-10 07:41:31,427 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=1 (type:<class 'int'>), total_questions=10
+2025-09-10 07:41:31,600 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 07:41:31] "GET /exam?department=road&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-10 07:41:50,011 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-10 07:41:50,019 - __main__ - INFO - Parameter normalization (fallback): question_type=specialist
+2025-09-10 07:41:50,020 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-10 07:41:50,020 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-10 07:41:50,020 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-10 07:41:50,021 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-10 07:41:50,021 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-10 07:41:50,022 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=None, department=road
+2025-09-10 07:41:50,022 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-10 07:41:50,023 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=True, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-10 07:41:50,023 - __main__ - INFO - need_reset = True
+2025-09-10 07:41:50,023 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-10 07:41:50,024 - __main__ - INFO - ê–å‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 3681–â
+2025-09-10 07:41:50,024 - __main__ - INFO - •”–åƒtƒBƒ‹ƒ^ƒŠƒ“ƒO: road ¨ road
+2025-09-10 07:41:50,025 - __main__ - WARNING - ê–å‰È–Ú•”–åƒ}ƒbƒ`ƒ“ƒO¸”s: road ‚ÉŠY“–‚·‚é–â‘è‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñ
+2025-09-10 07:41:50,055 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K10–â, ƒtƒBƒ‹ƒ^:[•”–å:“¹˜H, í•Ê:4-2 ‘I‘ğ‰È–Ú]
+2025-09-10 07:41:50,056 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=10, question_ids_count=10
+2025-09-10 07:41:50,056 - __main__ - INFO - –â‘èIDˆê——: [4273, 3411, 3712, 2477, 1046, 3783, 1797, 1889, 1502, 3007]
+2025-09-10 07:41:50,059 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 10–â, ƒtƒBƒ‹ƒ^: •”–å:“¹˜H, í•Ê:4-2 ‘I‘ğ‰È–Ú
+2025-09-10 07:41:50,060 - __main__ - INFO - –â‘èIDæ“¾: current_no=0, question_id=4273
+2025-09-10 07:41:50,061 - __main__ - INFO - –â‘è•\¦: 1/10 (“à•”: current_no=0, total_ids=10)
+2025-09-10 07:41:50,061 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=1 (type:<class 'int'>), total_questions=10
+2025-09-10 07:41:50,066 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 07:41:50] "GET /exam?department=road&question_type=specialist&count=1 HTTP/1.1" 200 -
+2025-09-10 09:54:11,138 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-10 09:54:11,141 - __main__ - INFO - Parameter normalization (fallback): question_type=specialist
+2025-09-10 09:54:11,141 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: ‘S‘Ì ¨ ‘S‘Ì
+2025-09-10 09:54:11,141 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-10 09:54:11,142 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-10 09:54:11,142 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-10 09:54:11,142 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=None, department=road
+2025-09-10 09:54:11,142 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-10 09:54:11,142 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=True, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-10 09:54:11,143 - __main__ - INFO - need_reset = True
+2025-09-10 09:54:11,143 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-10 09:54:11,154 - __main__ - INFO - ê–å‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 3681–â
+2025-09-10 09:54:11,154 - __main__ - INFO - •”–åƒtƒBƒ‹ƒ^ƒŠƒ“ƒO: road ¨ road
+2025-09-10 09:54:11,159 - __main__ - WARNING - ê–å‰È–Ú•”–åƒ}ƒbƒ`ƒ“ƒO¸”s: road ‚ÉŠY“–‚·‚é–â‘è‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñ
+2025-09-10 09:54:11,161 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K10–â, ƒtƒBƒ‹ƒ^:[•”–å:“¹˜H, í•Ê:4-2 ‘I‘ğ‰È–Ú]
+2025-09-10 09:54:11,162 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=10, question_ids_count=10
+2025-09-10 09:54:11,162 - __main__ - INFO - –â‘èIDˆê——: [4552, 4651, 1773, 3496, 2678, 3264, 3057, 1278, 4659, 2572]
+2025-09-10 09:54:11,169 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 10–â, ƒtƒBƒ‹ƒ^: •”–å:“¹˜H, í•Ê:4-2 ‘I‘ğ‰È–Ú
+2025-09-10 09:54:11,169 - __main__ - INFO - –â‘èIDæ“¾: current_no=0, question_id=4552
+2025-09-10 09:54:11,170 - __main__ - INFO - –â‘è•\¦: 1/10 (“à•”: current_no=0, total_ids=10)
+2025-09-10 09:54:11,171 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=1 (type:<class 'int'>), total_questions=10
+2025-09-10 09:54:11,181 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 09:54:11] "GET /exam?department=road&question_type=specialist&category=‘S‘Ì&count=10 HTTP/1.1" 200 -
+2025-09-10 10:12:02,145 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-10 10:12:02,147 - __main__ - INFO - Parameter normalization (fallback): question_type=specialist
+2025-09-10 10:12:02,147 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-10 10:12:02,147 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-10 10:12:02,147 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-10 10:12:02,148 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-10 10:12:02,148 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-10 10:12:02,149 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=None, department=road
+2025-09-10 10:12:02,149 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-10 10:12:02,149 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=True, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-10 10:12:02,149 - __main__ - INFO - need_reset = True
+2025-09-10 10:12:02,150 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-10 10:12:02,151 - __main__ - INFO - ê–å‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 3681–â
+2025-09-10 10:12:02,151 - __main__ - INFO - •”–åƒtƒBƒ‹ƒ^ƒŠƒ“ƒO: road ¨ road
+2025-09-10 10:12:02,152 - __main__ - WARNING - ê–å‰È–Ú•”–åƒ}ƒbƒ`ƒ“ƒO¸”s: road ‚ÉŠY“–‚·‚é–â‘è‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñ
+2025-09-10 10:12:02,155 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K10–â, ƒtƒBƒ‹ƒ^:[•”–å:“¹˜H, í•Ê:4-2 ‘I‘ğ‰È–Ú]
+2025-09-10 10:12:02,155 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=10, question_ids_count=10
+2025-09-10 10:12:02,155 - __main__ - INFO - –â‘èIDˆê——: [4380, 3172, 3856, 4420, 2568, 3218, 4351, 2743, 3445, 1952]
+2025-09-10 10:12:02,161 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 10–â, ƒtƒBƒ‹ƒ^: •”–å:“¹˜H, í•Ê:4-2 ‘I‘ğ‰È–Ú
+2025-09-10 10:12:02,161 - __main__ - INFO - –â‘èIDæ“¾: current_no=0, question_id=4380
+2025-09-10 10:12:02,162 - __main__ - INFO - –â‘è•\¦: 1/10 (“à•”: current_no=0, total_ids=10)
+2025-09-10 10:12:02,163 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=1 (type:<class 'int'>), total_questions=10
+2025-09-10 10:12:02,172 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 10:12:02] "GET /exam?department=road&question_type=specialist&count=10 HTTP/1.1" 200 -
+2025-09-10 10:12:56,258 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-10 10:12:56,260 - __main__ - INFO - Parameter normalization (fallback): question_type=specialist
+2025-09-10 10:12:56,261 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-10 10:12:56,261 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-10 10:12:56,261 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-10 10:12:56,261 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-10 10:12:56,261 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-10 10:12:56,262 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=None, department=road
+2025-09-10 10:12:56,262 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-10 10:12:56,262 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=True, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-10 10:12:56,262 - __main__ - INFO - need_reset = True
+2025-09-10 10:12:56,262 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-10 10:12:56,264 - __main__ - INFO - ê–å‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 3681–â
+2025-09-10 10:12:56,264 - __main__ - INFO - •”–åƒtƒBƒ‹ƒ^ƒŠƒ“ƒO: road ¨ road
+2025-09-10 10:12:56,265 - __main__ - WARNING - ê–å‰È–Ú•”–åƒ}ƒbƒ`ƒ“ƒO¸”s: road ‚ÉŠY“–‚·‚é–â‘è‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñ
+2025-09-10 10:12:56,270 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K10–â, ƒtƒBƒ‹ƒ^:[•”–å:“¹˜H, í•Ê:4-2 ‘I‘ğ‰È–Ú]
+2025-09-10 10:12:56,271 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=10, question_ids_count=10
+2025-09-10 10:12:56,271 - __main__ - INFO - –â‘èIDˆê——: [2283, 4681, 4198, 4302, 3032, 3275, 2876, 3024, 4426, 1017]
+2025-09-10 10:12:56,273 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 10–â, ƒtƒBƒ‹ƒ^: •”–å:“¹˜H, í•Ê:4-2 ‘I‘ğ‰È–Ú
+2025-09-10 10:12:56,273 - __main__ - INFO - –â‘èIDæ“¾: current_no=0, question_id=2283
+2025-09-10 10:12:56,274 - __main__ - INFO - –â‘è•\¦: 1/10 (“à•”: current_no=0, total_ids=10)
+2025-09-10 10:12:56,274 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=1 (type:<class 'int'>), total_questions=10
+2025-09-10 10:12:56,277 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 10:12:56] "GET /exam?department=road&question_type=specialist&count=10 HTTP/1.1" 200 -
+2025-09-10 10:14:31,022 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-10 10:14:31,024 - __main__ - INFO - Parameter normalization (fallback): question_type=specialist
+2025-09-10 10:14:31,024 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-10 10:14:31,024 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-10 10:14:31,024 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-10 10:14:31,024 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-10 10:14:31,024 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-10 10:14:31,024 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=None, department=road
+2025-09-10 10:14:31,024 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-10 10:14:31,025 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=True, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-10 10:14:31,025 - __main__ - INFO - need_reset = True
+2025-09-10 10:14:31,025 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-10 10:14:31,026 - __main__ - INFO - ê–å‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 3681–â
+2025-09-10 10:14:31,026 - __main__ - INFO - •”–åƒtƒBƒ‹ƒ^ƒŠƒ“ƒO: road ¨ road
+2025-09-10 10:14:31,026 - __main__ - WARNING - ê–å‰È–Ú•”–åƒ}ƒbƒ`ƒ“ƒO¸”s: road ‚ÉŠY“–‚·‚é–â‘è‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñ
+2025-09-10 10:14:31,028 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K10–â, ƒtƒBƒ‹ƒ^:[•”–å:“¹˜H, í•Ê:4-2 ‘I‘ğ‰È–Ú]
+2025-09-10 10:14:31,028 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=10, question_ids_count=10
+2025-09-10 10:14:31,028 - __main__ - INFO - –â‘èIDˆê——: [1291, 3936, 2416, 3879, 4453, 2445, 3659, 1889, 2221, 1723]
+2025-09-10 10:14:31,030 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 10–â, ƒtƒBƒ‹ƒ^: •”–å:“¹˜H, í•Ê:4-2 ‘I‘ğ‰È–Ú
+2025-09-10 10:14:31,030 - __main__ - INFO - –â‘èIDæ“¾: current_no=0, question_id=1291
+2025-09-10 10:14:31,030 - __main__ - INFO - –â‘è•\¦: 1/10 (“à•”: current_no=0, total_ids=10)
+2025-09-10 10:14:31,030 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=1 (type:<class 'int'>), total_questions=10
+2025-09-10 10:14:31,033 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 10:14:31] "GET /exam?department=road&question_type=specialist&count=10 HTTP/1.1" 200 -
+2025-09-10 10:14:33,063 - __main__ - INFO - === POSTˆ—ŠJn - ƒZƒbƒVƒ‡ƒ“ó‘ÔƒfƒoƒbƒO ===
+2025-09-10 10:14:33,063 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“ƒL[: ['_permanent', 'bookmarks', 'data_loaded', 'exam_category', 'exam_current', 'exam_question_ids', 'history', 'selected_department', 'selected_question_type', 'session_id', 'srs_data', 'request_history']
+2025-09-10 10:14:33,063 - __main__ - INFO - exam_question_ids: [1291, 3936, 2416, 3879, 4453, 2445, 3659, 1889, 2221, 1723]
+2025-09-10 10:14:33,063 - __main__ - INFO - exam_current: 0
+2025-09-10 10:14:33,063 - __main__ - INFO - exam_category: ‘S‘Ì
+2025-09-10 10:14:33,064 - __main__ - INFO - selected_question_type: specialist
+2025-09-10 10:14:33,064 - __main__ - INFO - selected_department: road
+2025-09-10 10:14:33,064 - __main__ - INFO - session_id: 303cd24df4426d4e8e6f4d65cd06c468
+2025-09-10 10:14:33,064 - __main__ - INFO - data_loaded: True
+2025-09-10 10:14:33,064 - __main__ - INFO - ==========================================
+2025-09-10 10:14:33,070 - __main__ - INFO - QID DEBUG: Received qid='1291' (type: <class 'str'>, repr: '1291')
+2025-09-10 10:14:33,071 - __main__ - INFO - QID DEBUG: Converted qid=1291 (type: <class 'int'>)
+2025-09-10 10:14:33,072 - __main__ - INFO - SRSXV: –â‘è1291 - ³‰ğ:1, ŠÔˆá‚¢:0, “ïˆÕ“x:4.5, ƒ}ƒXƒ^[:False
+2025-09-10 10:14:33,073 - __main__ - INFO - SRSXV: –â‘è1291 - ³‰ğ:2, ŠÔˆá‚¢:0, “ïˆÕ“x:4.0, ƒ}ƒXƒ^[:False
+2025-09-10 10:14:33,073 - __main__ - INFO - —š—ğ•Û‘¶: –â‘è1291, ‡Œv—š—ğ1Œ, ’¼ŒãŠm”F1Œ
+2025-09-10 10:14:33,073 - __main__ - INFO - === ‰ñ“šˆ—ƒfƒoƒbƒOî•ñ ===
+2025-09-10 10:14:33,073 - __main__ - INFO - –â‘èID: 1291, ‰ñ“š: A, ³”Û: True
+2025-09-10 10:14:33,073 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“ó‘Ô: current_no=0, next_no=1
+2025-09-10 10:14:33,073 - __main__ - INFO - ˆÀ‘S’l: safe_current_no=0, safe_next_no=1
+2025-09-10 10:14:33,074 - __main__ - INFO - –â‘èƒŠƒXƒg: ’·‚³=10, IDs=[1291, 3936, 2416]...
+2025-09-10 10:14:33,074 - __main__ - INFO - ÅI”»’è: is_last=False, next_index=1
+2025-09-10 10:14:33,074 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“ƒL[: ['_permanent', 'bookmarks', 'data_loaded', 'exam_category', 'exam_current', 'exam_question_ids', 'history', 'selected_department', 'selected_question_type', 'session_id', 'srs_data', 'request_history', 'advanced_srs', 'last_history_update', 'category_stats']
+2025-09-10 10:14:33,074 - __main__ - INFO - =========================
+2025-09-10 10:14:33,074 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“•Û‘¶Šm”F: exam_current = 1 (safe_next_no = 1)
+2025-09-10 10:14:33,074 - __main__ - INFO - ‰ñ“šˆ—Š®—¹: –â‘è1291, ³“šTrue, ƒŒƒxƒ‹0, ƒXƒgƒŠ[ƒN0“ú
+2025-09-10 10:14:33,074 - __main__ - INFO - ƒtƒB[ƒhƒoƒbƒN•Ï”: is_last_question=False, next_question_index=1, current_question_number=1, total_questions=10
+2025-09-10 10:14:33,096 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 10:14:33] "POST /exam HTTP/1.1" 200 -
+2025-09-10 10:14:35,127 - __main__ - INFO - Parameter normalization (fallback): question_type=specialist
+2025-09-10 10:14:35,127 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-10 10:14:35,127 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-10 10:14:35,127 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-10 10:14:35,128 - __main__ - INFO - GETˆ—: current_no=1, exam_question_ids=[1291, 3936, 2416, 3879, 4453], is_next=False, total_ids=10
+2025-09-10 10:14:35,128 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'advanced_srs', 'bookmarks', 'category_stats', 'data_loaded', 'exam_category', 'exam_current', 'exam_question_ids', 'history', 'last_history_update', 'last_update', 'request_history', 'selected_department', 'selected_question_type', 'session_id', 'srs_data'], exam_current=1
+2025-09-10 10:14:35,128 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=specialist, department=road
+2025-09-10 10:14:35,128 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-10 10:14:35,129 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=True, category_match=True, question_type_match=True, department_match=True, year_match=False, current_no=1, len=10
+2025-09-10 10:14:35,129 - __main__ - INFO - need_reset = True
+2025-09-10 10:14:35,129 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['exam_question_ids', 'exam_current', 'exam_category', 'selected_department', 'selected_question_type', 'request_history']
+2025-09-10 10:14:35,131 - __main__ - ERROR - quizŠÖ”‚ÅƒGƒ‰[: No module named 'ai_analyzer'
+2025-09-10 10:14:35,135 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 10:14:35] "GET /exam?department=road&question_type=specialist HTTP/1.1" 200 -
