@@ -554,7 +554,9 @@ def load_questions():
     try:
         # RCCM統合データ読み込み（4-1・4-2ファイル対応）
         data_dir = os.path.dirname(DataConfig.QUESTIONS_CSV)
+        logger.info(f"🔍 ULTRA DEBUG: data_dir={data_dir}, DataConfig.QUESTIONS_CSV={DataConfig.QUESTIONS_CSV}")
         questions = load_rccm_data_files(data_dir)
+        logger.info(f"🔍 ULTRA DEBUG: load_rccm_data_files returned {len(questions) if questions else 0} questions")
         
         if questions:
             # データ整合性チェック
@@ -858,6 +860,7 @@ def get_mixed_questions(user_session, all_questions, requested_category='全体'
                 # 既に日本語の場合はそのまま使用
                 target_categories = department
             logger.info(f"部門フィルタリング: {department} → {target_categories}")
+            logger.info(f"🔍 ULTRA DEBUG: フィルタリング前の問題数={len(available_questions)}, 専門科目問題数={len([q for q in available_questions if q.get('question_type') == 'specialist'])}")
             
             # 日本語カテゴリでマッチング（category フィールドを使用）
             # ✅ CSVファイル統一化により簡素化されたマッチング
@@ -2005,8 +2008,10 @@ def exam():
                         selected_questions.append(q)
             else:
                 # SRSを考慮した問題選択（RCCM部門対応）
+                logger.info(f"🔍 ULTRA DEBUG: calling get_mixed_questions with department='{requested_department}', question_type='{requested_question_type}', all_questions_count={len(all_questions)}")
                 selected_questions = get_mixed_questions(session, all_questions, requested_category, session_size, requested_department, requested_question_type, requested_year)
                 question_ids = [int(q.get('id', 0)) for q in selected_questions]
+                logger.info(f"🔍 ULTRA DEBUG: get_mixed_questions returned {len(selected_questions)} questions, IDs={question_ids}")
 
             # デバッグ: 問題選択の詳細ログ
             logger.info(f"問題選択詳細: requested_size={session_size}, selected_count={len(selected_questions)}, question_ids_count={len(question_ids)}")
