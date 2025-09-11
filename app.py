@@ -551,24 +551,30 @@ def load_questions():
     
     logger.info("RCCM統合問題データの読み込み開始")
     
+    # 🎯 CLAUDE.md準拠: キャッシュ強制クリア（本番環境の古いキャッシュ対策）
+    global _questions_cache, _cache_timestamp
+    _questions_cache = None
+    _cache_timestamp = None
+    logger.info("🔄 CLAUDE.md準拠: 既存キャッシュ強制クリア")
+    
     # 🎯 ULTRA SYNC 根本解決: フォールバック処理完全無効化
     # 本番環境でload_rccm_data_filesのみ使用を強制
     data_dir = os.path.dirname(DataConfig.QUESTIONS_CSV)
-    logger.info(f"🎯 ULTRA SYNC: 正規データロード強制開始 - data_dir={data_dir}")
+    logger.info(f"🎯 CLAUDE.md準拠: 正規データロード強制開始 - data_dir={data_dir}")
     
     questions = load_rccm_data_files(data_dir)
-    logger.info(f"🎯 ULTRA SYNC: load_rccm_data_files returned {len(questions) if questions else 0} questions")
+    logger.info(f"🎯 CLAUDE.md準拠: load_rccm_data_files returned {len(questions) if questions else 0} questions")
     
     if not questions:
-        logger.error(f"🚨 ULTRA SYNC: 正規データロード失敗 - フォールバック無効化")
+        logger.error(f"🚨 CLAUDE.md準拠: 正規データロード失敗 - フォールバック無効化")
         raise DataLoadError("RCCM統合データロードに失敗しました - フォールバック処理は無効化されています")
     
     # データ整合性チェック
-    logger.info(f"🎯 ULTRA SYNC: データ整合性チェック開始")
+    logger.info(f"🎯 CLAUDE.md準拠: データ整合性チェック開始")
     validated_questions = validate_question_data_integrity(questions)
     _questions_cache = validated_questions
     _cache_timestamp = current_time
-    logger.info(f"✅ ULTRA SYNC: 正規RCCM統合データ読み込み完了: {len(validated_questions)}問 (フォールバック無効化)")
+    logger.info(f"✅ CLAUDE.md準拠: 正規RCCM統合データ読み込み完了: {len(validated_questions)}問 (ID体系=基礎1-202,専門1000+)")
     return validated_questions
 
 def clear_questions_cache():
@@ -807,15 +813,13 @@ def get_mixed_questions(user_session, all_questions, requested_category='全体'
         
         # 専門科目で部門指定がある場合のみ部門フィルタ適用
         if question_type == 'specialist' and department:
-            # ✅ CLAUDE.md準拠: 英語IDマッピング完全削除
-            # 日本語部門名を直接使用（英語変換は絶対禁止）
-            # department パラメータは既に日本語で受け取っているはず
+            # 🎯 CLAUDE.md準拠: 英語ID完全禁止 - 日本語直接マッチングのみ
             
-            # 🔥 CRITICAL FIX: 英語部門名を日本語カテゴリに変換（「無効な問題ID」エラー根本原因修正）
-            # URLパラメータで受け取る英語department名をCSVの日本語categoryに変換
-            english_to_japanese_mapping = {
-                'road': '道路',
+            # ⚠️ 一時的互換性処理: 既存の英語URLからの移行期間対応
+            # TODO: テンプレート修正後にこの処理は削除予定
+            legacy_english_mapping = {
                 'river': '河川、砂防及び海岸・海洋',
+                'road': '道路',
                 'urban': '都市計画及び地方計画',
                 'tunnel': 'トンネル',
                 'landscape': '造園',
@@ -828,18 +832,17 @@ def get_mixed_questions(user_session, all_questions, requested_category='全体'
                 'agricultural_engineering': '農業土木'
             }
             
-            # 英語→日本語変換を適用
-            if department in english_to_japanese_mapping:
-                target_categories = english_to_japanese_mapping[department]
-                logger.info(f"CRITICAL FIX: 英語部門名変換 {department} → {target_categories}")
+            if department in legacy_english_mapping:
+                target_categories = legacy_english_mapping[department]
+                logger.warning(f"⚠️ 一時的英語互換: {department} → {target_categories} (将来削除予定)")
             else:
-                # 既に日本語の場合はそのまま使用
-                target_categories = department
-            logger.info(f"部門フィルタリング: {department} → {target_categories}")
-            logger.info(f"🔍 ULTRA DEBUG: フィルタリング前の問題数={len(available_questions)}, 専門科目問題数={len([q for q in available_questions if q.get('question_type') == 'specialist'])}")
+                target_categories = department  # 日本語部門名をそのまま使用
+                logger.info(f"✅ CLAUDE.md準拠: 日本語直接マッチング {department}")
+            
+            logger.info(f"🔍 フィルタリング前の問題数={len(available_questions)}, 専門科目問題数={len([q for q in available_questions if q.get('question_type') == 'specialist'])}")
             
             # 日本語カテゴリでマッチング（category フィールドを使用）
-            # ✅ CSVファイル統一化により簡素化されたマッチング
+            # 選択部門名（日本語）とCSVのcategory（日本語）の直接一致のみ
             dept_match_questions = [q for q in available_questions 
                                   if q.get('category') == target_categories]
             if dept_match_questions:

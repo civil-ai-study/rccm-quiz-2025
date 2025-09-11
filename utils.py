@@ -538,10 +538,10 @@ def map_category_to_department(category: str) -> str:
 
 def resolve_id_conflicts(questions: List[Dict]) -> List[Dict]:
     """
-    IDの重複を解決し、一意のIDを設定（問題種別別に範囲分け）
-    基礎科目: 1-1000, 専門科目: 1001-10000
+    CLAUDE.md準拠のID管理システム
+    4-1基礎科目: オリジナルID 1-202そのまま使用
+    4-2専門科目: 年度・分野識別しやすいID体系（1000番台から）
     """
-    used_ids = set()
     resolved_questions = []
     
     # 基礎科目と専門科目を分離して処理
@@ -549,63 +549,51 @@ def resolve_id_conflicts(questions: List[Dict]) -> List[Dict]:
     specialist_questions = [q for q in questions if q.get('question_type') == 'specialist']
     other_questions = [q for q in questions if q.get('question_type') not in ['basic', 'specialist']]
     
-    # 基礎科目のID範囲: 1-1000
-    next_basic_id = 1
+    # 🎯 4-1基礎科目: オリジナルID 1-202をそのまま使用（CLAUDE.md準拠）
     for q in basic_questions:
         original_id = q.get('id')
-        
-        # 重複チェック
-        while next_basic_id in used_ids and next_basic_id <= 1000:
-            next_basic_id += 1
-        
-        if next_basic_id > 1000:
-            logger.warning("基礎科目のID範囲を超過しました")
-            next_basic_id = 1
-            while next_basic_id in used_ids:
-                next_basic_id += 1
-        
-        q['id'] = next_basic_id
+        q['id'] = int(original_id)  # オリジナルIDそのまま
         q['original_id'] = original_id
-        used_ids.add(next_basic_id)
+        q['source_file'] = '4-1.csv'
         resolved_questions.append(q)
-        next_basic_id += 1
+        logger.debug(f"基礎科目ID保持: ID={q['id']}, original={original_id}")
     
-    # 専門科目のID範囲: 1001-10000
-    next_specialist_id = 1001
+    # 🎯 4-2専門科目: 年度・分野識別可能なID体系（CLAUDE.md準拠）
+    specialist_id_counter = 1000  # 1000番台から開始
+    
     for q in specialist_questions:
         original_id = q.get('id')
+        year = q.get('year', 0)
+        category = q.get('category', '')
         
-        # 重複チェック
-        while next_specialist_id in used_ids and next_specialist_id <= 10000:
-            next_specialist_id += 1
+        # 年度・分野識別可能なID生成
+        # 例: 2008年=1000台, 2009年=2000台, 2010年=3000台...
+        if year:
+            year_offset = (int(year) - 2008) * 1000
+            new_id = 1000 + year_offset + int(original_id)
+        else:
+            # 年度不明の場合は連番
+            specialist_id_counter += 1
+            new_id = specialist_id_counter
         
-        if next_specialist_id > 10000:
-            logger.warning("専門科目のID範囲を超過しました")
-            next_specialist_id = 1001
-            while next_specialist_id in used_ids:
-                next_specialist_id += 1
-        
-        q['id'] = next_specialist_id
+        q['id'] = new_id
         q['original_id'] = original_id
-        used_ids.add(next_specialist_id)
+        q['source_file'] = f'4-2_{year}.csv' if year else 'unknown'
         resolved_questions.append(q)
-        next_specialist_id += 1
+        logger.debug(f"専門科目ID変換: 年度={year}, category={category}, original={original_id} → new={new_id}")
     
-    # その他の問題: 10001以降
-    next_other_id = 10001
+    # その他の問題: 50000番台から
+    other_id_counter = 50000
     for q in other_questions:
         original_id = q.get('id')
+        other_id_counter += 1
         
-        while next_other_id in used_ids:
-            next_other_id += 1
-        
-        q['id'] = next_other_id
+        q['id'] = other_id_counter
         q['original_id'] = original_id
-        used_ids.add(next_other_id)
+        q['source_file'] = 'other'
         resolved_questions.append(q)
-        next_other_id += 1
     
-    logger.info(f"ID衝突解決: 基礎={len(basic_questions)}問, 専門={len(specialist_questions)}問, その他={len(other_questions)}問")
+    logger.info(f"✅ CLAUDE.md準拠ID管理: 基礎={len(basic_questions)}問(1-202), 専門={len(specialist_questions)}問(1000+), その他={len(other_questions)}問(50000+)")
     return resolved_questions
 
 def get_sample_data_improved() -> List[Dict]:
