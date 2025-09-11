@@ -551,56 +551,25 @@ def load_questions():
     
     logger.info("RCCM統合問題データの読み込み開始")
     
-    try:
-        # RCCM統合データ読み込み（4-1・4-2ファイル対応）
-        data_dir = os.path.dirname(DataConfig.QUESTIONS_CSV)
-        logger.info(f"🔍 ULTRA DEBUG: data_dir={data_dir}, DataConfig.QUESTIONS_CSV={DataConfig.QUESTIONS_CSV}")
-        logger.info(f"🔍 ULTRA DEBUG: 本番環境データロード開始 - load_rccm_data_files呼び出し")
-        questions = load_rccm_data_files(data_dir)
-        logger.info(f"🔍 ULTRA DEBUG: load_rccm_data_files returned {len(questions) if questions else 0} questions")
-        
-        if questions:
-            # データ整合性チェック
-            logger.info(f"🔍 ULTRA DEBUG: データ整合性チェック開始")
-            validated_questions = validate_question_data_integrity(questions)
-            _questions_cache = validated_questions
-            _cache_timestamp = current_time
-            logger.info(f"✅ RCCM統合データ読み込み完了: {len(validated_questions)}問 (検証済み)")
-            return validated_questions
-        else:
-            logger.error(f"🚨 ULTRA DEBUG: load_rccm_data_files returned empty data")
-            raise DataLoadError("統合データが空でした")
-        
-    except Exception as e:
-        logger.error(f"🚨 ULTRA DEBUG: RCCM統合データ読み込みエラー詳細: {type(e).__name__}: {e}")
-        logger.error(f"🚨 ULTRA DEBUG: レガシーデータ読み込みにフォールバック開始")
-        
-        try:
-            # フォールバック: レガシーデータ読み込み
-            logger.info(f"🔍 ULTRA DEBUG: フォールバック - load_questions_improved({DataConfig.QUESTIONS_CSV})開始")
-            questions = load_questions_improved(DataConfig.QUESTIONS_CSV)
-            logger.info(f"🔍 ULTRA DEBUG: load_questions_improved returned {len(questions) if questions else 0} questions")
-            
-            # レガシーデータに部門・問題種別情報を追加
-            for q in questions:
-                if 'department' not in q:
-                    q['department'] = '道路'  # ✅ CLAUDE.md準拠: 日本語部門名使用
-                if 'question_type' not in q:
-                    q['question_type'] = 'basic'  # デフォルト問題種別
-            
-            _questions_cache = questions
-            _cache_timestamp = current_time
-            logger.info(f"⚠️ ULTRA DEBUG: レガシーデータ読み込み完了: {len(questions)}問 - これが原因でID範囲不一致発生")
-            return questions
-            
-        except Exception as e2:
-            logger.error(f"🚨 ULTRA DEBUG: レガシーデータ読み込みエラー: {type(e2).__name__}: {e2}")
-            logger.error(f"🚨 ULTRA DEBUG: 最終フォールバック - サンプルデータ使用")
-            questions = get_sample_data_improved()
-            _questions_cache = questions
-            _cache_timestamp = current_time
-            logger.info(f"🚨 ULTRA DEBUG: サンプルデータ使用: {len(questions)}問")
-            return questions
+    # 🎯 ULTRA SYNC 根本解決: フォールバック処理完全無効化
+    # 本番環境でload_rccm_data_filesのみ使用を強制
+    data_dir = os.path.dirname(DataConfig.QUESTIONS_CSV)
+    logger.info(f"🎯 ULTRA SYNC: 正規データロード強制開始 - data_dir={data_dir}")
+    
+    questions = load_rccm_data_files(data_dir)
+    logger.info(f"🎯 ULTRA SYNC: load_rccm_data_files returned {len(questions) if questions else 0} questions")
+    
+    if not questions:
+        logger.error(f"🚨 ULTRA SYNC: 正規データロード失敗 - フォールバック無効化")
+        raise DataLoadError("RCCM統合データロードに失敗しました - フォールバック処理は無効化されています")
+    
+    # データ整合性チェック
+    logger.info(f"🎯 ULTRA SYNC: データ整合性チェック開始")
+    validated_questions = validate_question_data_integrity(questions)
+    _questions_cache = validated_questions
+    _cache_timestamp = current_time
+    logger.info(f"✅ ULTRA SYNC: 正規RCCM統合データ読み込み完了: {len(validated_questions)}問 (フォールバック無効化)")
+    return validated_questions
 
 def clear_questions_cache():
     """問題データキャッシュのクリア"""
