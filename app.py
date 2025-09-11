@@ -54,10 +54,14 @@ logging.basicConfig(
     ]
 )
 
+# 🔍 VERSION IDENTIFIER: CLAUDE.md準拠実装確認用ログ
+print("=== VERSION CHECK: CLAUDE.md COMPLIANT IMPLEMENTATION 2025-09-11-16:30 ===")
+logger = logging.getLogger(__name__)
+logger.error("🎯 VERSION: CLAUDE.md準拠IDシステム実装 - コミット4127076")
+
 # 🔥 CRITICAL: セッション競合状態解決のためのロック管理
 session_locks = {}
 lock_cleanup_lock = threading.Lock()
-logger = logging.getLogger(__name__)
 
 # Flask アプリケーション初期化
 app = Flask(__name__)
