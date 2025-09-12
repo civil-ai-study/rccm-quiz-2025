@@ -817,7 +817,7 @@ def get_mixed_questions(user_session, all_questions, requested_category='全体'
         # 専門科目で部門指定がある場合のみ部門フィルタ適用
         if question_type == 'specialist' and department:
             # 🎯 CLAUDE.md準拠: 英語ID完全禁止 - config.pyの統一マッピング使用
-            from config import RCCMConfig
+            # RCCMConfig is already imported globally at line 25
             
             # 🔄 URL英語ID→日本語変換（後方互換性のみ）
             if department in RCCMConfig.ENGLISH_TO_JAPANESE_DEPARTMENT_MAPPING:
