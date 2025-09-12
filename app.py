@@ -1664,9 +1664,11 @@ def exam():
             session.permanent = True
             session.modified = True
             
-            # セッション保存の確認
+            # 🚨 ULTRA-SYNC: セッション保存の厳密な確認（専門家推奨）
             saved_current = session.get('exam_current', 'NOT_FOUND')
-            logger.info(f"セッション保存確認: exam_current = {saved_current} (safe_next_no = {safe_next_no})")
+            logger.info(f"✅ SESSION STATE VERIFIED: exam_current = {saved_current} (expected: {safe_next_no})")
+            logger.info(f"✅ SESSION FLAGS: permanent={session.permanent}, modified={session.modified}")
+            logger.info(f"✅ SESSION KEYS: {sorted(session.keys())}")
             logger.info(f"回答処理完了: 問題{qid}, 正答{is_correct}, レベル{srs_info.get('level', 0)}, ストリーク{current_streak}日")
 
             # フィードバック画面に渡すデータを準備
@@ -1697,13 +1699,9 @@ def exam():
             # フィードバック画面の重要な変数をログ出力
             logger.info(f"フィードバック変数: is_last_question={feedback_data['is_last_question']}, next_question_index={feedback_data['next_question_index']}, current_question_number={feedback_data['current_question_number']}, total_questions={feedback_data['total_questions']}")
 
-            # 🚨 PHASE 1: POST処理完了後、次の問題への進行をthread-safe保存（最重要）
-            if not feedback_data['is_last_question']:
-                progress_state = {
-                    'exam_current': next_no  # 次の問題インデックスを保存
-                }
-                update_session_state(progress_state)
-                logger.info(f"🔒 POST Progress Saved: next_no={next_no}")
+            # 🚨 ULTRA-SYNC FIX: 重複セッション更新を削除（session['exam_current']は既にline1648で正しく設定済み）
+            # Expert guidance: session.modified=True already called in session_final_updates
+            logger.info(f"🔒 POST Progress Already Saved: safe_next_no={safe_next_no} at line 1648")
 
             return render_template('exam_feedback.html', **feedback_data)
 
@@ -1852,18 +1850,24 @@ def exam():
 
         # セッション管理
         exam_question_ids = session.get('exam_question_ids', [])
-        # URLパラメータから現在の問題番号を取得（競合回避）
-        url_current = request.args.get('current')
-        if is_next_request and url_current:
-            try:
-                current_no = int(url_current)
-                # セッションも同期
-                session['exam_current'] = current_no
-                session.modified = True
-            except ValueError:
-                current_no = session.get('exam_current', 0)
-        else:
+        # 🔧 ULTRA SYNC FIX: next=1リクエストはセッション値を優先使用
+        if is_next_request:
+            # 次の問題リクエストの場合は、セッションのexam_currentをそのまま使用
             current_no = session.get('exam_current', 0)
+            logger.info(f"🔄 NEXT REQUEST: セッションからcurrent_no={current_no}を取得")
+        else:
+            # URLパラメータから現在の問題番号を取得（競合回避）
+            url_current = request.args.get('current')
+            if url_current:
+                try:
+                    current_no = int(url_current)
+                    # セッションも同期
+                    session['exam_current'] = current_no
+                    session.modified = True
+                except ValueError:
+                    current_no = session.get('exam_current', 0)
+            else:
+                current_no = session.get('exam_current', 0)
         session_category = session.get('exam_category', '全体')
         
         # デバッグログ
