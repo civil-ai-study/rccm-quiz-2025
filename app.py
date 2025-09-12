@@ -72,8 +72,8 @@ app.config.from_object(Config)
 # [WRENCH] ULTRA SYNC FIX: CSRF保護を慎重に有効化
 csrf = CSRFProtect(app)
 
-# セッション設定を明示的に追加
-app.config['SESSION_PERMANENT'] = False
+# セッション設定を明示的に追加 - 専門家推奨による統一設定
+app.config['SESSION_PERMANENT'] = True  # ★ EXPERT FIX: 永続化設定統一
 app.config['SESSION_USE_SIGNER'] = True
 
 # 企業環境最適化: 遅延初期化で重複読み込み防止
@@ -912,16 +912,22 @@ def before_request():
     if 'session_id' not in session:
         session['session_id'] = os.urandom(16).hex()
     
-    # データロード済みフラグの確認（競合回避）
-    if 'data_loaded' not in session:
-        # [ALERT] PHASE 1: セッション初期化をthread-safeに変更
+    # データロード済みフラグの確認（競合回避） - EXPERT RECOMMENDED FIX
+    if ('data_loaded' not in session or 
+        'exam_question_ids' not in session or 
+        session.get('exam_question_ids') is None):
+        # [ALERT] PHASE 1: セッション初期化を条件を厳格化
+        # ★ 専門家推奨: 進行中試験のexam_currentは保持
+        existing_exam_current = session.get('exam_current', 0)
+        existing_exam_ids = session.get('exam_question_ids', [])
+        
         initial_state = {
             'data_loaded': True,
-            'exam_question_ids': [],
-            'exam_current': 0,
-            'history': [],
-            'bookmarks': [],
-            'srs_data': {}
+            'exam_question_ids': existing_exam_ids if existing_exam_ids else [],
+            'exam_current': existing_exam_current,  # ★ 進捗保持
+            'history': session.get('history', []),
+            'bookmarks': session.get('bookmarks', []),
+            'srs_data': session.get('srs_data', {})
         }
         update_session_state(initial_state)
         
