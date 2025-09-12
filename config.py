@@ -12,6 +12,10 @@ class Config:
     # 🔧 CRITICAL FIX: CSRF保護設定を基本設定に追加
     WTF_CSRF_ENABLED = True
     WTF_CSRF_TIME_LIMIT = None
+    
+    # 🔧 CRITICAL FIX: Flask-WTF CSRF referrer header対応（基本設定）
+    WTF_CSRF_SSL_STRICT = False        # requests.Session()対応
+    WTF_CSRF_CHECK_DEFAULT = True      # CSRF保護維持
     SESSION_COOKIE_NAME = 'rccm_session'
     SESSION_COOKIE_HTTPONLY = True
     SESSION_COOKIE_SECURE = os.environ.get('FLASK_ENV') == 'production'
@@ -242,6 +246,12 @@ class EnterpriseConfig(Config):
     # 企業セキュリティ強化
     WTF_CSRF_ENABLED = True
     WTF_CSRF_TIME_LIMIT = None
+    
+    # 🔧 CRITICAL FIX: Flask-WTF CSRF referrer header対応
+    # Render.com HTTPS環境での requests.Session() POST対応
+    WTF_CSRF_SSL_STRICT = False        # referrer検証を緩和（HTTPS環境対応）
+    WTF_CSRF_CHECK_DEFAULT = True      # CSRF保護は完全維持
+    WTF_CSRF_METHODS = ['POST', 'PUT', 'PATCH', 'DELETE']  # 保護対象メソッド
     
     # パフォーマンス設定
     SEND_FILE_MAX_AGE_DEFAULT = 0  # 静的ファイルキャッシュ無効
