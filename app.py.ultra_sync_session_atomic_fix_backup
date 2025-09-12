@@ -66,33 +66,14 @@ lock_cleanup_lock = threading.Lock()
 # Flask アプリケーション初期化
 app = Flask(__name__)
 
-# 🔧 CRITICAL FIX: 環境に応じた設定読み込み
-import os
-env_name = os.environ.get('FLASK_ENV', 'production')
-if env_name == 'production':
-    from config import EnterpriseConfig
-    # Render.com本番環境ではEnterpriseConfig使用
-    app.config.from_object(EnterpriseConfig)
-else:
-    # 開発環境では基本Config使用
-    app.config.from_object(Config)
+# 設定適用（改善版）
+app.config.from_object(Config)
 
 # [WRENCH] ULTRA SYNC FIX: CSRF保護を慎重に有効化
 csrf = CSRFProtect(app)
 
-# 🔧 CRITICAL FIX: CSRFトークン関数をテンプレートに明示的に登録
-@app.template_global()
-def csrf_token():
-    """テンプレート用CSRF トークン生成関数"""
-    try:
-        from flask_wtf.csrf import generate_csrf
-        return generate_csrf()
-    except Exception as e:
-        logger.error(f"CSRF token generation failed: {e}")
-        return ""
-
-# セッション設定を明示的に追加 - 専門家推奨による統一設定
-app.config['SESSION_PERMANENT'] = True  # ★ EXPERT FIX: 永続化設定統一
+# セッション設定を明示的に追加
+app.config['SESSION_PERMANENT'] = False
 app.config['SESSION_USE_SIGNER'] = True
 
 # 企業環境最適化: 遅延初期化で重複読み込み防止
@@ -921,11 +902,6 @@ def get_mixed_questions(user_session, all_questions, requested_category='全体'
 @app.before_request
 def before_request():
     """リクエスト前の処理（企業環境最適化版）"""
-    # 🔧 CRITICAL FIX: CSRF保護状態の診断ログ
-    if request.endpoint == 'exam':
-        logger.info(f"🔐 CSRF Protection: Enabled={app.config.get('WTF_CSRF_ENABLED', False)}")
-        logger.info(f"🔑 SECRET_KEY: Set={'SECRET_KEY' in app.config and app.config['SECRET_KEY']}")
-    
     # ULTRA SYNC DEBUG: before_request確認
     if request.endpoint == 'question_types' or '/departments/' in request.path and '/types' in request.path:
         logger.info(f"[SEARCH] ULTRA SYNC DEBUG: before_request for question_types, path: {request.path}, endpoint: {request.endpoint}")
@@ -936,22 +912,16 @@ def before_request():
     if 'session_id' not in session:
         session['session_id'] = os.urandom(16).hex()
     
-    # データロード済みフラグの確認（競合回避） - EXPERT RECOMMENDED FIX
-    if ('data_loaded' not in session or 
-        'exam_question_ids' not in session or 
-        session.get('exam_question_ids') is None):
-        # [ALERT] PHASE 1: セッション初期化を条件を厳格化
-        # ★ 専門家推奨: 進行中試験のexam_currentは保持
-        existing_exam_current = session.get('exam_current', 0)
-        existing_exam_ids = session.get('exam_question_ids', [])
-        
+    # データロード済みフラグの確認（競合回避）
+    if 'data_loaded' not in session:
+        # [ALERT] PHASE 1: セッション初期化をthread-safeに変更
         initial_state = {
             'data_loaded': True,
-            'exam_question_ids': existing_exam_ids if existing_exam_ids else [],
-            'exam_current': existing_exam_current,  # ★ 進捗保持
-            'history': session.get('history', []),
-            'bookmarks': session.get('bookmarks', []),
-            'srs_data': session.get('srs_data', {})
+            'exam_question_ids': [],
+            'exam_current': 0,
+            'history': [],
+            'bookmarks': [],
+            'srs_data': {}
         }
         update_session_state(initial_state)
         
@@ -1632,15 +1602,13 @@ def exam():
                     current_no = i
                     break
             else:
-                # 問題IDが見つからない場合の最終フォールバック - ULTRA SYNC ATOMIC FIX
+                # 問題IDが見つからない場合の最終フォールバック
                 logger.warning(f"問題ID {qid} がexam_question_ids内に見つかりません。先頭に設定します。")
                 current_no = 0
                 if qid not in exam_question_ids:
-                    # ★ FLASK MUTABLE SESSION FIX: atomic reassignment for detection
-                    new_exam_question_ids = [qid] + exam_question_ids  # 新リスト原子的作成
-                    session['exam_question_ids'] = new_exam_question_ids  # 原子的代入
-                    session.modified = True  # Flask検出確実化
-                    logger.info(f"[ATOMIC] セッション問題リストを原子的更新: {len(new_exam_question_ids)}問")
+                    exam_question_ids.insert(0, qid)
+                    session['exam_question_ids'] = exam_question_ids
+                    session.modified = True
 
             # 次の問題へ進む準備（仮計算）
             next_no = current_no + 1
@@ -1703,9 +1671,9 @@ def exam():
             logger.info(f"[CHECK] SESSION KEYS: {sorted(session.keys())}")
             logger.info(f"回答処理完了: 問題{qid}, 正答{is_correct}, レベル{srs_info.get('level', 0)}, ストリーク{current_streak}日")
 
-            # フィードバック画面に渡すデータを準備 - ULTRA SYNC PROGRESS FIX
-            # ★ 進捗表示バグ修正: 元の問題数固定値を使用（拡張されたリストを使わない）
-            safe_total_questions = session.get('exam_total_questions', 10)  # 元の固定値使用
+            # フィードバック画面に渡すデータを準備
+            # 安全なデフォルト値を保証
+            safe_total_questions = max(1, len(exam_question_ids)) if exam_question_ids else 10
             # 問題番号は1ベースだが、total_questions を超えないよう制限
             safe_current_number = min(max(1, current_no + 1), safe_total_questions)
             
@@ -3539,10 +3507,7 @@ def review_quiz():
                     session.pop('department', None)
                     session.pop('selected_department', None)
                     
-                    # 新しいセッション設定 - ULTRA SYNC SESSION UNIQUENESS
-                    # ★ セッション重複作成防止: UUID生成で一意性保証
-                    session_lock_id = str(uuid.uuid4())
-                    session['session_creation_lock'] = session_lock_id
+                    # 新しいセッション設定
                     session['exam_question_ids'] = question_ids
                     session['exam_current'] = 0
                     session['exam_category'] = category_name
@@ -3550,7 +3515,6 @@ def review_quiz():
                     session['department'] = ''  # 復習では部門指定なし
                     session['selected_department'] = ''  # セッション再構築用（復習では部門なし）
                     session.modified = True
-                    logger.info(f"[SESSION-LOCK] 復習セッション一意性保証: {session_lock_id[:8]}...")
                     
                     # セッション即座保存強制
                     session.permanent = False

@@ -8,6 +8,10 @@ import os
 class Config:
     """基本設定"""
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'rccm-quiz-secret-key-2024-ultra-secure'
+    
+    # 🔧 CRITICAL FIX: CSRF保護設定を基本設定に追加
+    WTF_CSRF_ENABLED = True
+    WTF_CSRF_TIME_LIMIT = None
     SESSION_COOKIE_NAME = 'rccm_session'
     SESSION_COOKIE_HTTPONLY = True
     SESSION_COOKIE_SECURE = os.environ.get('FLASK_ENV') == 'production'

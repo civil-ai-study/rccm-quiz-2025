@@ -407,12 +407,12 @@ def load_rccm_data_files(data_dir: str) -> List[Dict]:
     # 重複読み込み防止チェック
     with _data_load_lock:
         if _data_already_loaded:
-            logger.info("🚀 企業環境最適化: データ既読み込み済み - スキップ")
+            logger.info("[LAUNCH] 企業環境最適化: データ既読み込み済み - スキップ")
             # キャッシュから既存データを返す
             if hasattr(cache_manager_instance, '_global_questions_cache'):
                 return cache_manager_instance._global_questions_cache
             else:
-                logger.warning("⚠️ キャッシュデータが見つかりません - 読み込み続行")
+                logger.warning("[WARNING] キャッシュデータが見つかりません - 読み込み続行")
     
     logger.info(f"RCCM統合データ読み込み開始: {data_dir}")
     
@@ -469,7 +469,7 @@ def load_rccm_data_files(data_dir: str) -> List[Dict]:
         _data_already_loaded = True
         # グローバルキャッシュに保存
         cache_manager_instance._global_questions_cache = all_questions
-        logger.info("🚀 企業環境最適化: データキャッシュ完了 - 次回読み込み高速化")
+        logger.info("[LAUNCH] 企業環境最適化: データキャッシュ完了 - 次回読み込み高速化")
     
     logger.info(f"RCCM統合データ読み込み完了: {file_count}ファイル, 総計{len(all_questions)}問")
     logger.info(f"4-2専門データ対象年度: {specialist_years}")
@@ -478,7 +478,7 @@ def load_rccm_data_files(data_dir: str) -> List[Dict]:
 
 def map_category_to_department(category: str) -> str:
     """
-    🎯 CLAUDE.md準拠：カテゴリ名から日本語部門名への直接マッピング
+    [TARGET] CLAUDE.md準拠：カテゴリ名から日本語部門名への直接マッピング
     英語ID完全禁止 - 日本語部門名をそのまま返却
     """
     category_mapping = {
@@ -551,7 +551,7 @@ def resolve_id_conflicts(questions: List[Dict]) -> List[Dict]:
     specialist_questions = [q for q in questions if q.get('question_type') == 'specialist']
     other_questions = [q for q in questions if q.get('question_type') not in ['basic', 'specialist']]
     
-    # 🎯 4-1基礎科目: オリジナルID 1-202をそのまま使用（CLAUDE.md準拠）
+    # [TARGET] 4-1基礎科目: オリジナルID 1-202をそのまま使用（CLAUDE.md準拠）
     for q in basic_questions:
         original_id = q.get('id')
         q['id'] = int(original_id)  # オリジナルIDそのまま
@@ -560,7 +560,7 @@ def resolve_id_conflicts(questions: List[Dict]) -> List[Dict]:
         resolved_questions.append(q)
         logger.debug(f"基礎科目ID保持: ID={q['id']}, original={original_id}")
     
-    # 🎯 4-2専門科目: 年度・分野識別可能なID体系（CLAUDE.md準拠）
+    # [TARGET] 4-2専門科目: 年度・分野識別可能なID体系（CLAUDE.md準拠）
     specialist_id_counter = 1000  # 1000番台から開始
     
     for q in specialist_questions:
@@ -595,7 +595,7 @@ def resolve_id_conflicts(questions: List[Dict]) -> List[Dict]:
         q['source_file'] = 'other'
         resolved_questions.append(q)
     
-    logger.info(f"✅ CLAUDE.md準拠ID管理: 基礎={len(basic_questions)}問(1-202), 専門={len(specialist_questions)}問(1000+), その他={len(other_questions)}問(50000+)")
+    logger.info(f"[CHECK] CLAUDE.md準拠ID管理: 基礎={len(basic_questions)}問(1-202), 専門={len(specialist_questions)}問(1000+), その他={len(other_questions)}問(50000+)")
     return resolved_questions
 
 def get_sample_data_improved() -> List[Dict]:

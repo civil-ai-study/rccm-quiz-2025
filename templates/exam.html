@@ -44,9 +44,13 @@
             </div>
 
             <!-- 選択肢フォーム - アクセシビリティ強化 -->
-            <!-- 🔧 CRITICAL FIX: CSRF token正常生成 -->
+            <!-- 🔧 CRITICAL FIX: CSRF token正常生成 - フォールバック対応 -->
             <form method="POST" action="/exam" id="questionForm" role="form" aria-labelledby="question-title">
+                {% if csrf_token %}
                 <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+                {% else %}
+                {{ csrf_token() }}
+                {% endif %}
                 <input type="hidden" name="qid" value="{{ qid }}">
                 <input type="hidden" name="elapsed" value="0" id="elapsedTime">
                 
