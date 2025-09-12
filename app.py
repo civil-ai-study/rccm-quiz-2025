@@ -17,13 +17,13 @@ except ImportError:
 import time
 import uuid
 
-# 🚨 PHASE 1: Session State Lock Mechanism for Race Condition Resolution
+# [ALERT] PHASE 1: Session State Lock Mechanism for Race Condition Resolution
 session_locks = {}
 session_lock = threading.Lock()
 
 # 新しいファイルからインポート
 from config import Config, ExamConfig, SRSConfig, DataConfig, RCCMConfig
-# 🚨 ULTRA SYNC FIX: データ混合防止のため統一インポート
+# [ALERT] ULTRA SYNC FIX: データ混合防止のため統一インポート
 from utils import DataLoadError, DataValidationError, get_sample_data_improved, load_rccm_data_files
 
 # ULTRA SYNC STAGE 6: Parameter Validation (PHASE 1 Task B2) - TEMPORARILY DISABLED
@@ -44,7 +44,7 @@ api_manager = None
 advanced_personalization = None
 
 # ログ設定
-# 🚨 ULTRA SYNC FIX: パフォーマンス向上のためログレベル最適化
+# [ALERT] ULTRA SYNC FIX: パフォーマンス向上のためログレベル最適化
 logging.basicConfig(
     level=logging.ERROR,  # INFO→ERROR変更でI/O削減
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -54,12 +54,12 @@ logging.basicConfig(
     ]
 )
 
-# 🔍 VERSION IDENTIFIER: CLAUDE.md準拠実装確認用ログ
+# [SEARCH] VERSION IDENTIFIER: CLAUDE.md準拠実装確認用ログ
 print("=== VERSION CHECK: CLAUDE.md COMPLIANT IMPLEMENTATION 2025-09-11-16:30 ===")
 logger = logging.getLogger(__name__)
-logger.error("🎯 VERSION: CLAUDE.md準拠IDシステム実装 - コミット4127076")
+logger.error("[VERSION] CLAUDE.md準拠IDシステム実装 - コミット4127076")
 
-# 🔥 CRITICAL: セッション競合状態解決のためのロック管理
+# [FIRE] CRITICAL: セッション競合状態解決のためのロック管理
 session_locks = {}
 lock_cleanup_lock = threading.Lock()
 
@@ -69,7 +69,7 @@ app = Flask(__name__)
 # 設定適用（改善版）
 app.config.from_object(Config)
 
-# 🔧 ULTRA SYNC FIX: CSRF保護を慎重に有効化
+# [WRENCH] ULTRA SYNC FIX: CSRF保護を慎重に有効化
 csrf = CSRFProtect(app)
 
 # セッション設定を明示的に追加
@@ -86,7 +86,7 @@ enterprise_data_manager = None
 _questions_cache = None
 _cache_timestamp = None
 
-# 🔥 CRITICAL: セッション安全性確保のための排他制御関数
+# [FIRE] CRITICAL: セッション安全性確保のための排他制御関数
 def get_session_lock(user_id):
     """ユーザー固有のセッションロックを取得"""
     global session_locks, lock_cleanup_lock
@@ -136,14 +136,14 @@ def after_request(response):
     """
     全てのレスポンスにキャッシュ制御ヘッダーを追加
     企業環境での複数ユーザー利用に対応
-    🔥 CRITICAL: ユーザー要求による超強力キャッシュクリア
+    [FIRE] CRITICAL: ユーザー要求による超強力キャッシュクリア
     """
-    # 🔥 ULTRA強力なキャッシュ制御でブラウザキャッシュを完全無効化
+    # [FIRE] ULTRA強力なキャッシュ制御でブラウザキャッシュを完全無効化
     response.headers['Cache-Control'] = 'no-store, no-cache, must-revalidate, max-age=0, private'
     response.headers['Pragma'] = 'no-cache'
     response.headers['Expires'] = '-1'  # 過去の日付で強制期限切れ
     
-    # 🔥 問題関連ページの追加キャッシュクリア（ユーザー要求による）
+    # [FIRE] 問題関連ページの追加キャッシュクリア（ユーザー要求による）
     if any(path in request.path for path in ['/exam', '/result', '/review', '/feedback']):
         response.headers['Cache-Control'] = 'no-store, no-cache, must-revalidate, max-age=0, private, no-transform'
         response.headers['Last-Modified'] = 'Wed, 11 Jan 1984 05:00:00 GMT'  # 強制古い日付
@@ -253,7 +253,7 @@ def update_advanced_srs_data(question_id, is_correct, session):
     
     question_data = srs_data[qid_str]
     
-    # 🔥 CRITICAL: 既存データの後方互換性保証（ウルトラシンク修正）
+    # [FIRE] CRITICAL: 既存データの後方互換性保証（ウルトラシンク修正）
     # interval_daysが存在しない古いデータに対する修正
     if 'interval_days' not in question_data:
         question_data['interval_days'] = 1
@@ -488,7 +488,7 @@ def validate_question_data_integrity(questions):
     
     return valid_questions
 
-# 🚨 PHASE 1: Session State Management Functions (Critical Race Condition Fix)
+# [ALERT] PHASE 1: Session State Management Functions (Critical Race Condition Fix)
 def acquire_session_lock(session_id):
     """セッション状態の排他制御を取得"""
     global session_locks, session_lock
@@ -535,7 +535,7 @@ def update_session_state(state_dict, force_modified=True):
             
         # デバッグ用ログ（重要な変更のみ）
         if 'exam_question_ids' in state_dict:
-            logger.info(f"🔒 Session State Updated: {len(state_dict['exam_question_ids'])} questions, current: {state_dict.get('exam_current', 'N/A')}")
+            logger.info(f"[LOCK] Session State Updated: {len(state_dict['exam_question_ids'])} questions, current: {state_dict.get('exam_current', 'N/A')}")
 
 def load_questions():
     """
@@ -555,29 +555,29 @@ def load_questions():
     
     logger.info("RCCM統合問題データの読み込み開始")
     
-    # 🎯 CLAUDE.md準拠: キャッシュ強制クリア（本番環境の古いキャッシュ対策）
+    # [TARGET] CLAUDE.md準拠: キャッシュ強制クリア（本番環境の古いキャッシュ対策）
     _questions_cache = None
     _cache_timestamp = None
-    logger.info("🔄 CLAUDE.md準拠: 既存キャッシュ強制クリア")
+    logger.info("[REPEAT] CLAUDE.md準拠: 既存キャッシュ強制クリア")
     
-    # 🎯 ULTRA SYNC 根本解決: フォールバック処理完全無効化
+    # [TARGET] ULTRA SYNC 根本解決: フォールバック処理完全無効化
     # 本番環境でload_rccm_data_filesのみ使用を強制
     data_dir = os.path.dirname(DataConfig.QUESTIONS_CSV)
-    logger.info(f"🎯 CLAUDE.md準拠: 正規データロード強制開始 - data_dir={data_dir}")
+    logger.info(f"[TARGET] CLAUDE.md準拠: 正規データロード強制開始 - data_dir={data_dir}")
     
     questions = load_rccm_data_files(data_dir)
-    logger.info(f"🎯 CLAUDE.md準拠: load_rccm_data_files returned {len(questions) if questions else 0} questions")
+    logger.info(f"[TARGET] CLAUDE.md準拠: load_rccm_data_files returned {len(questions) if questions else 0} questions")
     
     if not questions:
-        logger.error(f"🚨 CLAUDE.md準拠: 正規データロード失敗 - フォールバック無効化")
+        logger.error(f"[ALERT] CLAUDE.md準拠: 正規データロード失敗 - フォールバック無効化")
         raise DataLoadError("RCCM統合データロードに失敗しました - フォールバック処理は無効化されています")
     
     # データ整合性チェック
-    logger.info(f"🎯 CLAUDE.md準拠: データ整合性チェック開始")
+    logger.info(f"[TARGET] CLAUDE.md準拠: データ整合性チェック開始")
     validated_questions = validate_question_data_integrity(questions)
     _questions_cache = validated_questions
     _cache_timestamp = current_time
-    logger.info(f"✅ CLAUDE.md準拠: 正規RCCM統合データ読み込み完了: {len(validated_questions)}問 (ID体系=基礎1-202,専門1000+)")
+    logger.info(f"[CHECK] CLAUDE.md準拠: 正規RCCM統合データ読み込み完了: {len(validated_questions)}問 (ID体系=基礎1-202,専門1000+)")
     return validated_questions
 
 def clear_questions_cache():
@@ -587,7 +587,7 @@ def clear_questions_cache():
     _cache_timestamp = None
     logger.info("問題データキャッシュをクリア")
 
-# 🔥 CRITICAL: ウルトラシンク復習セッション管理システム（統合管理）
+# [FIRE] CRITICAL: ウルトラシンク復習セッション管理システム（統合管理）
 def validate_review_session_integrity(session_data):
     """復習セッションの整合性を検証し、必要に応じて修復する"""
     try:
@@ -753,7 +753,7 @@ def get_due_questions(user_session, all_questions):
 
 def get_mixed_questions(user_session, all_questions, requested_category='全体', session_size=None, department='', question_type='', year=None):
     """新問題と復習問題をミックスした出題（RCCM部門対応版）"""
-    # 🔥 CRITICAL: 絶対に10問固定（ユーザー要求による）
+    # [FIRE] CRITICAL: 絶対に10問固定（ユーザー要求による）
     session_size = 10
     
     due_questions = get_due_questions(user_session, all_questions)
@@ -774,7 +774,7 @@ def get_mixed_questions(user_session, all_questions, requested_category='全体'
             continue
         if question_type and question.get('question_type') != question_type:
             continue
-        # 🚨 年度フィルタリング追加（ウルトラシンク修正）
+        # [ALERT] 年度フィルタリング追加（ウルトラシンク修正）
         if year and str(question.get('year', '')) != str(year):
             continue
         
@@ -816,18 +816,18 @@ def get_mixed_questions(user_session, all_questions, requested_category='全体'
         
         # 専門科目で部門指定がある場合のみ部門フィルタ適用
         if question_type == 'specialist' and department:
-            # 🎯 CLAUDE.md準拠: 英語ID完全禁止 - config.pyの統一マッピング使用
+            # [TARGET] CLAUDE.md準拠: 英語ID完全禁止 - config.pyの統一マッピング使用
             # RCCMConfig is already imported globally at line 25
             
-            # 🔄 URL英語ID→日本語変換（後方互換性のみ）
+            # [REPEAT] URL英語ID→日本語変換（後方互換性のみ）
             if department in RCCMConfig.ENGLISH_TO_JAPANESE_DEPARTMENT_MAPPING:
                 target_categories = RCCMConfig.ENGLISH_TO_JAPANESE_DEPARTMENT_MAPPING[department]
-                logger.warning(f"⚠️ 一時的英語互換: {department} → {target_categories} (将来削除予定)")
+                logger.warning(f"[WARNING] 一時的英語互換: {department} → {target_categories} (将来削除予定)")
             else:
                 target_categories = department  # 日本語部門名をそのまま使用
-                logger.info(f"✅ CLAUDE.md準拠: 日本語直接マッチング {department}")
+                logger.info(f"[CHECK] CLAUDE.md準拠: 日本語直接マッチング {department}")
             
-            logger.info(f"🔍 フィルタリング前の問題数={len(available_questions)}, 専門科目問題数={len([q for q in available_questions if q.get('question_type') == 'specialist'])}")
+            logger.info(f"[SEARCH] フィルタリング前の問題数={len(available_questions)}, 専門科目問題数={len([q for q in available_questions if q.get('question_type') == 'specialist'])}")
             
             # 日本語カテゴリでマッチング（category フィールドを使用）
             # 選択部門名（日本語）とCSVのcategory（日本語）の直接一致のみ
@@ -856,7 +856,7 @@ def get_mixed_questions(user_session, all_questions, requested_category='全体'
             logger.warning(f"正確なカテゴリマッチ失敗: {requested_category}, 部分マッチを試行")
             for q in [q for q in all_questions if q.get('question_type') == question_type]:
                 category = q.get('category', '')
-                # 🎯 CLAUDE.md準拠: 日本語カテゴリ直接マッチングのみ
+                # [TARGET] CLAUDE.md準拠: 日本語カテゴリ直接マッチングのみ
                 if ('道路' in category and '道' in requested_category) or \
                    ('トンネル' in category and 'トンネル' in requested_category) or \
                    ('河川' in category and '河川' in requested_category) or \
@@ -904,7 +904,7 @@ def before_request():
     """リクエスト前の処理（企業環境最適化版）"""
     # ULTRA SYNC DEBUG: before_request確認
     if request.endpoint == 'question_types' or '/departments/' in request.path and '/types' in request.path:
-        logger.info(f"🔍 ULTRA SYNC DEBUG: before_request for question_types, path: {request.path}, endpoint: {request.endpoint}")
+        logger.info(f"[SEARCH] ULTRA SYNC DEBUG: before_request for question_types, path: {request.path}, endpoint: {request.endpoint}")
     
     session.permanent = True
     
@@ -914,7 +914,7 @@ def before_request():
     
     # データロード済みフラグの確認（競合回避）
     if 'data_loaded' not in session:
-        # 🚨 PHASE 1: セッション初期化をthread-safeに変更
+        # [ALERT] PHASE 1: セッション初期化をthread-safeに変更
         initial_state = {
             'data_loaded': True,
             'exam_question_ids': [],
@@ -961,7 +961,7 @@ def after_request_data_save(response):
 def index():
     """ホーム画面（ユーザー識別対応）"""
     try:
-        # 🔥 CRITICAL: セッション完全クリア（ユーザー要求による）
+        # [FIRE] CRITICAL: セッション完全クリア（ユーザー要求による）
         # 問題途中でホームに戻った場合、全ての問題関連情報をクリア
         session_keys_to_clear = [
             'exam_question_ids', 'exam_current', 'exam_category',
@@ -1017,7 +1017,7 @@ def set_user():
         if len(user_name) > 20:
             user_name = user_name[:20]
         
-        # 🔥 CRITICAL: セッション競合回避 - 一意なセッションIDを生成
+        # [FIRE] CRITICAL: セッション競合回避 - 一意なセッションIDを生成
         unique_session_id = generate_unique_session_id()
         base_user_id = f"user_{hash(user_name) % 100000:05d}"
         session_aware_user_id = f"{base_user_id}_{unique_session_id}"
@@ -1029,7 +1029,7 @@ def set_user():
         session['session_id'] = unique_session_id   # セッション識別用
         session['login_time'] = datetime.now().isoformat()
         
-        logger.info(f"🔒 セッション安全性確保: {user_name} (セッションID: {unique_session_id}, ユーザーID: {session_aware_user_id})")
+        logger.info(f"[LOCK] セッション安全性確保: {user_name} (セッションID: {unique_session_id}, ユーザーID: {session_aware_user_id})")
         
         logger.info(f"ユーザー設定完了: {user_name} (ID: {session['user_id']})")
         return redirect(url_for('index'))
@@ -1069,7 +1069,7 @@ def force_refresh():
 def exam():
     """SRS対応のquiz関数（統合版）"""
     try:
-        # 🔥 CRITICAL: ウルトラシンク セッション整合性チェック・自動修復
+        # [FIRE] CRITICAL: ウルトラシンク セッション整合性チェック・自動修復
         if 'exam_question_ids' in session:
             exam_ids = session.get('exam_question_ids', [])
             current_no = session.get('exam_current', 0)
@@ -1175,20 +1175,20 @@ def exam():
                         bookmarks.remove(str(qid))
                         session['bookmarks'] = bookmarks
                         session.modified = True
-                        logger.info(f"🏆 マスター達成により復習リストから除外: 問題ID {qid}")
+                        logger.info(f"[TROPHY] マスター達成により復習リストから除外: 問題ID {qid}")
                 # 正解だが未マスターの場合は旧システムでも除外（新システムで管理）
                 elif str(qid) in bookmarks:
                     bookmarks.remove(str(qid))
                     session['bookmarks'] = bookmarks
                     session.modified = True
-                    logger.info(f"✅ 正解により一時的に復習リストから除外: 問題ID {qid} (SRSで管理)")
+                    logger.info(f"[CHECK] 正解により一時的に復習リストから除外: 問題ID {qid} (SRSで管理)")
             else:
                 # 不正解時は旧復習リストにも追加（互換性のため）
                 if str(qid) not in bookmarks:
                     bookmarks.append(str(qid))
                     session['bookmarks'] = bookmarks
                     session.modified = True
-                    logger.info(f"❌ 不正解により復習リストに追加: 問題ID {qid}")
+                    logger.info(f"[ERROR] 不正解により復習リストに追加: 問題ID {qid}")
             
             # マスター済み問題の一括クリーンアップ
             cleanup_mastered_questions(session)
@@ -1224,13 +1224,13 @@ def exam():
             current_history = session.get('history', [])
             current_history.append(history_item)
             
-            # 🔥 CRITICAL FIX: セッションデータ肥大化防止（8問目エラー完全解決）
+            # [FIRE] CRITICAL FIX: セッションデータ肥大化防止（8問目エラー完全解決）
             # 履歴が30件を超えた場合、古いデータを削除してセッションサイズを制限
             MAX_HISTORY_SIZE = 30
             if len(current_history) > MAX_HISTORY_SIZE:
                 # 最新30件のみを保持（古い履歴は削除）
                 current_history = current_history[-MAX_HISTORY_SIZE:]
-                logger.info(f"🔥 履歴制限適用: {len(current_history)}件に制限（8問目エラー対策）")
+                logger.info(f"[FIRE] 履歴制限適用: {len(current_history)}件に制限（8問目エラー対策）")
             
             # 一括でセッションを更新
             session_updates = {
@@ -1274,7 +1274,7 @@ def exam():
                     new_badges = gamification_manager.check_badges(session, session_performance)
                     new_badges.extend(streak_badges)
                 except Exception as e:
-                    logger.warning(f"⚠️ ゲーミフィケーション機能スキップ: {e}")
+                    logger.warning(f"[WARNING] ゲーミフィケーション機能スキップ: {e}")
                     current_streak = 0
                     new_badges = []
             
@@ -1302,13 +1302,13 @@ def exam():
                     question_type = session.get('selected_question_type', 'basic')
                     department = session.get('selected_department', '')
                     
-                    # 🔥 ウルトラシンク包括修正: 全問題種別統一セッション再構築システム
-                    # 🚨 ULTRA SYNC FIX: データ混合防止 - 統一データソース使用
+                    # [FIRE] ウルトラシンク包括修正: 全問題種別統一セッション再構築システム
+                    # [ALERT] ULTRA SYNC FIX: データ混合防止 - 統一データソース使用
                     all_questions = load_questions()  # 同一キャッシュシステムを使用
                     
                     logger.info(f"セッション再構築開始: 問題ID={qid}, 種別={question_type}, 部門={department}")
                     
-                    # 🔥 STEP1: まず問題IDから実際の問題を特定
+                    # [FIRE] STEP1: まず問題IDから実際の問題を特定
                     target_question = None
                     for q in all_questions:
                         if int(q.get('id', 0)) == qid:
@@ -1324,7 +1324,7 @@ def exam():
                     
                     logger.info(f"問題特定: ID={qid}, 実際の種別={actual_question_type}, カテゴリ={actual_category}, 年度={actual_year}")
                     
-                    # 🔥 STEP2: 問題種別に応じたセッション再構築（統一フローシート）
+                    # [FIRE] STEP2: 問題種別に応じたセッション再構築（統一フローシート）
                     if question_type == 'review':
                         # 復習モード: 既存の復習リストを使用
                         stored_review_ids = session.get('exam_question_ids', [])
@@ -1336,7 +1336,7 @@ def exam():
                             current_no = current_index
                             logger.info(f"復習セッション再構築成功: {len(stored_review_ids)}問, 現在位置{current_index}")
                         else:
-                            # 🔥 CRITICAL: 復習問題IDが見つからない場合の安定復習セッション再生成（ウルトラシンク修正）
+                            # [FIRE] CRITICAL: 復習問題IDが見つからない場合の安定復習セッション再生成（ウルトラシンク修正）
                             logger.warning(f"復習問題ID {qid} がセッション内に見つからないため、安定復習セッション再生成実行")
                             
                             # 現在のSRSデータとブックマークから復習セッションを再生成
@@ -1378,7 +1378,7 @@ def exam():
                                 except ValueError:
                                     current_index = 0  # 見つからない場合は最初から
                                 
-                                # 🚨 PHASE 1: セッション状態をthread-safe更新
+                                # [ALERT] PHASE 1: セッション状態をthread-safe更新
                                 review_state = {
                                     'exam_question_ids': review_question_ids,
                                     'exam_current': current_index,
@@ -1433,7 +1433,7 @@ def exam():
                         specialist_questions = [q for q in all_questions 
                                               if q.get('question_type') == 'specialist']
                         
-                        # ✅ CLAUDE.md準拠: 部門フィルタリング（日本語直接マッチング）
+                        # [CHECK] CLAUDE.md準拠: 部門フィルタリング（日本語直接マッチング）
                         if department:
                             # 英語IDマッピング完全削除 - 日本語部門名直接使用
                             target_category = department  # 既に日本語で受け取っているはず
@@ -1469,7 +1469,7 @@ def exam():
                             raise ValueError(f"専門科目データが見つかりません: カテゴリ={actual_category}, 部門={department}")
                     
                     else:
-                        # 🔥 フォールバック: 共通問題・混合セッション・その他
+                        # [FIRE] フォールバック: 共通問題・混合セッション・その他
                         logger.warning(f"未知の問題種別に対するフォールバック再構築: {question_type} -> {actual_question_type}")
                         
                         # 実際の問題種別で再分類
@@ -1516,7 +1516,7 @@ def exam():
                                 raise ValueError(f"フォールバック専門科目データが見つかりません: カテゴリ={actual_category}")
                         
                         else:
-                            # 🔥 最終フォールバック: 全問題から同種別を抽出
+                            # [FIRE] 最終フォールバック: 全問題から同種別を抽出
                             logger.warning(f"最終フォールバック: 問題種別不明 {actual_question_type}")
                             similar_questions = [q for q in all_questions 
                                                if q.get('question_type') == actual_question_type]
@@ -1541,7 +1541,7 @@ def exam():
                 except Exception as rebuild_error:
                     logger.error(f"ウルトラシンクセッション再構築失敗: {rebuild_error}")
                     
-                    # 🔥 ウルトラシンク緊急フォールバック処理
+                    # [FIRE] ウルトラシンク緊急フォールバック処理
                     current_question_type = session.get('selected_question_type', '')
                     
                     if current_question_type == 'review':
@@ -1554,15 +1554,15 @@ def exam():
                         return redirect(url_for('review_list'))
                     
                     else:
-                        # 🔥 最終緊急フォールバック: 問題IDから強制セッション作成
+                        # [FIRE] 最終緊急フォールバック: 問題IDから強制セッション作成
                         logger.warning(f"緊急フォールバック実行: 問題ID {qid} から最小セッション作成")
                         try:
-                            # 🔥 CRITICAL: load_questions()関数を使用（引数なし）
-                            # 🚨 ULTRA SYNC: データ整合性保証のため統一データソース使用
+                            # [FIRE] CRITICAL: load_questions()関数を使用（引数なし）
+                            # [ALERT] ULTRA SYNC: データ整合性保証のため統一データソース使用
                             all_questions = load_questions()
                             
                             # 問題IDを中心とした最小セッション作成
-                            # 🚨 PHASE 1: 緊急セッションもthread-safe更新
+                            # [ALERT] PHASE 1: 緊急セッションもthread-safe更新
                             emergency_state = {
                                 'exam_question_ids': [int(qid)],  # CRITICAL FIX: QIDを確実に整数として保存
                                 'exam_current': 0,
@@ -1583,7 +1583,7 @@ def exam():
                                                  error_type="session_complete_failure",
                                                  details=f"再構築失敗: {str(rebuild_error)}, 緊急失敗: {str(emergency_error)}")
                 
-                # 🔥 再構築後の最終安全チェック
+                # [FIRE] 再構築後の最終安全チェック
                 if not exam_question_ids:
                     logger.error(f"ウルトラシンク再構築後もexam_question_idsが空です")
                     # 緊急最小セッション作成
@@ -1596,19 +1596,21 @@ def exam():
                     session.modified = True
                     logger.info(f"緊急最小セッション作成: 問題ID {qid}")
             
-            # 🔥 ウルトラシンク: 現在の問題番号をより正確に特定
+            # [FIRE] ウルトラシンク: 現在の問題番号をより正確に特定
             for i, q_id in enumerate(exam_question_ids):
                 if str(q_id) == str(qid):
                     current_no = i
                     break
             else:
-                # 問題IDが見つからない場合の最終フォールバック
+                # 問題IDが見つからない場合の最終フォールバック - ULTRA SYNC ATOMIC FIX
                 logger.warning(f"問題ID {qid} がexam_question_ids内に見つかりません。先頭に設定します。")
                 current_no = 0
                 if qid not in exam_question_ids:
-                    exam_question_ids.insert(0, qid)
-                    session['exam_question_ids'] = exam_question_ids
-                    session.modified = True
+                    # ★ FLASK MUTABLE SESSION FIX: atomic reassignment for detection
+                    new_exam_question_ids = [qid] + exam_question_ids  # 新リスト原子的作成
+                    session['exam_question_ids'] = new_exam_question_ids  # 原子的代入
+                    session.modified = True  # Flask検出確実化
+                    logger.info(f"[ATOMIC] セッション問題リストを原子的更新: {len(new_exam_question_ids)}問")
 
             # 次の問題へ進む準備（仮計算）
             next_no = current_no + 1
@@ -1639,7 +1641,7 @@ def exam():
             logger.info(f"セッションキー: {list(session.keys())}")
             logger.info(f"=========================")
             
-            # 🔥 CRITICAL: 復習セッション保護付きセッション更新（ウルトラシンク修正）
+            # [FIRE] CRITICAL: 復習セッション保護付きセッション更新（ウルトラシンク修正）
             # 復習モードの場合は特別な保護処理
             is_review_session = (session.get('selected_question_type') == 'review' or
                                session.get('exam_category', '').startswith('復習'))
@@ -1664,16 +1666,16 @@ def exam():
             session.permanent = True
             session.modified = True
             
-            # 🚨 ULTRA-SYNC: セッション保存の厳密な確認（専門家推奨）
+            # [ALERT] ULTRA-SYNC: セッション保存の厳密な確認（専門家推奨）
             saved_current = session.get('exam_current', 'NOT_FOUND')
-            logger.info(f"✅ SESSION STATE VERIFIED: exam_current = {saved_current} (expected: {safe_next_no})")
-            logger.info(f"✅ SESSION FLAGS: permanent={session.permanent}, modified={session.modified}")
-            logger.info(f"✅ SESSION KEYS: {sorted(session.keys())}")
+            logger.info(f"[CHECK] SESSION STATE VERIFIED: exam_current = {saved_current} (expected: {safe_next_no})")
+            logger.info(f"[CHECK] SESSION FLAGS: permanent={session.permanent}, modified={session.modified}")
+            logger.info(f"[CHECK] SESSION KEYS: {sorted(session.keys())}")
             logger.info(f"回答処理完了: 問題{qid}, 正答{is_correct}, レベル{srs_info.get('level', 0)}, ストリーク{current_streak}日")
 
-            # フィードバック画面に渡すデータを準備
-            # 安全なデフォルト値を保証
-            safe_total_questions = max(1, len(exam_question_ids)) if exam_question_ids else 10
+            # フィードバック画面に渡すデータを準備 - ULTRA SYNC PROGRESS FIX
+            # ★ 進捗表示バグ修正: 元の問題数固定値を使用（拡張されたリストを使わない）
+            safe_total_questions = session.get('exam_total_questions', 10)  # 元の固定値使用
             # 問題番号は1ベースだが、total_questions を超えないよう制限
             safe_current_number = min(max(1, current_no + 1), safe_total_questions)
             
@@ -1699,9 +1701,9 @@ def exam():
             # フィードバック画面の重要な変数をログ出力
             logger.info(f"フィードバック変数: is_last_question={feedback_data['is_last_question']}, next_question_index={feedback_data['next_question_index']}, current_question_number={feedback_data['current_question_number']}, total_questions={feedback_data['total_questions']}")
 
-            # 🚨 ULTRA-SYNC FIX: 重複セッション更新を削除（session['exam_current']は既にline1648で正しく設定済み）
+            # [ALERT] ULTRA-SYNC FIX: 重複セッション更新を削除（session['exam_current']は既にline1648で正しく設定済み）
             # Expert guidance: session.modified=True already called in session_final_updates
-            logger.info(f"🔒 POST Progress Already Saved: safe_next_no={safe_next_no} at line 1648")
+            logger.info(f"[LOCK] POST Progress Already Saved: safe_next_no={safe_next_no} at line 1648")
 
             return render_template('exam_feedback.html', **feedback_data)
 
@@ -1811,10 +1813,10 @@ def exam():
                 else:
                     # 道路、土質及び基礎等の専門部門カテゴリ
                     requested_question_type = 'specialist'
-                    # ✅ CLAUDE.md準拠: 英語ID変換完全禁止 - 日本語カテゴリ直接使用
-                    # ❌ 削除: 英語変換マッピング（分野混在問題の根本原因）
+                    # [CHECK] CLAUDE.md準拠: 英語ID変換完全禁止 - 日本語カテゴリ直接使用
+                    # [ERROR] 削除: 英語変換マッピング（分野混在問題の根本原因）
                     if requested_category in ['道路', '土質及び基礎', '河川、砂防及び海岸・海洋', '鋼構造及びコンクリート', '農業土木', '施工計画、施工設備及び積算', '森林土木', 'トンネル', '建設環境', '造園', '都市計画及び地方計画', '上水道及び工業用水道']:
-                        # ✅ CLAUDE.md準拠: 日本語カテゴリをそのまま部門として使用（英語変換禁止）
+                        # [CHECK] CLAUDE.md準拠: 日本語カテゴリをそのまま部門として使用（英語変換禁止）
                         requested_department = requested_category
                     logger.info(f"専門カテゴリ: {requested_category} -> question_type=specialist, department={requested_department}")
         
@@ -1823,11 +1825,11 @@ def exam():
         if requested_year:
             logger.info(f"年度指定: {requested_year}年度の問題を取得")
         
-        # 🔥 CRITICAL: 絶対に10問固定（ユーザー要求による）
+        # [FIRE] CRITICAL: 絶対に10問固定（ユーザー要求による）
         session_size = 10
         specific_qid = sanitize_input(request.args.get('qid'))
         
-        # 🔥 CRITICAL: 復習機能の特別処理（ウルトラシンク修正）
+        # [FIRE] CRITICAL: 復習機能の特別処理（ウルトラシンク修正）
         # /exam/review からのリダイレクトの場合、departmentが'review'になってしまう問題を修正
         if requested_department == 'review':
             logger.info("復習機能からの呼び出し検出 - 部門パラメータを修正")
@@ -1850,11 +1852,11 @@ def exam():
 
         # セッション管理
         exam_question_ids = session.get('exam_question_ids', [])
-        # 🔧 ULTRA SYNC FIX: next=1リクエストはセッション値を優先使用
+        # [WRENCH] ULTRA SYNC FIX: next=1リクエストはセッション値を優先使用
         if is_next_request:
             # 次の問題リクエストの場合は、セッションのexam_currentをそのまま使用
             current_no = session.get('exam_current', 0)
-            logger.info(f"🔄 NEXT REQUEST: セッションからcurrent_no={current_no}を取得")
+            logger.info(f"[REPEAT] NEXT REQUEST: セッションからcurrent_no={current_no}を取得")
         else:
             # URLパラメータから現在の問題番号を取得（競合回避）
             url_current = request.args.get('current')
@@ -1876,7 +1878,7 @@ def exam():
         logger.info(f"問題種別情報: requested_question_type={requested_question_type}, session_question_type={session.get('selected_question_type')}, department={requested_department}")
         logger.info(f"カテゴリ情報: requested_category={requested_category}, session_category={session_category}")
 
-        # ★追加: 特定の問題表示の場合
+        # [STAR]追加: 特定の問題表示の場合
         if specific_qid:
             try:
                 specific_qid = int(specific_qid)
@@ -1886,7 +1888,7 @@ def exam():
                     return render_template('error.html', error=f"指定された問題が見つかりません (ID: {specific_qid})。")
 
                 # この問題を単独セッションとして設定
-                # 🚨 PHASE 1: 単独問題セッションもthread-safe更新
+                # [ALERT] PHASE 1: 単独問題セッションもthread-safe更新
                 single_question_state = {
                     'exam_question_ids': [specific_qid],
                     'exam_current': 0,
@@ -1916,41 +1918,41 @@ def exam():
         # 次の問題への遷移要求の場合はリセットしない
         session_question_type = session.get('selected_question_type')
         session_department = session.get('selected_department')
-        session_year = session.get('selected_year')  # 🚨 年度マッチング追加
+        session_year = session.get('selected_year')  # [ALERT] 年度マッチング追加
         
         category_match = requested_category == session_category
         question_type_match = requested_question_type == session_question_type
         department_match = requested_department == session_department
-        year_match = requested_year == session_year  # 🚨 年度マッチング判定追加
+        year_match = requested_year == session_year  # [ALERT] 年度マッチング判定追加
         
         logger.info(f"リセット判定: is_next={is_next_request}, exam_ids={bool(exam_question_ids)}, category_match={category_match}, question_type_match={question_type_match}, department_match={department_match}, year_match={year_match}, current_no={current_no}, len={len(exam_question_ids)}")
         
-        # 🔥 CRITICAL: 強化されたリセット判定（ユーザー要求による）
+        # [FIRE] CRITICAL: 強化されたリセット判定（ユーザー要求による）
         # ホームから戻ってきた場合は必ずリセット
         referrer_is_home = request.referrer and request.referrer.endswith('/')
         
-        # 🔥 CRITICAL: 復習モードの詳細判定（ウルトラシンク修正）
+        # [FIRE] CRITICAL: 復習モードの詳細判定（ウルトラシンク修正）
         is_review_mode = (
             (requested_question_type == 'review' and exam_question_ids) or
             (session.get('selected_question_type') == 'review' and exam_question_ids) or
             (session.get('exam_category', '').startswith('復習') and exam_question_ids)
         )
         
-        # 🔥 CRITICAL: 復習モード保護強化 - 復習セッション中は不適切なリセットを防止
-        # 🚨 年度変更時のリセット判定を追加（ウルトラシンク修正）
+        # [FIRE] CRITICAL: 復習モード保護強化 - 復習セッション中は不適切なリセットを防止
+        # [ALERT] 年度変更時のリセット判定を追加（ウルトラシンク修正）
         need_reset = (not is_next_request and not is_review_mode and (
                     not exam_question_ids or                    # 問題IDがない
                     request.args.get('reset') == '1' or        # 明示的リセット要求
                     (referrer_is_home and not is_review_mode) or # ホームから来た場合（復習除く）
                     (not question_type_match and not is_review_mode) or # 問題種別変更（復習除く）
                     (not department_match and not is_review_mode) or    # 部門変更（復習除く）
-                    (not year_match and not is_review_mode) or          # 🚨 年度変更（復習除く）
+                    (not year_match and not is_review_mode) or          # [ALERT] 年度変更（復習除く）
                     len(exam_question_ids) == 0))              # 空の問題リスト
         
         logger.info(f"need_reset = {need_reset}")
 
         if need_reset:
-            # 🔥 CRITICAL: セッション情報完全クリア（ユーザー要求による）
+            # [FIRE] CRITICAL: セッション情報完全クリア（ユーザー要求による）
             # 古い問題情報を確実に削除
             old_session_keys = [
                 'exam_question_ids', 'exam_current', 'exam_category',
@@ -1967,7 +1969,7 @@ def exam():
             if cleared_keys:
                 logger.info(f"問題リセット: セッション完全クリア - {cleared_keys}")
             
-            # 🔥 CRITICAL: 復習モードの場合は既存のexam_question_idsを使用
+            # [FIRE] CRITICAL: 復習モードの場合は既存のexam_question_idsを使用
             if requested_question_type == 'review' and session.get('exam_question_ids'):
                 logger.info("復習モード: セッションの既存問題IDを使用")
                 question_ids = session.get('exam_question_ids', [])
@@ -1979,16 +1981,16 @@ def exam():
                         selected_questions.append(q)
             else:
                 # SRSを考慮した問題選択（RCCM部門対応）
-                logger.info(f"🔍 ULTRA DEBUG: calling get_mixed_questions with department='{requested_department}', question_type='{requested_question_type}', all_questions_count={len(all_questions)}")
+                logger.info(f"[SEARCH] ULTRA DEBUG: calling get_mixed_questions with department='{requested_department}', question_type='{requested_question_type}', all_questions_count={len(all_questions)}")
                 selected_questions = get_mixed_questions(session, all_questions, requested_category, session_size, requested_department, requested_question_type, requested_year)
                 question_ids = [int(q.get('id', 0)) for q in selected_questions]
-                logger.info(f"🔍 ULTRA DEBUG: get_mixed_questions returned {len(selected_questions)} questions, IDs={question_ids}")
+                logger.info(f"[SEARCH] ULTRA DEBUG: get_mixed_questions returned {len(selected_questions)} questions, IDs={question_ids}")
 
             # デバッグ: 問題選択の詳細ログ
             logger.info(f"問題選択詳細: requested_size={session_size}, selected_count={len(selected_questions)}, question_ids_count={len(question_ids)}")
             logger.info(f"問題ID一覧: {question_ids}")
 
-            # 🚨 PHASE 1: 新規セッション作成をthread-safe更新（最重要）
+            # [ALERT] PHASE 1: 新規セッション作成をthread-safe更新（最重要）
             new_session_state = {
                 'exam_question_ids': question_ids,
                 'exam_current': 0,
@@ -2018,7 +2020,7 @@ def exam():
             
             logger.info(f"新しい問題セッション開始: {len(question_ids)}問, フィルタ: {', '.join(filter_desc) if filter_desc else '全体'}")
 
-        # 🔥 CRITICAL: 復習セッション保護付き範囲チェック（ウルトラシンク修正）
+        # [FIRE] CRITICAL: 復習セッション保護付き範囲チェック（ウルトラシンク修正）
         if current_no >= len(exam_question_ids):
             # 復習モードの場合は結果画面ではなく復習完了処理へ
             if is_review_mode or session.get('selected_question_type') == 'review':
@@ -2035,7 +2037,7 @@ def exam():
         current_question_id = exam_question_ids[current_no]
         logger.info(f"問題ID取得: current_no={current_no}, question_id={current_question_id}")
         
-        # 🚨 ULTRA CRITICAL FIX: セッション破綻完全防止（問題文と選択肢不一致解決）
+        # [ALERT] ULTRA CRITICAL FIX: セッション破綻完全防止（問題文と選択肢不一致解決）
         # 問題データ取得の厳密な整合性確保
         question = next((q for q in all_questions if int(q.get('id', 0)) == current_question_id), None)
         
@@ -2043,14 +2045,14 @@ def exam():
         if question:
             retrieved_id = int(question.get('id', 0))
             if retrieved_id != current_question_id:
-                logger.error(f"🚨 QID不整合検出: expected={current_question_id}, got={retrieved_id}")
+                logger.error(f"[ALERT] QID不整合検出: expected={current_question_id}, got={retrieved_id}")
                 question = None
 
         if not question:
             logger.error(f"問題データ取得失敗: ID {current_question_id}, available_ids={[q.get('id') for q in all_questions[:5]]}")
             
-            # 🚨 ULTRA CRITICAL: セッション破綻応急復旧ロジック
-            logger.warning("🔥 セッション破綻検出: 緑急復旧処理を実行")
+            # [ALERT] ULTRA CRITICAL: セッション破綻応急復旧ロジック
+            logger.warning("[FIRE] セッション破綻検出: 緑急復旧処理を実行")
             
             # セッションをリセットしてホームにリダイレクト
             for key in ['exam_question_ids', 'exam_current', 'exam_total', 'exam_category', 
@@ -2072,7 +2074,7 @@ def exam():
         # デバッグログ: 表示数値の確認
         logger.info(f"問題表示: {display_current}/{display_total} (内部: current_no={current_no}, total_ids={len(exam_question_ids)})")
         
-        # 🚨 ULTRA CRITICAL: テンプレート変数の完全整合性検証
+        # [ALERT] ULTRA CRITICAL: テンプレート変数の完全整合性検証
         template_vars = {
             'question': question,
             'total_questions': display_total,
@@ -2084,13 +2086,13 @@ def exam():
             'department': session.get('selected_department', ''),
             'question_type': session.get('selected_question_type', 'basic')
         }
-        # 🚨 ULTRA CRITICAL: テンプレート変数の最終整合性確認
+        # [ALERT] ULTRA CRITICAL: テンプレート変数の最終整合性確認
         logger.info(f"テンプレート変数: current_no={template_vars['current_no']} (type:{type(template_vars['current_no'])}), total_questions={template_vars['total_questions']}")
-        logger.info(f"🔍 整合性検証: QID={current_question_id}, question.id={question.get('id')}, year={question.get('year')}, category={question.get('category')}")
+        logger.info(f"[SEARCH] 整合性検証: QID={current_question_id}, question.id={question.get('id')}, year={question.get('year')}, category={question.get('category')}")
         
         # 最終安全性チェック
         if str(question.get('id', '')) != str(current_question_id):
-            logger.error(f"🚨 FATAL: 最終整合性チェック失敗 - template展開前にID不一致検出")
+            logger.error(f"[ALERT] FATAL: 最終整合性チェック失敗 - template展開前にID不一致検出")
             return render_template('error.html', error="データ整合性エラー。ホームからやり直してください。")
         
         return render_template('exam.html', **template_vars)
@@ -2101,7 +2103,7 @@ def exam():
 @app.route('/exam/next')
 def exam_next():
     """次の問題に進む"""
-    # 🚨 PHASE 1: セッション状態をthread-safe読み取り
+    # [ALERT] PHASE 1: セッション状態をthread-safe読み取り
     session_state = get_current_session_state()
     current_no = session_state['exam_current']
     exam_question_ids = session_state['exam_question_ids']
@@ -2169,7 +2171,7 @@ def result():
             'result.html',
             correct_count=correct_count,
             total_questions=total_questions,
-            # 🚨 ULTRA CRITICAL: セッション破綻防止用デバッグ情報
+            # [ALERT] ULTRA CRITICAL: セッション破綻防止用デバッグ情報
             debug_session_id=session.get('session_id', 'MISSING'),
             debug_current_question_id=current_question_id,
             debug_question_actual_id=question.get('id', 'MISSING'),
@@ -2334,9 +2336,9 @@ def select_department(department_id):
         
         logger.info(f"部門選択: {department_id} ({RCCMConfig.DEPARTMENTS[department_id]['name']})")
         
-        # 🚨 ULTRA SYNC DEBUG: 道路部門の場合は直接緊急テストを実行
+        # [ALERT] ULTRA SYNC DEBUG: 道路部門の場合は直接緊急テストを実行
         if department_id == '道路':
-            logger.info("🔥 ULTRA SYNC: Road department - DIRECT emergency test from select_department")
+            logger.info("[FIRE] ULTRA SYNC: Road department - DIRECT emergency test from select_department")
             return """<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -2345,17 +2347,17 @@ def select_department(department_id):
     <style>body { font-family: Arial; padding: 20px; background: #e6ffe6; }</style>
 </head>
 <body>
-    <h1>🔥 ULTRA SYNC Emergency Test - DIRECT ROUTE</h1>
-    <div>✅ This is executed from select_department route</div>
-    <div>✅ department_id = '道路' detected</div>
-    <div>⚠️ This bypasses question_types route entirely</div>
-    <div>🔍 Proves routing system works but question_types may have issues</div>
+    <h1>[FIRE] ULTRA SYNC Emergency Test - DIRECT ROUTE</h1>
+    <div>[CHECK] This is executed from select_department route</div>
+    <div>[CHECK] department_id = '道路' detected</div>
+    <div>[WARNING] This bypasses question_types route entirely</div>
+    <div>[SEARCH] Proves routing system works but question_types may have issues</div>
     <p><a href="/departments">← Back</a></p>
 </body>
 </html>"""
         
         # 問題種別選択画面にリダイレクト - ULTRA SYNC 修正
-        logger.info(f"🔧 ULTRA SYNC: Redirecting to original route /departments/{department_id}/types")
+        logger.info(f"[WRENCH] ULTRA SYNC: Redirecting to original route /departments/{department_id}/types")
         return redirect(f'/departments/{department_id}/types')
         
     except Exception as e:
@@ -2365,11 +2367,11 @@ def select_department(department_id):
 @app.route('/ultra_sync_test')
 def ultra_sync_test():
     """ULTRA SYNC Flask動作確認テスト"""
-    return "✅ ULTRA SYNC SUCCESS: Flask application is working correctly!"
+    return "[CHECK] ULTRA SYNC SUCCESS: Flask application is working correctly!"
 
 @app.route('/ultra_sync_road_debug')
 def ultra_sync_road_debug():
-    """🚨 ULTRA SYNC 道路部門デバッグ専用ルート - 副作用なし"""
+    """[ALERT] ULTRA SYNC 道路部門デバッグ専用ルート - 副作用なし"""
     from datetime import datetime
     
     debug_html = """<!DOCTYPE html>
@@ -2383,11 +2385,11 @@ def ultra_sync_road_debug():
     </style>
 </head>
 <body>
-    <h1>🚨 ULTRA SYNC Road Debug Route Active</h1>
-    <div class="debug">✅ This route is definitely executing</div>
-    <div class="debug">✅ Flask routing system is functional</div>
-    <div class="debug">⚠️ URL: /ultra_sync_road_debug</div>
-    <div class="debug">🔍 Timestamp: {timestamp}</div>
+    <h1>[ALERT] ULTRA SYNC Road Debug Route Active</h1>
+    <div class="debug">[CHECK] This route is definitely executing</div>
+    <div class="debug">[CHECK] Flask routing system is functional</div>
+    <div class="debug">[WARNING] URL: /ultra_sync_road_debug</div>
+    <div class="debug">[SEARCH] Timestamp: {timestamp}</div>
     <hr>
     <p><strong>DEBUG PURPOSE:</strong> Verify Flask routing system works</p>
     <p><strong>NEXT STEP:</strong> If this works, investigate /departments/road/types routing conflict</p>
@@ -2401,15 +2403,15 @@ def ultra_sync_road_debug():
 def question_types(department_id):
     """問題種別選択画面（4-1基礎 / 4-2専門）- ULTRA SYNC強制表示版"""
     try:
-        # 🚨 ULTRA SYNC CRITICAL: 強制実行確認
-        logger.info(f"🔥 ULTRA SYNC FORCE: question_types route EXECUTED for department_id='{department_id}'")
+        # [ALERT] ULTRA SYNC CRITICAL: 強制実行確認
+        logger.info(f"[FIRE] ULTRA SYNC FORCE: question_types route EXECUTED for department_id='{department_id}'")
         
         # CRITICAL FIX: 緊急テストコードを削除 - 正常な道路部門アクセスを復旧
         # 道路部門も他の部門と同じ正常な処理フローで動作させる
         
         if department_id not in RCCMConfig.DEPARTMENTS:
-            logger.error(f"🚨 ULTRA SYNC DEBUG: department_id '{department_id}' not found in RCCMConfig.DEPARTMENTS")
-            logger.info(f"🔍 ULTRA SYNC DEBUG: Available departments: {list(RCCMConfig.DEPARTMENTS.keys())}")
+            logger.error(f"[ALERT] ULTRA SYNC DEBUG: department_id '{department_id}' not found in RCCMConfig.DEPARTMENTS")
+            logger.info(f"[SEARCH] ULTRA SYNC DEBUG: Available departments: {list(RCCMConfig.DEPARTMENTS.keys())}")
             return render_template('error.html', error="指定された部門が見つかりません。")
         
         department_info = RCCMConfig.DEPARTMENTS[department_id]
@@ -2432,13 +2434,13 @@ def question_types(department_id):
             }
         
         # ULTRA SYNC DEBUG: テンプレート描画前確認
-        logger.info(f"✅ ULTRA SYNC DEBUG: Rendering question_types.html for department '{department_id}' ({department_info['name']})")
-        logger.info(f"🔍 ULTRA SYNC DEBUG: Available question types: {list(RCCMConfig.QUESTION_TYPES.keys())}")
-        logger.info(f"🔍 ULTRA SYNC DEBUG: department_info content: {department_info}")
-        logger.info(f"🔍 ULTRA SYNC DEBUG: About to call render_template - this should return HTML page, not redirect")
+        logger.info(f"[CHECK] ULTRA SYNC DEBUG: Rendering question_types.html for department '{department_id}' ({department_info['name']})")
+        logger.info(f"[SEARCH] ULTRA SYNC DEBUG: Available question types: {list(RCCMConfig.QUESTION_TYPES.keys())}")
+        logger.info(f"[SEARCH] ULTRA SYNC DEBUG: department_info content: {department_info}")
+        logger.info(f"[SEARCH] ULTRA SYNC DEBUG: About to call render_template - this should return HTML page, not redirect")
         
         # ULTRA SYNC STAGE 8: 正式にテンプレート描画を復旧
-        logger.info(f"✅ ULTRA SYNC STAGE 8: Attempting template rendering with question_types.html")
+        logger.info(f"[CHECK] ULTRA SYNC STAGE 8: Attempting template rendering with question_types.html")
         
         return render_template('question_types.html',
             department=department_info,
@@ -3208,9 +3210,9 @@ def remove_bookmark():
 
 @app.route('/exam/review')
 def review_quiz():
-    """🔥 ULTRA堅牢な高度SRSシステム復習問題練習（ウルトラシンク対応）"""
+    """[FIRE] ULTRA堅牢な高度SRSシステム復習問題練習（ウルトラシンク対応）"""
     try:
-        # 🔥 CRITICAL: 包括的エラーハンドリング
+        # [FIRE] CRITICAL: 包括的エラーハンドリング
         logger.info("=== 復習開始処理開始 ===")
         
         # 問題データロード（エラーハンドリング強化）
@@ -3229,7 +3231,7 @@ def review_quiz():
                                  error="問題データの読み込み中にエラーが発生しました。",
                                  error_type="data_load_exception")
         
-        # 🔥 ULTRA堅牢: 復習対象問題を統合取得（安全性強化・ウルトラシンク対応）
+        # [FIRE] ULTRA堅牢: 復習対象問題を統合取得（安全性強化・ウルトラシンク対応）
         try:
             srs_data = session.get('advanced_srs', {})
             bookmarks = session.get('bookmarks', [])
@@ -3242,7 +3244,7 @@ def review_quiz():
                 logger.warning(f"ブックマークがリスト型ではありません: {type(bookmarks)} - 初期化")
                 bookmarks = []
             
-            # 🔥 ULTRA堅牢: SRSデータの詳細検証と修復
+            # [FIRE] ULTRA堅牢: SRSデータの詳細検証と修復
             valid_srs_data = {}
             for qid, srs_info in srs_data.items():
                 try:
@@ -3268,7 +3270,7 @@ def review_quiz():
             logger.info(f"SRSデータ検証: 元データ{len(srs_data)}問 → 有効データ{len(valid_srs_data)}問")
             srs_data = valid_srs_data
             
-            # 🔥 ULTRA堅牢: ブックマークデータの詳細検証と修復
+            # [FIRE] ULTRA堅牢: ブックマークデータの詳細検証と修復
             valid_bookmarks = []
             for bookmark in bookmarks:
                 try:
@@ -3322,7 +3324,7 @@ def review_quiz():
                                      error="現在復習が必要な問題がありません。素晴らしい！新しい問題に挑戦するか、時間が経ってから復習してください。",
                                      error_type="all_mastered")
         
-        # 🔥 CRITICAL: 問題データマッチングと弱点スコア計算（ウルトラシンク対応）
+        # [FIRE] CRITICAL: 問題データマッチングと弱点スコア計算（ウルトラシンク対応）
         try:
             # 問題IDから実際の問題データを取得（安全性強化）
             questions_dict = {}
@@ -3415,9 +3417,9 @@ def review_quiz():
                                  error="復習対象の問題が見つかりません。新しい問題を解いて間違えることで復習リストが作成されます。",
                                  error_type="no_filtered_questions")
         
-        # 🔥 ULTRA CRITICAL: 最終問題選択とセッション設定（ウルトラシンク対応）
+        # [FIRE] ULTRA CRITICAL: 最終問題選択とセッション設定（ウルトラシンク対応）
         try:
-            # 🔥 ULTRA堅牢: 弱点スコア順でソート（安全なソート・完全エラーハンドリング）
+            # [FIRE] ULTRA堅牢: 弱点スコア順でソート（安全なソート・完全エラーハンドリング）
             try:
                 # 各問題の弱点スコアが数値であることを確認
                 for item in review_questions_with_score:
@@ -3430,7 +3432,7 @@ def review_quiz():
                 logger.warning(f"ソートエラー（デフォルト順序を使用）: {sort_error}")
                 # ソートに失敗してもそのまま続行
             
-            # 🔥 ULTRA CRITICAL: セッション問題数の動的決定（最低保証とユーザー要求バランス）
+            # [FIRE] ULTRA CRITICAL: セッション問題数の動的決定（最低保証とユーザー要求バランス）
             available_questions = len(review_questions_with_score)
             min_session_size = min(3, available_questions)  # 最低3問、または利用可能問題数
             target_session_size = 10  # 理想は10問
@@ -3497,7 +3499,7 @@ def review_quiz():
                                          error="復習問題IDの処理中にエラーが発生しました。",
                                          error_type="question_id_processing_error")
                 
-                # 🔥 ULTRA堅牢: セッション変数を安全に設定（ウルトラシンク対応・完全検証）
+                # [FIRE] ULTRA堅牢: セッション変数を安全に設定（ウルトラシンク対応・完全検証）
                 try:
                     # セッションクリア（競合防止）
                     session.pop('exam_question_ids', None)
@@ -3507,7 +3509,10 @@ def review_quiz():
                     session.pop('department', None)
                     session.pop('selected_department', None)
                     
-                    # 新しいセッション設定
+                    # 新しいセッション設定 - ULTRA SYNC SESSION UNIQUENESS
+                    # ★ セッション重複作成防止: UUID生成で一意性保証
+                    session_lock_id = str(uuid.uuid4())
+                    session['session_creation_lock'] = session_lock_id
                     session['exam_question_ids'] = question_ids
                     session['exam_current'] = 0
                     session['exam_category'] = category_name
@@ -3515,6 +3520,7 @@ def review_quiz():
                     session['department'] = ''  # 復習では部門指定なし
                     session['selected_department'] = ''  # セッション再構築用（復習では部門なし）
                     session.modified = True
+                    logger.info(f"[SESSION-LOCK] 復習セッション一意性保証: {session_lock_id[:8]}...")
                     
                     # セッション即座保存強制
                     session.permanent = False
@@ -3528,7 +3534,7 @@ def review_quiz():
                                          error="復習セッション変数の設定中にエラーが発生しました。",
                                          error_type="session_variable_error")
                 
-                # 🔥 ULTRA堅牢: セッション状態の最終確認（複数回検証）
+                # [FIRE] ULTRA堅牢: セッション状態の最終確認（複数回検証）
                 verification_attempts = 0
                 max_verification_attempts = 3
                 
@@ -3546,7 +3552,7 @@ def review_quiz():
                             final_current >= 0 and 
                             final_category and 
                             final_question_type == 'review'):
-                            logger.info(f"✅ セッション設定検証成功 (試行{verification_attempts + 1})")
+                            logger.info(f"[CHECK] セッション設定検証成功 (試行{verification_attempts + 1})")
                             break
                         else:
                             verification_attempts += 1
@@ -3585,7 +3591,7 @@ def review_quiz():
         return redirect(url_for('exam'))
         
     except Exception as e:
-        logger.error(f"🔥 復習問題開始の重大エラー: {e}")
+        logger.error(f"[FIRE] 復習問題開始の重大エラー: {e}")
         import traceback
         logger.error(f"詳細エラー情報: {traceback.format_exc()}")
         return render_template('error.html', 
@@ -3594,7 +3600,7 @@ def review_quiz():
 
 @app.route('/debug/create_review_data')
 def create_review_test_data():
-    """🔥 復習テスト用ダミーデータ作成（ウルトラシンク対応）"""
+    """[FIRE] 復習テスト用ダミーデータ作成（ウルトラシンク対応）"""
     try:
         from datetime import datetime, timedelta
         import random
@@ -3647,7 +3653,7 @@ def create_review_test_data():
         logger.info(f"復習テストデータ作成: SRS={len(srs_data)}問, ブックマーク={len(bookmarks)}問")
         
         return f"""
-        <h2>🔥 復習テストデータ作成完了！</h2>
+        <h2>[FIRE] 復習テストデータ作成完了！</h2>
         <p>SRSデータ: {len(srs_data)}問</p>
         <p>ブックマーク: {len(bookmarks)}問</p>
         <p><a href="/review">復習リストを確認</a></p>
@@ -3661,7 +3667,7 @@ def create_review_test_data():
 
 @app.route('/debug/clear_session')
 def clear_session_debug():
-    """🔥 セッションクリア（デバッグ用）"""
+    """[FIRE] セッションクリア（デバッグ用）"""
     try:
         # 復習関連データのみクリア
         session.pop('advanced_srs', None)
@@ -3790,7 +3796,7 @@ def adaptive_quiz():
     """アダプティブ問題練習モード（部門別対応版）"""
     try:
         learning_mode = request.args.get('mode', 'balanced')
-        # 🔥 CRITICAL: 絶対に10問固定（ユーザー要求による）
+        # [FIRE] CRITICAL: 絶対に10問固定（ユーザー要求による）
         session_size = 10
         department = request.args.get('department', session.get('selected_department', ''))
         
@@ -3841,7 +3847,7 @@ def integrated_learning():
     try:
         # パラメータ取得
         learning_mode = request.args.get('mode', 'basic_to_specialist')
-        # 🔥 CRITICAL: 絶対に10問固定（ユーザー要求による）
+        # [FIRE] CRITICAL: 絶対に10問固定（ユーザー要求による）
         session_size = 10
         department = request.args.get('department', session.get('selected_department', ''))
         
@@ -5516,7 +5522,7 @@ try:
     
     if fast_mode:
         # 高速化モード: 遅延インポートでデータ管理初期化
-        logger.info("🚀 高速化モード: 企業環境用データ読み込み開始")
+        logger.info("[LAUNCH] 高速化モード: 企業環境用データ読み込み開始")
         
         # 遅延インポート: データ管理
         from data_manager import DataManager, SessionDataManager, EnterpriseUserManager
@@ -5556,41 +5562,41 @@ try:
         
         preload_success = enterprise_data_manager.preload_all_data()
         if preload_success:
-            logger.info("✅ 企業環境用データ事前読み込み完了 - 高速アクセス準備完了")
+            logger.info("[CHECK] 企業環境用データ事前読み込み完了 - 高速アクセス準備完了")
             
             # データ整合性チェック（軽量版）
             integrity_report = enterprise_data_manager.get_file_integrity_check()
-            logger.info(f"📊 データ整合性チェック: {integrity_report['status']} - 総計{integrity_report['total_questions']}問")
+            logger.info(f"[CHART] データ整合性チェック: {integrity_report['status']} - 総計{integrity_report['total_questions']}問")
         else:
-            logger.warning("⚠️ 企業環境用データ読み込み失敗 - 従来モードに切り替え")
+            logger.warning("[WARNING] 企業環境用データ読み込み失敗 - 従来モードに切り替え")
             # フォールバック: 従来の読み込み
             initial_questions = load_questions()
-            logger.info(f"📂 従来モード: {len(initial_questions)}問読み込み完了")
+            logger.info(f"[FOLDER] 従来モード: {len(initial_questions)}問読み込み完了")
     else:
         # 従来モード: 後方互換性保持
-        logger.info("📂 従来モード: 基本データ読み込み")
+        logger.info("[FOLDER] 従来モード: 基本データ読み込み")
         initial_questions = load_questions()
-        logger.info(f"✅ 基本アプリケーション初期化完了: {len(initial_questions)}問読み込み")
+        logger.info(f"[CHECK] 基本アプリケーション初期化完了: {len(initial_questions)}問読み込み")
     
 except Exception as e:
-    logger.error(f"❌ アプリケーション初期化エラー: {e}")
-    logger.info("🔄 基本機能で続行します")
+    logger.error(f"[ERROR] アプリケーション初期化エラー: {e}")
+    logger.info("[REPEAT] 基本機能で続行します")
 
 if __name__ == '__main__':
-    # 🔥 本番環境のポート設定: Renderではポート10000を使用
+    # [FIRE] 本番環境のポート設定: Renderではポート10000を使用
     port = int(os.environ.get('PORT', 5003))
     host = '0.0.0.0' if os.environ.get('FLASK_ENV') == 'production' else '0.0.0.0'
     debug_mode = os.environ.get('FLASK_ENV') != 'production'
     
     # サーバー配布版の場合の起動ログ
     if os.environ.get('FLASK_ENV') == 'production':
-        logger.info("🌐 RCCM試験問題集2025 - サーバー配布版起動")
-        logger.info("📊 問題データ事前読み込み開始...")
+        logger.info("[GLOBE] RCCM試験問題集2025 - サーバー配布版起動")
+        logger.info("[CHART] 問題データ事前読み込み開始...")
         try:
             questions = load_questions()
-            logger.info(f"✅ 問題データ読み込み完了: {len(questions)}問")
+            logger.info(f"[CHECK] 問題データ読み込み完了: {len(questions)}問")
         except Exception as e:
-            logger.error(f"⚠️ 問題データ読み込み警告: {e}")
+            logger.error(f"[WARNING] 問題データ読み込み警告: {e}")
     else:
         # 開発環境の場合のWSL2 IPアドレス表示
         logger.info("RCCM試験問題集アプリケーション起動中...")
@@ -5598,8 +5604,8 @@ if __name__ == '__main__':
         logger.info("アクセスURL: http://localhost:5003")
     
     # サーバー起動
-    logger.info(f"🚀 RCCM試験問題集2025 Enterprise Edition 起動中...")
-    logger.info(f"📡 Host: {host}, Port: {port}, Debug: {debug_mode}")
+    logger.info(f"[LAUNCH] RCCM試験問題集2025 Enterprise Edition 起動中...")
+    logger.info(f"[SIGNAL] Host: {host}, Port: {port}, Debug: {debug_mode}")
     
     if __name__ == '__main__':
         app.run(
