@@ -556,7 +556,6 @@ def load_questions():
     logger.info("RCCM統合問題データの読み込み開始")
     
     # 🎯 CLAUDE.md準拠: キャッシュ強制クリア（本番環境の古いキャッシュ対策）
-    global _questions_cache, _cache_timestamp
     _questions_cache = None
     _cache_timestamp = None
     logger.info("🔄 CLAUDE.md準拠: 既存キャッシュ強制クリア")
@@ -817,27 +816,12 @@ def get_mixed_questions(user_session, all_questions, requested_category='全体'
         
         # 専門科目で部門指定がある場合のみ部門フィルタ適用
         if question_type == 'specialist' and department:
-            # 🎯 CLAUDE.md準拠: 英語ID完全禁止 - 日本語直接マッチングのみ
+            # 🎯 CLAUDE.md準拠: 英語ID完全禁止 - config.pyの統一マッピング使用
+            from config import RCCMConfig
             
-            # ⚠️ 一時的互換性処理: 既存の英語URLからの移行期間対応
-            # TODO: テンプレート修正後にこの処理は削除予定
-            legacy_english_mapping = {
-                'river': '河川、砂防及び海岸・海洋',
-                'road': '道路',
-                'urban': '都市計画及び地方計画',
-                'tunnel': 'トンネル',
-                'landscape': '造園',
-                'construction_environment': '建設環境',
-                'steel_concrete': '鋼構造及びコンクリート',
-                'soil_foundation': '土質及び基礎',
-                'construction_planning': '施工計画、施工設備及び積算',
-                'water_supply': '上水道及び工業用水道',
-                'forest_engineering': '森林土木',
-                'agricultural_engineering': '農業土木'
-            }
-            
-            if department in legacy_english_mapping:
-                target_categories = legacy_english_mapping[department]
+            # 🔄 URL英語ID→日本語変換（後方互換性のみ）
+            if department in RCCMConfig.ENGLISH_TO_JAPANESE_DEPARTMENT_MAPPING:
+                target_categories = RCCMConfig.ENGLISH_TO_JAPANESE_DEPARTMENT_MAPPING[department]
                 logger.warning(f"⚠️ 一時的英語互換: {department} → {target_categories} (将来削除予定)")
             else:
                 target_categories = department  # 日本語部門名をそのまま使用
@@ -872,11 +856,11 @@ def get_mixed_questions(user_session, all_questions, requested_category='全体'
             logger.warning(f"正確なカテゴリマッチ失敗: {requested_category}, 部分マッチを試行")
             for q in [q for q in all_questions if q.get('question_type') == question_type]:
                 category = q.get('category', '')
-                # 道路、トンネル等の主要カテゴリのマッチング
-                if ('道路' in category and ('道' in requested_category or 'road' in requested_category.lower())) or \
-                   ('トンネル' in category and ('トンネル' in requested_category or 'tunnel' in requested_category.lower())) or \
-                   ('河川' in category and ('河川' in requested_category or 'civil' in requested_category.lower())) or \
-                   ('土質' in category and ('土質' in requested_category or 'soil' in requested_category.lower())):
+                # 🎯 CLAUDE.md準拠: 日本語カテゴリ直接マッチングのみ
+                if ('道路' in category and '道' in requested_category) or \
+                   ('トンネル' in category and 'トンネル' in requested_category) or \
+                   ('河川' in category and '河川' in requested_category) or \
+                   ('土質' in category and '土質' in requested_category):
                     if q not in available_questions:
                         available_questions.append(q)
         

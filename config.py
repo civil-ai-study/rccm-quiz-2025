@@ -57,113 +57,130 @@ class DataConfig:
 class RCCMConfig:
     """RCCM専門部門設定"""
     
-    # RCCM12専門部門定義（CSVデータに実際に存在する部門）
+    # 🚨 CLAUDE.md準拠：日本語キー直接使用システム（英語ID完全禁止）
     DEPARTMENTS = {
-        'road': {
-            'id': 'road',
+        '道路': {
+            'id': '道路',
             'name': '道路',
             'full_name': '建設部門：道路',
             'description': '道路計画、道路設計、道路施工に関する専門技術',
             'icon': '🛣️',
             'color': '#FF9800'
         },
-        'tunnel': {
-            'id': 'tunnel',
+        'トンネル': {
+            'id': 'トンネル',
             'name': 'トンネル',
             'full_name': '建設部門：トンネル',
             'description': 'トンネル計画、設計、施工に関する専門技術',
             'icon': '🚇',
             'color': '#795548'
         },
-        'civil_planning': {
-            'id': 'civil_planning',
+        '河川、砂防及び海岸・海洋': {
+            'id': '河川、砂防及び海岸・海洋',
             'name': '河川、砂防及び海岸・海洋',
             'full_name': '建設部門：河川、砂防及び海岸・海洋',
             'description': '河川工学、砂防工学、海岸・海洋工学に関する専門技術',
             'icon': '🌊',
             'color': '#2196F3'
         },
-        'urban_planning': {
-            'id': 'urban_planning',
+        '都市計画及び地方計画': {
+            'id': '都市計画及び地方計画',
             'name': '都市計画及び地方計画',
             'full_name': '建設部門：都市計画及び地方計画',
             'description': '都市計画、地方計画に関する専門技術',
             'icon': '🏙️',
             'color': '#9C27B0'
         },
-        'landscape': {
-            'id': 'landscape',
+        '造園': {
+            'id': '造園',
             'name': '造園',
             'full_name': '建設部門：造園',
             'description': '造園計画、設計、施工に関する専門技術',
             'icon': '🌸',
             'color': '#E91E63'
         },
-        'construction_env': {
-            'id': 'construction_env',
+        '建設環境': {
+            'id': '建設環境',
             'name': '建設環境',
             'full_name': '建設部門：建設環境',
             'description': '建設環境、環境保全に関する専門技術',
             'icon': '🌱',
             'color': '#4CAF50'
         },
-        'steel_concrete': {
-            'id': 'steel_concrete',
+        '鋼構造及びコンクリート': {
+            'id': '鋼構造及びコンクリート',
             'name': '鋼構造及びコンクリート',
             'full_name': '建設部門：鋼構造及びコンクリート',
             'description': '鋼構造、コンクリート構造に関する専門技術',
             'icon': '🏗️',
             'color': '#607D8B'
         },
-        'soil_foundation': {
-            'id': 'soil_foundation',
+        '土質及び基礎': {
+            'id': '土質及び基礎',
             'name': '土質及び基礎',
             'full_name': '建設部門：土質及び基礎',
             'description': '土質工学、基礎工学に関する専門技術',
             'icon': '🪨',
             'color': '#8D6E63'
         },
-        'construction_planning': {
-            'id': 'construction_planning',
+        '施工計画、施工設備及び積算': {
+            'id': '施工計画、施工設備及び積算',
             'name': '施工計画、施工設備及び積算',
             'full_name': '建設部門：施工計画、施工設備及び積算',
             'description': '施工計画、施工設備、積算に関する専門技術',
             'icon': '📋',
             'color': '#FF5722'
         },
-        'water_supply': {
-            'id': 'water_supply',
+        '上水道及び工業用水道': {
+            'id': '上水道及び工業用水道',
             'name': '上水道及び工業用水道',
             'full_name': '建設部門：上水道及び工業用水道',
             'description': '上水道、工業用水道に関する専門技術',
             'icon': '💧',
             'color': '#00BCD4'
         },
-        'forestry': {
-            'id': 'forestry',
+        '森林土木': {
+            'id': '森林土木',
             'name': '森林土木',
             'full_name': '建設部門：森林土木',
             'description': '森林土木、治山工事に関する専門技術',
             'icon': '🌲',
             'color': '#8BC34A'
         },
-        'agriculture': {
-            'id': 'agriculture',
+        '農業土木': {
+            'id': '農業土木',
             'name': '農業土木',
             'full_name': '建設部門：農業土木',
             'description': '農業基盤整備に関する専門技術',
             'icon': '🌾',
             'color': '#CDDC39'
-        },
-        # ULTRA SYNC FIX: Add 'env' alias for 'construction_env' to fix broken URLs
-        'env': {
-            'id': 'env',
-            'name': '建設環境',
-            'full_name': '建設部門：建設環境',
-            'description': '建設環境、環境保全に関する専門技術',
-            'icon': '🌱',
-            'color': '#4CAF50'
         }
+    }
+    
+    # 🔄 URL英語ID→日本語変換用マッピング（後方互換性のみ）
+    ENGLISH_TO_JAPANESE_DEPARTMENT_MAPPING = {
+        'road': '道路',
+        'tunnel': 'トンネル', 
+        'civil_planning': '河川、砂防及び海岸・海洋',
+        'river': '河川、砂防及び海岸・海洋',
+        'urban_planning': '都市計画及び地方計画',
+        'urban': '都市計画及び地方計画',
+        'landscape': '造園',
+        'garden': '造園',
+        'construction_env': '建設環境',
+        'env': '建設環境',
+        'steel_concrete': '鋼構造及びコンクリート',
+        'steel': '鋼構造及びコンクリート',
+        'soil_foundation': '土質及び基礎',
+        'soil': '土質及び基礎',
+        'construction_planning': '施工計画、施工設備及び積算',
+        'construction': '施工計画、施工設備及び積算',
+        'water_supply': '上水道及び工業用水道',
+        'water': '上水道及び工業用水道',
+        'forestry': '森林土木',
+        'forest': '森林土木',
+        'agriculture': '農業土木',
+        'agri': '農業土木'
     }
     
     # RCCM問題種別定義
@@ -188,8 +205,8 @@ class RCCMConfig:
         }
     }
     
-    # デフォルト設定
-    DEFAULT_DEPARTMENT = 'road'  # 道路部門をデフォルトに
+    # デフォルト設定（CLAUDE.md準拠：日本語キー使用）
+    DEFAULT_DEPARTMENT = '道路'  # 道路部門をデフォルトに
     DEFAULT_QUESTION_TYPE = 'basic'  # 基礎問題をデフォルトに
 
 class LogConfig:

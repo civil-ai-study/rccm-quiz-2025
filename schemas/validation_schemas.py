@@ -31,12 +31,12 @@ class ExamParameterSchema(Schema):
     department = fields.String(
         required=True,
         validate=validate.OneOf([
-            'basic', 'road', 'tunnel', 'river', 'urban', 'garden', 
-            'env', 'steel', 'soil', 'construction', 'water', 'forest', 'agri'
+            '基礎科目', '道路', 'トンネル', '河川、砂防及び海岸・海洋', '都市計画及び地方計画', '造園', 
+            '建設環境', '鋼構造及びコンクリート', '土質及び基礎', '施工計画、施工設備及び積算', '上水道及び工業用水道', '森林土木', '農業土木'
         ]),
         error_messages={
             'required': 'Department parameter is required.',
-            'validator_failed': 'Invalid department. Must be one of: basic, road, tunnel, river, urban, garden, env, steel, soil, construction, water, forest, agri'
+            'validator_failed': 'Invalid department. Must be one of the 13 valid RCCM departments in Japanese.'
         }
     )
     
@@ -158,12 +158,12 @@ class DepartmentParameterSchema(Schema):
     department_id = fields.String(
         required=True,
         validate=validate.OneOf([
-            'basic', 'road', 'tunnel', 'river', 'urban', 'garden', 
-            'env', 'steel', 'soil', 'construction', 'water', 'forest', 'agri'
+            '基礎科目', '道路', 'トンネル', '河川、砂防及び海岸・海洋', '都市計画及び地方計画', '造園', 
+            '建設環境', '鋼構造及びコンクリート', '土質及び基礎', '施工計画、施工設備及び積算', '上水道及び工業用水道', '森林土木', '農業土木'
         ]),
         error_messages={
             'required': 'Department ID is required.',
-            'validator_failed': 'Invalid department ID. Must be one of the 13 valid departments.'
+            'validator_failed': 'Invalid department ID. Must be one of the 13 valid RCCM departments in Japanese.'
         }
     )
 
