@@ -1646,10 +1646,13 @@ def exam():
             # current_no は回答した問題のインデックス（0ベース）
             # next_no は次に表示される問題のインデックス（セッションに保存済み）
             
-            # 安全なチェック: exam_question_idsの整合性を確保
+            # 🚨 EXPERT FIX: 専門家推奨による進行管理の責任分離
+            # POST処理の責任: 現在の問題の回答処理 + 次の問題インデックスへの更新
             total_questions_count = len(exam_question_ids) if exam_question_ids else 0
             safe_current_no = max(0, min(current_no, total_questions_count - 1))
-            safe_next_no = safe_current_no + 1
+            safe_next_no = safe_current_no + 1  # 次の問題インデックス（0ベース）
+            
+            logger.info(f"[POST] 進行計算: current={current_no}→safe_current={safe_current_no}→safe_next={safe_next_no}, total={total_questions_count}")
             
             # より堅牢な最終問題判定
             # 次の問題のインデックスが問題リストの範囲を超えている場合は最終問題
@@ -1659,13 +1662,12 @@ def exam():
             next_question_index = safe_next_no if not is_last_question else None
             
             # 詳細デバッグログ（セッション状態の完全な記録）
-            logger.info(f"=== 回答処理デバッグ情報 ===")
+            logger.info(f"=== 専門家推奨デバッグ: POST処理解析 ===")
             logger.info(f"問題ID: {qid}, 回答: {answer}, 正否: {is_correct}")
-            logger.info(f"セッション状態: current_no={current_no}, next_no={next_no}")
-            logger.info(f"安全値: safe_current_no={safe_current_no}, safe_next_no={safe_next_no}")
+            logger.info(f"進行状態: current_no={current_no}→safe_current={safe_current_no}→safe_next={safe_next_no}")
             logger.info(f"問題リスト: 長さ={total_questions_count}, IDs={exam_question_ids[:3]}..." if total_questions_count > 3 else f"問題リスト: IDs={exam_question_ids}")
             logger.info(f"最終判定: is_last={is_last_question}, next_index={next_question_index}")
-            logger.info(f"セッションキー: {list(session.keys())}")
+            logger.info(f"セッション更新: exam_current={current_no}→{safe_next_no}")
             logger.info(f"=========================")
             
             # [FIRE] CRITICAL: 復習セッション保護付きセッション更新（ウルトラシンク修正）
@@ -2094,9 +2096,13 @@ def exam():
         srs_data = session.get('srs_data', {})
         question_srs = srs_data.get(str(current_question_id), {})
 
-        # 表示用の数値を検証して設定
-        display_current = max(1, current_no + 1)  # 最小値1を保証
+        # 🚨 EXPERT FIX: 専門家推奨による表示計算の責任分離
+        # GET処理の責任: 表示用数値の計算のみ（状態変更なし）
+        # current_noは現在表示する問題のインデックス（0ベース）
+        display_current = max(1, current_no + 1)  # 1ベース表示への変換のみ
         display_total = max(1, len(exam_question_ids))  # 最小値1を保証
+        
+        logger.info(f"[GET] 表示計算: current_no={current_no}→display={display_current}/{display_total}")
         
         # デバッグログ: 表示数値の確認
         logger.info(f"問題表示: {display_current}/{display_total} (内部: current_no={current_no}, total_ids={len(exam_question_ids)})")
