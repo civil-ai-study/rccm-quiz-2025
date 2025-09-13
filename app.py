@@ -1149,18 +1149,11 @@ def exam():
                                      error="無効な回答が選択されました。",
                                      error_type="invalid_input")
             
-            # 問題IDの検証 - CRITICAL FIX: 堅牢なQID処理
+            # 🚨 EMERGENCY FIX: シンプルなQID処理に修正
             logger.info(f"QID DEBUG: Received qid='{qid}' (type: {type(qid)}, repr: {repr(qid)})")
             try:
-                # より堅牢なQID処理：不可視文字を除去し、空白をトリム
-                qid_clean = str(qid).strip()
-                # 数字以外の文字を除去（マイナス記号は保持）
-                qid_clean = re.sub(r'[^\d\-]', '', qid_clean)
-                
-                if not qid_clean:
-                    raise ValueError("QID is empty after cleaning")
-                
-                qid = int(qid_clean)
+                # シンプルで安全なQID処理
+                qid = int(str(qid).strip())
                 logger.info(f"QID DEBUG: Converted qid={qid} (type: {type(qid)})")
                 
                 # 有効範囲チェック
@@ -1168,7 +1161,7 @@ def exam():
                     raise ValueError(f"QID must be positive: {qid}")
                     
             except (ValueError, TypeError) as e:
-                logger.error(f"QID DEBUG: Conversion failed - original='{qid}', cleaned='{qid_clean if 'qid_clean' in locals() else 'N/A'}', error={e}")
+                logger.error(f"QID DEBUG: Conversion failed - original='{qid}', error={e}")
                 return render_template('error.html', 
                                      error="無効な問題IDです。",
                                      error_type="invalid_question")
