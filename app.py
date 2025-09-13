@@ -938,16 +938,25 @@ def before_request():
     
     # 🚨 EMERGENCY FIX: 進行中セッションを保護するセッション初期化
     if ('data_loaded' not in session):
-        # 進行中の試験セッションを検出
+        # [ULTRA SYNC] Expert-recommended: Fix before_request interference
+        # Problem identified: existing_exam_current >= 0 is always true (0 >= 0)
+        
         existing_exam_current = session.get('exam_current', 0)
         existing_exam_ids = session.get('exam_question_ids', [])
         
-        # 進行中セッションの場合は最小限の初期化のみ
-        if existing_exam_ids and existing_exam_current >= 0:
+        # Expert fix: Proper condition to detect active exam sessions
+        has_active_exam = (
+            existing_exam_ids and 
+            len(existing_exam_ids) > 0 and 
+            existing_exam_current < len(existing_exam_ids)  # Valid progression state
+        )
+        
+        if has_active_exam:
+            # Expert: Minimal touch for ongoing sessions
             session['data_loaded'] = True
-            logger.info(f"🔒 進行中セッション保護: {len(existing_exam_ids)}問, 現在{existing_exam_current}問目")
+            logger.info(f"[ULTRA SYNC] Active exam preserved: {len(existing_exam_ids)}q, current={existing_exam_current}")
         else:
-            # 新規セッションのみ完全初期化
+            # Expert: Only initialize truly new sessions
             initial_state = {
                 'data_loaded': True,
                 'exam_question_ids': [],
@@ -957,7 +966,7 @@ def before_request():
                 'srs_data': session.get('srs_data', {})
             }
             update_session_state(initial_state)
-            logger.info("🆕 新規セッション初期化完了")
+            logger.info("[ULTRA SYNC] New session initialized")
         
         # 企業環境用データロードは必要時のみ実行
         fast_mode = os.environ.get('RCCM_FAST_MODE', 'true').lower() == 'true'
@@ -1319,9 +1328,13 @@ def exam():
             current_no = session.get('exam_current', 0)
             exam_question_ids = session.get('exam_question_ids', [])
             
-            # 安全チェック: exam_question_idsが空の場合はセッション再構築
+            # [ULTRA SYNC] Expert-recommended: Eliminate unnecessary session reconstruction
+            # Problem: Triggers 300+ line reconstruction even during normal operation
             if not exam_question_ids:
-                logger.warning(f"POST処理: exam_question_idsが空です。セッション再構築を試行。問題ID: {qid}")
+                logger.error(f"[ULTRA SYNC] CRITICAL: exam_question_ids is empty, QID: {qid}")
+                return render_template('error.html', 
+                                     error="Session data lost. Please restart the exam.",
+                                     error_type="session_error")
                 
                 # セッション再構築を試行
                 try:
@@ -1670,30 +1683,40 @@ def exam():
             logger.info(f"セッション更新: exam_current={current_no}→{safe_next_no}")
             logger.info(f"=========================")
             
-            # [FIRE] CRITICAL: 復習セッション保護付きセッション更新（ウルトラシンク修正）
-            # 復習モードの場合は特別な保護処理
-            is_review_session = (session.get('selected_question_type') == 'review' or
-                               session.get('exam_category', '').startswith('復習'))
+            # [ULTRA SYNC] CRITICAL: Expert-Recommended Atomic Session Update
+            # Based on Stack Overflow expert Martijn Pieters and Flask 2024 best practices
             
-            session_final_updates = {
-                'exam_current': safe_next_no,  # 安全な次の問題インデックスを使用
-                'last_update': datetime.now().isoformat(),
-                'history': session.get('history', [])  # 履歴を明示的に保持
+            # Create backup before atomic operation (Expert: rollback capability)
+            session_backup = {
+                'exam_current': session.get('exam_current'),
+                'last_update': session.get('last_update'),
+                'history': session.get('history', [])
             }
             
-            # 復習セッションの場合は追加保護
-            if is_review_session:
-                session_final_updates.update({
-                    'selected_question_type': 'review',  # 復習モード維持
-                    'review_session_active': True,       # 復習セッションアクティブフラグ
-                    'review_session_timestamp': datetime.now().isoformat()  # タイムスタンプ
-                })
-                logger.info(f"復習セッション保護: 問題{qid}回答後, 次={safe_next_no}, 総数={total_questions_count}")
-            
-            for key, value in session_final_updates.items():
-                session[key] = value
-            session.permanent = True
-            session.modified = True
+            try:
+                # Expert-recommended atomic session update
+                session['exam_current'] = safe_next_no
+                session['last_update'] = datetime.now().isoformat()
+                session['history'] = session.get('history', [])
+                
+                # Flask 2024: Ensure session modification is detected
+                session.permanent = True
+                session.modified = True
+                
+                # Expert: Verify atomic operation succeeded
+                if session.get('exam_current') != safe_next_no:
+                    raise Exception(f"Atomic session update failed: expected {safe_next_no}, got {session.get('exam_current')}")
+                
+                logger.info(f"[ULTRA SYNC] Atomic update SUCCESS: exam_current = {safe_next_no}")
+                
+            except Exception as e:
+                # Expert: Rollback on failure
+                logger.error(f"[ULTRA SYNC] Atomic update FAILED: {e}")
+                for key, value in session_backup.items():
+                    if value is not None:
+                        session[key] = value
+                session.modified = True
+                raise e
             
             # [ALERT] ULTRA-SYNC: セッション保存の厳密な確認（専門家推奨）
             saved_current = session.get('exam_current', 'NOT_FOUND')

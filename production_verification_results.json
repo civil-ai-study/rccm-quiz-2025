@@ -1,0 +1,11 @@
+{
+  "session_consistency": false,
+  "progression_1_to_2": false,
+  "progression_2_to_3": false,
+  "csrf_token_valid": true,
+  "session_data_preserved": true,
+  "error_details": [
+    "POST failed: 400",
+    "Test execution error: 'cp932' codec can't encode character '\\U0001f50d' in position 37: illegal multibyte sequence"
+  ]
+}

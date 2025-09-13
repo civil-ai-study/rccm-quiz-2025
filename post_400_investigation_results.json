@@ -1,0 +1,37 @@
+{
+  "get_success": true,
+  "csrf_token_valid": true,
+  "qid_valid": true,
+  "post_error_details": "<!DOCTYPE html>\n<!-- 🔍 ULTRA SYNC段階26緊急診断: この行が表示されればテンプレート更新成功 -->\n<html lang=\"ja\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes, viewport-fit=cover\">\n    <title>エラー | RCCM試験問題集</title>\n    \n    <!-- 🔥 CRITICAL: 超強力キャッシュクリア（ユーザー要求による） -->\n    <meta http-equiv=\"Cache-Control\" content=\"no-store, no-cache, must-revalidate, max-age=0\">\n    <meta http-equiv=\"Pragma\" content=\"no-cache\">\n    <meta http-equiv=\"Expires\" content=\"-1\">\n    <script>\n        // 🔥 ページ読み込み時のキャッシュ強制クリア（ユーザー要求による）\n        (function() {\n            if (window.performance && window.performance.navigation.type === 2) {\n                // 戻るボタンでアクセスされた場合は強制リロード\n                window.location.reload(true);\n            }\n            // セッションストレージの問題関連データもクリア\n            if (typeof(Storage) !== \"undefined\") {\n                sessionStorage.removeItem('exa",
+  "response_headers": {
+    "Date": "Sat, 13 Sep 2025 03:15:21 GMT",
+    "Content-Type": "text/html; charset=utf-8",
+    "Transfer-Encoding": "chunked",
+    "Connection": "keep-alive",
+    "access-control-allow-credentials": "true",
+    "access-control-allow-headers": "Content-Type",
+    "access-control-allow-methods": "GET, POST, OPTIONS",
+    "Cache-Control": "no-store, no-cache, must-revalidate, max-age=0, private, no-transform",
+    "etag": "W/\"0\"",
+    "expires": "-1",
+    "last-modified": "Wed, 11 Jan 1984 05:00:00 GMT",
+    "permissions-policy": "geolocation=(), microphone=(), camera=()",
+    "pragma": "no-cache",
+    "referrer-policy": "strict-origin-when-cross-origin",
+    "rndr-id": "31a7d0ca-adac-400f",
+    "Set-Cookie": "rccm_session=.eJx9UMtuwyAQ_BfOSQXYYOPv6K2pEIZ1iho_CriqG-Xfu7YiX4p82EXsDDOz3ImNodNp_ISBNISZsmsllEzauuKSs7rtWq5UC1aZ1nbAXF0woOREoIdwhcEuul0mE6M2NvlvIE0KM2RgaxJcx7Cgy2VWVBSXuXbQ5ZQcTCakHoaE5DAalyOlZUIzEiew3tx8TCvpx_RHRhs8h7Ap0-fga4aY_Dho7yJp3ggvkMorbCWWwKrXwbozl9gY1npyQd6fErksu2we9L86Qkp-uKLpfWdHPUFAJEa8kIbRx4kE2FD9gW-3vTAj5eJM1ZkVr7RomGg4e5FS8EptUf-DtVKl5GvgCDewCVz2lzPgwX_u7INdH38Ej8lP.aMThyQ.4uFjzyX6z7iSwkrG45g1KRJGsGk; HttpOnly; Path=/; SameSite=Lax",
+    "strict-transport-security": "max-age=31536000; includeSubDomains",
+    "vary": "*, Cookie, Accept-Encoding",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY",
+    "x-render-origin-server": "gunicorn",
+    "x-xss-protection": "1; mode=block",
+    "cf-cache-status": "DYNAMIC",
+    "Server": "cloudflare",
+    "CF-RAY": "97e47acd58e0eb95-NRT",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "error_analysis": [
+    "Investigation error: 'cp932' codec can't encode character '\\U0001f50d' in position 58: illegal multibyte sequence"
+  ]
+}
