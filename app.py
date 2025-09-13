@@ -936,24 +936,28 @@ def before_request():
     if 'session_id' not in session:
         session['session_id'] = os.urandom(16).hex()
     
-    # データロード済みフラグの確認（競合回避） - EXPERT RECOMMENDED FIX
-    if ('data_loaded' not in session or 
-        'exam_question_ids' not in session or 
-        session.get('exam_question_ids') is None):
-        # [ALERT] PHASE 1: セッション初期化を条件を厳格化
-        # ★ 専門家推奨: 進行中試験のexam_currentは保持
+    # 🚨 EMERGENCY FIX: 進行中セッションを保護するセッション初期化
+    if ('data_loaded' not in session):
+        # 進行中の試験セッションを検出
         existing_exam_current = session.get('exam_current', 0)
         existing_exam_ids = session.get('exam_question_ids', [])
         
-        initial_state = {
-            'data_loaded': True,
-            'exam_question_ids': existing_exam_ids if existing_exam_ids else [],
-            'exam_current': existing_exam_current,  # ★ 進捗保持
-            'history': session.get('history', []),
-            'bookmarks': session.get('bookmarks', []),
-            'srs_data': session.get('srs_data', {})
-        }
-        update_session_state(initial_state)
+        # 進行中セッションの場合は最小限の初期化のみ
+        if existing_exam_ids and existing_exam_current >= 0:
+            session['data_loaded'] = True
+            logger.info(f"🔒 進行中セッション保護: {len(existing_exam_ids)}問, 現在{existing_exam_current}問目")
+        else:
+            # 新規セッションのみ完全初期化
+            initial_state = {
+                'data_loaded': True,
+                'exam_question_ids': [],
+                'exam_current': 0,
+                'history': session.get('history', []),
+                'bookmarks': session.get('bookmarks', []),
+                'srs_data': session.get('srs_data', {})
+            }
+            update_session_state(initial_state)
+            logger.info("🆕 新規セッション初期化完了")
         
         # 企業環境用データロードは必要時のみ実行
         fast_mode = os.environ.get('RCCM_FAST_MODE', 'true').lower() == 'true'
