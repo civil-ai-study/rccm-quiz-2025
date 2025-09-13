@@ -16,7 +16,6 @@ except ImportError:
     fcntl = None  # Windows環境では使用不可
 import time
 import uuid
-from flask_session import Session
 
 # [ALERT] PHASE 1: Session State Lock Mechanism for Race Condition Resolution
 session_locks = {}
@@ -176,24 +175,6 @@ def handle_qid_validation_error(e):
     # Re-raise if not a QID validation error
     raise e
 
-
-# ULTRA SYNC: Server-Side Session Storage Configuration
-# Solves client-side cookie session corruption at 2nd question
-app.config['SESSION_TYPE'] = 'filesystem'
-app.config['SESSION_PERMANENT'] = False
-app.config['SESSION_USE_SIGNER'] = True
-app.config['SESSION_KEY_PREFIX'] = 'rccm_session:'
-app.config['SESSION_FILE_DIR'] = os.path.join(os.getcwd(), 'flask_session')
-app.config['SESSION_FILE_THRESHOLD'] = 500
-app.config['SESSION_FILE_MODE'] = 384  # 0o600 in octal
-
-# Ensure session directory exists
-os.makedirs(app.config['SESSION_FILE_DIR'], exist_ok=True)
-
-# Initialize Flask-Session
-Session(app)
-
-print(f"[ULTRA SYNC] Server-side session storage initialized: {app.config['SESSION_FILE_DIR']}")
 
 # [WRENCH] ULTRA SYNC FIX: CSRF保護を慎重に有効化
 csrf = CSRFProtect(app)
@@ -1142,9 +1123,7 @@ def before_request():
             # 従来のデータロード（後方互換性）
             try:
                 user_name = session.get('user_name')
-                # session_data_manager.load_session_data(session, session['session_id'], user_name)  # TEMPORARILY DISABLED
-                if session_data_manager:
-                    session_data_manager.load_session_data(session, session['session_id'], user_name)
+                session_data_manager.load_session_data(session, session['session_id'], user_name)
             except Exception as e:
                 logger.warning(f"セッションデータロード失敗（続行可能）: {e}")
 
@@ -1160,9 +1139,7 @@ def after_request_data_save(response):
         if session_id and session.get('history'):
             try:
                 user_name = session.get('user_name')
-                # session_data_manager.auto_save_trigger(session, session_id, user_name)  # TEMPORARILY DISABLED
-                if session_data_manager:
-                    session_data_manager.auto_save_trigger(session, session_id, user_name)
+                session_data_manager.auto_save_trigger(session, session_id, user_name)
             except Exception as e:
                 logger.warning(f"セッション自動保存失敗（続行可能）: {e}")
     
@@ -3238,7 +3215,7 @@ def export_data():
         if not session_id:
             return jsonify({'error': 'セッションが見つかりません'}), 400
         
-        export_data = data_manager.get_data_export(session_id) if data_manager else None
+        export_data = data_manager.get_data_export(session_id)
         if export_data:
             return jsonify(export_data)
         else:
@@ -5727,7 +5704,7 @@ def enterprise_dashboard():
 def api_enterprise_data_integrity():
     """データ整合性チェックAPI（企業環境用）"""
     try:
-        integrity_report = enterprise_data_manager.get_file_integrity_check() if enterprise_data_manager else {}
+        integrity_report = enterprise_data_manager.get_file_integrity_check()
         
         return jsonify({
             'success': True,
@@ -5782,17 +5759,14 @@ try:
         logger.info("[LAUNCH] 高速化モード: 企業環境用データ読み込み開始")
         
         # 遅延インポート: データ管理
-        # from data_manager import DataManager, SessionDataManager, EnterpriseUserManager  # TEMPORARILY DISABLED
-        # from utils import enterprise_data_manager as edm  # TEMPORARILY DISABLED
+        from data_manager import DataManager, SessionDataManager, EnterpriseUserManager
+        from utils import enterprise_data_manager as edm
         
-        # グローバル変数に代入 - SAFE FALLBACK MODE
-        # data_manager = DataManager()  # TEMPORARILY DISABLED
-        # session_data_manager = SessionDataManager(data_manager)  # TEMPORARILY DISABLED
-        # enterprise_user_manager = EnterpriseUserManager(data_manager)  # TEMPORARILY DISABLED
-        data_manager = None
-        session_data_manager = None
-        enterprise_user_manager = None
-        enterprise_data_manager = None
+        # グローバル変数に代入
+        data_manager = DataManager()
+        session_data_manager = SessionDataManager(data_manager)
+        enterprise_user_manager = EnterpriseUserManager(data_manager)
+        enterprise_data_manager = edm
         
         # 遅延インポート: 機能モジュール
         from gamification import gamification_manager as gam_mgr
@@ -5820,12 +5794,12 @@ try:
         api_manager = api_mgr
         advanced_personalization = adv_per
         
-        preload_success = enterprise_data_manager.preload_all_data() if enterprise_data_manager else False
+        preload_success = enterprise_data_manager.preload_all_data()
         if preload_success:
             logger.info("[CHECK] 企業環境用データ事前読み込み完了 - 高速アクセス準備完了")
             
             # データ整合性チェック（軽量版）
-            integrity_report = enterprise_data_manager.get_file_integrity_check() if enterprise_data_manager else {}
+            integrity_report = enterprise_data_manager.get_file_integrity_check()
             logger.info(f"[CHART] データ整合性チェック: {integrity_report['status']} - 総計{integrity_report['total_questions']}問")
         else:
             logger.warning("[WARNING] 企業環境用データ読み込み失敗 - 従来モードに切り替え")

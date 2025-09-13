@@ -1,0 +1,45 @@
+{
+  "timestamp": "2025-09-13T22:11:36.420602",
+  "test_type": "ULTRA_SYNC_STAGE3_VERIFICATION",
+  "server_side_session_test": [
+    {
+      "department": "basic",
+      "question_type": "basic",
+      "progression_success": [
+        1,
+        2,
+        3
+      ],
+      "corruption_detected": false,
+      "completed_questions": 10
+    },
+    {
+      "department": "road",
+      "question_type": "specialist",
+      "progression_success": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "corruption_detected": false,
+      "completed_questions": 10
+    },
+    {
+      "department": "civil_planning",
+      "question_type": "specialist",
+      "progression_success": [
+        1
+      ],
+      "corruption_detected": false,
+      "completed_questions": 10
+    }
+  ],
+  "corruption_eliminated": true
+}

@@ -1,0 +1,131 @@
+{
+  "timestamp": "2025-09-13T22:02:32.720302",
+  "analysis_type": "ULTRA_SYNC_SESSION_STATE_DEEP_ANALYSIS",
+  "session_progression": [
+    {
+      "department": "basic",
+      "question_type": "basic",
+      "progression_steps": [
+        {
+          "question_number": 1,
+          "step_status": "question_displayed",
+          "session_cookie_analysis": {
+            "rccm_session": {
+              "length": 352,
+              "has_dots": 3,
+              "starts_with": ".eJxFkN1uwyAMhd_F1-l...",
+              "ends_with": "...VfWZQbdWPc"
+            }
+          },
+          "form_tokens_present": {
+            "csrf_token": true,
+            "qid_input": true,
+            "csrf_value": "IjdhZjBiZTk5ODUyMzAyMDM2OGUwM2Y2YzVmMjc1NzdhODdkYzc0YWUi.aMVraQ.lQmunxxLJFnGlpQPRFZieL2AQ8o",
+            "qid_value": "29"
+          },
+          "response_type": "question_page"
+        },
+        {
+          "question_number": 2,
+          "step_status": "session_corruption",
+          "session_cookie_analysis": {
+            "rccm_session": {
+              "length": 903,
+              "has_dots": 3,
+              "starts_with": ".eJyNVNtu2zAM_ZVBr3M...",
+              "ends_with": "..._1G_ceX9-g"
+            }
+          },
+          "form_tokens_present": {
+            "csrf_token": false,
+            "qid_input": false,
+            "csrf_value": null,
+            "qid_value": null
+          },
+          "response_type": "feedback_page"
+        }
+      ],
+      "session_state_changes": [],
+      "failure_point": 2,
+      "session_corruption_detected": true
+    },
+    {
+      "department": "road",
+      "question_type": "specialist",
+      "progression_steps": [
+        {
+          "question_number": 1,
+          "step_status": "question_displayed",
+          "session_cookie_analysis": {
+            "rccm_session": {
+              "length": 396,
+              "has_dots": 3,
+              "starts_with": ".eJx9UMtuwyAQ_BfOScX...",
+              "ends_with": "...Ts0CxSrULA"
+            }
+          },
+          "form_tokens_present": {
+            "csrf_token": true,
+            "qid_input": true,
+            "csrf_value": "IjQ2MjAxMTU2MzhlZmY5OTJhNDlmMTU0Y2RkNzllYWNlMjM2MDEwODUi.aMVrag.jawP0qvOsK9CHu361_6oL0C37Ko",
+            "qid_value": "26"
+          },
+          "response_type": "question_page"
+        },
+        {
+          "question_number": 2,
+          "step_status": "session_corruption",
+          "session_cookie_analysis": {
+            "rccm_session": {
+              "length": 959,
+              "has_dots": 3,
+              "starts_with": ".eJyNVNtymzAQ_ZWOXks...",
+              "ends_with": "...r33sGzJnxY"
+            }
+          },
+          "form_tokens_present": {
+            "csrf_token": false,
+            "qid_input": false,
+            "csrf_value": null,
+            "qid_value": null
+          },
+          "response_type": "feedback_page"
+        }
+      ],
+      "session_state_changes": [],
+      "failure_point": 2,
+      "session_corruption_detected": true
+    },
+    {
+      "department": "civil_planning",
+      "question_type": "specialist",
+      "progression_steps": [
+        {
+          "question_number": 1,
+          "step_status": "question_displayed",
+          "session_cookie_analysis": {
+            "rccm_session": {
+              "length": 447,
+              "has_dots": 3,
+              "starts_with": ".eJyNUctugzAQ_Befk8o...",
+              "ends_with": "...4C0uz3-nYo"
+            }
+          },
+          "form_tokens_present": {
+            "csrf_token": true,
+            "qid_input": true,
+            "csrf_value": "ImIzNTBlNjEzYTk2OWVkN2JhMmEzMTYzOGI0ZjQwZWE0ODljNzhjM2Mi.aMVraw.1tqaSA1N1pUKzA5VxdBaA-kUgFE",
+            "qid_value": "68"
+          },
+          "response_type": "question_page"
+        }
+      ],
+      "session_state_changes": [],
+      "failure_point": 2,
+      "session_corruption_detected": true
+    }
+  ],
+  "session_data_analysis": {},
+  "failure_point_analysis": {},
+  "root_cause_hypothesis": {}
+}

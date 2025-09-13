@@ -1,0 +1,134 @@
+{
+  "timestamp": "2025-09-13T22:04:42.772374",
+  "investigation_type": "ULTRA_SYNC_FLASK_INTERNAL_SESSION",
+  "flask_session_analysis": {},
+  "serialization_corruption_tests": [
+    {
+      "department": "basic",
+      "question_type": "basic",
+      "session_integrity_progression": [
+        {
+          "step_number": 1,
+          "session_cookie_length": 351,
+          "integrity_analysis": {
+            "before_length": 351,
+            "after_length": 351,
+            "size_growth_ratio": 1.0,
+            "character_changes": {
+              "dot_count_before": 3,
+              "dot_count_after": 3,
+              "dot_count_changed": false
+            },
+            "potential_corruption_indicators": []
+          },
+          "form_tokens_status": {
+            "csrf_present": true,
+            "qid_present": true,
+            "csrf_value_length": 91,
+            "qid_value": "119"
+          },
+          "flask_internal_status": "healthy"
+        },
+        {
+          "step_number": 2,
+          "session_cookie_length": 0,
+          "integrity_analysis": {},
+          "form_tokens_status": {
+            "csrf_present": false,
+            "qid_present": false,
+            "csrf_value_length": 0,
+            "qid_value": null
+          },
+          "flask_internal_status": "session_corruption"
+        }
+      ],
+      "corruption_detected": true,
+      "corruption_point": 2
+    },
+    {
+      "department": "road",
+      "question_type": "specialist",
+      "session_integrity_progression": [
+        {
+          "step_number": 1,
+          "session_cookie_length": 395,
+          "integrity_analysis": {
+            "before_length": 395,
+            "after_length": 395,
+            "size_growth_ratio": 1.0,
+            "character_changes": {
+              "dot_count_before": 3,
+              "dot_count_after": 3,
+              "dot_count_changed": false
+            },
+            "potential_corruption_indicators": []
+          },
+          "form_tokens_status": {
+            "csrf_present": true,
+            "qid_present": true,
+            "csrf_value_length": 91,
+            "qid_value": "25"
+          },
+          "flask_internal_status": "healthy"
+        },
+        {
+          "step_number": 2,
+          "session_cookie_length": 0,
+          "integrity_analysis": {},
+          "form_tokens_status": {
+            "csrf_present": false,
+            "qid_present": false,
+            "csrf_value_length": 0,
+            "qid_value": null
+          },
+          "flask_internal_status": "session_corruption"
+        }
+      ],
+      "corruption_detected": true,
+      "corruption_point": 2
+    },
+    {
+      "department": "civil_planning",
+      "question_type": "specialist",
+      "session_integrity_progression": [
+        {
+          "step_number": 1,
+          "session_cookie_length": 446,
+          "integrity_analysis": {
+            "before_length": 446,
+            "after_length": 446,
+            "size_growth_ratio": 1.0,
+            "character_changes": {
+              "dot_count_before": 3,
+              "dot_count_after": 3,
+              "dot_count_changed": false
+            },
+            "potential_corruption_indicators": []
+          },
+          "form_tokens_status": {
+            "csrf_present": true,
+            "qid_present": true,
+            "csrf_value_length": 91,
+            "qid_value": "56"
+          },
+          "flask_internal_status": "healthy"
+        },
+        {
+          "step_number": 2,
+          "session_cookie_length": 0,
+          "integrity_analysis": {},
+          "form_tokens_status": {
+            "csrf_present": false,
+            "qid_present": false,
+            "csrf_value_length": 0,
+            "qid_value": null
+          },
+          "flask_internal_status": "session_corruption"
+        }
+      ],
+      "corruption_detected": true,
+      "corruption_point": 2
+    }
+  ],
+  "cookie_integrity_analysis": {}
+}

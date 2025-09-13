@@ -1,0 +1,95 @@
+{
+  "timestamp": "2025-09-13T18:07:54.365822",
+  "investigation_type": "PRODUCTION_COOKIE_SIZE_ANALYSIS",
+  "cookie_progression": [
+    {
+      "department": "basic",
+      "question_type": "basic",
+      "cookie_sizes": [
+        {
+          "question_no": 1,
+          "total_size": 364,
+          "session_size": 364,
+          "exceeds_4kb": false
+        }
+      ],
+      "session_data_sizes": [],
+      "failure_point": 1,
+      "max_cookie_size": 364
+    },
+    {
+      "department": "road",
+      "question_type": "specialist",
+      "cookie_sizes": [
+        {
+          "question_no": 1,
+          "total_size": 411,
+          "session_size": 411,
+          "exceeds_4kb": false
+        },
+        {
+          "question_no": 2,
+          "total_size": 985,
+          "session_size": 985,
+          "exceeds_4kb": false
+        },
+        {
+          "question_no": 3,
+          "total_size": 1056,
+          "session_size": 1056,
+          "exceeds_4kb": false
+        },
+        {
+          "question_no": 4,
+          "total_size": 1153,
+          "session_size": 1153,
+          "exceeds_4kb": false
+        },
+        {
+          "question_no": 5,
+          "total_size": 1221,
+          "session_size": 1221,
+          "exceeds_4kb": false
+        },
+        {
+          "question_no": 6,
+          "total_size": 1291,
+          "session_size": 1291,
+          "exceeds_4kb": false
+        },
+        {
+          "question_no": 7,
+          "total_size": 1363,
+          "session_size": 1363,
+          "exceeds_4kb": false
+        },
+        {
+          "question_no": 8,
+          "total_size": 1421,
+          "session_size": 1421,
+          "exceeds_4kb": false
+        }
+      ],
+      "session_data_sizes": [],
+      "failure_point": 8,
+      "max_cookie_size": 1421
+    },
+    {
+      "department": "civil_planning",
+      "question_type": "specialist",
+      "cookie_sizes": [
+        {
+          "question_no": 1,
+          "total_size": 455,
+          "session_size": 455,
+          "exceeds_4kb": false
+        }
+      ],
+      "session_data_sizes": [],
+      "failure_point": 1,
+      "max_cookie_size": 455
+    }
+  ],
+  "size_analysis": {},
+  "root_cause_confirmation": {}
+}
