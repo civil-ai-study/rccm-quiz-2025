@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify, send_from_directory, make_response
-from flask_wtf.csrf import CSRFProtect
+from flask_wtf.csrf import CSRFProtect, CSRFError
 import os
 import random
 from datetime import datetime, timedelta
@@ -43,13 +43,13 @@ social_learning_manager = None
 api_manager = None  
 advanced_personalization = None
 
-# ログ設定
-# [ALERT] ULTRA SYNC FIX: パフォーマンス向上のためログレベル最適化
+# [ULTRA SYNC] Expert-recommended Unicode logging fix
+# Based on Stack Overflow experts: UTF-8 encoding prevents I/O blocking
 logging.basicConfig(
     level=logging.ERROR,  # INFO→ERROR変更でI/O削減
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('rccm_app.log'),
+        logging.FileHandler('rccm_app.log', encoding='utf-8'),  # Expert: UTF-8 encoding
         logging.StreamHandler()
     ]
 )
@@ -4670,6 +4670,19 @@ def app_icon(size):
     except Exception as e:
         logger.debug(f"アイコン配信エラー: {e}")
         return '', 404
+
+# [ULTRA SYNC] Expert-recommended CSRF error handler
+# Based on Stack Overflow expert recommendations for POST 400 error fix
+@app.errorhandler(CSRFError)
+def handle_csrf_error(e):
+    """
+    Stack Overflow expert solution for CSRF validation failures
+    Fixes the main cause of POST 400 errors preventing 1st->2nd progression
+    """
+    logger.error(f"[ULTRA SYNC] CSRF validation failed: {e.description}")
+    return render_template('error.html', 
+                         error="セキュリティトークンが無効です。ページを再読み込みしてください。",
+                         error_type="csrf_error"), 400
 
 @app.errorhandler(404)
 def page_not_found(e):

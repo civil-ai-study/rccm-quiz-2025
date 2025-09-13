@@ -1,0 +1,85 @@
+{
+  "timestamp": "2025-09-13T12:30:29.467850",
+  "tests_performed": [],
+  "errors_detected": [
+    {
+      "stage": "post_request",
+      "status_code": 400,
+      "indicators": [
+        "OLD_DEBUG_VERSION"
+      ],
+      "content_sample": "<!DOCTYPE html>\n<!-- 🔍 ULTRA SYNC段階26緊急診断: この行が表示されればテンプレート更新成功 -->\n<html lang=\"ja\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes, viewport-fit=cover\">\n    <title>エラー | RCCM試験問題集</title>\n    \n    <!-- 🔥 CRITICAL: 超強力キャッシュクリア（ユーザー要求による） -->\n    <meta http-equiv=\"Cache-Control\" content=\"no-store, no-cache, must-revalidate, max-age=0\">\n    <meta http-equiv=\"Pragma\" content=\"no-cache\">\n    <meta http-equiv=\"Expires\" content=\"-1\">\n    <script>\n        // 🔥 ページ読み込み時のキャッシュ強制クリア（ユーザー要求による）\n        (function() {\n            if (window.performance && window.performance.navigation.type === 2) {\n                // 戻るボタンでアクセスされた場合は強制リロード\n                window.location.reload(true);\n            }\n            // セッションストレージの問題関連データもクリア\n            if (typeof(Storage) !== \"undefined\") {\n                sessionStorage.removeItem('exa"
+    }
+  ],
+  "session_behavior": {
+    "initialization": {
+      "cookies_set": true,
+      "csrf_token_present": true,
+      "csrf_token_length": 91,
+      "qid_present": true,
+      "qid_value": "24",
+      "progress_display": true,
+      "content_sample": "<!DOCTYPE html>\n<!-- 🔍 ULTRA SYNC段階26緊急診断: この行が表示されればテンプレート更新成功 -->\n<html lang=\"ja\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=ye"
+    },
+    "post_request": {
+      "status_code": 400,
+      "response_time": 0.17141127586364746,
+      "headers": {
+        "Date": "Sat, 13 Sep 2025 03:30:30 GMT",
+        "Content-Type": "text/html; charset=utf-8",
+        "Transfer-Encoding": "chunked",
+        "Connection": "keep-alive",
+        "access-control-allow-credentials": "true",
+        "access-control-allow-headers": "Content-Type",
+        "access-control-allow-methods": "GET, POST, OPTIONS",
+        "Cache-Control": "no-store, no-cache, must-revalidate, max-age=0, private, no-transform",
+        "etag": "W/\"0\"",
+        "expires": "-1",
+        "last-modified": "Wed, 11 Jan 1984 05:00:00 GMT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "pragma": "no-cache",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "rndr-id": "ccd1d600-6376-4cee",
+        "Set-Cookie": "rccm_session=.eJx9UMtuwyAQ_BfOSbUYcG1_R29NhTCsU9T4UcBV3Sj_XkCRT8gSGsTOMLO7d6K9G2SYv3AiHTEaoOmHngkYaipELcAYigiM87bGmtJeNKLi5ERwRHfFSW-y3xblvVQ62B8kXXArFmitAl5nt8WUy9qCYJe1MTiUnAwuyoURpxDFblamJArbEsOIX1BbdbM-JNGvGo-CMr06l53hWfhe0Qc7T9IaT7p3kqejbQIRoaojpFK6aQaayizCK_l4mpS62Y3LpP2THkOw0zXG3ne1lwu6yHgfH6Sj8DgRh5mVn_Fvnix2CZU4Q3um7A1YxyCeF1rxpkmtlkhecdpCatjjDXVAU9xzgTzY6K4-mPXxD6hNyGs.aMTlVg.qn4GWEjHuLXwzNmIxvG6Y1OQfSQ; HttpOnly; Path=/; SameSite=Lax",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "vary": "*, Cookie, Accept-Encoding",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-render-origin-server": "gunicorn",
+        "x-xss-protection": "1; mode=block",
+        "cf-cache-status": "DYNAMIC",
+        "Server": "cloudflare",
+        "CF-RAY": "97e490fb9b3be38a-NRT",
+        "alt-svc": "h3=\":443\"; ma=86400"
+      },
+      "content_sample": "<!DOCTYPE html>\n<!-- 🔍 ULTRA SYNC段階26緊急診断: この行が表示されればテンプレート更新成功 -->\n<html lang=\"ja\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes, viewport-fit=cover\">\n    <title>エラー | RCCM試験問題集</title>\n    \n    <!-- 🔥 CRITICAL: 超強力キャッシュクリア（ユーザー要求による） -->\n    <meta http-equiv=\"Cache-Control\" content=\"no-store, no-cache, must-revalidate, max-a"
+    }
+  },
+  "server_responses": [
+    {
+      "url": "https://rccm-quiz-2025.onrender.com",
+      "status_code": 200,
+      "content_sample": "<!DOCTYPE html>\n<!-- 🔍 ULTRA SYNC段階26緊急診断: この行が表示されればテンプレート更新成功 -->\n<html lang=\"ja\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes, viewport-fit=cover\">\n    <title>ホーム | RCCM試験問題集</title>\n    \n    <!-- 🔥 CRITICAL: 超強力キャッシュクリア（ユーザー要求による） -->\n    <meta http-equiv=\"Cache-Control\" content=\"no-store, no-cache, must-revalidate, max-a"
+    }
+  ],
+  "code_version_indicators": [
+    {
+      "location": "homepage",
+      "indicator": "ULTRA SYNC段階26",
+      "status": "OLD_DEBUG_CODE"
+    }
+  ],
+  "deployment_status": {
+    "ultra_sync_26_present": false,
+    "latest_commit_present": false,
+    "expert_fixes_present": false,
+    "old_debug_present": true
+  },
+  "final_results": {
+    "session_initialization_success": true,
+    "post_request_success": false,
+    "deployment_status": "UNCLEAR",
+    "core_issue_identified": true,
+    "requires_deployment": false
+  }
+}
