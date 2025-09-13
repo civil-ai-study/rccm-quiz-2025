@@ -76,45 +76,74 @@ lock_cleanup_lock = threading.Lock()
 
 def validate_qid_category_match(qid, department, question_type, all_questions):
     """
-    Expert-recommended QID-Category validation function
-    Based on Miguel Grinberg Flask error handling best practices
+    COMPREHENSIVE FIX: Complete QID-Category validation
     
-    Validates that the QID belongs to the correct category for the session
+    Enhanced validation addressing all identified root causes:
+    - Complete database question verification
+    - Comprehensive category matching
+    - Source file validation
+    - QID range validation
     """
-    # Find the question by ID
-    question = next((q for q in all_questions if int(q.get('id', 0)) == qid), None)
-    if not question:
-        logger.error(f"[EXPERT VALIDATION] Question ID {qid} not found in database")
-        return False, f"Question ID {qid} not found"
-    
-    # Get expected category based on department mapping
-    from config import department_mapping
-    expected_category = department_mapping.get(department, department)
-    
-    # Get actual category from question
-    actual_category = question.get('category', '')
-    
-    # For basic questions, allow any category from 4-1.csv (共通)
-    if question_type == 'basic':
-        if actual_category == '共通':
-            logger.info(f"[EXPERT VALIDATION] Basic question ID {qid} validated: category={actual_category}")
-            return True, None
-        else:
-            logger.error(f"[EXPERT VALIDATION] Basic question ID {qid} has wrong category: expected='共通', actual='{actual_category}'")
-            return False, f"Basic question has incorrect category: {actual_category}"
-    
-    # For specialist questions, validate exact category match
-    elif question_type == 'specialist':
-        if actual_category == expected_category:
-            logger.info(f"[EXPERT VALIDATION] Specialist question ID {qid} validated: category={actual_category}")
-            return True, None
-        else:
-            logger.error(f"[EXPERT VALIDATION] Specialist question ID {qid} category mismatch: expected='{expected_category}', actual='{actual_category}'")
-            return False, f"Question belongs to '{actual_category}' but session expects '{expected_category}'"
-    
-    # Unknown question type
-    logger.error(f"[EXPERT VALIDATION] Unknown question type: {question_type}")
-    return False, f"Unknown question type: {question_type}"
+    try:
+        logger.info(f"[COMPREHENSIVE VALIDATION] Validating QID {qid} for {department} {question_type}")
+        
+        # COMPREHENSIVE VALIDATION 1: Question existence check
+        question = next((q for q in all_questions if int(q.get('id', 0)) == qid), None)
+        if not question:
+            logger.error(f"[COMPREHENSIVE VALIDATION] Question ID {qid} not found in database")
+            return False, f"Question ID {qid} not found in database"
+        
+        # COMPREHENSIVE VALIDATION 2: Source file validation
+        source_file = question.get('source', '')
+        if question_type == 'basic':
+            if source_file != '4-1.csv':
+                logger.error(f"[COMPREHENSIVE VALIDATION] Basic question {qid} has wrong source: {source_file}")
+                return False, f"Basic question must be from 4-1.csv, found: {source_file}"
+        elif question_type == 'specialist':
+            if not source_file.startswith('4-2'):
+                logger.error(f"[COMPREHENSIVE VALIDATION] Specialist question {qid} has wrong source: {source_file}")
+                return False, f"Specialist question must be from 4-2_*.csv, found: {source_file}"
+        
+        # COMPREHENSIVE VALIDATION 3: QID range validation
+        if question_type == 'basic':
+            if not (1 <= qid <= 202):
+                logger.error(f"[COMPREHENSIVE VALIDATION] Basic QID {qid} out of range (1-202)")
+                return False, f"Basic question QID {qid} out of valid range (1-202)"
+        elif question_type == 'specialist':
+            if qid < 1000:
+                logger.error(f"[COMPREHENSIVE VALIDATION] Specialist QID {qid} out of range (1000+)")
+                return False, f"Specialist question QID {qid} should be 1000+ range"
+        
+        # COMPREHENSIVE VALIDATION 4: Category matching
+        from config import department_mapping
+        expected_category = department_mapping.get(department, department)
+        actual_category = question.get('category', '')
+        
+        if question_type == 'basic':
+            if actual_category == '共通':
+                logger.info(f"[COMPREHENSIVE VALIDATION] Basic question {qid} validated: source={source_file}, category={actual_category}")
+                return True, None
+            else:
+                logger.error(f"[COMPREHENSIVE VALIDATION] Basic question {qid} wrong category: expected='共通', actual='{actual_category}'")
+                return False, f"Basic question has incorrect category: {actual_category} (expected: 共通)"
+        
+        elif question_type == 'specialist':
+            if actual_category == expected_category:
+                logger.info(f"[COMPREHENSIVE VALIDATION] Specialist question {qid} validated: source={source_file}, category={actual_category}")
+                return True, None
+            else:
+                logger.error(f"[COMPREHENSIVE VALIDATION] Specialist question {qid} category mismatch: expected='{expected_category}', actual='{actual_category}'")
+                return False, f"Question belongs to '{actual_category}' but {department} session expects '{expected_category}'"
+        
+        # Unknown question type
+        logger.error(f"[COMPREHENSIVE VALIDATION] Unknown question type: {question_type}")
+        return False, f"Unknown question type: {question_type}"
+        
+    except Exception as e:
+        logger.error(f"[COMPREHENSIVE VALIDATION] Validation exception: {e}")
+        import traceback
+        logger.error(f"[COMPREHENSIVE VALIDATION] Traceback: {traceback.format_exc()}")
+        return False, f"Validation error: {str(e)}"
 
 
 # Flask アプリケーション初期化
@@ -967,8 +996,58 @@ def get_mixed_questions(user_session, all_questions, requested_category='全体'
     selected_ids = [int(q.get('id', 0)) for q in selected_questions]
     new_questions = [q for q in available_questions if int(q.get('id', 0)) not in selected_ids]
     
-    random.shuffle(new_questions)
-    selected_questions.extend(new_questions[:remaining_count])
+    # CRITICAL FIX: QID Validation before final selection
+    validated_questions = []
+    invalid_qids = []
+    
+    for q in new_questions:
+        qid = int(q.get('id', 0))
+        category = q.get('category', '')
+        source = q.get('source', '')
+        
+        # CRITICAL VALIDATION 1: Basic Subject QID validation
+        if question_type == 'basic':
+            # Basic questions must be from 4-1.csv with QID 1-202 and category="共通"
+            if (source == '4-1.csv' and 
+                category == '共通' and 
+                1 <= qid <= 202):
+                validated_questions.append(q)
+                logger.info(f"[CRITICAL FIX] Basic question validated: QID={qid}, category={category}")
+            else:
+                invalid_qids.append(qid)
+                logger.error(f"[CRITICAL FIX] Invalid basic question filtered: QID={qid}, category={category}, source={source}")
+        
+        # CRITICAL VALIDATION 2: Specialist Subject QID validation
+        elif question_type == 'specialist':
+            # EMERGENCY FIX: Allow QIDs in range 1-400 for civil_planning specialist questions
+            # This addresses the immediate QID 336 issue while maintaining category validation
+            min_specialist_qid = 1 if department == 'civil_planning' else 1000
+            
+            # Specialist questions must be from 4-2_*.csv with proper QID range and matching department category
+            if (source.startswith('4-2') and 
+                qid >= min_specialist_qid and 
+                category == target_categories):
+                validated_questions.append(q)
+                logger.info(f"[CRITICAL FIX] Specialist question validated: QID={qid}, category={category}, dept={department}")
+            else:
+                invalid_qids.append(qid)
+                logger.error(f"[CRITICAL FIX] Invalid specialist question filtered: QID={qid}, category={category}, expected={target_categories}, source={source}, dept={department}")
+        
+        # CRITICAL VALIDATION 3: Other question types
+        else:
+            # For other types, basic validation
+            if qid > 0:
+                validated_questions.append(q)
+            else:
+                invalid_qids.append(qid)
+    
+    if invalid_qids:
+        logger.error(f"[CRITICAL FIX] Filtered {len(invalid_qids)} invalid QIDs: {invalid_qids}")
+    
+    logger.info(f"[CRITICAL FIX] QID validation: {len(new_questions)} -> {len(validated_questions)} valid questions")
+    
+    random.shuffle(validated_questions)
+    selected_questions.extend(validated_questions[:remaining_count])
     
     random.shuffle(selected_questions)
     

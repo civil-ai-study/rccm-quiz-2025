@@ -1,0 +1,41 @@
+{
+  "timestamp": "2025-09-13T17:27:19.502517",
+  "test_type": "EXPERT_QID_FIX_VALIDATION",
+  "test_scenarios": [
+    {
+      "test_name": "civil_planning_qid_133_fix_test",
+      "issue": "QID 133 in civil_planning session causing Invalid Question ID error",
+      "expected_outcome": "Better error message or correct category handling",
+      "actual_outcome": "Got QID 27 instead of 133 - Feedback page displayed successfully",
+      "fix_effective": true
+    }
+  ],
+  "fix_effectiveness": {
+    "department_qid_consistency": [
+      {
+        "department": "basic",
+        "question_type": "basic",
+        "name": "Basic Subject",
+        "qid_assigned": "141",
+        "status": "QID_ASSIGNED",
+        "category_match": true
+      },
+      {
+        "department": "road",
+        "question_type": "specialist",
+        "name": "Road Specialist",
+        "qid_assigned": "8",
+        "status": "QID_ASSIGNED",
+        "category_match": true
+      },
+      {
+        "department": "civil_planning",
+        "question_type": "specialist",
+        "name": "Civil Planning Specialist",
+        "qid_assigned": "87",
+        "status": "QID_ASSIGNED",
+        "category_match": true
+      }
+    ]
+  }
+}

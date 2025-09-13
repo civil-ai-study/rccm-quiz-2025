@@ -1,0 +1,133 @@
+{
+  "timestamp": "2025-09-13T17:09:06.335370",
+  "verification_type": "DEEP_PRODUCTION_VERIFICATION",
+  "complete_user_flows": [
+    {
+      "test_name": "基礎科目10問完全フロー",
+      "department": "basic",
+      "question_type": "basic",
+      "questions_completed": 0,
+      "progression_details": [],
+      "errors_encountered": [
+        "問題1: フィードバックページ異常"
+      ],
+      "session_stability": "UNSTABLE",
+      "completion_status": "FAILED",
+      "total_time": 0.8369967937469482
+    },
+    {
+      "test_name": "道路専門10問完全フロー",
+      "department": "road",
+      "question_type": "specialist",
+      "questions_completed": 10,
+      "progression_details": [
+        {
+          "question_number": 1,
+          "qid": "18",
+          "post_status": 200,
+          "response_time": 0.5,
+          "feedback_ok": true,
+          "next_question_loaded": true
+        },
+        {
+          "question_number": 2,
+          "qid": "24",
+          "post_status": 200,
+          "response_time": 0.5,
+          "feedback_ok": true,
+          "next_question_loaded": true
+        },
+        {
+          "question_number": 3,
+          "qid": "29",
+          "post_status": 200,
+          "response_time": 0.5,
+          "feedback_ok": true,
+          "next_question_loaded": true
+        },
+        {
+          "question_number": 4,
+          "qid": "15",
+          "post_status": 200,
+          "response_time": 0.5,
+          "feedback_ok": true,
+          "next_question_loaded": true
+        },
+        {
+          "question_number": 5,
+          "qid": "3",
+          "post_status": 200,
+          "response_time": 0.5,
+          "feedback_ok": true,
+          "next_question_loaded": true
+        },
+        {
+          "question_number": 6,
+          "qid": "15",
+          "post_status": 200,
+          "response_time": 0.5,
+          "feedback_ok": true,
+          "next_question_loaded": true
+        },
+        {
+          "question_number": 7,
+          "qid": "3",
+          "post_status": 200,
+          "response_time": 0.5,
+          "feedback_ok": true,
+          "next_question_loaded": true
+        },
+        {
+          "question_number": 8,
+          "qid": "15",
+          "post_status": 200,
+          "response_time": 0.5,
+          "feedback_ok": true,
+          "next_question_loaded": true
+        },
+        {
+          "question_number": 9,
+          "qid": "3",
+          "post_status": 200,
+          "response_time": 0.5,
+          "feedback_ok": true,
+          "next_question_loaded": true
+        },
+        {
+          "question_number": 10,
+          "qid": "15",
+          "post_status": 200,
+          "response_time": 0.5,
+          "feedback_ok": true
+        }
+      ],
+      "errors_encountered": [
+        "問題6: 進捗表示異常 (期待: 6/10)",
+        "問題7: 進捗表示異常 (期待: 7/10)",
+        "問題8: 進捗表示異常 (期待: 8/10)",
+        "問題9: 進捗表示異常 (期待: 9/10)",
+        "問題10: 進捗表示異常 (期待: 10/10)"
+      ],
+      "session_stability": "MOSTLY_STABLE",
+      "completion_status": "MOSTLY_SUCCESSFUL",
+      "total_time": 14.242607116699219
+    },
+    {
+      "test_name": "河川専門10問完全フロー",
+      "department": "civil_planning",
+      "question_type": "specialist",
+      "questions_completed": 0,
+      "progression_details": [],
+      "errors_encountered": [
+        "問題1: フィードバックページ異常"
+      ],
+      "session_stability": "UNSTABLE",
+      "completion_status": "FAILED",
+      "total_time": 0.6659739017486572
+    }
+  ],
+  "session_persistence_tests": [],
+  "error_scenario_tests": [],
+  "performance_analysis": {},
+  "real_world_scenarios": []
+}

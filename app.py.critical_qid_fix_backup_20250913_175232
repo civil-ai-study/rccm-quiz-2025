@@ -23,6 +23,16 @@ session_lock = threading.Lock()
 
 # 新しいファイルからインポート
 from config import Config, ExamConfig, SRSConfig, DataConfig, RCCMConfig
+
+# EXPERT FIX: Ensure department mapping is loaded
+try:
+    from config import department_mapping
+    if not hasattr(config, 'department_mapping'):
+        logger.error("[EXPERT FIX] Department mapping not found in config")
+except ImportError:
+    logger.error("[EXPERT FIX] Failed to import department mapping")
+    department_mapping = {}
+
 # [ALERT] ULTRA SYNC FIX: データ混合防止のため統一インポート
 from utils import DataLoadError, DataValidationError, get_sample_data_improved, load_rccm_data_files
 
@@ -63,6 +73,79 @@ logger.error("[VERSION] CLAUDE.md準拠IDシステム実装 - コミット412707
 session_locks = {}
 lock_cleanup_lock = threading.Lock()
 
+
+def validate_qid_category_match(qid, department, question_type, all_questions):
+    """
+    COMPREHENSIVE FIX: Complete QID-Category validation
+    
+    Enhanced validation addressing all identified root causes:
+    - Complete database question verification
+    - Comprehensive category matching
+    - Source file validation
+    - QID range validation
+    """
+    try:
+        logger.info(f"[COMPREHENSIVE VALIDATION] Validating QID {qid} for {department} {question_type}")
+        
+        # COMPREHENSIVE VALIDATION 1: Question existence check
+        question = next((q for q in all_questions if int(q.get('id', 0)) == qid), None)
+        if not question:
+            logger.error(f"[COMPREHENSIVE VALIDATION] Question ID {qid} not found in database")
+            return False, f"Question ID {qid} not found in database"
+        
+        # COMPREHENSIVE VALIDATION 2: Source file validation
+        source_file = question.get('source', '')
+        if question_type == 'basic':
+            if source_file != '4-1.csv':
+                logger.error(f"[COMPREHENSIVE VALIDATION] Basic question {qid} has wrong source: {source_file}")
+                return False, f"Basic question must be from 4-1.csv, found: {source_file}"
+        elif question_type == 'specialist':
+            if not source_file.startswith('4-2'):
+                logger.error(f"[COMPREHENSIVE VALIDATION] Specialist question {qid} has wrong source: {source_file}")
+                return False, f"Specialist question must be from 4-2_*.csv, found: {source_file}"
+        
+        # COMPREHENSIVE VALIDATION 3: QID range validation
+        if question_type == 'basic':
+            if not (1 <= qid <= 202):
+                logger.error(f"[COMPREHENSIVE VALIDATION] Basic QID {qid} out of range (1-202)")
+                return False, f"Basic question QID {qid} out of valid range (1-202)"
+        elif question_type == 'specialist':
+            if qid < 1000:
+                logger.error(f"[COMPREHENSIVE VALIDATION] Specialist QID {qid} out of range (1000+)")
+                return False, f"Specialist question QID {qid} should be 1000+ range"
+        
+        # COMPREHENSIVE VALIDATION 4: Category matching
+        from config import department_mapping
+        expected_category = department_mapping.get(department, department)
+        actual_category = question.get('category', '')
+        
+        if question_type == 'basic':
+            if actual_category == '共通':
+                logger.info(f"[COMPREHENSIVE VALIDATION] Basic question {qid} validated: source={source_file}, category={actual_category}")
+                return True, None
+            else:
+                logger.error(f"[COMPREHENSIVE VALIDATION] Basic question {qid} wrong category: expected='共通', actual='{actual_category}'")
+                return False, f"Basic question has incorrect category: {actual_category} (expected: 共通)"
+        
+        elif question_type == 'specialist':
+            if actual_category == expected_category:
+                logger.info(f"[COMPREHENSIVE VALIDATION] Specialist question {qid} validated: source={source_file}, category={actual_category}")
+                return True, None
+            else:
+                logger.error(f"[COMPREHENSIVE VALIDATION] Specialist question {qid} category mismatch: expected='{expected_category}', actual='{actual_category}'")
+                return False, f"Question belongs to '{actual_category}' but {department} session expects '{expected_category}'"
+        
+        # Unknown question type
+        logger.error(f"[COMPREHENSIVE VALIDATION] Unknown question type: {question_type}")
+        return False, f"Unknown question type: {question_type}"
+        
+    except Exception as e:
+        logger.error(f"[COMPREHENSIVE VALIDATION] Validation exception: {e}")
+        import traceback
+        logger.error(f"[COMPREHENSIVE VALIDATION] Traceback: {traceback.format_exc()}")
+        return False, f"Validation error: {str(e)}"
+
+
 # Flask アプリケーション初期化
 app = Flask(__name__)
 
@@ -76,6 +159,22 @@ if env_name == 'production':
 else:
     # 開発環境では基本Config使用
     app.config.from_object(Config)
+
+@app.errorhandler(ValueError)
+def handle_qid_validation_error(e):
+    """
+    Expert-recommended error handler for QID validation failures
+    Based on Miguel Grinberg Flask error handling best practices
+    """
+    if "QID" in str(e) or "category" in str(e).lower():
+        logger.error(f"[EXPERT ERROR HANDLER] QID validation error: {e}")
+        return render_template('error.html', 
+                             error="問題の読み込み中にエラーが発生しました。セッションをリセットして再試行してください。",
+                             error_type="qid_validation_error"), 400
+    
+    # Re-raise if not a QID validation error
+    raise e
+
 
 # [WRENCH] ULTRA SYNC FIX: CSRF保護を慎重に有効化
 csrf = CSRFProtect(app)
@@ -1191,6 +1290,22 @@ def exam():
             #     return render_template('error.html', error="問題IDが無効です。")
 
             # 問題を検索
+            # EXPERT FIX: QID-Category validation before question retrieval
+            # Based on Miguel Grinberg and Stack Overflow expert recommendations
+            is_valid, validation_error = validate_qid_category_match(
+                qid, 
+                session.get('selected_department', ''), 
+                session.get('selected_question_type', 'basic'), 
+                all_questions
+            )
+            
+            if not is_valid:
+                logger.error(f"[EXPERT VALIDATION] QID {qid} validation failed: {validation_error}")
+                return render_template('error.html', 
+                                     error=f"無効な問題IDです: {validation_error}",
+                                     error_type="qid_category_mismatch")
+            
+            # Retrieve question after validation
             question = next((q for q in all_questions if int(q.get('id', 0)) == qid), None)
             if not question:
                 logger.error(f"問題が見つからない: ID {qid}")

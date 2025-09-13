@@ -1,0 +1,111 @@
+{
+  "timestamp": "2025-09-13T17:39:07.020866",
+  "investigation_type": "URGENT_7TH_QUESTION_ERROR",
+  "session_progression_analysis": [
+    {
+      "department": "basic",
+      "question_type": "basic",
+      "questions_completed": 0,
+      "error_occurred_at": 1,
+      "qid_sequence": [
+        {
+          "question_no": 1,
+          "qid": "157",
+          "csrf_present": true
+        }
+      ],
+      "error_details": {
+        "type": "invalid_question_id",
+        "error_title": "エラー | RCCM試験問題集",
+        "qid_at_error": "157"
+      },
+      "session_state_corruption": false
+    },
+    {
+      "department": "road",
+      "question_type": "specialist",
+      "questions_completed": 6,
+      "error_occurred_at": 6,
+      "qid_sequence": [
+        {
+          "question_no": 1,
+          "qid": "5",
+          "csrf_present": true
+        },
+        {
+          "question_no": 2,
+          "qid": "15",
+          "csrf_present": true
+        },
+        {
+          "question_no": 3,
+          "qid": "26",
+          "csrf_present": true
+        },
+        {
+          "question_no": 4,
+          "qid": "18",
+          "csrf_present": true
+        },
+        {
+          "question_no": 5,
+          "qid": "22",
+          "csrf_present": true
+        },
+        {
+          "question_no": 6,
+          "qid": "28",
+          "csrf_present": true
+        }
+      ],
+      "error_details": {
+        "type": "missing_next_link"
+      },
+      "session_state_corruption": false
+    },
+    {
+      "department": "civil_planning",
+      "question_type": "specialist",
+      "questions_completed": 0,
+      "error_occurred_at": 1,
+      "qid_sequence": [
+        {
+          "question_no": 1,
+          "qid": "175",
+          "csrf_present": true
+        }
+      ],
+      "error_details": {
+        "type": "invalid_question_id",
+        "error_title": "エラー | RCCM試験問題集",
+        "qid_at_error": "175"
+      },
+      "session_state_corruption": false
+    }
+  ],
+  "qid_tracking": [],
+  "error_pattern_analysis": {
+    "error_occurrence_positions": [
+      {
+        "department": "Basic Subject",
+        "error_at_question": 1,
+        "error_type": "invalid_question_id",
+        "qid_at_error": "157"
+      },
+      {
+        "department": "Road Specialist",
+        "error_at_question": 6,
+        "error_type": "missing_next_link",
+        "qid_at_error": null
+      },
+      {
+        "department": "Civil Planning Specialist",
+        "error_at_question": 1,
+        "error_type": "invalid_question_id",
+        "qid_at_error": "175"
+      }
+    ],
+    "qid_exhaustion_indicators": [],
+    "session_corruption_indicators": []
+  }
+}

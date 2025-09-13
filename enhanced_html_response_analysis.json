@@ -1,0 +1,158 @@
+{
+  "timestamp": "2025-09-13T17:11:32.744062",
+  "analysis_type": "ENHANCED_HTML_RESPONSE_ANALYSIS",
+  "question_type_responses": {
+    "basic_questions": {
+      "test_name": "basic_questions",
+      "department": "basic",
+      "question_type": "basic",
+      "initialization": {
+        "status_code": 200,
+        "qid": "39",
+        "csrf_present": true
+      },
+      "post_response": {
+        "status_code": 200,
+        "content_length": 27378
+      },
+      "html_analysis": {
+        "feedback_indicators": {
+          "正解_text": true,
+          "不正解_text": true,
+          "feedback_card_class": true,
+          "あなたの解答_text": true,
+          "解答_text": true,
+          "解説_text": true,
+          "feedback_div": false,
+          "result_div": false,
+          "answer_div": false
+        },
+        "next_link_present": true,
+        "next_link_href": "/exam?next=1&current=",
+        "page_title": "解答結果 | RCCM試験問題集",
+        "error_indicators": {
+          "error_class": false,
+          "alert_class": true,
+          "内部エラー_text": false,
+          "エラー_text": true,
+          "500_error": true,
+          "400_error": false
+        },
+        "contains_japanese": true,
+        "total_text_length": 27378,
+        "text_sample": "<!DOCTYPE html> <!-- 🔍 ULTRA SYNC段階26緊急診断: この行が表示されればテンプレート更新成功 --> <html lang=\"ja\"> <head> <meta charset=\"UTF-8\"> <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes, viewport-fit=cover\"> <title>解答結果 | RCCM試験問題集</title> <!-- 🔥 CRITICAL: 超強力キャッシュクリア（ユーザー要求による） --> <meta http-equiv=\"Cache-Control\" content=\"no-store, no-cache, must-revalidate, max-age=0\"> <meta http-equiv=\"Pra...",
+        "feedback_detected": true
+      }
+    },
+    "civil_planning_specialist": {
+      "test_name": "civil_planning_specialist",
+      "department": "civil_planning",
+      "question_type": "specialist",
+      "initialization": {
+        "status_code": 200,
+        "qid": "133",
+        "csrf_present": true
+      },
+      "post_response": {
+        "status_code": 200,
+        "content_length": 16123
+      },
+      "html_analysis": {
+        "feedback_indicators": {
+          "正解_text": false,
+          "不正解_text": false,
+          "feedback_card_class": false,
+          "あなたの解答_text": false,
+          "解答_text": false,
+          "解説_text": false,
+          "feedback_div": false,
+          "result_div": false,
+          "answer_div": false
+        },
+        "next_link_present": false,
+        "page_title": "エラー | RCCM試験問題集",
+        "error_indicators": {
+          "error_class": false,
+          "alert_class": true,
+          "内部エラー_text": false,
+          "エラー_text": true,
+          "500_error": true,
+          "400_error": false
+        },
+        "contains_japanese": true,
+        "total_text_length": 16123,
+        "text_sample": "<!DOCTYPE html> <!-- 🔍 ULTRA SYNC段階26緊急診断: この行が表示されればテンプレート更新成功 --> <html lang=\"ja\"> <head> <meta charset=\"UTF-8\"> <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes, viewport-fit=cover\"> <title>エラー | RCCM試験問題集</title> <!-- 🔥 CRITICAL: 超強力キャッシュクリア（ユーザー要求による） --> <meta http-equiv=\"Cache-Control\" content=\"no-store, no-cache, must-revalidate, max-age=0\"> <meta http-equiv=\"Prag...",
+        "feedback_detected": false
+      }
+    },
+    "road_specialist_reference": {
+      "test_name": "road_specialist_reference",
+      "department": "road",
+      "question_type": "specialist",
+      "initialization": {
+        "status_code": 200,
+        "qid": "29",
+        "csrf_present": true
+      },
+      "post_response": {
+        "status_code": 200,
+        "content_length": 27407
+      },
+      "html_analysis": {
+        "feedback_indicators": {
+          "正解_text": true,
+          "不正解_text": true,
+          "feedback_card_class": true,
+          "あなたの解答_text": true,
+          "解答_text": true,
+          "解説_text": true,
+          "feedback_div": false,
+          "result_div": false,
+          "answer_div": false
+        },
+        "next_link_present": true,
+        "next_link_href": "/exam?next=1&current=",
+        "page_title": "解答結果 | RCCM試験問題集",
+        "error_indicators": {
+          "error_class": false,
+          "alert_class": true,
+          "内部エラー_text": false,
+          "エラー_text": true,
+          "500_error": true,
+          "400_error": false
+        },
+        "contains_japanese": true,
+        "total_text_length": 27407,
+        "text_sample": "<!DOCTYPE html> <!-- 🔍 ULTRA SYNC段階26緊急診断: この行が表示されればテンプレート更新成功 --> <html lang=\"ja\"> <head> <meta charset=\"UTF-8\"> <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes, viewport-fit=cover\"> <title>解答結果 | RCCM試験問題集</title> <!-- 🔥 CRITICAL: 超強力キャッシュクリア（ユーザー要求による） --> <meta http-equiv=\"Cache-Control\" content=\"no-store, no-cache, must-revalidate, max-age=0\"> <meta http-equiv=\"Pra...",
+        "feedback_detected": true
+      }
+    }
+  },
+  "feedback_detection_analysis": {},
+  "comparative_analysis": {
+    "basic_questions": {
+      "post_status": 200,
+      "feedback_detected": true,
+      "next_link_present": true,
+      "page_title": "解答結果 | RCCM試験問題集",
+      "feedback_indicators_count": 6,
+      "error_indicators_count": 3
+    },
+    "civil_planning_specialist": {
+      "post_status": 200,
+      "feedback_detected": false,
+      "next_link_present": false,
+      "page_title": "エラー | RCCM試験問題集",
+      "feedback_indicators_count": 0,
+      "error_indicators_count": 3
+    },
+    "road_specialist_reference": {
+      "post_status": 200,
+      "feedback_detected": true,
+      "next_link_present": true,
+      "page_title": "解答結果 | RCCM試験問題集",
+      "feedback_indicators_count": 6,
+      "error_indicators_count": 3
+    }
+  }
+}

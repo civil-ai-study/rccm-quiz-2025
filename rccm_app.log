@@ -4995,3 +4995,257 @@
 2025-09-13 07:15:17,142 - app - INFO - [LAUNCH] ‚‘¬‰»ƒ‚[ƒh: Šé‹ÆŠÂ‹«—pƒf[ƒ^“Ç‚İ‚İŠJn
 2025-09-13 07:15:17,143 - app - ERROR - [ERROR] ƒAƒvƒŠƒP[ƒVƒ‡ƒ“‰Šú‰»ƒGƒ‰[: No module named 'data_manager'
 2025-09-13 07:15:17,143 - app - INFO - [REPEAT] Šî–{‹@”\‚Å‘±s‚µ‚Ü‚·
+2025-09-13 12:46:31,061 - flask_wtf.csrf - INFO - The CSRF session token is missing.
+2025-09-13 12:46:31,068 - werkzeug - INFO - 127.0.0.1 - - [13/Sep/2025 12:46:31] "[31m[1mPOST /exam HTTP/1.1[0m" 400 -
+2025-09-13 12:46:31,080 - __main__ - INFO - [LOCK] Session State Updated: 0 questions, current: 0
+2025-09-13 12:46:31,081 - __main__ - INFO - ƒz[ƒ€‰æ–Ê: ƒZƒbƒVƒ‡ƒ“î•ñƒNƒŠƒA - ['exam_question_ids', 'exam_current']
+2025-09-13 12:46:31,081 - __main__ - INFO - ƒz[ƒ€ƒy[ƒWƒAƒNƒZƒX - –¢”FØƒ†[ƒU[
+2025-09-13 12:46:31,105 - werkzeug - INFO - 127.0.0.1 - - [13/Sep/2025 12:46:31] "GET / HTTP/1.1" 200 -
+2025-09-13 12:46:31,114 - utils - INFO - [LAUNCH] Šé‹ÆŠÂ‹«Å“K‰»: ƒf[ƒ^Šù“Ç‚İ‚İÏ‚İ - ƒXƒLƒbƒv
+2025-09-13 12:46:31,114 - __main__ - INFO - Parameter normalization (fallback): question_type=specialist
+2025-09-13 12:46:31,115 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-13 12:46:31,115 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-13 12:46:31,115 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-13 12:46:31,115 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-13 12:46:31,115 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'bookmarks', 'category_stats', 'data_loaded', 'history', 'session_id', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-13 12:46:31,116 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=None, department=road
+2025-09-13 12:46:31,116 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-13 12:46:31,116 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=True, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-13 12:46:31,116 - __main__ - INFO - need_reset = True
+2025-09-13 12:46:31,116 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-13 12:46:31,116 - __main__ - INFO - [SEARCH] ULTRA DEBUG: calling get_mixed_questions with department='road', question_type='specialist', all_questions_count=3883
+2025-09-13 12:46:31,120 - __main__ - INFO - ê–å‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 3681–â
+2025-09-13 12:46:31,120 - __main__ - WARNING - [WARNING] ˆê“I‰pŒêŒİŠ·: road ¨ “¹˜H («—ˆíœ—\’è)
+2025-09-13 12:46:31,121 - __main__ - INFO - [SEARCH] ƒtƒBƒ‹ƒ^ƒŠƒ“ƒO‘O‚Ì–â‘è”=3681, ê–å‰È–Ú–â‘è”=3681
+2025-09-13 12:46:31,125 - __main__ - INFO - ê–å‰È–Ú•”–åƒ}ƒbƒ`ƒ“ƒO¬Œ÷: 310–â
+2025-09-13 12:46:31,127 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K10–â, ƒtƒBƒ‹ƒ^:[•”–å:road, í•Ê:4-2 ‘I‘ğ‰È–Ú]
+2025-09-13 12:46:31,127 - __main__ - INFO - [SEARCH] ULTRA DEBUG: get_mixed_questions returned 10 questions, IDs=[1023, 11005, 6018, 4006, 5017, 1027, 11006, 2002, 2006, 3009]
+2025-09-13 12:46:31,127 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=10, question_ids_count=10
+2025-09-13 12:46:31,128 - __main__ - INFO - –â‘èIDˆê——: [1023, 11005, 6018, 4006, 5017, 1027, 11006, 2002, 2006, 3009]
+2025-09-13 12:46:31,128 - __main__ - INFO - [LOCK] Session State Updated: 10 questions, current: 0
+2025-09-13 12:46:31,128 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 10–â, ƒtƒBƒ‹ƒ^: •”–å:road, í•Ê:4-2 ‘I‘ğ‰È–Ú
+2025-09-13 12:46:31,128 - __main__ - INFO - –â‘èIDæ“¾: current_no=0, question_id=1023
+2025-09-13 12:46:31,128 - __main__ - INFO - –â‘è•\¦: 1/10 (“à•”: current_no=0, total_ids=10)
+2025-09-13 12:46:31,129 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=1 (type:<class 'int'>), total_questions=10
+2025-09-13 12:46:31,129 - __main__ - INFO - [SEARCH] ®‡«ŒŸØ: QID=1023, question.id=1023, year=2008, category=“¹˜H
+2025-09-13 12:46:31,146 - werkzeug - INFO - 127.0.0.1 - - [13/Sep/2025 12:46:31] "GET /exam?department=road&question_type=specialist&count=10 HTTP/1.1" 200 -
+2025-09-13 12:46:31,164 - utils - INFO - [LAUNCH] Šé‹ÆŠÂ‹«Å“K‰»: ƒf[ƒ^Šù“Ç‚İ‚İÏ‚İ - ƒXƒLƒbƒv
+2025-09-13 12:46:31,165 - __main__ - INFO - === POSTˆ—ŠJn - ƒZƒbƒVƒ‡ƒ“ó‘ÔƒfƒoƒbƒO ===
+2025-09-13 12:46:31,165 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“ƒL[: ['_permanent', 'bookmarks', 'category_stats', 'csrf_token', 'data_loaded', 'exam_category', 'exam_current', 'exam_question_ids', 'history', 'selected_department', 'selected_question_type', 'session_id', 'srs_data', 'request_history']
+2025-09-13 12:46:31,165 - __main__ - INFO - exam_question_ids: [1023, 11005, 6018, 4006, 5017, 1027, 11006, 2002, 2006, 3009]
+2025-09-13 12:46:31,165 - __main__ - INFO - exam_current: 0
+2025-09-13 12:46:31,165 - __main__ - INFO - exam_category: ‘S‘Ì
+2025-09-13 12:46:31,165 - __main__ - INFO - selected_question_type: specialist
+2025-09-13 12:46:31,166 - __main__ - INFO - selected_department: road
+2025-09-13 12:46:31,166 - __main__ - INFO - session_id: 762e1aa2a7478fb27b8101fac15178a8
+2025-09-13 12:46:31,166 - __main__ - INFO - data_loaded: True
+2025-09-13 12:46:31,166 - __main__ - INFO - ==========================================
+2025-09-13 12:46:31,166 - __main__ - INFO - QID DEBUG: Received qid='1023' (type: <class 'str'>, repr: '1023')
+2025-09-13 12:46:31,166 - __main__ - INFO - QID DEBUG: Converted qid=1023 (type: <class 'int'>)
+2025-09-13 12:46:31,166 - __main__ - INFO - SRSXV: –â‘è1023 - ³‰ğ:0, ŠÔˆá‚¢:1, “ïˆÕ“x:6.0, ƒ}ƒXƒ^[:False
+2025-09-13 12:46:31,166 - __main__ - INFO - [ERROR] •s³‰ğ‚É‚æ‚è•œKƒŠƒXƒg‚É’Ç‰Á: –â‘èID 1023
+2025-09-13 12:46:31,166 - __main__ - INFO - SRSXV: –â‘è1023 - ³‰ğ:0, ŠÔˆá‚¢:2, “ïˆÕ“x:7.0, ƒ}ƒXƒ^[:False
+2025-09-13 12:46:31,167 - __main__ - INFO - —š—ğ•Û‘¶: –â‘è1023, ‡Œv—š—ğ1Œ, ’¼ŒãŠm”F1Œ
+2025-09-13 12:46:31,167 - __main__ - INFO - === ‰ñ“šˆ—ƒfƒoƒbƒOî•ñ ===
+2025-09-13 12:46:31,167 - __main__ - INFO - –â‘èID: 1023, ‰ñ“š: A, ³”Û: False
+2025-09-13 12:46:31,167 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“ó‘Ô: current_no=0, next_no=1
+2025-09-13 12:46:31,167 - __main__ - INFO - ˆÀ‘S’l: safe_current_no=0, safe_next_no=1
+2025-09-13 12:46:31,167 - __main__ - INFO - –â‘èƒŠƒXƒg: ’·‚³=10, IDs=[1023, 11005, 6018]...
+2025-09-13 12:46:31,167 - __main__ - INFO - ÅI”»’è: is_last=False, next_index=1
+2025-09-13 12:46:31,167 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“ƒL[: ['_permanent', 'bookmarks', 'category_stats', 'csrf_token', 'data_loaded', 'exam_category', 'exam_current', 'exam_question_ids', 'history', 'selected_department', 'selected_question_type', 'session_id', 'srs_data', 'request_history', 'advanced_srs', 'last_history_update']
+2025-09-13 12:46:31,167 - __main__ - INFO - =========================
+2025-09-13 12:46:31,167 - __main__ - INFO - [CHECK] SESSION STATE VERIFIED: exam_current = 1 (expected: 1)
+2025-09-13 12:46:31,167 - __main__ - INFO - [CHECK] SESSION FLAGS: permanent=True, modified=True
+2025-09-13 12:46:31,168 - __main__ - INFO - [CHECK] SESSION KEYS: ['_permanent', 'advanced_srs', 'bookmarks', 'category_stats', 'csrf_token', 'data_loaded', 'exam_category', 'exam_current', 'exam_question_ids', 'history', 'last_history_update', 'last_update', 'request_history', 'selected_department', 'selected_question_type', 'session_id', 'srs_data']
+2025-09-13 12:46:31,168 - __main__ - INFO - ‰ñ“šˆ—Š®—¹: –â‘è1023, ³“šFalse, ƒŒƒxƒ‹0, ƒXƒgƒŠ[ƒN0“ú
+2025-09-13 12:46:31,168 - __main__ - INFO - ƒtƒB[ƒhƒoƒbƒN•Ï”: is_last_question=False, next_question_index=1, current_question_number=1, total_questions=10
+2025-09-13 12:46:31,168 - __main__ - INFO - [LOCK] POST Progress Already Saved: safe_next_no=1 at line 1648
+2025-09-13 12:46:31,170 - werkzeug - INFO - 127.0.0.1 - - [13/Sep/2025 12:46:31] "POST /exam HTTP/1.1" 200 -
+2025-09-13 12:47:24,468 - flask_wtf.csrf - INFO - The CSRF session token is missing.
+2025-09-13 12:47:24,469 - werkzeug - INFO - 127.0.0.1 - - [13/Sep/2025 12:47:24] "[31m[1mPOST /exam HTTP/1.1[0m" 400 -
+2025-09-13 12:47:24,479 - __main__ - INFO - [LOCK] Session State Updated: 0 questions, current: 0
+2025-09-13 12:47:24,480 - __main__ - INFO - ƒz[ƒ€‰æ–Ê: ƒZƒbƒVƒ‡ƒ“î•ñƒNƒŠƒA - ['exam_question_ids', 'exam_current']
+2025-09-13 12:47:24,480 - __main__ - INFO - ƒz[ƒ€ƒy[ƒWƒAƒNƒZƒX - –¢”FØƒ†[ƒU[
+2025-09-13 12:47:24,481 - werkzeug - INFO - 127.0.0.1 - - [13/Sep/2025 12:47:24] "GET / HTTP/1.1" 200 -
+2025-09-13 12:47:24,487 - utils - INFO - [LAUNCH] Šé‹ÆŠÂ‹«Å“K‰»: ƒf[ƒ^Šù“Ç‚İ‚İÏ‚İ - ƒXƒLƒbƒv
+2025-09-13 12:47:24,487 - __main__ - INFO - Parameter normalization (fallback): question_type=specialist
+2025-09-13 12:47:24,487 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-13 12:47:24,487 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-13 12:47:24,488 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-13 12:47:24,488 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-13 12:47:24,488 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'bookmarks', 'category_stats', 'data_loaded', 'history', 'session_id', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-13 12:47:24,488 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=None, department=road
+2025-09-13 12:47:24,488 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-13 12:47:24,488 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=True, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-13 12:47:24,488 - __main__ - INFO - need_reset = True
+2025-09-13 12:47:24,488 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-13 12:47:24,488 - __main__ - INFO - [SEARCH] ULTRA DEBUG: calling get_mixed_questions with department='road', question_type='specialist', all_questions_count=3883
+2025-09-13 12:47:24,489 - __main__ - INFO - ê–å‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 3681–â
+2025-09-13 12:47:24,489 - __main__ - WARNING - [WARNING] ˆê“I‰pŒêŒİŠ·: road ¨ “¹˜H («—ˆíœ—\’è)
+2025-09-13 12:47:24,491 - __main__ - INFO - [SEARCH] ƒtƒBƒ‹ƒ^ƒŠƒ“ƒO‘O‚Ì–â‘è”=3681, ê–å‰È–Ú–â‘è”=3681
+2025-09-13 12:47:24,492 - __main__ - INFO - ê–å‰È–Ú•”–åƒ}ƒbƒ`ƒ“ƒO¬Œ÷: 310–â
+2025-09-13 12:47:24,493 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K10–â, ƒtƒBƒ‹ƒ^:[•”–å:road, í•Ê:4-2 ‘I‘ğ‰È–Ú]
+2025-09-13 12:47:24,493 - __main__ - INFO - [SEARCH] ULTRA DEBUG: get_mixed_questions returned 10 questions, IDs=[8019, 6027, 6008, 5007, 7002, 2003, 9023, 2013, 11003, 9024]
+2025-09-13 12:47:24,493 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=10, question_ids_count=10
+2025-09-13 12:47:24,493 - __main__ - INFO - –â‘èIDˆê——: [8019, 6027, 6008, 5007, 7002, 2003, 9023, 2013, 11003, 9024]
+2025-09-13 12:47:24,493 - __main__ - INFO - [LOCK] Session State Updated: 10 questions, current: 0
+2025-09-13 12:47:24,493 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 10–â, ƒtƒBƒ‹ƒ^: •”–å:road, í•Ê:4-2 ‘I‘ğ‰È–Ú
+2025-09-13 12:47:24,493 - __main__ - INFO - –â‘èIDæ“¾: current_no=0, question_id=8019
+2025-09-13 12:47:24,494 - __main__ - INFO - –â‘è•\¦: 1/10 (“à•”: current_no=0, total_ids=10)
+2025-09-13 12:47:24,494 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=1 (type:<class 'int'>), total_questions=10
+2025-09-13 12:47:24,494 - __main__ - INFO - [SEARCH] ®‡«ŒŸØ: QID=8019, question.id=8019, year=2015, category=“¹˜H
+2025-09-13 12:47:24,496 - werkzeug - INFO - 127.0.0.1 - - [13/Sep/2025 12:47:24] "GET /exam?department=road&question_type=specialist&count=10 HTTP/1.1" 200 -
+2025-09-13 12:47:24,515 - utils - INFO - [LAUNCH] Šé‹ÆŠÂ‹«Å“K‰»: ƒf[ƒ^Šù“Ç‚İ‚İÏ‚İ - ƒXƒLƒbƒv
+2025-09-13 12:47:24,515 - __main__ - INFO - === POSTˆ—ŠJn - ƒZƒbƒVƒ‡ƒ“ó‘ÔƒfƒoƒbƒO ===
+2025-09-13 12:47:24,515 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“ƒL[: ['_permanent', 'bookmarks', 'category_stats', 'csrf_token', 'data_loaded', 'exam_category', 'exam_current', 'exam_question_ids', 'history', 'selected_department', 'selected_question_type', 'session_id', 'srs_data', 'request_history']
+2025-09-13 12:47:24,515 - __main__ - INFO - exam_question_ids: [8019, 6027, 6008, 5007, 7002, 2003, 9023, 2013, 11003, 9024]
+2025-09-13 12:47:24,516 - __main__ - INFO - exam_current: 0
+2025-09-13 12:47:24,516 - __main__ - INFO - exam_category: ‘S‘Ì
+2025-09-13 12:47:24,516 - __main__ - INFO - selected_question_type: specialist
+2025-09-13 12:47:24,516 - __main__ - INFO - selected_department: road
+2025-09-13 12:47:24,516 - __main__ - INFO - session_id: e8910736eeaf12e67357e776c8e671ad
+2025-09-13 12:47:24,516 - __main__ - INFO - data_loaded: True
+2025-09-13 12:47:24,516 - __main__ - INFO - ==========================================
+2025-09-13 12:47:24,516 - __main__ - INFO - QID DEBUG: Received qid='8019' (type: <class 'str'>, repr: '8019')
+2025-09-13 12:47:24,517 - __main__ - INFO - QID DEBUG: Converted qid=8019 (type: <class 'int'>)
+2025-09-13 12:47:24,518 - __main__ - INFO - SRSXV: –â‘è8019 - ³‰ğ:0, ŠÔˆá‚¢:1, “ïˆÕ“x:6.0, ƒ}ƒXƒ^[:False
+2025-09-13 12:47:24,518 - __main__ - INFO - [ERROR] •s³‰ğ‚É‚æ‚è•œKƒŠƒXƒg‚É’Ç‰Á: –â‘èID 8019
+2025-09-13 12:47:24,518 - __main__ - INFO - SRSXV: –â‘è8019 - ³‰ğ:0, ŠÔˆá‚¢:2, “ïˆÕ“x:7.0, ƒ}ƒXƒ^[:False
+2025-09-13 12:47:24,518 - __main__ - INFO - —š—ğ•Û‘¶: –â‘è8019, ‡Œv—š—ğ1Œ, ’¼ŒãŠm”F1Œ
+2025-09-13 12:47:24,518 - __main__ - INFO - === ‰ñ“šˆ—ƒfƒoƒbƒOî•ñ ===
+2025-09-13 12:47:24,519 - __main__ - INFO - –â‘èID: 8019, ‰ñ“š: A, ³”Û: False
+2025-09-13 12:47:24,519 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“ó‘Ô: current_no=0, next_no=1
+2025-09-13 12:47:24,519 - __main__ - INFO - ˆÀ‘S’l: safe_current_no=0, safe_next_no=1
+2025-09-13 12:47:24,519 - __main__ - INFO - –â‘èƒŠƒXƒg: ’·‚³=10, IDs=[8019, 6027, 6008]...
+2025-09-13 12:47:24,519 - __main__ - INFO - ÅI”»’è: is_last=False, next_index=1
+2025-09-13 12:47:24,519 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“ƒL[: ['_permanent', 'bookmarks', 'category_stats', 'csrf_token', 'data_loaded', 'exam_category', 'exam_current', 'exam_question_ids', 'history', 'selected_department', 'selected_question_type', 'session_id', 'srs_data', 'request_history', 'advanced_srs', 'last_history_update']
+2025-09-13 12:47:24,519 - __main__ - INFO - =========================
+2025-09-13 12:47:24,520 - __main__ - INFO - [CHECK] SESSION STATE VERIFIED: exam_current = 1 (expected: 1)
+2025-09-13 12:47:24,520 - __main__ - INFO - [CHECK] SESSION FLAGS: permanent=True, modified=True
+2025-09-13 12:47:24,520 - __main__ - INFO - [CHECK] SESSION KEYS: ['_permanent', 'advanced_srs', 'bookmarks', 'category_stats', 'csrf_token', 'data_loaded', 'exam_category', 'exam_current', 'exam_question_ids', 'history', 'last_history_update', 'last_update', 'request_history', 'selected_department', 'selected_question_type', 'session_id', 'srs_data']
+2025-09-13 12:47:24,520 - __main__ - INFO - ‰ñ“šˆ—Š®—¹: –â‘è8019, ³“šFalse, ƒŒƒxƒ‹0, ƒXƒgƒŠ[ƒN0“ú
+2025-09-13 12:47:24,520 - __main__ - INFO - ƒtƒB[ƒhƒoƒbƒN•Ï”: is_last_question=False, next_question_index=1, current_question_number=1, total_questions=10
+2025-09-13 12:47:24,521 - __main__ - INFO - [LOCK] POST Progress Already Saved: safe_next_no=1 at line 1648
+2025-09-13 12:47:24,522 - werkzeug - INFO - 127.0.0.1 - - [13/Sep/2025 12:47:24] "POST /exam HTTP/1.1" 200 -
+2025-09-13 12:47:24,536 - utils - INFO - [LAUNCH] Šé‹ÆŠÂ‹«Å“K‰»: ƒf[ƒ^Šù“Ç‚İ‚İÏ‚İ - ƒXƒLƒbƒv
+2025-09-13 12:47:24,537 - __main__ - INFO - [REPEAT] NEXT REQUEST: ƒZƒbƒVƒ‡ƒ“‚©‚çcurrent_no=1‚ğæ“¾
+2025-09-13 12:47:24,537 - __main__ - INFO - GETˆ—: current_no=1, exam_question_ids=[8019, 6027, 6008, 5007, 7002], is_next=True, total_ids=10
+2025-09-13 12:47:24,537 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'advanced_srs', 'bookmarks', 'category_stats', 'csrf_token', 'data_loaded', 'exam_category', 'exam_current', 'exam_question_ids', 'history', 'last_history_update', 'last_update', 'request_history', 'selected_department', 'selected_question_type', 'session_id', 'srs_data'], exam_current=1
+2025-09-13 12:47:24,538 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=specialist, department=road
+2025-09-13 12:47:24,538 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-13 12:47:24,538 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=True, exam_ids=True, category_match=True, question_type_match=True, department_match=True, year_match=False, current_no=1, len=10
+2025-09-13 12:47:24,538 - __main__ - INFO - need_reset = False
+2025-09-13 12:47:24,538 - __main__ - INFO - –â‘èIDæ“¾: current_no=1, question_id=6027
+2025-09-13 12:47:24,539 - __main__ - INFO - –â‘è•\¦: 2/10 (“à•”: current_no=1, total_ids=10)
+2025-09-13 12:47:24,539 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=2 (type:<class 'int'>), total_questions=10
+2025-09-13 12:47:24,539 - __main__ - INFO - [SEARCH] ®‡«ŒŸØ: QID=6027, question.id=6027, year=2013, category=“¹˜H
+2025-09-13 12:47:24,541 - werkzeug - INFO - 127.0.0.1 - - [13/Sep/2025 12:47:24] "GET /exam?next=1 HTTP/1.1" 200 -
+2025-09-13 17:01:17,669 - __main__ - INFO - [LOCK] Session State Updated: 0 questions, current: 0
+2025-09-13 17:01:17,672 - __main__ - WARNING - ƒZƒbƒVƒ‡ƒ“”j‘¹ŒŸo - ©“®ƒŠƒZƒbƒgÀs
+2025-09-13 17:01:17,673 - utils - INFO - [LAUNCH] Šé‹ÆŠÂ‹«Å“K‰»: ƒf[ƒ^Šù“Ç‚İ‚İÏ‚İ - ƒXƒLƒbƒv
+2025-09-13 17:01:17,678 - __main__ - INFO - Parameter normalization (fallback): question_type=specialist
+2025-09-13 17:01:17,679 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-13 17:01:17,681 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-13 17:01:17,682 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-13 17:01:17,682 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-13 17:01:17,682 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'session_id', 'data_loaded', 'history', 'bookmarks', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-13 17:01:17,683 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=None, department=road
+2025-09-13 17:01:17,683 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-13 17:01:17,683 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=True, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-13 17:01:17,684 - __main__ - INFO - need_reset = True
+2025-09-13 17:01:17,684 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-13 17:01:17,684 - __main__ - INFO - [SEARCH] ULTRA DEBUG: calling get_mixed_questions with department='road', question_type='specialist', all_questions_count=3883
+2025-09-13 17:01:17,694 - __main__ - INFO - ê–å‰È–ÚƒtƒBƒ‹ƒ^“K—p: Œ‹‰Ê 3681–â
+2025-09-13 17:01:17,694 - __main__ - WARNING - [WARNING] ˆê“I‰pŒêŒİŠ·: road ¨ “¹˜H («—ˆíœ—\’è)
+2025-09-13 17:01:17,698 - __main__ - INFO - [SEARCH] ƒtƒBƒ‹ƒ^ƒŠƒ“ƒO‘O‚Ì–â‘è”=3681, ê–å‰È–Ú–â‘è”=3681
+2025-09-13 17:01:17,702 - __main__ - INFO - ê–å‰È–Ú•”–åƒ}ƒbƒ`ƒ“ƒO¬Œ÷: 310–â
+2025-09-13 17:01:17,703 - __main__ - INFO - –â‘è‘I‘ğŠ®—¹: •œK0–â, V‹K10–â, ƒtƒBƒ‹ƒ^:[•”–å:road, í•Ê:4-2 ‘I‘ğ‰È–Ú]
+2025-09-13 17:01:17,704 - __main__ - INFO - [SEARCH] ULTRA DEBUG: get_mixed_questions returned 10 questions, IDs=[2001, 8026, 3006, 3008, 6022, 3002, 11014, 10036, 4016, 3005]
+2025-09-13 17:01:17,704 - __main__ - INFO - –â‘è‘I‘ğÚ×: requested_size=10, selected_count=10, question_ids_count=10
+2025-09-13 17:01:17,704 - __main__ - INFO - –â‘èIDˆê——: [2001, 8026, 3006, 3008, 6022, 3002, 11014, 10036, 4016, 3005]
+2025-09-13 17:01:17,704 - __main__ - INFO - [LOCK] Session State Updated: 10 questions, current: 0
+2025-09-13 17:01:17,704 - __main__ - INFO - V‚µ‚¢–â‘èƒZƒbƒVƒ‡ƒ“ŠJn: 10–â, ƒtƒBƒ‹ƒ^: •”–å:road, í•Ê:4-2 ‘I‘ğ‰È–Ú
+2025-09-13 17:01:17,704 - __main__ - INFO - –â‘èIDæ“¾: current_no=0, question_id=2001
+2025-09-13 17:01:17,705 - __main__ - INFO - –â‘è•\¦: 1/10 (“à•”: current_no=0, total_ids=10)
+2025-09-13 17:01:17,705 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=1 (type:<class 'int'>), total_questions=10
+2025-09-13 17:01:17,705 - __main__ - INFO - [SEARCH] ®‡«ŒŸØ: QID=2001, question.id=2001, year=2009, category=“¹˜H
+2025-09-13 17:01:17,714 - werkzeug - INFO - 127.0.0.1 - - [13/Sep/2025 17:01:17] "GET /exam?department=road&question_type=specialist&count=10 HTTP/1.1" 200 -
+2025-09-13 17:01:17,732 - utils - INFO - [LAUNCH] Šé‹ÆŠÂ‹«Å“K‰»: ƒf[ƒ^Šù“Ç‚İ‚İÏ‚İ - ƒXƒLƒbƒv
+2025-09-13 17:01:17,733 - __main__ - INFO - === POSTˆ—ŠJn - ƒZƒbƒVƒ‡ƒ“ó‘ÔƒfƒoƒbƒO ===
+2025-09-13 17:01:17,733 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“ƒL[: ['_permanent', 'bookmarks', 'csrf_token', 'data_loaded', 'exam_category', 'exam_current', 'exam_question_ids', 'history', 'selected_department', 'selected_question_type', 'session_id', 'srs_data', 'request_history']
+2025-09-13 17:01:17,733 - __main__ - INFO - exam_question_ids: [2001, 8026, 3006, 3008, 6022, 3002, 11014, 10036, 4016, 3005]
+2025-09-13 17:01:17,733 - __main__ - INFO - exam_current: 0
+2025-09-13 17:01:17,733 - __main__ - INFO - exam_category: ‘S‘Ì
+2025-09-13 17:01:17,733 - __main__ - INFO - selected_question_type: specialist
+2025-09-13 17:01:17,733 - __main__ - INFO - selected_department: road
+2025-09-13 17:01:17,733 - __main__ - INFO - session_id: f9f8c3e1933f7d3e5ab52a96c14ba958
+2025-09-13 17:01:17,734 - __main__ - INFO - data_loaded: True
+2025-09-13 17:01:17,734 - __main__ - INFO - ==========================================
+2025-09-13 17:01:17,734 - __main__ - INFO - QID DEBUG: Received qid='2001' (type: <class 'str'>, repr: '2001')
+2025-09-13 17:01:17,734 - __main__ - INFO - QID DEBUG: Converted qid=2001 (type: <class 'int'>)
+2025-09-13 17:01:17,734 - __main__ - INFO - SRSXV: –â‘è2001 - ³‰ğ:0, ŠÔˆá‚¢:1, “ïˆÕ“x:6.0, ƒ}ƒXƒ^[:False
+2025-09-13 17:01:17,734 - __main__ - INFO - [ERROR] •s³‰ğ‚É‚æ‚è•œKƒŠƒXƒg‚É’Ç‰Á: –â‘èID 2001
+2025-09-13 17:01:17,735 - __main__ - INFO - SRSXV: –â‘è2001 - ³‰ğ:0, ŠÔˆá‚¢:2, “ïˆÕ“x:7.0, ƒ}ƒXƒ^[:False
+2025-09-13 17:01:17,735 - __main__ - INFO - —š—ğ•Û‘¶: –â‘è2001, ‡Œv—š—ğ1Œ, ’¼ŒãŠm”F1Œ
+2025-09-13 17:01:17,735 - __main__ - INFO - === ‰ñ“šˆ—ƒfƒoƒbƒOî•ñ ===
+2025-09-13 17:01:17,735 - __main__ - INFO - –â‘èID: 2001, ‰ñ“š: A, ³”Û: False
+2025-09-13 17:01:17,735 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“ó‘Ô: current_no=0, next_no=1
+2025-09-13 17:01:17,735 - __main__ - INFO - ˆÀ‘S’l: safe_current_no=0, safe_next_no=1
+2025-09-13 17:01:17,735 - __main__ - INFO - –â‘èƒŠƒXƒg: ’·‚³=10, IDs=[2001, 8026, 3006]...
+2025-09-13 17:01:17,736 - __main__ - INFO - ÅI”»’è: is_last=False, next_index=1
+2025-09-13 17:01:17,736 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“ƒL[: ['_permanent', 'bookmarks', 'csrf_token', 'data_loaded', 'exam_category', 'exam_current', 'exam_question_ids', 'history', 'selected_department', 'selected_question_type', 'session_id', 'srs_data', 'request_history', 'advanced_srs', 'last_history_update', 'category_stats']
+2025-09-13 17:01:17,736 - __main__ - INFO - =========================
+2025-09-13 17:01:17,736 - __main__ - INFO - [CHECK] SESSION STATE VERIFIED: exam_current = 1 (expected: 1)
+2025-09-13 17:01:17,736 - __main__ - INFO - [CHECK] SESSION FLAGS: permanent=True, modified=True
+2025-09-13 17:01:17,736 - __main__ - INFO - [CHECK] SESSION KEYS: ['_permanent', 'advanced_srs', 'bookmarks', 'category_stats', 'csrf_token', 'data_loaded', 'exam_category', 'exam_current', 'exam_question_ids', 'history', 'last_history_update', 'last_update', 'request_history', 'selected_department', 'selected_question_type', 'session_id', 'srs_data']
+2025-09-13 17:01:17,736 - __main__ - INFO - ‰ñ“šˆ—Š®—¹: –â‘è2001, ³“šFalse, ƒŒƒxƒ‹0, ƒXƒgƒŠ[ƒN0“ú
+2025-09-13 17:01:17,737 - __main__ - INFO - ƒtƒB[ƒhƒoƒbƒN•Ï”: is_last_question=False, next_question_index=1, current_question_number=1, total_questions=10
+2025-09-13 17:01:17,737 - __main__ - INFO - [LOCK] POST Progress Already Saved: safe_next_no=1 at line 1648
+2025-09-13 17:01:17,739 - werkzeug - INFO - 127.0.0.1 - - [13/Sep/2025 17:01:17] "POST /exam HTTP/1.1" 200 -
+2025-09-13 17:01:17,749 - utils - INFO - [LAUNCH] Šé‹ÆŠÂ‹«Å“K‰»: ƒf[ƒ^Šù“Ç‚İ‚İÏ‚İ - ƒXƒLƒbƒv
+2025-09-13 17:01:17,750 - __main__ - INFO - [REPEAT] NEXT REQUEST: ƒZƒbƒVƒ‡ƒ“‚©‚çcurrent_no=1‚ğæ“¾
+2025-09-13 17:01:17,750 - __main__ - INFO - GETˆ—: current_no=1, exam_question_ids=[2001, 8026, 3006, 3008, 6022], is_next=True, total_ids=10
+2025-09-13 17:01:17,750 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'advanced_srs', 'bookmarks', 'category_stats', 'csrf_token', 'data_loaded', 'exam_category', 'exam_current', 'exam_question_ids', 'history', 'last_history_update', 'last_update', 'request_history', 'selected_department', 'selected_question_type', 'session_id', 'srs_data'], exam_current=1
+2025-09-13 17:01:17,750 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=specialist, department=road
+2025-09-13 17:01:17,750 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-13 17:01:17,750 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=True, exam_ids=True, category_match=True, question_type_match=True, department_match=True, year_match=False, current_no=1, len=10
+2025-09-13 17:01:17,750 - __main__ - INFO - need_reset = False
+2025-09-13 17:01:17,751 - __main__ - INFO - –â‘èIDæ“¾: current_no=1, question_id=8026
+2025-09-13 17:01:17,751 - __main__ - INFO - –â‘è•\¦: 2/10 (“à•”: current_no=1, total_ids=10)
+2025-09-13 17:01:17,751 - __main__ - INFO - ƒeƒ“ƒvƒŒ[ƒg•Ï”: current_no=2 (type:<class 'int'>), total_questions=10
+2025-09-13 17:01:17,751 - __main__ - INFO - [SEARCH] ®‡«ŒŸØ: QID=8026, question.id=8026, year=2015, category=“¹˜H
+2025-09-13 17:01:17,755 - werkzeug - INFO - 127.0.0.1 - - [13/Sep/2025 17:01:17] "GET /exam?next=1 HTTP/1.1" 200 -
+2025-09-13 17:01:18,768 - utils - INFO - [LAUNCH] Šé‹ÆŠÂ‹«Å“K‰»: ƒf[ƒ^Šù“Ç‚İ‚İÏ‚İ - ƒXƒLƒbƒv
+2025-09-13 17:01:18,769 - __main__ - INFO - Parameter normalization (fallback): question_type=specialist
+2025-09-13 17:01:18,769 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-13 17:01:18,770 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-13 17:01:18,771 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-13 17:01:18,771 - __main__ - INFO - GETˆ—: current_no=1, exam_question_ids=[2001, 8026, 3006, 3008, 6022], is_next=False, total_ids=10
+2025-09-13 17:01:18,772 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'advanced_srs', 'bookmarks', 'category_stats', 'csrf_token', 'data_loaded', 'exam_category', 'exam_current', 'exam_question_ids', 'history', 'last_history_update', 'last_update', 'request_history', 'selected_department', 'selected_question_type', 'session_id', 'srs_data'], exam_current=1
+2025-09-13 17:01:18,772 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=specialist, department=road
+2025-09-13 17:01:18,772 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-13 17:01:18,772 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=True, category_match=True, question_type_match=True, department_match=True, year_match=False, current_no=1, len=10
+2025-09-13 17:01:18,773 - __main__ - INFO - need_reset = True
+2025-09-13 17:01:18,773 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['exam_question_ids', 'exam_current', 'exam_category', 'selected_department', 'selected_question_type', 'request_history']
+2025-09-13 17:01:18,773 - __main__ - INFO - [SEARCH] ULTRA DEBUG: calling get_mixed_questions with department='road', question_type='specialist', all_questions_count=3883
+2025-09-13 17:01:18,780 - __main__ - ERROR - quizŠÖ”‚ÅƒGƒ‰[: No module named 'ai_analyzer'
+2025-09-13 17:01:18,782 - werkzeug - INFO - 127.0.0.1 - - [13/Sep/2025 17:01:18] "GET /exam?department=road&question_type=specialist&count=10 HTTP/1.1" 200 -
+2025-09-13 17:01:18,793 - utils - INFO - [LAUNCH] Šé‹ÆŠÂ‹«Å“K‰»: ƒf[ƒ^Šù“Ç‚İ‚İÏ‚İ - ƒXƒLƒbƒv
+2025-09-13 17:01:18,793 - __main__ - INFO - Parameter normalization (fallback): question_type=specialist
+2025-09-13 17:01:18,793 - __main__ - INFO - Parameter normalization (fallback): category=all implies count=10 (default)
+2025-09-13 17:01:18,794 - __main__ - INFO - ƒJƒeƒSƒŠ‰pŒê¨“ú–{Œê•ÏŠ·: None ¨ ‘S‘Ì
+2025-09-13 17:01:18,794 - __main__ - INFO - ƒJƒeƒSƒŠƒfƒR[ƒhŒ‹‰Ê: ‘S‘Ì
+2025-09-13 17:01:18,794 - __main__ - INFO - GETˆ—: current_no=0, exam_question_ids=[], is_next=False, total_ids=0
+2025-09-13 17:01:18,794 - __main__ - INFO - ƒZƒbƒVƒ‡ƒ“Ú×: session keys=['_permanent', 'advanced_srs', 'bookmarks', 'category_stats', 'csrf_token', 'data_loaded', 'history', 'last_history_update', 'last_update', 'session_id', 'srs_data', 'request_history'], exam_current=MISSING
+2025-09-13 17:01:18,794 - __main__ - INFO - –â‘èí•Êî•ñ: requested_question_type=specialist, session_question_type=None, department=road
+2025-09-13 17:01:18,794 - __main__ - INFO - ƒJƒeƒSƒŠî•ñ: requested_category=‘S‘Ì, session_category=‘S‘Ì
+2025-09-13 17:01:18,795 - __main__ - INFO - ƒŠƒZƒbƒg”»’è: is_next=False, exam_ids=False, category_match=True, question_type_match=False, department_match=False, year_match=False, current_no=0, len=0
+2025-09-13 17:01:18,795 - __main__ - INFO - need_reset = True
+2025-09-13 17:01:18,795 - __main__ - INFO - –â‘èƒŠƒZƒbƒg: ƒZƒbƒVƒ‡ƒ“Š®‘SƒNƒŠƒA - ['request_history']
+2025-09-13 17:01:18,795 - __main__ - INFO - [SEARCH] ULTRA DEBUG: calling get_mixed_questions with department='road', question_type='specialist', all_questions_count=3883
+2025-09-13 17:01:18,796 - __main__ - ERROR - quizŠÖ”‚ÅƒGƒ‰[: No module named 'ai_analyzer'
+2025-09-13 17:01:18,799 - werkzeug - INFO - 127.0.0.1 - - [13/Sep/2025 17:01:18] "GET /exam?department=road&question_type=specialist&count=10 HTTP/1.1" 200 -
+2025-09-13 17:15:11,933 - app - ERROR - [VERSION] CLAUDE.md€‹’IDƒVƒXƒeƒ€À‘• - ƒRƒ~ƒbƒg4127076
+2025-09-13 17:15:11,991 - app - INFO - [LAUNCH] ‚‘¬‰»ƒ‚[ƒh: Šé‹ÆŠÂ‹«—pƒf[ƒ^“Ç‚İ‚İŠJn
+2025-09-13 17:15:11,992 - app - ERROR - [ERROR] ƒAƒvƒŠƒP[ƒVƒ‡ƒ“‰Šú‰»ƒGƒ‰[: No module named 'data_manager'
+2025-09-13 17:15:11,992 - app - INFO - [REPEAT] Šî–{‹@”\‚Å‘±s‚µ‚Ü‚·

@@ -1,0 +1,70 @@
+{
+  "timestamp": "2025-09-13T17:03:37.929311",
+  "analysis_type": "ULTRA_SYNC_PRODUCTION_DEEP_ANALYSIS",
+  "progression_tests": [
+    {
+      "test_number": 1,
+      "timestamp": "2025-09-13T17:03:37.929497",
+      "status": "PROGRESSION_SUCCESS",
+      "details": {
+        "first_qid": "12",
+        "csrf_present": true,
+        "post_status": 200,
+        "second_qid": "10"
+      }
+    },
+    {
+      "test_number": 2,
+      "timestamp": "2025-09-13T17:03:41.012525",
+      "status": "PROGRESSION_SUCCESS",
+      "details": {
+        "first_qid": "24",
+        "csrf_present": true,
+        "post_status": 200,
+        "second_qid": "23"
+      }
+    },
+    {
+      "test_number": 3,
+      "timestamp": "2025-09-13T17:03:44.030370",
+      "status": "PROGRESSION_SUCCESS",
+      "details": {
+        "first_qid": "21",
+        "csrf_present": true,
+        "post_status": 200,
+        "second_qid": "9"
+      }
+    },
+    {
+      "test_number": 4,
+      "timestamp": "2025-09-13T17:03:47.036432",
+      "status": "PROGRESSION_SUCCESS",
+      "details": {
+        "first_qid": "15",
+        "csrf_present": true,
+        "post_status": 200,
+        "second_qid": "27"
+      }
+    },
+    {
+      "test_number": 5,
+      "timestamp": "2025-09-13T17:03:50.118632",
+      "status": "PROGRESSION_SUCCESS",
+      "details": {
+        "first_qid": "15",
+        "csrf_present": true,
+        "post_status": 200,
+        "second_qid": "12"
+      }
+    }
+  ],
+  "csrf_behavior": {},
+  "session_management": {},
+  "expert_fixes_status": {
+    "latest_commit_present": false,
+    "ultra_sync_present": false,
+    "expert_fixes_present": false,
+    "claude_md_compliant": false
+  },
+  "deployment_necessity": "NOT_NEEDED"
+}
