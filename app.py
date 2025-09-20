@@ -552,10 +552,9 @@ def load_questions():
     logger.info("RCCM統合問題データの読み込み開始")
     
     # 🎯 CLAUDE.md準拠: キャッシュ強制クリア（本番環境の古いキャッシュ対策）
-    global _questions_cache, _cache_timestamp
     _questions_cache = None
     _cache_timestamp = None
-    logger.info("🔄 CLAUDE.md準拠: 既存キャッシュ強制クリア")
+    logger.info("[CACHE] CLAUDE.md compliant: Cache clearing initiated")
     
     # 🎯 ULTRA SYNC 根本解決: フォールバック処理完全無効化
     # 本番環境でload_rccm_data_filesのみ使用を強制
@@ -1200,7 +1199,7 @@ def exam():
                     bookmarks.append(str(qid))
                     session['bookmarks'] = bookmarks
                     session.modified = True
-                    logger.info(f"❌ 不正解により復習リストに追加: 問題ID {qid}")
+                    logger.info(f"[SRS] Added to review list due to incorrect answer: Question ID {qid}")
             
             # マスター済み問題の一括クリーンアップ
             cleanup_mastered_questions(session)
@@ -5524,17 +5523,26 @@ try:
     
     if fast_mode:
         # 高速化モード: 遅延インポートでデータ管理初期化
-        logger.info("🚀 高速化モード: 企業環境用データ読み込み開始")
+        logger.info("[ENTERPRISE] High-speed mode: Enterprise data loading started")
         
-        # 遅延インポート: データ管理
-        from data_manager import DataManager, SessionDataManager, EnterpriseUserManager
-        from utils import enterprise_data_manager as edm
-        
-        # グローバル変数に代入
-        data_manager = DataManager()
-        session_data_manager = SessionDataManager(data_manager)
-        enterprise_user_manager = EnterpriseUserManager(data_manager)
-        enterprise_data_manager = edm
+        # 遅延インポート: データ管理 (Ultra Sync Safe Fallback)
+        try:
+            from data_manager import DataManager, SessionDataManager, EnterpriseUserManager
+            from utils import enterprise_data_manager as edm
+
+            # グローバル変数に代入
+            data_manager = DataManager()
+            session_data_manager = SessionDataManager(data_manager)
+            enterprise_user_manager = EnterpriseUserManager(data_manager)
+            enterprise_data_manager = edm
+            logger.info("[DATA_MANAGER] Enterprise data management modules loaded successfully")
+        except ImportError as import_error:
+            logger.warning(f"[DATA_MANAGER] Optional module not found: {import_error}")
+            # フォールバック: 基本機能のみで継続
+            data_manager = None
+            session_data_manager = None
+            enterprise_user_manager = None
+            enterprise_data_manager = None
         
         # 遅延インポート: 機能モジュール
         from gamification import gamification_manager as gam_mgr
@@ -5581,8 +5589,8 @@ try:
         logger.info(f"✅ 基本アプリケーション初期化完了: {len(initial_questions)}問読み込み")
     
 except Exception as e:
-    logger.error(f"❌ アプリケーション初期化エラー: {e}")
-    logger.info("🔄 基本機能で続行します")
+    logger.error(f"[ERROR] Application initialization failed: {e}")
+    logger.info("[FALLBACK] Continuing with basic functionality")
 
 if __name__ == '__main__':
     # 🔥 本番環境のポート設定: Renderではポート10000を使用
@@ -5606,8 +5614,8 @@ if __name__ == '__main__':
         logger.info("アクセスURL: http://localhost:5003")
     
     # サーバー起動
-    logger.info(f"🚀 RCCM試験問題集2025 Enterprise Edition 起動中...")
-    logger.info(f"📡 Host: {host}, Port: {port}, Debug: {debug_mode}")
+    logger.info(f"[STARTUP] RCCM Quiz Application 2025 Enterprise Edition starting...")
+    logger.info(f"[CONFIG] Host: {host}, Port: {port}, Debug: {debug_mode}")
     
     if __name__ == '__main__':
         app.run(
