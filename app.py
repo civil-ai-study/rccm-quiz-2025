@@ -126,6 +126,37 @@ def safe_session_operation(user_id, operation_func, *args, **kwargs):
         logger.error(f"セッション操作エラー (user_id: {user_id}): {e}")
         return None
 
+# 🎯 CLAUDE.md準拠: 10/20/30問題数システム実装
+def get_question_count_from_request():
+    """URLパラメーターから問題数を取得（CLAUDE.md準拠: 10/20/30対応）"""
+    try:
+        count = request.args.get('count', type=int)
+        if count in ExamConfig.SUPPORTED_QUESTION_COUNTS:
+            return count
+        # デフォルト値を返す
+        return ExamConfig.QUESTIONS_PER_SESSION
+    except (ValueError, TypeError):
+        return ExamConfig.QUESTIONS_PER_SESSION
+
+def validate_question_count(count, available_questions_count):
+    """問題数が利用可能な問題数に対して適切かチェック"""
+    if count not in ExamConfig.SUPPORTED_QUESTION_COUNTS:
+        return False
+
+    config = ExamConfig.SESSION_TYPE_CONFIG.get(count, {})
+    min_required = config.get('min_questions_required', count + 5)
+
+    return available_questions_count >= min_required
+
+def get_session_config_by_count(count):
+    """問題数に基づいてセッション設定を取得"""
+    return ExamConfig.SESSION_TYPE_CONFIG.get(count, {
+        'name': f'{count}問セッション',
+        'description': f'{count}問の学習セッション',
+        'time_limit': None,
+        'min_questions_required': count + 5
+    })
+
 # 強力なキャッシュ制御ヘッダーを設定（マルチユーザー・企業環境対応）
 @app.after_request
 def after_request(response):
@@ -749,8 +780,9 @@ def get_due_questions(user_session, all_questions):
 
 def get_mixed_questions(user_session, all_questions, requested_category='全体', session_size=None, department='', question_type='', year=None):
     """新問題と復習問題をミックスした出題（RCCM部門対応版）"""
-    # 🔥 CRITICAL: 絶対に10問固定（ユーザー要求による）
-    session_size = 10
+    # 🎯 CLAUDE.md準拠: 可変問題数システム (10/20/30問対応)
+    if session_size is None:
+        session_size = ExamConfig.QUESTIONS_PER_SESSION
     
     due_questions = get_due_questions(user_session, all_questions)
     
@@ -1835,9 +1867,9 @@ def exam():
         requested_year = sanitize_input(request.args.get('year'))
         if requested_year:
             logger.info(f"年度指定: {requested_year}年度の問題を取得")
-        
-        # 🔥 CRITICAL: 絶対に10問固定（ユーザー要求による）
-        session_size = 10
+
+        # 🎯 CLAUDE.md準拠: 可変問題数システム (10/20/30問対応)
+        session_size = get_question_count_from_request()
         specific_qid = sanitize_input(request.args.get('qid'))
         
         # 🔥 CRITICAL: 復習機能の特別処理（ウルトラシンク修正）
@@ -3797,8 +3829,8 @@ def adaptive_quiz():
     """アダプティブ問題練習モード（部門別対応版）"""
     try:
         learning_mode = request.args.get('mode', 'balanced')
-        # 🔥 CRITICAL: 絶対に10問固定（ユーザー要求による）
-        session_size = 10
+        # 🎯 CLAUDE.md準拠: 可変問題数システム (10/20/30問対応)
+        session_size = get_question_count_from_request()
         department = request.args.get('department', session.get('selected_department', ''))
         
         all_questions = load_questions()
@@ -3848,8 +3880,8 @@ def integrated_learning():
     try:
         # パラメータ取得
         learning_mode = request.args.get('mode', 'basic_to_specialist')
-        # 🔥 CRITICAL: 絶対に10問固定（ユーザー要求による）
-        session_size = 10
+        # 🎯 CLAUDE.md準拠: 可変問題数システム (10/20/30問対応)
+        session_size = get_question_count_from_request()
         department = request.args.get('department', session.get('selected_department', ''))
         
         # 連携学習モードの検証

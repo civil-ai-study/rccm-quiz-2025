@@ -16,15 +16,40 @@ class Config:
 
 class ExamConfig:
     """問題・学習設定"""
-    # 🔥 CRITICAL: 絶対に10問固定（ユーザー要求による）
-    QUESTIONS_PER_SESSION = 10
-    
-    # セッション長オプション
+    # 🎯 CLAUDE.md準拠: 10/20/30問題システム実装
+    QUESTIONS_PER_SESSION = 10  # デフォルト値
+
+    # CLAUDE.md準拠: 可変問題数セッションオプション
     SESSION_SIZES = {
-        'quick': 10,     # 全て10問に統一
-        'standard': 10,  # 全て10問に統一
-        'intensive': 10, # 全て10問に統一
-        'unlimited': 10  # 全て10問に統一
+        'quick': 10,      # クイックセッション (10問)
+        'standard': 20,   # スタンダードセッション (20問)
+        'intensive': 30,  # インテンシブセッション (30問)
+        'unlimited': 10   # アンリミテッド（互換性維持）
+    }
+
+    # CLAUDE.md準拠: 問題数バリエーション定義
+    SUPPORTED_QUESTION_COUNTS = [10, 20, 30]
+
+    # CLAUDE.md準拠: セッションタイプ別詳細設定
+    SESSION_TYPE_CONFIG = {
+        10: {
+            'name': 'クイック学習',
+            'description': '短時間集中学習 (10問)',
+            'time_limit': None,
+            'min_questions_required': 15
+        },
+        20: {
+            'name': 'スタンダード学習',
+            'description': '標準的な学習セッション (20問)',
+            'time_limit': 1800,  # 30分
+            'min_questions_required': 25
+        },
+        30: {
+            'name': 'インテンシブ学習',
+            'description': '集中的な学習セッション (30問)',
+            'time_limit': 2700,  # 45分
+            'min_questions_required': 35
+        }
     }
 
 class SRSConfig:
