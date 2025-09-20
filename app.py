@@ -1,10 +1,18 @@
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify, send_from_directory, make_response
-from flask_wtf.csrf import CSRFProtect
 import os
 import random
 from datetime import datetime, timedelta
 from collections import defaultdict
 import logging
+
+# 本番環境対応: Flask-WTF安全インポート
+try:
+    from flask_wtf.csrf import CSRFProtect
+    CSRF_AVAILABLE = True
+except ImportError:
+    CSRF_AVAILABLE = False
+    CSRFProtect = None
+    print("[DEPLOY] Flask-WTF not available, CSRF protection disabled")
 from typing import Dict, List
 import re
 import html
@@ -65,8 +73,13 @@ app = Flask(__name__)
 # 設定適用（改善版）
 app.config.from_object(Config)
 
-# 🔧 ULTRA SYNC FIX: CSRF保護を慎重に有効化
-csrf = CSRFProtect(app)
+# 🔧 本番環境対応: CSRF保護を条件付きで有効化
+if CSRF_AVAILABLE and CSRFProtect:
+    csrf = CSRFProtect(app)
+    print("[DEPLOY] CSRF protection enabled")
+else:
+    csrf = None
+    print("[DEPLOY] CSRF protection disabled - Flask-WTF not available")
 
 # セッション設定を明示的に追加
 app.config['SESSION_PERMANENT'] = False
