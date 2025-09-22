@@ -1,0 +1,9 @@
+{
+  "_comment": "PWA manifest disabled per user request - URL management only",
+  "_original_backup": "Original manifest content backed up",
+  "name": "",
+  "short_name": "",
+  "start_url": "/",
+  "display": "browser",
+  "icons": []
+} 
