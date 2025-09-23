@@ -72,15 +72,18 @@ app.config.from_object(Config)
 # 🎯 ULTRA SIMPLE FIX: HTTP 413エラー解決 - MAX_CONTENT_LENGTH調整
 app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024  # 50MB (デフォルト16MB → 50MB)
 
-# 🔧 数学記号表示用カスタムフィルター
+# 🔧 数学記号表示用カスタムフィルター（一時的に無効化）
 @app.template_filter('math_notation')
 def math_notation_filter(text):
     """
     数学記号を確実に表示するためのHTMLエンティティ変換
-    Unicode文字を&#数値; 形式に変換してブラウザ互換性を確保
+    一時的に無効化して問題を確認
     """
     if not text:
         return text
+
+    # TEMPORARY: フィルターを無効化して原因を調査
+    return text
 
     # 数学記号のUnicode → HTMLエンティティ マッピング
     math_symbols = {
