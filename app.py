@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify, send_from_directory, make_response
 from flask_wtf.csrf import CSRFProtect
-from flask_session import Session  # 🚨 ULTRA SYNC: レースコンディション対策
+# from flask_session import Session  # 🚨 DISABLED: Python 3.13互換性問題のため無効化
 import os
 import random
 from datetime import datetime, timedelta
@@ -66,8 +66,8 @@ app = Flask(__name__)
 # 設定適用（改善版）
 app.config.from_object(Config)
 
-# 🚨 ULTRA SYNC: Flask-Session初期化（レースコンディション解決）
-Session(app)
+# 🚨 DISABLED: Flask-Session無効化（Python 3.13互換性問題のため）
+# Session(app)
 
 # 🎯 ULTRA SIMPLE FIX: HTTP 413エラー解決 - MAX_CONTENT_LENGTH調整
 app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024  # 50MB (デフォルト16MB → 50MB)
