@@ -72,6 +72,69 @@ app.config.from_object(Config)
 # 🎯 ULTRA SIMPLE FIX: HTTP 413エラー解決 - MAX_CONTENT_LENGTH調整
 app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024  # 50MB (デフォルト16MB → 50MB)
 
+# 🔧 数学記号表示用カスタムフィルター
+@app.template_filter('math_notation')
+def math_notation_filter(text):
+    """
+    数学記号を確実に表示するためのHTMLエンティティ変換
+    Unicode文字を&#数値; 形式に変換してブラウザ互換性を確保
+    """
+    if not text:
+        return text
+
+    # 数学記号のUnicode → HTMLエンティティ マッピング
+    math_symbols = {
+        '²': '&sup2;',        # 上付き2
+        '³': '&sup3;',        # 上付き3
+        '⁴': '&#8308;',       # 上付き4
+        '⁵': '&#8309;',       # 上付き5
+        '⁶': '&#8310;',       # 上付き6
+        '⁷': '&#8311;',       # 上付き7
+        '⁸': '&#8312;',       # 上付き8
+        '⁹': '&#8313;',       # 上付き9
+        '¹': '&sup1;',        # 上付き1
+        '⁰': '&#8304;',       # 上付き0
+        '₀': '&#8320;',       # 下付き0
+        '₁': '&#8321;',       # 下付き1
+        '₂': '&#8322;',       # 下付き2
+        '₃': '&#8323;',       # 下付き3
+        '₄': '&#8324;',       # 下付き4
+        '₅': '&#8325;',       # 下付き5
+        '₆': '&#8326;',       # 下付き6
+        '₇': '&#8327;',       # 下付き7
+        '₈': '&#8328;',       # 下付き8
+        '₉': '&#8329;',       # 下付き9
+        '×': '&times;',       # 乗算記号
+        '÷': '&divide;',      # 除算記号
+        '±': '&plusmn;',      # プラスマイナス
+        '∞': '&infin;',       # 無限大
+        '∑': '&sum;',         # シグマ
+        '∏': '&prod;',        # プロダクト
+        '∫': '&int;',         # インテグラル
+        '√': '&radic;',       # 平方根
+        '∆': '&Delta;',       # デルタ
+        'α': '&alpha;',       # アルファ
+        'β': '&beta;',        # ベータ
+        'γ': '&gamma;',       # ガンマ
+        'π': '&pi;',          # パイ
+        'θ': '&theta;',       # シータ
+        'σ': '&sigma;',       # シグマ小文字
+        'φ': '&phi;',         # ファイ
+        'Ω': '&Omega;',       # オメガ
+        '≤': '&le;',          # 以下
+        '≥': '&ge;',          # 以上
+        '≠': '&ne;',          # 不等号
+        '≈': '&asymp;',       # 近似
+        '∝': '&prop;',        # 比例
+        '°': '&deg;',         # 度記号
+    }
+
+    # 変換実行
+    for unicode_char, html_entity in math_symbols.items():
+        text = text.replace(unicode_char, html_entity)
+
+    return text
+
 # 🔧 ULTRA SYNC FIX: CSRF保護を慎重に有効化
 # 🔥 EMERGENCY FIX: CSRF無効化（問題回答の不一致修正優先）
 # csrf = CSRFProtect(app)

@@ -366,6 +366,60 @@
         padding-bottom: max(1rem, env(safe-area-inset-bottom)) !important;
       }
     }
+
+    /* 🔧 数学記号表示強化CSS - ブラウザ互換性確保 */
+    .math-formula {
+      font-family: 'Times New Roman', 'STIX Two Math', 'KaTeX_Main', serif;
+      font-size: 1.1em;
+      line-height: 1.4;
+      letter-spacing: normal;
+    }
+
+    /* 上付き・下付き文字の強化表示 */
+    sup, .math-sup {
+      font-size: 0.75em;
+      vertical-align: super;
+      line-height: 0;
+    }
+
+    sub, .math-sub {
+      font-size: 0.75em;
+      vertical-align: sub;
+      line-height: 0;
+    }
+
+    /* 数学記号の視認性向上 */
+    .question-text, .option-text {
+      font-feature-settings: "frac" 1, "sups" 1, "subs" 1;
+      -webkit-font-feature-settings: "frac" 1, "sups" 1, "subs" 1;
+    }
+
+    /* 特定の数学記号の表示を確実にする */
+    .math-symbol {
+      font-weight: normal;
+      font-style: normal;
+      text-decoration: none;
+    }
+
+    /* フォールバック対応 - 数学フォントが利用できない場合 */
+    @supports not (font-feature-settings: "sups" 1) {
+      .question-text sup, .option-text sup {
+        font-size: 0.7em;
+        vertical-align: 0.5em;
+      }
+      .question-text sub, .option-text sub {
+        font-size: 0.7em;
+        vertical-align: -0.2em;
+      }
+    }
+
+    /* 高解像度ディスプレイでの数学記号最適化 */
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+      .math-formula, .question-text, .option-text {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    }
     </style>
 
     {% block head %}{% endblock %}
