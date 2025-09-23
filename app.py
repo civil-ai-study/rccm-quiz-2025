@@ -2125,6 +2125,11 @@ def bulk_remove_from_review():
         logger.error(f"復習問題一括削除エラー: {e}")
         return jsonify({'success': False, 'error': str(e)})
 
+@app.route('/srs')
+def srs_list():
+    """SRS復習リスト（/reviewへのリダイレクト）"""
+    return redirect(url_for('review_list'))
+
 @app.route('/srs_stats')
 def srs_statistics():
     """SRS学習統計の表示（エラー処理強化版）"""
