@@ -37,47 +37,14 @@ app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'fallback-key')
 ```
 
 ### **部門マッピング（統一済み）**
-```python
-# config.py - 13部門完全対応（修正禁止）
-LIGHTWEIGHT_DEPARTMENT_MAPPING = {
-    'basic': '基礎科目（共通）',
-    'road': '道路',
-    'river': '河川、砂防及び海岸・海洋',
-    'urban': '都市計画及び地方計画',
-    'garden': '造園',
-    'env': '建設環境',
-    'steel': '鋼構造及びコンクリート',
-    'soil': '土質及び基礎',
-    'construction': '施工計画、施工設備及び積算',
-    'water': '上水道及び工業用水道',
-    'forest': '森林土木',
-    'agri': '農業土木',
-    'tunnel': 'トンネル'
-}
-
-# app.py - 英語カテゴリー完全削除済み
-# 🚨 legacy_english_mapping は完全削除済み（禁止された英語カテゴリー系統）
-target_categories = LIGHTWEIGHT_DEPARTMENT_MAPPING.get(department, department)
-```
+- **使用マッピング**: `config.py` の `LIGHTWEIGHT_DEPARTMENT_MAPPING`（13部門対応）
+- **英語カテゴリー**: `legacy_english_mapping` 完全削除済み
+- **マッピング方式**: 英語部門ID → 日本語カテゴリ名への統一変換
 
 ### **フィードバック画面統合（修正済み）**
-```python
-# app.py line 1244-1259 - POST処理修正済み
-if request.method == 'POST':
-    # 回答処理...
-    return render_template('exam_feedback.html',
-        is_correct=is_correct,
-        selected_answer=answer,
-        correct_answer=correct_answer,
-        explanation=explanation,
-        question_num=current_question,
-        total_questions=total_questions,
-        current_streak=0,
-        performance_comparison=None,
-        new_badges=None,
-        badge_info=None
-    )
-```
+- **修正箇所**: `app.py` line 1244-1259 POST処理
+- **修正内容**: redirect → exam_feedback.html テンプレート表示
+- **結果**: 正常なフィードバック画面表示と「次の問題へ」ボタン動作
 
 ### **クイズフロー（完全動作中）**
 ```
