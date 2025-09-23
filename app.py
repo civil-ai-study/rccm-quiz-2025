@@ -1412,8 +1412,8 @@ def result():
         if selected_department:
             if selected_department in LIGHTWEIGHT_DEPARTMENT_MAPPING:
                 department_name = LIGHTWEIGHT_DEPARTMENT_MAPPING[selected_department]
-            elif selected_department in RCCMConfig.DEPARTMENTS:
-                department_name = RCCMConfig.DEPARTMENTS[selected_department].get('name', selected_department)
+            elif selected_department in LIGHTWEIGHT_DEPARTMENT_MAPPING:
+                department_name = LIGHTWEIGHT_DEPARTMENT_MAPPING[selected_department]
 
         return render_template(
             'result.html',
@@ -1521,7 +1521,7 @@ def department_statistics():
         report = dept_stats_analyzer.generate_comprehensive_department_report(user_session)
         
         # 部門情報を追加
-        departments = RCCMConfig.DEPARTMENTS
+        departments = LIGHTWEIGHT_DEPARTMENT_MAPPING
         
         logger.info(f"部門別統計レポート生成: {report.get('total_questions_analyzed', 0)}問分析")
         
@@ -1547,7 +1547,7 @@ def departments():
         department_progress = {}
         history = session.get('history', [])
         
-        for dept_id, dept_info in RCCMConfig.DEPARTMENTS.items():
+        for dept_id, dept_info in LIGHTWEIGHT_DEPARTMENT_MAPPING.items():
             # この部門での問題数と正答数を集計
             dept_history = [h for h in history if h.get('department') == dept_id]
             total_answered = len(dept_history)
@@ -1561,7 +1561,7 @@ def departments():
         
         return render_template(
             'departments.html',
-            departments=RCCMConfig.DEPARTMENTS,
+            departments=LIGHTWEIGHT_DEPARTMENT_MAPPING,
             current_department=current_department,
             department_progress=department_progress
         )
@@ -1657,12 +1657,12 @@ def question_types(department_id):
         # CRITICAL FIX: 緊急テストコードを削除 - 正常な道路部門アクセスを復旧
         # 道路部門も他の部門と同じ正常な処理フローで動作させる
         
-        if department_id not in RCCMConfig.DEPARTMENTS:
-            logger.error(f"🚨 ULTRA SYNC DEBUG: department_id '{department_id}' not found in RCCMConfig.DEPARTMENTS")
-            logger.info(f"🔍 ULTRA SYNC DEBUG: Available departments: {list(RCCMConfig.DEPARTMENTS.keys())}")
+        if department_id not in LIGHTWEIGHT_DEPARTMENT_MAPPING:
+            logger.error(f"🚨 ULTRA SYNC DEBUG: department_id '{department_id}' not found in LIGHTWEIGHT_DEPARTMENT_MAPPING")
+            logger.info(f"🔍 ULTRA SYNC DEBUG: Available departments: {list(LIGHTWEIGHT_DEPARTMENT_MAPPING.keys())}")
             return render_template('error.html', error="指定された部門が見つかりません。")
         
-        department_info = RCCMConfig.DEPARTMENTS[department_id]
+        department_info = LIGHTWEIGHT_DEPARTMENT_MAPPING[department_id]
         
         # 各問題種別の学習進捗を計算
         type_progress = {}
@@ -1704,7 +1704,7 @@ def question_types(department_id):
 def department_categories(department_id, question_type):
     """部門・問題種別別のカテゴリ画面"""
     try:
-        if department_id not in RCCMConfig.DEPARTMENTS:
+        if department_id not in LIGHTWEIGHT_DEPARTMENT_MAPPING:
             return render_template('error.html', error="指定された部門が見つかりません。")
         
         if question_type not in RCCMConfig.QUESTION_TYPES:
@@ -1715,7 +1715,7 @@ def department_categories(department_id, question_type):
         session['selected_question_type'] = question_type
         session.modified = True
         
-        department_info = RCCMConfig.DEPARTMENTS[department_id]
+        department_info = LIGHTWEIGHT_DEPARTMENT_MAPPING[department_id]
         type_info = RCCMConfig.QUESTION_TYPES[question_type]
         
         questions = load_questions()
@@ -1782,7 +1782,7 @@ def department_study(department):
     try:
         # 部門名を英語キーに変換
         department_key = None
-        for key, info in RCCMConfig.DEPARTMENTS.items():
+        for key, info in LIGHTWEIGHT_DEPARTMENT_MAPPING.items():
             if info['name'] == department or key == department:
                 department_key = key
                 break
@@ -1791,7 +1791,7 @@ def department_study(department):
             logger.error(f"無効な部門名: {department}")
             return render_template('error.html', error="指定された部門が見つかりません。")
         
-        department_info = RCCMConfig.DEPARTMENTS[department_key]
+        department_info = LIGHTWEIGHT_DEPARTMENT_MAPPING[department_key]
         
         # セッションに部門を保存
         session['selected_department'] = department_key
@@ -1921,7 +1921,7 @@ def review_list():
         if not all_review_ids:
             return render_template('review_enhanced.html', 
                                  message="まだ復習問題が登録されていません。問題を解いて間違えることで、科学的な復習システムが自動的に最適な学習計画を作成します。",
-                                 departments=RCCMConfig.DEPARTMENTS,
+                                 departments=LIGHTWEIGHT_DEPARTMENT_MAPPING,
                                  srs_stats={
                                      'total_questions': 0,
                                      'due_now': 0,
@@ -2035,7 +2035,7 @@ def review_list():
                              mastered_questions=mastered_questions,
                              total_count=len(active_questions),
                              mastered_count=len(mastered_questions),
-                             departments=RCCMConfig.DEPARTMENTS,
+                             departments=LIGHTWEIGHT_DEPARTMENT_MAPPING,
                              srs_stats=srs_stats,
                              show_srs_details=True)
     
@@ -2437,8 +2437,7 @@ def bookmarks_page():
                 dept_key = question.get('department', '')
                 dept_name = ''
                 if dept_key:
-                    dept_info = RCCMConfig.DEPARTMENTS.get(dept_key, {})
-                    dept_name = dept_info.get('name', dept_key)
+                    dept_name = LIGHTWEIGHT_DEPARTMENT_MAPPING.get(dept_key, dept_key)
                 
                 questions.append({
                     'id': question.get('id'),
@@ -3065,9 +3064,9 @@ def ai_analysis():
         history = session.get('history', [])
         for entry in history:
             dept = entry.get('department')
-            if dept and dept in RCCMConfig.DEPARTMENTS:
+            if dept and dept in LIGHTWEIGHT_DEPARTMENT_MAPPING:
                 if dept not in available_departments:
-                    available_departments[dept] = {'count': 0, 'name': RCCMConfig.DEPARTMENTS[dept]['name']}
+                    available_departments[dept] = {'count': 0, 'name': LIGHTWEIGHT_DEPARTMENT_MAPPING[dept]['name']}
                 available_departments[dept]['count'] += 1
         
         return render_template(
@@ -3077,7 +3076,7 @@ def ai_analysis():
             learning_modes=adaptive_engine.learning_modes,
             available_departments=available_departments,
             current_department=department_filter,
-            departments=RCCMConfig.DEPARTMENTS
+            departments=LIGHTWEIGHT_DEPARTMENT_MAPPING
         )
         
     except Exception as e:
@@ -3120,7 +3119,7 @@ def adaptive_quiz():
         # カテゴリ名を部門別に調整
         category_name = 'AI適応学習'
         if department:
-            dept_name = RCCMConfig.DEPARTMENTS.get(department, {}).get('name', department)
+            dept_name = LIGHTWEIGHT_DEPARTMENT_MAPPING.get(department, department)
             category_name = f'AI適応学習 ({dept_name})'
         
         session['exam_category'] = category_name
@@ -3187,7 +3186,7 @@ def integrated_learning():
         category_name = mode_names.get(learning_mode, '連携学習')
         
         if department:
-            dept_name = RCCMConfig.DEPARTMENTS.get(department, {}).get('name', department)
+            dept_name = LIGHTWEIGHT_DEPARTMENT_MAPPING.get(department, department)
             category_name = f'{category_name} ({dept_name})'
         
         session['exam_category'] = category_name
@@ -3216,7 +3215,7 @@ def integrated_learning_selection():
         foundation_mastery = adaptive_engine._assess_foundation_mastery(session, department)
         
         # 部門情報
-        departments = RCCMConfig.DEPARTMENTS
+        departments = LIGHTWEIGHT_DEPARTMENT_MAPPING
         department_patterns = adaptive_engine.department_learning_patterns
         
         return render_template(
@@ -3242,7 +3241,7 @@ def learner_insights():
         insights = adaptive_engine.get_learner_insights(session, department)
         
         # 部門情報
-        departments = RCCMConfig.DEPARTMENTS
+        departments = LIGHTWEIGHT_DEPARTMENT_MAPPING
         
         return render_template(
             'learner_insights.html',
