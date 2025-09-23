@@ -114,12 +114,12 @@
                                onclick="selectOption('A', event); event.stopPropagation();"
                                style="cursor: pointer; width: 100%; height: 100%; display: flex; align-items: center; padding-left: 35px;">
                             <div class="d-flex align-items-center w-100" onclick="selectOption('A', event); event.stopPropagation();">
-                                <span class="badge bg-primary me-2 option-letter" 
+                                <span class="badge bg-primary me-2 option-letter"
                                       onclick="selectOption('A', event); event.stopPropagation();"
                                       style="font-size: 0.8rem; cursor: pointer;">A</span>
-                                <span class="option-text" 
+                                <span class="option-text"
                                       onclick="selectOption('A', event); event.stopPropagation();"
-                                      style="font-size: 0.9rem; cursor: pointer; flex: 1;">{{ question.option_a }}</span>
+                                      style="font-size: 0.9rem; cursor: pointer; flex: 1;">{{ question.option_a|safe }}</span>
                             </div>
                         </label>
                     </div>
@@ -134,12 +134,12 @@
                                onclick="selectOption('B', event); event.stopPropagation();"
                                style="cursor: pointer; width: 100%; height: 100%; display: flex; align-items: center; padding-left: 35px;">
                             <div class="d-flex align-items-center w-100" onclick="selectOption('B', event); event.stopPropagation();">
-                                <span class="badge bg-primary me-2 option-letter" 
+                                <span class="badge bg-primary me-2 option-letter"
                                       onclick="selectOption('B', event); event.stopPropagation();"
                                       style="font-size: 0.8rem; cursor: pointer;">B</span>
-                                <span class="option-text" 
+                                <span class="option-text"
                                       onclick="selectOption('B', event); event.stopPropagation();"
-                                      style="font-size: 0.9rem; cursor: pointer; flex: 1;">{{ question.option_b }}</span>
+                                      style="font-size: 0.9rem; cursor: pointer; flex: 1;">{{ question.option_b|safe }}</span>
                             </div>
                         </label>
                     </div>
@@ -154,12 +154,12 @@
                                onclick="selectOption('C', event); event.stopPropagation();"
                                style="cursor: pointer; width: 100%; height: 100%; display: flex; align-items: center; padding-left: 35px;">
                             <div class="d-flex align-items-center w-100" onclick="selectOption('C', event); event.stopPropagation();">
-                                <span class="badge bg-primary me-2 option-letter" 
+                                <span class="badge bg-primary me-2 option-letter"
                                       onclick="selectOption('C', event); event.stopPropagation();"
                                       style="font-size: 0.8rem; cursor: pointer;">C</span>
-                                <span class="option-text" 
+                                <span class="option-text"
                                       onclick="selectOption('C', event); event.stopPropagation();"
-                                      style="font-size: 0.9rem; cursor: pointer; flex: 1;">{{ question.option_c }}</span>
+                                      style="font-size: 0.9rem; cursor: pointer; flex: 1;">{{ question.option_c|safe }}</span>
                             </div>
                         </label>
                     </div>
@@ -174,12 +174,12 @@
                                onclick="selectOption('D', event); event.stopPropagation();"
                                style="cursor: pointer; width: 100%; height: 100%; display: flex; align-items: center; padding-left: 35px;">
                             <div class="d-flex align-items-center w-100" onclick="selectOption('D', event); event.stopPropagation();">
-                                <span class="badge bg-primary me-2 option-letter" 
+                                <span class="badge bg-primary me-2 option-letter"
                                       onclick="selectOption('D', event); event.stopPropagation();"
                                       style="font-size: 0.8rem; cursor: pointer;">D</span>
-                                <span class="option-text" 
+                                <span class="option-text"
                                       onclick="selectOption('D', event); event.stopPropagation();"
-                                      style="font-size: 0.9rem; cursor: pointer; flex: 1;">{{ question.option_d }}</span>
+                                      style="font-size: 0.9rem; cursor: pointer; flex: 1;">{{ question.option_d|safe }}</span>
                             </div>
                         </label>
                     </div>

@@ -1207,6 +1207,34 @@ def exam():
                 'correct_answer': current_question.get('correct_answer', ''),
                 'date': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
             })
+
+            # 🚀 新機能: 間違った問題を自動的に復習リストに登録
+            if not is_correct:
+                # SRSシステムで管理
+                if 'advanced_srs' not in session:
+                    session['advanced_srs'] = {}
+
+                srs_data = session['advanced_srs']
+                qid_str = str(qid)
+
+                # 新規登録または既存データ更新
+                if qid_str not in srs_data:
+                    srs_data[qid_str] = {
+                        'level': 1,
+                        'next_review': datetime.now().isoformat(),
+                        'incorrect_count': 1,
+                        'added_date': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+                        'question_type': current_question.get('question_type', 'basic'),
+                        'category': current_question.get('category', '不明')
+                    }
+                else:
+                    # 既存の問題の場合、間違い回数を増加
+                    srs_data[qid_str]['incorrect_count'] = srs_data[qid_str].get('incorrect_count', 0) + 1
+                    srs_data[qid_str]['level'] = max(1, srs_data[qid_str].get('level', 1) - 1)
+                    srs_data[qid_str]['next_review'] = datetime.now().isoformat()
+
+                session['advanced_srs'] = srs_data
+
             session.modified = True
 
             # 次の問題のID取得（現在のセッションから）
@@ -2280,8 +2308,32 @@ def force_reset():
 
 @app.route('/help')
 def help_page():
-    """ヘルプページ"""
-    return render_template('help.html', total_questions=ExamConfig.QUESTIONS_PER_SESSION)
+    """包括的なヘルプページ"""
+
+    # 統計データを取得
+    history = session.get('history', [])
+    srs_data = session.get('advanced_srs', {})
+    bookmarks = session.get('bookmarks', [])
+
+    help_data = {
+        'total_questions': ExamConfig.QUESTIONS_PER_SESSION,
+        'departments': LIGHTWEIGHT_DEPARTMENT_MAPPING,
+        'total_solved': len(history),
+        'review_count': len(srs_data),
+        'bookmark_count': len(bookmarks),
+        'features': {
+            'basic_exam': '基礎科目10問題での学習',
+            'specialist_exam': '13専門部門から選択して10問題での学習',
+            'auto_review': '間違った問題の自動復習リスト登録',
+            'srs_system': '科学的反復学習システム',
+            'bookmarks': '重要問題のブックマーク機能',
+            'statistics': '詳細学習統計・分析',
+            'mobile_support': 'モバイル対応・オフライン学習',
+            'ai_analysis': 'AI学習分析・推奨機能'
+        }
+    }
+
+    return render_template('help.html', **help_data)
 
 @app.route('/debug')
 def debug_page():
