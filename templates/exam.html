@@ -22,6 +22,9 @@
                     {% endif %}
                     {% if question.question_type == 'specialist' %}
                     <span class="badge bg-info text-white" style="font-size: 0.7rem;">4-2 専門</span>
+                    {% if department_name %}
+                    <span class="badge bg-success text-white" style="font-size: 0.7rem;">{{ department_name }}</span>
+                    {% endif %}
                     {% elif question.question_type == 'basic' %}
                     <span class="badge bg-secondary text-white" style="font-size: 0.7rem;">4-1 基礎</span>
                     {% endif %}
