@@ -1929,9 +1929,25 @@ def review_list():
                                      'in_progress': 0
                                  })
         
-        # 問題データを読み込み
-        all_questions = load_questions()
-        questions_dict = {str(q.get('id')): q for q in all_questions}
+        # 問題データを読み込み（防御的プログラミング強化）
+        try:
+            all_questions = load_questions()
+            if not all_questions:
+                logger.warning("load_questions()が空のリストを返しました")
+                return render_template('review_enhanced.html',
+                                     message="問題データの読み込みに問題があります。管理者に連絡してください。",
+                                     departments=LIGHTWEIGHT_DEPARTMENT_MAPPING,
+                                     srs_stats={'total_questions': 0, 'due_now': 0, 'mastered': 0, 'in_progress': 0})
+
+            questions_dict = {str(q.get('id')): q for q in all_questions if q.get('id')}
+            logger.info(f"問題データロード成功: {len(all_questions)}問, 辞書変換: {len(questions_dict)}問")
+
+        except Exception as data_error:
+            logger.error(f"問題データ読み込みエラー: {data_error}")
+            return render_template('review_enhanced.html',
+                                 message=f"問題データの読み込みでエラーが発生しました: {str(data_error)}",
+                                 departments=LIGHTWEIGHT_DEPARTMENT_MAPPING,
+                                 srs_stats={'total_questions': 0, 'due_now': 0, 'mastered': 0, 'in_progress': 0})
         
         # 復習問題の詳細情報を作成（SRSデータ統合）
         review_questions = []
@@ -2041,7 +2057,21 @@ def review_list():
     
     except Exception as e:
         logger.error(f"復習リスト表示エラー: {e}")
-        return render_template('error.html', error="復習リスト表示中にエラーが発生しました。")
+        import traceback
+        logger.error(f"詳細エラー情報: {traceback.format_exc()}")
+
+        # 🚨 ULTRATHIN区段階: より詳細なエラー情報をユーザーに提供
+        error_details = f"復習リスト表示中にエラーが発生しました。詳細: {str(e)}"
+
+        # データロード問題の場合の特別処理
+        if "load_questions" in str(e).lower() or "data" in str(e).lower():
+            error_details = "問題データの読み込みでエラーが発生しました。データファイルを確認してください。"
+        elif "template" in str(e).lower():
+            error_details = "テンプレートエラーが発生しました。"
+        elif "session" in str(e).lower():
+            error_details = "セッションエラーが発生しました。ページを再読み込みしてください。"
+
+        return render_template('error.html', error=error_details)
 
 @app.route('/api/review/questions', methods=['POST'])
 def get_review_questions():
