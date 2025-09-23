@@ -1,239 +1,43 @@
 # CLAUDE.md - RCCM Quiz Application Development Guide
 
-## 🏆 **CURRENT STATUS: PRODUCTION DEPLOYMENT SUCCESS** (Updated: 2025-09-23 09:30:00 JST)
+## 🎯 **現在の状況: 完全動作中** (2025-09-23)
 
-### 🎯 **PROJECT OBJECTIVE & CURRENT STATE**
-**Main Goal**: RCCMクイズアプリケーションの完全動作確認とRender.com本番デプロイ成功
+**本番環境**: https://rccm-quiz-2025.onrender.com ✅ **完全動作確認済み**
+**開発環境**: localhost:5005 ✅ **即座に利用可能**
+**状態**: 基本機能完璧・10問フロー完全動作・フィードバック画面正常
 
-**Current Status**: ✅ **ALL PROBLEMS RESOLVED - PRODUCTION READY**
+---
 
-### 🌐 **PRODUCTION DEPLOYMENT ACHIEVEMENTS**
+## 🏗️ **アプリケーション構成**
 
-#### ✅ **本番環境完全稼働 - 実測確認済み**
-- **URL**: https://rccm-quiz-2025.onrender.com
-- **状況**: ✅ **COMPLETELY OPERATIONAL**
-- **検証日時**: 2025-09-23 09:30:00 JST
-- **動作確認**: ホームページ・部門選択・10問クイズフロー・フィードバック画面 完全動作
+### **重要ファイル**
+- `app.py` - メインアプリケーション（Flask-Session無効化済み）
+- `config.py` - 13部門設定（LIGHTWEIGHT_DEPARTMENT_MAPPING）
+- `requirements.txt` - 依存関係（Flask-Session無効化済み）
+- `render.yaml` - Render.com デプロイ設定
+- `wsgi.py` - 本番環境エントリーポイント
+- `templates/exam_feedback.html` - フィードバック画面（統合完了）
 
-#### ✅ **Critical Session Management Fix - 完全解決済み**
-- **問題**: Flask-Session Python 3.13互換性エラー（500 Internal Server Error）
-- **解決**: Flask-Session完全無効化 → Flaskデフォルトcookie-basedセッション使用
-- **結果**: 本番環境で100%正常動作確認済み
+### **データファイル（修正禁止）**
+- `data/4-1.csv` - 基礎科目問題
+- `data/4-2_2008.csv` ～ `data/4-2_2019.csv` - 専門科目問題（13部門）
 
-#### ✅ **Feedback Screen Integration - 実装完了**
-- **Before**: 問題回答後、フィードバック画面なしで次の問題に直行
-- **After**: 問題回答後 → フィードバック画面表示 → 「次の問題へ」ボタンで継続
-- **検証**: localhost:5005と本番環境で完全に同一動作確認
+---
 
-### 🔧 **CURRENT APPLICATION STATE**
+## 🔧 **技術仕様（動作確認済み）**
 
-#### **Production Environment Status**
-- **Main URL**: https://rccm-quiz-2025.onrender.com ✅ **FULLY OPERATIONAL**
-- **All 13 Departments**: Working correctly with proper field isolation
-- **Quiz Flow**: 10問完走 → フィードバック表示 → 結果画面 完全動作
-- **Session Management**: Flask default session (no Flask-Session dependency)
-
-#### **Localhost Development Status**
-- **Primary Dev Server**: localhost:5005 ✅ **FULLY OPERATIONAL**
-- **Test Verification**: 河川砂防部門で10問完走フロー確認済み
-- **Template Integration**: exam_feedback.html正常動作確認済み
-
-### 🎯 **CRITICAL FIXES IMPLEMENTED IN THIS SESSION**
-
-#### **1. Feedback Screen Integration (app.py line 1244-1259)**
+### **セッション管理**
 ```python
-# BEFORE (問題のあった状態):
-if request.method == 'POST':
-    # 回答処理
-    return redirect(url_for('exam'))  # 直接次の問題へ
-
-# AFTER (修正後):
-if request.method == 'POST':
-    # 回答処理
-    return render_template('exam_feedback.html',
-        is_correct=is_correct,
-        selected_answer=answer,
-        correct_answer=correct_answer,
-        explanation=explanation,
-        question_num=current_question,
-        total_questions=total_questions,
-        current_streak=0,
-        performance_comparison=None,
-        new_badges=None,
-        badge_info=None
-    )
-```
-
-#### **2. Flask-Session Compatibility Resolution**
-```python
-# requirements.txt変更履歴:
-Flask-Session==0.5.0  # 初期 → Python 3.13でエラー
-Flask-Session==0.4.0  # ダウングレード1 → 依然エラー
-Flask-Session==0.3.0  # ダウングレード2 → 依然エラー
-# Flask-Session==0.2.0  # DISABLED: 完全無効化
-
-# app.py変更:
-# from flask_session import Session  # DISABLED
-# Session(app)  # DISABLED
-```
-
-#### **3. Render.com Deployment Configuration**
-```yaml
-# render.yaml (完全動作版):
-services:
-  - type: web
-    name: rccm-quiz-2025-complete
-    env: python
-    plan: free
-    buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn --bind 0.0.0.0:$PORT --workers 1 --timeout 180 --preload wsgi:application
-    envVars:
-      - key: SECRET_KEY
-        generateValue: true
-      - key: FLASK_ENV
-        value: production
-    autoDeploy: true
-    branch: main  # master → main に修正済み
-```
-
-### 📋 **13 DEPARTMENTS - COMPLETE WORKING LIST (本番環境確認済み)**
-
-```
-All Departments Verified Working (2025-09-23):
-├── basic: 基礎科目（共通） ✅
-├── road: 道路 ✅
-├── river: 河川、砂防及び海岸・海洋 ✅ [動作確認済み]
-├── urban: 都市計画及び地方計画 ✅
-├── garden: 造園 ✅
-├── env: 建設環境 ✅
-├── steel: 鋼構造及びコンクリート ✅
-├── soil: 土質及び基礎 ✅
-├── construction: 施工計画、施工設備及び積算 ✅
-├── water: 上水道及び工業用水道 ✅
-├── forest: 森林土木 ✅
-├── agri: 農業土木 ✅
-└── tunnel: トンネル ✅
-```
-
-### 🔍 **次回作業セッション継続ガイド**
-
-#### **現在の完璧な状態を維持するために**
-1. **現在の状態**: 基本機能は完璧に動作中 - 修正不要
-2. **本番URL**: https://rccm-quiz-2025.onrender.com（完全動作確認済み）
-3. **ローカル開発**: localhost:5005で即座に開発再開可能
-
-#### **今後の細かい修正作業時の注意事項**
-```bash
-# 🚨 副作用を絶対に起こさない安全な作業手順:
-
-# 1. 必ず現在の動作状況を確認
-curl -I https://rccm-quiz-2025.onrender.com
-# → 200 OK であることを確認
-
-# 2. ローカル環境でテスト
-cd rccm-quiz-app
-python -m flask --app app run --host localhost --port 5005
-# → localhost:5005 で動作確認
-
-# 3. 修正作業は必ずローカルで完全テスト後に実施
-python simple_test.py  # 13部門全体テスト
-python final_emergency_test.py  # 10問フローテスト
-
-# 4. 問題がないことを確認してからデプロイ
-git add [修正ファイル]
-git commit -m "修正内容の詳細説明"
-git push origin main
-
-# 5. デプロイ後3分待機してから動作確認
-sleep 180
-curl -I https://rccm-quiz-2025.onrender.com
-```
-
-#### **副作用が発生した場合の緊急復旧手順**
-```bash
-# 🆘 緊急時の復旧手順（この状態に戻す方法）:
-
-cd rccm-quiz-app
-
-# 1. 現在の完璧なcommitに戻す
-git log --oneline -10  # 最新10コミット確認
-git reset --hard 9b26440  # Flask-Session無効化の成功コミット
-
-# 2. 強制プッシュで本番環境を復旧
-git push origin main --force
-
-# 3. 3分待機後に動作確認
-curl -I https://rccm-quiz-2025.onrender.com
-
-# 4. 復旧確認
-# ホームページが表示されることを確認
-# 河川砂防部門で10問完走できることを確認
-```
-
-### 🚫 **絶対にやってはいけないこと（副作用防止）**
-
-#### **Flask-Session関連**
-```bash
-# 🚨 絶対にFlask-Sessionを有効化しない
-# × requirements.txtにFlask-Session==任意のバージョンを追加
-# × app.pyでfrom flask_session import Sessionを有効化
-# × app.pyでSession(app)を有効化
-# → これらは100%エラーを引き起こします
-```
-
-#### **セッション管理**
-```python
-# ✅ 現在の動作している方式（触らない）
-from flask import session  # Flaskデフォルトのsession（cookie-based）
-
-# 🚨 今後もFlaskデフォルトsessionのみ使用
-# Flask-Sessionは完全に避ける
-```
-
-#### **requirements.txt**
-```txt
-# ✅ 現在の動作している状態（修正禁止）
-Flask==3.0.0
-gunicorn==21.2.0
-Werkzeug==3.0.1
-Jinja2==3.1.2
-Flask-WTF==1.2.1
-# Flask-Session==0.2.0  # DISABLED: Python 3.13互換性問題のため無効化
-```
-
-### 💾 **KEY FILES & LOCATIONS（現在の完璧状態）**
-
-#### **Production Application Files**
-- **Main App**: `rccm-quiz-app/app.py` ✅ 完璧動作中（Flask-Session無効化済み）
-- **Config**: `rccm-quiz-app/config.py` ✅ LIGHTWEIGHT_DEPARTMENT_MAPPING 完全統合済み
-- **Dependencies**: `rccm-quiz-app/requirements.txt` ✅ Flask-Session無効化済み
-- **Deployment**: `rccm-quiz-app/render.yaml` ✅ mainブランチ設定済み
-- **Entry Point**: `rccm-quiz-app/wsgi.py` ✅ 本番環境対応済み
-
-#### **Critical Templates（動作確認済み）**
-- **Feedback Screen**: `templates/exam_feedback.html` ✅ 完全統合済み
-- **Home Page**: `templates/index.html` ✅ 部門選択正常動作
-- **Exam Page**: `templates/exam.html` ✅ 10問フロー正常動作
-
-#### **Data Files (絶対修正禁止)**
-- **CSV Location**: `rccm-quiz-app/data/`
-- **Files**: 4-1.csv, 4-2_2008.csv through 4-2_2019.csv ✅ 全ファイル正常動作中
-
-### 🔧 **TECHNICAL ARCHITECTURE（現在の完璧状態）**
-
-#### **Session Management（現在の動作方式）**
-```python
-# ✅ 現在使用中（完璧動作）
-from flask import session  # Flaskデフォルト（cookie-based）
-
-# app.py設定:
+# ✅ 現在の動作方式（Flask デフォルト cookie-based）
+from flask import session
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'fallback-key')
-# Flask-Sessionは完全に無効化済み
+
+# 🚨 絶対禁止: Flask-Session は完全に無効化済み
 ```
 
-#### **Department Resolution System（変更禁止）**
+### **部門マッピング**
 ```python
-# config.py - 完全動作中（絶対修正禁止）
+# config.py - 13部門完全対応（修正禁止）
 LIGHTWEIGHT_DEPARTMENT_MAPPING = {
     'basic': '基礎科目（共通）',
     'road': '道路',
@@ -251,87 +55,132 @@ LIGHTWEIGHT_DEPARTMENT_MAPPING = {
 }
 ```
 
-#### **Feedback Integration（完璧動作中）**
-```python
-# app.py exam route - 動作確認済み（修正禁止）
-@app.route('/exam', methods=['GET', 'POST'])
-def exam():
-    if request.method == 'POST':
-        # 回答処理...
-        return render_template('exam_feedback.html',
-            is_correct=is_correct,
-            selected_answer=answer,
-            correct_answer=correct_answer,
-            explanation=explanation,
-            question_num=current_question,
-            total_questions=total_questions,
-            current_streak=0,
-            performance_comparison=None,
-            new_badges=None,
-            badge_info=None
-        )
+### **クイズフロー（完全動作中）**
+```
+問題表示 → 回答選択 → フィードバック画面 → 次の問題へ → ... → 結果画面
 ```
 
-### 🎯 **SUCCESS CRITERIA STATUS（全達成）**
+---
 
-| Criteria | Status | Evidence |
-|----------|---------|----------|
-| **フィードバック画面正常表示** | ✅ **ACHIEVED** | localhost:5005 & 本番環境確認済み |
-| **10問完走フロー動作** | ✅ **ACHIEVED** | 河川砂防部門で実測確認済み |
-| **本番環境デプロイ成功** | ✅ **ACHIEVED** | https://rccm-quiz-2025.onrender.com 動作中 |
-| **全13部門正常動作** | ✅ **ACHIEVED** | 部門選択・問題表示確認済み |
-| **Flask-Session互換性解決** | ✅ **ACHIEVED** | 完全無効化により解決済み |
+## 🚀 **開発・デプロイ手順**
 
-### 📈 **DEVELOPMENT METHODOLOGY（今セッションで適用）**
+### **ローカル開発開始**
+```bash
+cd rccm-quiz-app
+python -m flask --app app run --host localhost --port 5005
+# http://localhost:5005 でアクセス
+```
 
-#### **Systematic Problem Resolution Applied**
-- ✅ **段階的デバッグ** - フィードバック画面不具合→テンプレート変数不足→完全修正
-- ✅ **互換性問題解決** - Flask-Session段階的ダウングレード→完全無効化
-- ✅ **本番環境検証** - localhost動作確認→デプロイ→本番動作確認
-- ✅ **副作用ゼロ原則** - 既存動作機能に一切悪影響なし
+### **本番デプロイ**
+```bash
+# 修正後のデプロイ手順
+git add [修正ファイル]
+git commit -m "修正内容"
+git push origin main
 
-#### **今後の作業での教訓**
-- **Environment**: Render.com Python 3.13環境
-- **Session Strategy**: Flaskデフォルトsession使用（Flask-Session避ける）
-- **Testing Protocol**: 必ずlocalhostで完全テスト後デプロイ
-- **Deployment**: render.yaml自動デプロイ（3分程度で完了）
+# 3分待機後に動作確認
+curl -I https://rccm-quiz-2025.onrender.com
+```
 
-### 🏗️ **THIS SESSION DEVELOPMENT HISTORY**
+### **動作確認テスト**
+```bash
+# 13部門テスト
+python simple_test.py
 
-#### **今回のセッションで解決した問題**
-1. **Feedback Screen Missing**: フィードバック画面が表示されない問題
-2. **Template Variable Error**: exam_feedback.htmlのテンプレート変数不足
-3. **Flask-Session Compatibility**: Python 3.13環境での互換性エラー
-4. **Production Deployment**: Render.com本番環境500エラー
-5. **10-Question Flow**: 完全10問フロー動作確認
-
-#### **適用した解決策**
-1. **app.py exam route修正**: POST処理でfeedbackテンプレート表示
-2. **テンプレート変数追加**: 必要な全変数をデフォルト値で提供
-3. **Flask-Session完全無効化**: requirements.txt & app.py両方で無効化
-4. **段階的デプロイ検証**: 各修正後に本番環境動作確認
-5. **包括的テスト**: localhost & 本番環境両方で動作確認
+# 10問フローテスト
+python final_emergency_test.py
+```
 
 ---
 
-## 🎉 **FINAL STATUS: PRODUCTION SUCCESS**
+## ⚠️ **重要な注意事項**
 
-**RCCM Quiz Application Complete Working State**: ✅ **FULLY OPERATIONAL**
+### **絶対にやってはいけないこと**
+1. **Flask-Session の再有効化** - Python 3.13で確実にエラー
+2. **CSV ファイルの修正** - データ破損の原因
+3. **LIGHTWEIGHT_DEPARTMENT_MAPPING の変更** - 部門混在エラー復活
 
-### **🌐 本番環境完全稼働中**
-- **URL**: https://rccm-quiz-2025.onrender.com
-- **Status**: 100% Operational
-- **Features**: 全機能正常動作（部門選択・10問クイズ・フィードバック・結果表示）
-
-### **🔧 開発環境即座に利用可能**
-- **localhost:5005**: 即座に開発再開可能
-- **全ファイル**: 完璧な状態で保存済み
-- **今後の修正**: 安全な手順で副作用ゼロ保証
-
-### **📚 今後の学習者向け**
-この状態から任意の細かい修正・機能追加が安全に実施可能。
-基本機能は完璧に動作しているため、エンハンスメント作業に集中できます。
+### **Flask-Session 関連（触らない）**
+```python
+# 🚨 これらは絶対に復活させない
+# from flask_session import Session
+# Session(app)
+# Flask-Session==任意のバージョン in requirements.txt
+```
 
 ---
 
-*このドキュメントは2025-09-23 09:30:00 JST時点での完璧な動作状態を記録しています。全ての記載内容は実際のテスト結果に基づく検証済み情報です。*
+## 🆘 **問題発生時の復旧手順**
+
+### **緊急復旧（現在の完璧な状態に戻す）**
+```bash
+cd rccm-quiz-app
+
+# 1. 現在の動作コミットに戻す
+git reset --hard 6fd1bc4
+
+# 2. 強制プッシュで本番環境復旧
+git push origin main --force
+
+# 3. 動作確認
+curl -I https://rccm-quiz-2025.onrender.com
+```
+
+### **状態確認コマンド**
+```bash
+# Flask-Session 無効化確認
+grep -n "Flask-Session" requirements.txt  # コメントアウト状態確認
+grep -n "from flask_session" app.py      # インポート無効化確認
+
+# 部門マッピング確認
+python -c "from config import LIGHTWEIGHT_DEPARTMENT_MAPPING; print(len(LIGHTWEIGHT_DEPARTMENT_MAPPING))"  # 13 が出力されること
+```
+
+---
+
+## 🎯 **今後の開発指針**
+
+### **安全な機能追加手順**
+1. **localhost:5005 で完全テスト**
+2. **既存機能への影響確認**
+3. **デプロイ前の最終確認**
+4. **本番環境での動作検証**
+
+### **推奨する拡張開発**
+- UI/UX 改善
+- 新機能追加（既存機能は完璧動作中）
+- パフォーマンス最適化
+- セキュリティ強化
+
+### **開発環境最適化**
+- localhost:5005 を主要開発サーバーとして使用
+- 他のポート（5000-5004, 5010）は実験用
+- 本番環境は安定稼働中のため安心して開発可能
+
+---
+
+## 📊 **現在の動作状況**
+
+| 機能 | 状況 | 確認方法 |
+|------|------|----------|
+| ホームページ | ✅ 動作 | https://rccm-quiz-2025.onrender.com |
+| 13部門選択 | ✅ 動作 | 部門選択メニュー確認済み |
+| 10問クイズフロー | ✅ 動作 | 河川砂防部門で実測済み |
+| フィードバック画面 | ✅ 動作 | 回答後の画面表示確認済み |
+| 結果画面 | ✅ 動作 | 10問完了後の表示確認済み |
+
+---
+
+## 🎉 **最終状態**
+
+**RCCM Quiz Application**: ✅ **本番環境完全稼働中**
+
+- **学習者**: 即座に学習開始可能
+- **開発者**: 安全な機能拡張環境完備
+- **保守性**: 完全な復旧手順文書化済み
+
+**基本機能は完璧 - エンハンスメント作業に集中可能**
+
+---
+
+*このドキュメントは現在の完璧な動作状態（2025-09-23）を記録しています。*
