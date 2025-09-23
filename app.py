@@ -2625,16 +2625,16 @@ def review_quiz():
                         logger.warning(f"SRS情報が無効な型: 問題ID {qid}, 型: {type(srs_info)}")
                         continue
                     
-                    # 必須フィールドの存在チェック
-                    required_fields = ['total_attempts', 'wrong_count', 'correct_count']
-                    if all(field in srs_info for field in required_fields):
-                        # 数値の妥当性チェック
-                        total_attempts = int(srs_info.get('total_attempts', 0))
-                        wrong_count = int(srs_info.get('wrong_count', 0))
-                        if total_attempts > 0 and wrong_count >= 0:
+                    # 🔥 FIXED: SRSデータフィールド名を実際のデータ構造に合わせて修正
+                    # 実際のSRSデータは: incorrect_count, level, category, next_review, question_type
+                    # より柔軟な検証にして、最低限の情報があれば受け入れる
+                    if 'incorrect_count' in srs_info:
+                        # 間違い回数があれば復習対象として扱う
+                        incorrect_count = int(srs_info.get('incorrect_count', 0))
+                        if incorrect_count >= 0:  # 0以上であれば有効
                             valid_srs_data[qid] = srs_info
                     else:
-                        logger.warning(f"SRS情報に必須フィールドが不足: 問題ID {qid}, フィールド: {srs_info.keys()}")
+                        logger.warning(f"SRS情報に必要フィールド(incorrect_count)が不足: 問題ID {qid}, フィールド: {srs_info.keys()}")
                 except (ValueError, TypeError) as field_error:
                     logger.warning(f"SRS情報の数値変換エラー: 問題ID {qid}, エラー: {field_error}")
                     continue
@@ -2724,10 +2724,10 @@ def review_quiz():
                         try:
                             srs_info = srs_data.get(qid, {})
                             
-                            # 数値データの安全な取得
-                            wrong_count = max(0, int(srs_info.get('wrong_count', 0)))
-                            total_attempts = max(1, int(srs_info.get('total_attempts', 1)))
-                            difficulty_level = max(0, float(srs_info.get('difficulty_level', 5)))
+                            # 🔥 FIXED: 実際のSRSデータ構造に合わせてフィールド名を修正
+                            wrong_count = max(0, int(srs_info.get('incorrect_count', 0)))
+                            total_attempts = max(1, wrong_count + 1)  # 間違い回数+1で概算
+                            difficulty_level = max(0, float(srs_info.get('level', 1) * 2))  # レベルから難易度を概算
                             
                             # 復習期限チェック（エラーハンドリング強化）
                             overdue_bonus = 0
