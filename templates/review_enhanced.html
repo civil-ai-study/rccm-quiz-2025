@@ -184,15 +184,15 @@
                                 <small>
                                     <i class="fas fa-clock me-1 text-primary"></i>
                                     <strong>次回復習予定:</strong> 
-                                    {% set days_until = question.days_until_review %}
-                                    {% if days_until <= 0 %}
-                                        <span class="badge bg-danger">🔥 今すぐ復習</span>
-                                    {% elif days_until == 1 %}
-                                        <span class="badge bg-warning text-dark">📅 明日復習予定</span>
-                                    {% elif days_until <= 3 %}
-                                        <span class="badge bg-info">📅 {{ days_until }}日後に復習予定</span>
+                                    {% if question.get('next_review') %}
+                                        {% set next_review_str = question.get('next_review', '') %}
+                                        {% if next_review_str %}
+                                            <span class="badge bg-info">📅 {{ next_review_str[:10] }} に復習予定</span>
+                                        {% else %}
+                                            <span class="badge bg-danger">🔥 今すぐ復習</span>
+                                        {% endif %}
                                     {% else %}
-                                        <span class="badge bg-success">✅ {{ days_until }}日後に再出題予定</span>
+                                        <span class="badge bg-danger">🔥 今すぐ復習</span>
                                     {% endif %}
                                 </small>
                             </div>
