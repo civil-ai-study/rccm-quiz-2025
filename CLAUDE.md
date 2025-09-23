@@ -11,7 +11,7 @@
 ## 🏗️ **アプリケーション構成**
 
 ### **重要ファイル**
-- `app.py` - メインアプリケーション（Flask-Session無効化済み）
+- `app.py` - メインアプリケーション（Flask-Session無効化・英語カテゴリー削除済み）
 - `config.py` - 13部門設定（LIGHTWEIGHT_DEPARTMENT_MAPPING）
 - `requirements.txt` - 依存関係（Flask-Session無効化済み）
 - `render.yaml` - Render.com デプロイ設定
@@ -33,9 +33,10 @@ from flask import session
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'fallback-key')
 
 # 🚨 絶対禁止: Flask-Session は完全に無効化済み
+# 理由: Python 3.13環境で互換性エラー発生のため
 ```
 
-### **部門マッピング**
+### **部門マッピング（統一済み）**
 ```python
 # config.py - 13部門完全対応（修正禁止）
 LIGHTWEIGHT_DEPARTMENT_MAPPING = {
@@ -53,6 +54,29 @@ LIGHTWEIGHT_DEPARTMENT_MAPPING = {
     'agri': '農業土木',
     'tunnel': 'トンネル'
 }
+
+# app.py - 英語カテゴリー完全削除済み
+# 🚨 legacy_english_mapping は完全削除済み（禁止された英語カテゴリー系統）
+target_categories = LIGHTWEIGHT_DEPARTMENT_MAPPING.get(department, department)
+```
+
+### **フィードバック画面統合（修正済み）**
+```python
+# app.py line 1244-1259 - POST処理修正済み
+if request.method == 'POST':
+    # 回答処理...
+    return render_template('exam_feedback.html',
+        is_correct=is_correct,
+        selected_answer=answer,
+        correct_answer=correct_answer,
+        explanation=explanation,
+        question_num=current_question,
+        total_questions=total_questions,
+        current_streak=0,
+        performance_comparison=None,
+        new_badges=None,
+        badge_info=None
+    )
 ```
 
 ### **クイズフロー（完全動作中）**
@@ -99,6 +123,7 @@ python final_emergency_test.py
 1. **Flask-Session の再有効化** - Python 3.13で確実にエラー
 2. **CSV ファイルの修正** - データ破損の原因
 3. **LIGHTWEIGHT_DEPARTMENT_MAPPING の変更** - 部門混在エラー復活
+4. **英語カテゴリーの復活** - legacy_english_mapping等の英語ID系統は完全禁止
 
 ### **Flask-Session 関連（触らない）**
 ```python
@@ -106,6 +131,13 @@ python final_emergency_test.py
 # from flask_session import Session
 # Session(app)
 # Flask-Session==任意のバージョン in requirements.txt
+```
+
+### **英語カテゴリー関連（完全禁止）**
+```python
+# 🚨 これらは削除済み - 絶対に復活させない
+# legacy_english_mapping = { ... }  # 削除済み
+# 英語部門ID（'river', 'road', 'urban'等）の直接使用は禁止
 ```
 
 ---
@@ -117,7 +149,7 @@ python final_emergency_test.py
 cd rccm-quiz-app
 
 # 1. 現在の動作コミットに戻す
-git reset --hard 6fd1bc4
+git reset --hard 03d9130  # 英語カテゴリー削除済みの最新状態
 
 # 2. 強制プッシュで本番環境復旧
 git push origin main --force
@@ -132,9 +164,35 @@ curl -I https://rccm-quiz-2025.onrender.com
 grep -n "Flask-Session" requirements.txt  # コメントアウト状態確認
 grep -n "from flask_session" app.py      # インポート無効化確認
 
+# 英語カテゴリー削除確認
+grep -n "legacy_english_mapping" app.py  # 何も出力されないこと
+
 # 部門マッピング確認
 python -c "from config import LIGHTWEIGHT_DEPARTMENT_MAPPING; print(len(LIGHTWEIGHT_DEPARTMENT_MAPPING))"  # 13 が出力されること
 ```
+
+---
+
+## 📋 **解決済み問題とその経緯**
+
+### **1. フィードバック画面表示問題（解決済み）**
+- **問題**: 問題回答後、フィードバック画面が表示されず直接次の問題に移行
+- **原因**: app.py POST処理でredirect(url_for('exam'))を使用
+- **解決**: POST処理でexam_feedback.htmlテンプレートを表示するよう修正
+- **結果**: 正常なフィードバック画面表示と「次の問題へ」ボタン動作
+
+### **2. Flask-Session互換性問題（解決済み）**
+- **問題**: Render.com Python 3.13環境で500 Internal Server Error
+- **原因**: Flask-Session 0.5.0がPython 3.13と互換性なし
+- **解決過程**: 0.5.0 → 0.4.0 → 0.3.0 → 完全無効化
+- **最終解決**: Flask-Session完全削除、Flaskデフォルトsession使用
+- **結果**: 本番環境で100%正常動作
+
+### **3. 禁止された英語カテゴリー問題（解決済み）**
+- **問題**: app.py内にlegacy_english_mapping（英語ID系統）が残存
+- **原因**: 一時的互換性処理として残されていた英語マッピング
+- **解決**: legacy_english_mapping完全削除、LIGHTWEIGHT_DEPARTMENT_MAPPING統一
+- **結果**: 英語ID系統完全根絶、統一されたマッピングシステム
 
 ---
 
@@ -168,6 +226,7 @@ python -c "from config import LIGHTWEIGHT_DEPARTMENT_MAPPING; print(len(LIGHTWEI
 | 10問クイズフロー | ✅ 動作 | 河川砂防部門で実測済み |
 | フィードバック画面 | ✅ 動作 | 回答後の画面表示確認済み |
 | 結果画面 | ✅ 動作 | 10問完了後の表示確認済み |
+| 英語カテゴリー排除 | ✅ 完了 | legacy_english_mapping削除確認済み |
 
 ---
 
@@ -178,9 +237,10 @@ python -c "from config import LIGHTWEIGHT_DEPARTMENT_MAPPING; print(len(LIGHTWEI
 - **学習者**: 即座に学習開始可能
 - **開発者**: 安全な機能拡張環境完備
 - **保守性**: 完全な復旧手順文書化済み
+- **技術的清浄性**: 禁止された英語ID系統完全根絶
 
 **基本機能は完璧 - エンハンスメント作業に集中可能**
 
 ---
 
-*このドキュメントは現在の完璧な動作状態（2025-09-23）を記録しています。*
+*このドキュメントは現在の完璧な動作状態（2025-09-23）を記録しています。今回のセッションで解決されたフィードバック画面問題、Flask-Session互換性問題、禁止された英語カテゴリー削除を含む全ての修正が反映されています。*
