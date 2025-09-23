@@ -906,29 +906,10 @@ def get_mixed_questions(user_session, all_questions, requested_category='全体'
         if question_type == 'specialist' and department:
             # 🎯 CLAUDE.md準拠: 英語ID完全禁止 - 日本語直接マッチングのみ
             
-            # ⚠️ 一時的互換性処理: 既存の英語URLからの移行期間対応
-            # TODO: テンプレート修正後にこの処理は削除予定
-            legacy_english_mapping = {
-                'river': '河川、砂防及び海岸・海洋',
-                'road': '道路',
-                'urban': '都市計画及び地方計画',
-                'tunnel': 'トンネル',
-                'landscape': '造園',
-                'construction_environment': '建設環境',
-                'steel_concrete': '鋼構造及びコンクリート',
-                'soil_foundation': '土質及び基礎',
-                'construction_planning': '施工計画、施工設備及び積算',
-                'water_supply': '上水道及び工業用水道',
-                'forest_engineering': '森林土木',
-                'agricultural_engineering': '農業土木'
-            }
-            
-            if department in legacy_english_mapping:
-                target_categories = legacy_english_mapping[department]
-                logger.warning(f"⚠️ 一時的英語互換: {department} → {target_categories} (将来削除予定)")
-            else:
-                target_categories = department  # 日本語部門名をそのまま使用
-                logger.info(f"✅ CLAUDE.md準拠: 日本語直接マッチング {department}")
+            # 🚨 CLAUDE.md準拠: 英語ID系統完全禁止
+            # LIGHTWEIGHT_DEPARTMENT_MAPPINGを使用して日本語カテゴリに変換
+            target_categories = LIGHTWEIGHT_DEPARTMENT_MAPPING.get(department, department)
+            logger.info(f"✅ 日本語直接マッチング: {department} → {target_categories}")
             
             logger.info(f"🔍 フィルタリング前の問題数={len(available_questions)}, 専門科目問題数={len([q for q in available_questions if q.get('question_type') == 'specialist'])}")
             
