@@ -27,14 +27,8 @@
 ## 🔧 **技術仕様（動作確認済み）**
 
 ### **セッション管理**
-```python
-# ✅ 現在の動作方式（Flask デフォルト cookie-based）
-from flask import session
-app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'fallback-key')
-
-# 🚨 絶対禁止: Flask-Session は完全に無効化済み
-# 理由: Python 3.13環境で互換性エラー発生のため
-```
+- **動作方式**: Flask デフォルト cookie-based セッション
+- **Flask-Session**: 完全無効化済み（Python 3.13互換性問題のため）
 
 ### **部門マッピング（統一済み）**
 - **使用マッピング**: `config.py` の `LIGHTWEIGHT_DEPARTMENT_MAPPING`（13部門対応）
@@ -93,19 +87,10 @@ python final_emergency_test.py
 4. **英語カテゴリーの復活** - legacy_english_mapping等の英語ID系統は完全禁止
 
 ### **Flask-Session 関連（触らない）**
-```python
-# 🚨 これらは絶対に復活させない
-# from flask_session import Session
-# Session(app)
-# Flask-Session==任意のバージョン in requirements.txt
-```
+- Flask-Sessionの import・初期化・requirements.txt追加は完全禁止
 
 ### **英語カテゴリー関連（完全禁止）**
-```python
-# 🚨 これらは削除済み - 絶対に復活させない
-# legacy_english_mapping = { ... }  # 削除済み
-# 英語部門ID（'river', 'road', 'urban'等）の直接使用は禁止
-```
+- legacy_english_mapping・英語部門ID の使用は完全禁止
 
 ---
 
@@ -116,7 +101,7 @@ python final_emergency_test.py
 cd rccm-quiz-app
 
 # 1. 現在の動作コミットに戻す
-git reset --hard 03d9130  # 英語カテゴリー削除済みの最新状態
+git reset --hard 725d86b  # 最新の安定状態
 
 # 2. 強制プッシュで本番環境復旧
 git push origin main --force
@@ -125,18 +110,10 @@ git push origin main --force
 curl -I https://rccm-quiz-2025.onrender.com
 ```
 
-### **状態確認コマンド**
-```bash
-# Flask-Session 無効化確認
-grep -n "Flask-Session" requirements.txt  # コメントアウト状態確認
-grep -n "from flask_session" app.py      # インポート無効化確認
-
-# 英語カテゴリー削除確認
-grep -n "legacy_english_mapping" app.py  # 何も出力されないこと
-
-# 部門マッピング確認
-python -c "from config import LIGHTWEIGHT_DEPARTMENT_MAPPING; print(len(LIGHTWEIGHT_DEPARTMENT_MAPPING))"  # 13 が出力されること
-```
+### **状態確認方法**
+- Flask-Session無効化: requirements.txt・app.py で確認
+- 英語カテゴリー削除: legacy_english_mapping 検索で確認
+- 部門マッピング: LIGHTWEIGHT_DEPARTMENT_MAPPING（13部門）で確認
 
 ---
 
