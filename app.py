@@ -969,7 +969,7 @@ def get_mixed_questions(user_session, all_questions, requested_category='全体'
     
     filter_info = []
     if department:
-        filter_info.append(f"部門:{RCCMConfig.DEPARTMENTS.get(department, {}).get('name', department)}")
+        filter_info.append(f"部門:{LIGHTWEIGHT_DEPARTMENT_MAPPING.get(department, department)}")
     if question_type:
         filter_info.append(f"種別:{RCCMConfig.QUESTION_TYPES.get(question_type, {}).get('name', question_type)}")
     if requested_category != '全体':
@@ -1574,7 +1574,7 @@ def departments():
 def select_department(department_id):
     """部門選択処理"""
     try:
-        if department_id not in RCCMConfig.DEPARTMENTS:
+        if department_id not in LIGHTWEIGHT_DEPARTMENT_MAPPING:
             logger.error(f"無効な部門ID: {department_id}")
             return render_template('error.html', error="指定された部門が見つかりません。")
 
@@ -1591,7 +1591,7 @@ def select_department(department_id):
         session['selected_department'] = department_id
         session.modified = True
 
-        logger.info(f"部門選択: {department_id} ({RCCMConfig.DEPARTMENTS[department_id]['name']})")
+        logger.info(f"部門選択: {department_id} ({LIGHTWEIGHT_DEPARTMENT_MAPPING[department_id]})")
 
         # 問題種別選択画面にリダイレクト
         return redirect(url_for('question_types', department_id=department_id))
