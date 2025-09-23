@@ -23,7 +23,7 @@ session_locks = {}
 session_lock = threading.Lock()
 
 # 新しいファイルからインポート
-from config import Config, ExamConfig, SRSConfig, DataConfig, RCCMConfig, LIGHTWEIGHT_DEPARTMENT_MAPPING
+from config import Config, ExamConfig, SRSConfig, DataConfig, LIGHTWEIGHT_DEPARTMENT_MAPPING
 # 🚨 ULTRA SYNC FIX: データ混合防止のため統一インポート
 from utils import DataLoadError, DataValidationError, get_sample_data_improved, load_rccm_data_files
 
@@ -971,7 +971,7 @@ def get_mixed_questions(user_session, all_questions, requested_category='全体'
     if department:
         filter_info.append(f"部門:{LIGHTWEIGHT_DEPARTMENT_MAPPING.get(department, department)}")
     if question_type:
-        filter_info.append(f"種別:{RCCMConfig.QUESTION_TYPES.get(question_type, {}).get('name', question_type)}")
+        filter_info.append(f"種別:{question_type}")
     if requested_category != '全体':
         filter_info.append(f"カテゴリ:{requested_category}")
     if year:
@@ -1668,7 +1668,7 @@ def question_types(department_id):
         type_progress = {}
         history = session.get('history', [])
         
-        for type_id, type_info in RCCMConfig.QUESTION_TYPES.items():
+        for type_id in ['basic', 'specialist']:
             # この部門・種別での問題数と正答数を集計
             type_history = [h for h in history 
                           if h.get('department') == department_id and h.get('question_type') == type_id]
@@ -1683,7 +1683,7 @@ def question_types(department_id):
         
         # ULTRA SYNC DEBUG: テンプレート描画前確認
         logger.info(f"✅ ULTRA SYNC DEBUG: Rendering question_types.html for department '{department_id}' ({department_info['name']})")
-        logger.info(f"🔍 ULTRA SYNC DEBUG: Available question types: {list(RCCMConfig.QUESTION_TYPES.keys())}")
+        logger.info(f"🔍 ULTRA SYNC DEBUG: Available question types: ['basic', 'specialist']")
         logger.info(f"🔍 ULTRA SYNC DEBUG: department_info content: {department_info}")
         logger.info(f"🔍 ULTRA SYNC DEBUG: About to call render_template - this should return HTML page, not redirect")
         
@@ -1692,7 +1692,7 @@ def question_types(department_id):
         
         return render_template('question_types.html',
             department=department_info,
-            question_types=RCCMConfig.QUESTION_TYPES,
+            question_types={'basic': {'name': '基礎科目'}, 'specialist': {'name': '専門科目'}},
             type_progress=type_progress
         )
         
@@ -1707,7 +1707,7 @@ def department_categories(department_id, question_type):
         if department_id not in LIGHTWEIGHT_DEPARTMENT_MAPPING:
             return render_template('error.html', error="指定された部門が見つかりません。")
         
-        if question_type not in RCCMConfig.QUESTION_TYPES:
+        if question_type not in ['basic', 'specialist']:
             return render_template('error.html', error="指定された問題種別が見つかりません。")
         
         # セッションに選択情報を保存
@@ -1716,7 +1716,7 @@ def department_categories(department_id, question_type):
         session.modified = True
         
         department_info = LIGHTWEIGHT_DEPARTMENT_MAPPING[department_id]
-        type_info = RCCMConfig.QUESTION_TYPES[question_type]
+        type_info = {'basic': {'name': '基礎科目'}, 'specialist': {'name': '専門科目'}}[question_type]
         
         questions = load_questions()
         
@@ -1836,7 +1836,7 @@ def department_study(department):
             basic_stats=basic_stats,
             specialist_stats=specialist_stats,
             review_count=len(review_questions),
-            question_types=RCCMConfig.QUESTION_TYPES
+            question_types={'basic': {'name': '基礎科目'}, 'specialist': {'name': '専門科目'}}
         )
         
     except Exception as e:
