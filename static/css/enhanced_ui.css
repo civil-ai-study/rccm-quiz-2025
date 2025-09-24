@@ -1,40 +1,6 @@
 /* 🎨 Enhanced UI/UX Brush-up - Modern Design System */
 
-/* 🚨 CRITICAL FIX: Prevent unwanted superscript number display */
-* {
-  font-variant-numeric: normal !important;
-  font-variant-position: normal !important;
-  font-feature-settings: "sups" off, "subs" off, "ordn" off !important;
-}
-
-/* Force normal number display for all elements */
-body, p, div, span, h1, h2, h3, h4, h5, h6, td, th, li, label, input, button, textarea {
-  font-variant-numeric: normal !important;
-  font-variant-position: normal !important;
-  font-feature-settings: "sups" off, "subs" off, "ordn" off !important;
-}
-
-/* 🔧 ULTIMATE SUPERSCRIPT PREVENTION */
-sup {
-  font-size: inherit !important;
-  vertical-align: baseline !important;
-  position: static !important;
-}
-
-/* Question and option text specific fixes */
-.question-text, .choice-text, .option-text {
-  font-variant-numeric: normal !important;
-  font-variant-position: normal !important;
-  font-feature-settings: "sups" off, "subs" off, "ordn" off !important;
-  -webkit-font-feature-settings: "sups" off, "subs" off, "ordn" off !important;
-  -moz-font-feature-settings: "sups" off, "subs" off, "ordn" off !important;
-}
-
-.question-text sup, .choice-text sup, .option-text sup {
-  font-size: inherit !important;
-  vertical-align: baseline !important;
-  position: static !important;
-}
+/* CSS fixes removed - reverting to original state */
 
 /* ==================== Core Design Tokens ==================== */
 :root {

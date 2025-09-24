@@ -76,32 +76,9 @@ app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024  # 50MB (デフォルト16MB
 @app.template_filter('math_notation')
 def math_notation_filter(text):
     """
-    数学記号を適切に表示し、意図しない上付き文字を防止する
+    数学記号フィルタを無効化 - 元の状態に戻す
     """
-    if not text:
-        return text
-
-    import re
-
-    # 🚨 CRITICAL: Unicode上付き文字を通常数字に変換
-    superscript_map = {
-        '⁰': '0', '¹': '1', '²': '2', '³': '3', '⁴': '4', '⁵': '5', '⁶': '6', '⁷': '7', '⁸': '8', '⁹': '9',
-        '⁻': '-',  # 🔥 CRITICAL FIX: マイナス上付き文字（例: 2×10⁻⁴）
-        '⁺': '+'   # プラス上付き文字も対応
-    }
-
-    # 上付き文字を通常の数字に変換
-    for sup, normal in superscript_map.items():
-        text = text.replace(sup, normal)
-
-    # HTMLのsupタグを削除
-    text = re.sub(r'<sup[^>]*>', '', text)
-    text = re.sub(r'</sup>', '', text)
-
-    # その他の上付き文字関連タグを削除
-    text = re.sub(r'<sub[^>]*>', '', text)
-    text = re.sub(r'</sub>', '', text)
-
+    # フィルタを無効化して元のテキストをそのまま返す
     return text
 
 # 🔧 ULTRA SYNC FIX: CSRF保護を慎重に有効化
