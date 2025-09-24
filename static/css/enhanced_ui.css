@@ -25,9 +25,12 @@
   --gray-900: #0f172a;
   
   /* Typography */
-  --font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-family-sans: 'Inter', 'Cambria Math', 'STIXGeneral', 'Arial Unicode MS', 'Noto Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-family-mono: 'JetBrains Mono', 'Fira Code', monospace;
   
+  /* Math Symbol Font Fallback */
+  --font-family-math: 'Cambria Math', 'STIX Two Math', 'STIX Math', 'STIXGeneral', 'Arial Unicode MS', 'DejaVu Sans', 'Noto Sans Math', monospace;
+
   /* Spacing Scale */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -544,3 +547,43 @@ body {
     border-color: var(--gray-700);
   }
 }
+
+/* 🔧 MATHEMATICAL SYMBOL FIX: Font fallback for Unicode math symbols */
+.question-text,
+.choice-text,
+.question-content,
+.exam-content {
+  font-family: var(--font-family-sans);
+}
+
+/* Special handling for mathematical symbols */
+.math-symbol,
+sup, sub {
+  font-family: var(--font-family-math);
+  font-feature-settings: "kern" 1, "liga" 1;
+}
+
+/* Force Unicode math symbol rendering */
+*[title*="²"], 
+*[title*="³"], 
+*[title*="¹"],
+*:contains("²"), 
+*:contains("³"), 
+*:contains("¹"),
+*:contains("kN/m²"),
+*:contains("N/mm²"),
+*:contains("MPa"),
+*:contains("cm²") {
+  font-family: var(--font-family-math) !important;
+  -webkit-font-feature-settings: "kern" 1, "liga" 1;
+  font-feature-settings: "kern" 1, "liga" 1;
+  text-rendering: optimizeLegibility;
+}
+
+/* Specific fix for mathematical unit display */
+.question-text *,
+.choice-text * {
+  unicode-bidi: embed;
+  direction: ltr;
+}
+
