@@ -1346,8 +1346,22 @@ def exam():
 
         # セッションが空の場合、新しいセッションを作成
         if not exam_question_ids:
-            question_type = session.get('selected_question_type', 'basic')
-            department = session.get('selected_department', '')
+            # URL パラメータから設定を取得
+            question_type = request.args.get('question_type', session.get('selected_question_type', 'basic'))
+            department = request.args.get('department', session.get('selected_department', ''))
+            count = request.args.get('count', '10')
+
+            # カウントを整数に変換（デフォルト10、最大30）
+            try:
+                count = int(count)
+                count = max(1, min(30, count))  # 1-30の範囲に制限
+            except (ValueError, TypeError):
+                count = 10
+
+            # セッションに保存
+            session['selected_question_type'] = question_type
+            if department:
+                session['selected_department'] = department
 
             if question_type == 'basic':
                 questions = [q for q in all_questions if q.get('question_type') == 'basic']
@@ -1363,9 +1377,9 @@ def exam():
             if not questions:
                 return render_template('error.html', error="指定された条件の問題が見つかりません。")
 
-            # 10問をランダム選択
+            # 指定された問数をランダム選択
             import random
-            selected_questions = random.sample(questions, min(10, len(questions)))
+            selected_questions = random.sample(questions, min(count, len(questions)))
             exam_question_ids = [q.get('id') for q in selected_questions]
 
             session['exam_question_ids'] = exam_question_ids

@@ -10,10 +10,18 @@
 <div class="text-center">
   <h1 class="mb-3">🤖 AI搭載 RCCM試験問題集アプリ</h1>
   <div class="alert alert-primary d-inline-block mb-4" style="max-width: 600px;">
-    <p class="mb-2"><i class="fas fa-cog me-2"></i><strong>10問・20問・30問はこちらで設定ができます</strong></p>
-    <a href="/settings" class="btn btn-primary btn-sm">
-      <i class="fas fa-sliders-h me-1"></i>設定画面へ
-    </a>
+    <p class="mb-2"><i class="fas fa-cog me-2"></i><strong>問題数を選択して学習開始</strong></p>
+    <div class="d-flex gap-2 flex-wrap justify-content-center">
+      <a href="/exam?question_type=basic&count=10" class="btn btn-success btn-sm">
+        <i class="fas fa-play me-1"></i>10問
+      </a>
+      <a href="/exam?question_type=basic&count=20" class="btn btn-success btn-sm">
+        <i class="fas fa-play me-1"></i>20問
+      </a>
+      <a href="/exam?question_type=basic&count=30" class="btn btn-success btn-sm">
+        <i class="fas fa-play me-1"></i>30問
+      </a>
+    </div>
   </div>
   
   <!-- ユーザー識別セクション（企業環境対応） -->
