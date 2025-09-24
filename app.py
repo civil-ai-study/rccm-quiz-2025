@@ -72,69 +72,33 @@ app.config.from_object(Config)
 # 🎯 ULTRA SIMPLE FIX: HTTP 413エラー解決 - MAX_CONTENT_LENGTH調整
 app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024  # 50MB (デフォルト16MB → 50MB)
 
-# 🔧 数学記号表示用カスタムフィルター（一時的に無効化）
+# 🔧 数学記号表示用カスタムフィルター（上付き文字防止強化版）
 @app.template_filter('math_notation')
 def math_notation_filter(text):
     """
-    数学記号を確実に表示するためのHTMLエンティティ変換
-    一時的に無効化して問題を確認
+    数学記号を適切に表示し、意図しない上付き文字を防止する
     """
     if not text:
         return text
 
-    # 🚨 TEMPORARY: フィルターを再度無効化 - 通常数字まで変換している問題を修正
-    return text
+    import re
 
-    # 数学記号のUnicode → HTMLエンティティ マッピング
-    math_symbols = {
-        '²': '&sup2;',        # 上付き2
-        '³': '&sup3;',        # 上付き3
-        '⁴': '&#8308;',       # 上付き4
-        '⁵': '&#8309;',       # 上付き5
-        '⁶': '&#8310;',       # 上付き6
-        '⁷': '&#8311;',       # 上付き7
-        '⁸': '&#8312;',       # 上付き8
-        '⁹': '&#8313;',       # 上付き9
-        '¹': '&sup1;',        # 上付き1
-        '⁰': '&#8304;',       # 上付き0
-        '₀': '&#8320;',       # 下付き0
-        '₁': '&#8321;',       # 下付き1
-        '₂': '&#8322;',       # 下付き2
-        '₃': '&#8323;',       # 下付き3
-        '₄': '&#8324;',       # 下付き4
-        '₅': '&#8325;',       # 下付き5
-        '₆': '&#8326;',       # 下付き6
-        '₇': '&#8327;',       # 下付き7
-        '₈': '&#8328;',       # 下付き8
-        '₉': '&#8329;',       # 下付き9
-        '×': '&times;',       # 乗算記号
-        '÷': '&divide;',      # 除算記号
-        '±': '&plusmn;',      # プラスマイナス
-        '∞': '&infin;',       # 無限大
-        '∑': '&sum;',         # シグマ
-        '∏': '&prod;',        # プロダクト
-        '∫': '&int;',         # インテグラル
-        '√': '&radic;',       # 平方根
-        '∆': '&Delta;',       # デルタ
-        'α': '&alpha;',       # アルファ
-        'β': '&beta;',        # ベータ
-        'γ': '&gamma;',       # ガンマ
-        'π': '&pi;',          # パイ
-        'θ': '&theta;',       # シータ
-        'σ': '&sigma;',       # シグマ小文字
-        'φ': '&phi;',         # ファイ
-        'Ω': '&Omega;',       # オメガ
-        '≤': '&le;',          # 以下
-        '≥': '&ge;',          # 以上
-        '≠': '&ne;',          # 不等号
-        '≈': '&asymp;',       # 近似
-        '∝': '&prop;',        # 比例
-        '°': '&deg;',         # 度記号
+    # 🚨 CRITICAL: Unicode上付き文字を通常数字に変換
+    superscript_map = {
+        '⁰': '0', '¹': '1', '²': '2', '³': '3', '⁴': '4', '⁵': '5', '⁶': '6', '⁷': '7', '⁸': '8', '⁹': '9'
     }
 
-    # 変換実行
-    for unicode_char, html_entity in math_symbols.items():
-        text = text.replace(unicode_char, html_entity)
+    # 上付き文字を通常の数字に変換
+    for sup, normal in superscript_map.items():
+        text = text.replace(sup, normal)
+
+    # HTMLのsupタグを削除
+    text = re.sub(r'<sup[^>]*>', '', text)
+    text = re.sub(r'</sup>', '', text)
+
+    # その他の上付き文字関連タグを削除
+    text = re.sub(r'<sub[^>]*>', '', text)
+    text = re.sub(r'</sub>', '', text)
 
     return text
 
@@ -1317,6 +1281,12 @@ def exam():
             }
 
             # フィードバック画面を表示（全必要変数を追加）
+            # 部門名を取得
+            department = session.get('selected_department', '')
+            department_name = "未選択"
+            if department:
+                department_name = LIGHTWEIGHT_DEPARTMENT_MAPPING.get(department, department)
+
             return render_template('exam_feedback.html',
                 question=current_question,
                 user_answer=answer,
@@ -1330,7 +1300,8 @@ def exam():
                 current_streak=0,  # 修正: current_streak変数を追加
                 performance_comparison=None,  # 修正: performance_comparison変数を追加
                 new_badges=None,  # 修正: new_badges変数を追加
-                badge_info=None   # 修正: badge_info変数を追加
+                badge_info=None,   # 修正: badge_info変数を追加
+                department_name=department_name
             )
 
         # GET処理（問題表示）
@@ -1401,13 +1372,20 @@ def exam():
         if not current_question:
             return render_template('error.html', error="問題データが見つかりません。")
 
+        # 部門名を取得
+        department = session.get('selected_department', '')
+        department_name = "未選択"
+        if department:
+            department_name = LIGHTWEIGHT_DEPARTMENT_MAPPING.get(department, department)
+
         # 問題表示用データ準備
         context = {
             'question': current_question,
             'current_no': current_index + 1,
             'total_questions': len(exam_question_ids),
             'exam_question_ids': exam_question_ids,
-            'is_exam_mode': True
+            'is_exam_mode': True,
+            'department_name': department_name
         }
 
         return render_template('exam.html', **context)
