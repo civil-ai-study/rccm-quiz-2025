@@ -1,6 +1,16 @@
 /* 🎨 Enhanced UI/UX Brush-up - Modern Design System */
 
-/* CSS fixes removed - reverting to original state */
+/* EMERGENCY FONT FIX: Force proper number display */
+* {
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+    font-variant-numeric: normal !important;
+}
+
+body, .question-text, .choice-text, .option-text {
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+    font-variant-numeric: normal !important;
+    font-feature-settings: normal !important;
+}
 
 /* ==================== Core Design Tokens ==================== */
 :root {
