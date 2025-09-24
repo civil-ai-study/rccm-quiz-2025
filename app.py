@@ -82,8 +82,7 @@ def math_notation_filter(text):
     if not text:
         return text
 
-    # TEMPORARY: フィルターを無効化して原因を調査
-    return text
+    # 🔧 FIXED: 数学記号のみを変換（通常の数字は変換しない）
 
     # 数学記号のUnicode → HTMLエンティティ マッピング
     math_symbols = {
