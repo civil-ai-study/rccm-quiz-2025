@@ -1,5 +1,19 @@
 /* 🎨 Enhanced UI/UX Brush-up - Modern Design System */
 
+/* 🚨 CRITICAL FIX: Prevent unwanted superscript number display */
+* {
+  font-variant-numeric: normal !important;
+  font-variant-position: normal !important;
+  font-feature-settings: "sups" off, "subs" off, "ordn" off !important;
+}
+
+/* Force normal number display for all elements */
+body, p, div, span, h1, h2, h3, h4, h5, h6, td, th, li, label, input, button, textarea {
+  font-variant-numeric: normal !important;
+  font-variant-position: normal !important;
+  font-feature-settings: "sups" off, "subs" off, "ordn" off !important;
+}
+
 /* ==================== Core Design Tokens ==================== */
 :root {
   /* Color Palette - Professional & Accessible */
@@ -585,5 +599,33 @@ sup, sub {
 .choice-text * {
   unicode-bidi: embed;
   direction: ltr;
+}
+
+/* 🚨 ULTIMATE FIX: Force normal number rendering */
+.question-text, .choice-text, .exam-content, .question-content {
+  font-variant-numeric: normal !important;
+  font-variant-position: normal !important;
+  font-feature-settings: "sups" off, "subs" off, "ordn" off !important;
+  -webkit-font-feature-settings: "sups" off, "subs" off, "ordn" off !important;
+  -moz-font-feature-settings: "sups" off, "subs" off, "ordn" off !important;
+}
+
+/* Target specific number-containing elements */
+.question-text span,
+.choice-text span,
+.question-text div,
+.choice-text div {
+  font-variant-numeric: normal !important;
+  font-variant-position: normal !important;
+  font-feature-settings: "sups" off, "subs" off, "ordn" off !important;
+}
+
+/* Additional superscript prevention */
+.question-text :not(sup):not(sub),
+.choice-text :not(sup):not(sub) {
+  vertical-align: baseline !important;
+  font-size: inherit !important;
+  font-variant-numeric: normal !important;
+  font-variant-position: normal !important;
 }
 
