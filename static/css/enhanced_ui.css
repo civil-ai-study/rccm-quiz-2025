@@ -568,28 +568,37 @@ body {
   font-family: var(--font-family-sans);
 }
 
-/* Special handling for mathematical symbols */
+/* 🚫 DISABLE mathematical symbol special handling to prevent floating characters */
 .math-symbol,
 sup, sub {
-  font-family: var(--font-family-math);
-  font-feature-settings: "kern" 1, "liga" 1;
+  font-family: inherit !important;
+  font-feature-settings: "sups" off, "subs" off, "ordn" off !important;
+  font-variant-numeric: normal !important;
+  font-variant-position: normal !important;
+  vertical-align: baseline !important;
+  font-size: inherit !important;
 }
 
-/* Force Unicode math symbol rendering */
-*[title*="²"], 
-*[title*="³"], 
+/* 🚫 DISABLE forced Unicode math symbol rendering that causes floating characters */
+*[title*="²"],
+*[title*="³"],
 *[title*="¹"],
-*:contains("²"), 
-*:contains("³"), 
+*:contains("²"),
+*:contains("³"),
 *:contains("¹"),
 *:contains("kN/m²"),
 *:contains("N/mm²"),
 *:contains("MPa"),
 *:contains("cm²") {
-  font-family: var(--font-family-math) !important;
-  -webkit-font-feature-settings: "kern" 1, "liga" 1;
-  font-feature-settings: "kern" 1, "liga" 1;
-  text-rendering: optimizeLegibility;
+  font-family: inherit !important;
+  -webkit-font-feature-settings: "sups" off, "subs" off, "ordn" off !important;
+  font-feature-settings: "sups" off, "subs" off, "ordn" off !important;
+  -moz-font-feature-settings: "sups" off, "subs" off, "ordn" off !important;
+  text-rendering: auto !important;
+  font-variant-numeric: normal !important;
+  font-variant-position: normal !important;
+  vertical-align: baseline !important;
+  font-size: inherit !important;
 }
 
 /* Specific fix for mathematical unit display */
@@ -618,12 +627,44 @@ sup, sub {
   font-feature-settings: "sups" off, "subs" off, "ordn" off !important;
 }
 
-/* Additional superscript prevention */
+/* 🚨 ULTIMATE SUPERSCRIPT ELIMINATION - Force all numbers to display normal */
+body * {
+  font-variant-numeric: normal !important;
+  font-variant-position: normal !important;
+  font-feature-settings: "sups" off, "subs" off, "ordn" off !important;
+  -webkit-font-feature-settings: "sups" off, "subs" off, "ordn" off !important;
+  -moz-font-feature-settings: "sups" off, "subs" off, "ordn" off !important;
+}
+
+/* Target all text elements to prevent any floating character display */
 .question-text :not(sup):not(sub),
-.choice-text :not(sup):not(sub) {
+.choice-text :not(sup):not(sub),
+.exam-content *,
+.question-content *,
+p, div, span, text {
   vertical-align: baseline !important;
   font-size: inherit !important;
   font-variant-numeric: normal !important;
   font-variant-position: normal !important;
+  font-feature-settings: "sups" off, "subs" off, "ordn" off !important;
+  -webkit-font-feature-settings: "sups" off, "subs" off, "ordn" off !important;
+  -moz-font-feature-settings: "sups" off, "subs" off, "ordn" off !important;
+  text-rendering: auto !important;
+}
+
+/* FORCE override of any browser default superscript rendering */
+* {
+  font-variant: normal !important;
+}
+
+/* Special handling for numbers that were appearing as floating characters */
+*:contains("25"), *:contains("30"), *:contains("295"),
+*:contains("1人"), *:contains("2人"), *:contains("3人"),
+*:contains("9.8kN/m"), *:contains("kN/m3") {
+  font-variant-numeric: normal !important;
+  font-variant-position: normal !important;
+  font-feature-settings: "sups" off, "subs" off, "ordn" off !important;
+  vertical-align: baseline !important;
+  font-size: inherit !important;
 }
 
