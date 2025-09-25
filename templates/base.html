@@ -86,6 +86,27 @@
       --surface-color: #1e293b;
     }
 
+    /* 🚨 ULTIMATE FLOATING CHARACTER FIX - INLINE EMERGENCY CSS */
+    * {
+      font-feature-settings: "sups" 0, "subs" 0, "ordn" 0 !important;
+      -webkit-font-feature-settings: "sups" 0, "subs" 0, "ordn" 0 !important;
+      -moz-font-feature-settings: "sups" 0, "subs" 0, "ordn" 0 !important;
+      font-variant-position: normal !important;
+      font-variant-numeric: normal !important;
+      font-variant: normal !important;
+    }
+
+    /* FORCE NORMAL NUMBER DISPLAY - NO FLOATING CHARACTERS ALLOWED */
+    body *, .question-text *, .choice-text *, .card *, div, span, p, h1, h2, h3, h4, h5, h6 {
+      font-feature-settings: "sups" off, "subs" off, "ordn" off !important;
+      -webkit-font-feature-settings: "sups" off, "subs" off, "ordn" off !important;
+      -moz-font-feature-settings: "sups" off, "subs" off, "ordn" off !important;
+      font-variant-position: normal !important;
+      font-variant-numeric: normal !important;
+      vertical-align: baseline !important;
+      font-size: inherit !important;
+    }
+
     body { 
       background-color: var(--bg-color) !important; 
       color: var(--text-color) !important; 
