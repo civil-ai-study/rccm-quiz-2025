@@ -79,7 +79,7 @@
                 {% endif %}
                 {% endif %}
                 <h3 class="question-text fw-bold" id="question-title" style="font-size: 0.95rem; line-height: 1.3;">
-                    {{ question.question|safe }}
+                    {{ question.question|math|safe }}
                 </h3>
             </div>
 
@@ -121,7 +121,7 @@
                                       style="font-size: 0.8rem; cursor: pointer;">A</span>
                                 <span class="option-text"
                                       onclick="selectOption('A', event); event.stopPropagation();"
-                                      style="font-size: 0.9rem; cursor: pointer; flex: 1;">{{ question.option_a|safe }}</span>
+                                      style="font-size: 0.9rem; cursor: pointer; flex: 1;">{{ question.option_a|math|safe }}</span>
                             </div>
                         </label>
                     </div>
@@ -141,7 +141,7 @@
                                       style="font-size: 0.8rem; cursor: pointer;">B</span>
                                 <span class="option-text"
                                       onclick="selectOption('B', event); event.stopPropagation();"
-                                      style="font-size: 0.9rem; cursor: pointer; flex: 1;">{{ question.option_b|safe }}</span>
+                                      style="font-size: 0.9rem; cursor: pointer; flex: 1;">{{ question.option_b|math|safe }}</span>
                             </div>
                         </label>
                     </div>
@@ -161,7 +161,7 @@
                                       style="font-size: 0.8rem; cursor: pointer;">C</span>
                                 <span class="option-text"
                                       onclick="selectOption('C', event); event.stopPropagation();"
-                                      style="font-size: 0.9rem; cursor: pointer; flex: 1;">{{ question.option_c|safe }}</span>
+                                      style="font-size: 0.9rem; cursor: pointer; flex: 1;">{{ question.option_c|math|safe }}</span>
                             </div>
                         </label>
                     </div>
@@ -181,7 +181,7 @@
                                       style="font-size: 0.8rem; cursor: pointer;">D</span>
                                 <span class="option-text"
                                       onclick="selectOption('D', event); event.stopPropagation();"
-                                      style="font-size: 0.9rem; cursor: pointer; flex: 1;">{{ question.option_d|safe }}</span>
+                                      style="font-size: 0.9rem; cursor: pointer; flex: 1;">{{ question.option_d|math|safe }}</span>
                             </div>
                         </label>
                     </div>

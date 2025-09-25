@@ -26,6 +26,7 @@ session_lock = threading.Lock()
 from config import Config, ExamConfig, SRSConfig, DataConfig, LIGHTWEIGHT_DEPARTMENT_MAPPING
 # 🚨 ULTRA SYNC FIX: データ混合防止のため統一インポート
 from utils import DataLoadError, DataValidationError, get_sample_data_improved, load_rccm_data_files
+from math_notation_html_filter import create_math_notation_filter
 
 # ULTRA SYNC STAGE 6: Parameter Validation (PHASE 1 Task B2) - TEMPORARILY DISABLED
 # from marshmallow import ValidationError
@@ -71,6 +72,14 @@ app.config.from_object(Config)
 
 # 🎯 ULTRA SIMPLE FIX: HTTP 413エラー解決 - MAX_CONTENT_LENGTH調整
 app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024  # 50MB (デフォルト16MB → 50MB)
+
+# 🎯 MATHEMATICAL NOTATION HTML FILTER: 数学記法を正しいHTMLに変換
+math_filter = create_math_notation_filter()
+
+@app.template_filter('math')
+def math_notation_filter(text):
+    """数学記法をHTMLの<sup><sub>タグに変換するフィルター"""
+    return math_filter(text)
 
 # 🚫 REMOVED: Mathematical notation filter completely removed to prevent floating character issues
 # Previously caused normal numbers to display as superscript characters
