@@ -72,14 +72,8 @@ app.config.from_object(Config)
 # 🎯 ULTRA SIMPLE FIX: HTTP 413エラー解決 - MAX_CONTENT_LENGTH調整
 app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024  # 50MB (デフォルト16MB → 50MB)
 
-# 🔧 数学記号表示用カスタムフィルター（上付き文字防止強化版）
-@app.template_filter('math_notation')
-def math_notation_filter(text):
-    """
-    数学記号フィルタを無効化 - 元の状態に戻す
-    """
-    # フィルタを無効化して元のテキストをそのまま返す
-    return text
+# 🚫 REMOVED: Mathematical notation filter completely removed to prevent floating character issues
+# Previously caused normal numbers to display as superscript characters
 
 # 🔧 ULTRA SYNC FIX: CSRF保護を慎重に有効化
 # 🔥 EMERGENCY FIX: CSRF無効化（問題回答の不一致修正優先）
