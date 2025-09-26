@@ -71,19 +71,19 @@
             問題 {{ current_question_number if current_question_number is defined and current_question_number is not none else '1' }} / {{ total_questions if total_questions is defined and total_questions is not none else '10' }}
         </div>
         <div class="card-body">
-            <h5 class="card-title question-text">{{ question.question }}</h5>
+            <h5 class="card-title question-text">{{ question.question|math|safe }}</h5>
             <div class="answer-summary">
                 <p class="card-text">
-                    <span class="answer-label">あなたの解答:</span> <strong class="user-answer">{{ user_answer }} ({{ user_answer_text }})</strong><br>
+                    <span class="answer-label">あなたの解答:</span> <strong class="user-answer">{{ user_answer }} ({{ user_answer_text|math|safe }})</strong><br>
                     {% if not is_correct %}
-                        <span class="answer-label">正解:</span> <strong class="correct-answer">{{ question.correct_answer }} ({{ correct_answer_text }})</strong>
+                        <span class="answer-label">正解:</span> <strong class="correct-answer">{{ question.correct_answer }} ({{ correct_answer_text|math|safe }})</strong>
                     {% endif %}
                 </p>
             </div>
             {% if question.explanation %}
                 <div class="explanation-section">
                     <p class="card-text">
-                        <strong>解説:</strong> <span class="explanation-text">{{ question.explanation }}</span>
+                        <strong>解説:</strong> <span class="explanation-text">{{ question.explanation|math|safe }}</span>
                     </p>
                 </div>
             {% endif %}

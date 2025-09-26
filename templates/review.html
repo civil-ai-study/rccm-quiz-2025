@@ -69,7 +69,7 @@
                     <span class="badge bg-info">{{ question.category or '分野未設定' }}</span>
                 </div>
                 <div class="card-body">
-                    <h6 class="card-title">{{ question.question[:100] }}{% if question.question|length > 100 %}...{% endif %}</h6>
+                    <h6 class="card-title">{{ question.question[:100]|math|safe }}{% if question.question|length > 100 %}...{% endif %}</h6>
                     <div class="d-grid gap-2">
                         <a href="/exam?qid={{ question.id }}" class="btn btn-outline-primary btn-sm">
                             <i class="fas fa-redo"></i> この問題を解く
