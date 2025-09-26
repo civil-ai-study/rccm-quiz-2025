@@ -24,6 +24,11 @@ try:
 except ImportError:
     REDIS_CACHE_AVAILABLE = False
     cache_manager = None
+    # Create dummy functions to prevent NameError
+    def get_cached_questions(key):
+        return None
+    def cache_questions(key, data):
+        return False
 
 # 🔥 ULTRA SYNC LOG FIX: ログファイル肥大化防止（ローテーション機能追加）
 import logging.handlers
