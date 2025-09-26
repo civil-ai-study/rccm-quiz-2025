@@ -103,7 +103,7 @@
                 <div class="card-body">
                     <!-- 問題文 -->
                     <div class="question-text mb-4">
-                        <p class="lead">{{ question.question }}</p>
+                        <p class="lead">{{ question.question|math|safe }}</p>
                     </div>
                     
                     <!-- 回答フォーム -->
@@ -122,7 +122,7 @@
                                            onclick="enableSubmit()">
                                     <label class="form-check-label" for="option{{ option_key.upper() }}">
                                         <span class="option-letter">{{ option_key.upper() }}</span>
-                                        <span class="option-text">{{ option_text }}</span>
+                                        <span class="option-text">{{ option_text|math|safe }}</span>
                                     </label>
                                 </div>
                                 {% endif %}

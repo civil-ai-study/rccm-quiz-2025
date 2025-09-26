@@ -164,7 +164,7 @@
                             {% elif question.wrong_count >= 2 %}
                             <span class="badge bg-warning text-dark me-2">🔄 重要</span>
                             {% endif %}
-                            <span class="fw-bold">{{ question.question[:80] }}{% if question.question|length > 80 %}...{% endif %}</span>
+                            <span class="fw-bold">{{ question.question[:80]|math|safe }}{% if question.question|length > 80 %}...{% endif %}</span>
                         </div>
                         <div class="question-meta mb-2">
                             {% if question.year %}

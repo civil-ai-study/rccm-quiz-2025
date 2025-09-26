@@ -45,7 +45,7 @@
                         {% if discussion.related_question %}
                         <div class="alert alert-light border-start border-primary border-4">
                             <h6><i class="fas fa-question-circle me-2"></i>関連問題</h6>
-                            <p class="mb-2">{{ discussion.related_question.question }}</p>
+                            <p class="mb-2">{{ discussion.related_question.question|math|safe }}</p>
                             <small class="text-muted">問題ID: {{ discussion.related_question.id }}</small>
                         </div>
                         {% endif %}
