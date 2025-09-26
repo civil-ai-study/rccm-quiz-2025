@@ -575,6 +575,11 @@ def validate_question_data(row: Dict[str, Any], index: int) -> Optional[Dict]:
     # 必須フィールド検証
     if not row.get('question') or row.get('question') == '':
         raise DataValidationError("問題文が空です")
+
+    # 文字化け検出（四角い長方形問題の修正）
+    question_text = str(row.get('question', ''))
+    if '�' in question_text or len(question_text.encode('utf-8', errors='replace')) < len(question_text) * 0.5:
+        raise DataValidationError(f"問題文が文字化けしています (ID: {row.get('id')})")
     
     if not row.get('correct_answer') or row.get('correct_answer') == '':
         raise DataValidationError("正解が指定されていません")
@@ -595,6 +600,10 @@ def validate_question_data(row: Dict[str, Any], index: int) -> Optional[Dict]:
     for option_key, option_text in options.items():
         if not option_text or option_text == '':
             raise DataValidationError(f"選択肢{option_key}が空です")
+
+        # 選択肢の文字化け検出
+        if '�' in str(option_text):
+            raise DataValidationError(f"選択肢{option_key}が文字化けしています (ID: {row.get('id')})")
     
     # 正解選択肢に対応するオプションが存在するか確認
     correct_option = options.get(correct_answer)
