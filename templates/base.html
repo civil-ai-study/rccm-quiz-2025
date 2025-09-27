@@ -451,6 +451,31 @@
         -moz-osx-font-smoothing: grayscale;
       }
     }
+
+    /* 🔧 FONTAWESOME ICON FIX: Hide FontAwesome icons to prevent □ character display */
+    .fas, .far, .fab, .fa-solid, .fa-regular, .fa-brands {
+      display: none !important;
+    }
+
+    /* Specifically hide FontAwesome icons that cause □ display issues */
+    i.fas, i.far, i.fab, i.fa-solid, i.fa-regular, i.fa-brands {
+      display: none !important;
+    }
+
+    /* Hide any icon elements that might show as □ */
+    .fa, .fa-*[class*="fa-"] {
+      display: none !important;
+    }
+
+    /* Exception: Keep essential navigation icons in navbar */
+    .navbar .fas, .navbar .far, .navbar .fab {
+      display: inline !important;
+    }
+
+    /* Exception: Keep theme toggle icon */
+    #themeToggle .fas, #themeToggle .far {
+      display: inline !important;
+    }
     </style>
 
     {% block head %}{% endblock %}
