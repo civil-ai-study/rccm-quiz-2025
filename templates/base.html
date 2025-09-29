@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes, viewport-fit=cover">
-    <title>{% block title %}RCCM試験問題集 - AI学習アシスタント{% endblock %}</title>
+    <title>{% block title %}RCCM試験問題集{% endblock %}</title>
     
     <!-- 🔥 CRITICAL: 超強力キャッシュクリア（ユーザー要求による） -->
     <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
@@ -43,8 +43,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
           onerror="this.onerror=null;this.href='/static/fallback/bootstrap.min.css';">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-          onerror="this.onerror=null;this.href='/static/fallback/font-awesome.min.css';"  >
+    <!-- FontAwesome removed to prevent □ character display issues -->
     
     <!-- ダークモード対応CSS -->
     <style>
@@ -227,7 +226,7 @@
         font-style: italic;
     }
     
-    /* 学習ストリーク表示スタイル */
+    /* 学習ストリーク表示スタイル（アニメーション削除） */
     .streak-display {
       background: linear-gradient(45deg, #FF6B35, #F7931E);
       color: white;
@@ -236,14 +235,8 @@
       font-weight: bold;
       display: inline-block;
       margin: 0.5rem 0;
-      animation: glow 2s ease-in-out infinite alternate;
     }
-    
-    @keyframes glow {
-      from { box-shadow: 0 0 5px rgba(255, 107, 53, 0.3); }
-      to { box-shadow: 0 0 20px rgba(255, 107, 53, 0.6); }
-    }
-    
+
     [data-theme="dark"] .streak-display {
       background: linear-gradient(45deg, #FF6B35, #F7931E);
     }
@@ -492,18 +485,12 @@
         <li class="nav-item"><a class="nav-link" href="/statistics" style="color: white !important;">解答結果分析</a></li>
         <li class="nav-item"><a class="nav-link" href="/categories" style="color: white !important;">部門別</a></li>
         <li class="nav-item"><a class="nav-link" href="/review" style="color: white !important;">復習リスト</a></li>
-        <li class="nav-item"><a class="nav-link" href="/reset" style="color: white !important;">リセット</a></li>
-        <li class="nav-item"><a class="nav-link" href="/settings" style="color: white !important;"><i class="fas fa-cog me-1"></i>設定</a></li>
+        <li class="nav-item"><a class="nav-link" href="/settings" style="color: white !important;">設定</a></li>
         <li class="nav-item"><a class="nav-link" href="/help" style="color: white !important;">ヘルプ</a></li>
         <li class="nav-item ms-2">
           <button class="btn btn-outline-light btn-sm" onclick="toggleTheme()" id="themeToggle" title="ダークモード切替" style="font-size: 0.75rem; line-height: 1; padding: 0.25rem 0.5rem; vertical-align: middle;">
             🌙
           </button>
-        </li>
-        <li class="nav-item ms-2">
-          <span class="navbar-text text-light small" id="sessionStatus" title="セッション状態">
-            <i class="fas fa-clock me-1"></i>セッション確認中...
-          </span>
         </li>
       </ul>
     </div>
@@ -531,11 +518,7 @@
 <!-- メインJavaScript（分離版） -->
 <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 
-<!-- モバイル機能JavaScript -->
-<script src="{{ url_for('static', filename='js/mobile-features.js') }}"></script>
-
-<!-- セッションタイムアウト管理JavaScript -->
-<script src="{{ url_for('static', filename='js/session-timeout.js') }}"></script>
+<!-- 軽量化：不要なJavaScript削除済み -->
 
 {% block scripts %}{% endblock %}
 </body>

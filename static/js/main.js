@@ -61,12 +61,9 @@ function skipUserName() {
     .then(response => {
         if (response.ok) {
             window.location.reload();
-        } else {
-            console.error('ユーザー設定エラー');
         }
     })
     .catch(error => {
-        console.error('通信エラー:', error);
         // エラーが発生してもページをリロードして継続
         window.location.reload();
     });
@@ -83,19 +80,18 @@ function showKeyboardShortcuts() {
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
       <div class="modal-body">
-        <h6><i class="fas fa-graduation-cap me-2"></i>問題解答時</h6>
+        <h6>🎓 問題解答時</h6>
         <ul class="list-unstyled mb-3">
           <li><kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd> <kbd>4</kbd> - 選択肢A〜D選択</li>
           <li><kbd>Enter</kbd> - 解答送信</li>
-          <li><kbd>Shift</kbd> + <kbd>V</kbd> - 音声読み上げ</li>
         </ul>
-        <h6><i class="fas fa-keyboard me-2"></i>全画面共通</h6>
+        <h6>⌨️ 全画面共通</h6>
         <ul class="list-unstyled mb-3">
           <li><kbd>Alt</kbd> + <kbd>D</kbd> - ダークモード切替</li>
           <li><kbd>Alt</kbd> + <kbd>H</kbd> - ホームに戻る</li>
           <li><kbd>Ctrl</kbd> + <kbd>/</kbd> - ヘルプ表示</li>
         </ul>
-        <h6><i class="fas fa-mobile-alt me-2"></i>モバイル</h6>
+        <h6>📱 モバイル</h6>
         <ul class="list-unstyled">
           <li>画面タップ - 選択肢選択</li>
           <li>スワイプ - ページ切り替え（対応ページ）</li>

@@ -2,24 +2,16 @@
 {% block title %}結果 | RCCM試験問題集{% endblock %}
 {% block content %}
 <div class="container-fluid">
-  <!-- モバイル対応ヘッダー -->
-  <div class="d-flex justify-content-between align-items-center mb-4">
-    <h2><i class="fas fa-chart-bar text-primary"></i> 問題結果</h2>
-    <div class="mobile-controls">
-      <button type="button" id="voiceBtn" class="btn btn-sm btn-outline-primary me-2" title="音声読み上げ (Space)">
-        <i class="fas fa-volume-up"></i>
-      </button>
-      <button type="button" id="mobileMenuBtn" class="btn btn-sm btn-outline-secondary" title="モバイルメニュー">
-        <i class="fas fa-bars"></i>
-      </button>
-    </div>
+  <!-- ヘッダー -->
+  <div class="mb-4">
+    <h2>📊 問題結果</h2>
   </div>
 
   <!-- 🔥 ULTRA SYNC IMPROVEMENT 4: 復習完了感 -->
   {% if is_review_session %}
   <div class="alert alert-success border-0 mb-4 text-center">
     <div class="mb-3">
-      <i class="fas fa-trophy text-warning" style="font-size: 3rem;"></i>
+      🏆
     </div>
     <h3 class="text-success">🎆 今日の復習目標達成！</h3>
     <p class="mb-3 fs-5">
@@ -36,10 +28,10 @@
       <div class="col-md-6">
         <div class="d-flex justify-content-center gap-3">
           <a href="/review" class="btn btn-primary">
-            <i class="fas fa-bookmark me-2"></i>復習リストに戻る
+            🔖 復習リストに戻る
           </a>
           <a href="/exam/review" class="btn btn-success">
-            <i class="fas fa-redo me-2"></i>もう一度復習
+            🔄 もう一度復習
           </a>
         </div>
       </div>
@@ -86,14 +78,14 @@
   <!-- 共通・専門別成績 -->
   <div class="card category-scores-card mb-4">
     <div class="card-header">
-      <h5 class="mb-0"><i class="fas fa-chart-pie"></i> 共通・専門別成績</h5>
+      <h5 class="mb-0">📈 共通・専門別成績</h5>
     </div>
     <div class="card-body">
       {% if basic_specialty_scores %}
       <div class="row">
         <div class="col-md-6 mb-3">
           <div class="score-type-card">
-            <h6 class="text-primary"><i class="fas fa-graduation-cap me-2"></i>4-1 基礎科目（共通）</h6>
+            <h6 class="text-primary">🎓 4-1 基礎科目（共通）</h6>
             <div class="score-display">
               <span class="score-number">{{ basic_specialty_scores.basic.correct }}</span>
               <span class="score-separator">/</span>
@@ -107,7 +99,7 @@
         </div>
         <div class="col-md-6 mb-3">
           <div class="score-type-card">
-            <h6 class="text-success"><i class="fas fa-cogs me-2"></i>4-2 専門科目</h6>
+            <h6 class="text-success">⚙️ 4-2 専門科目</h6>
             <div class="score-display">
               <span class="score-number">{{ basic_specialty_scores.specialty.correct }}</span>
               <span class="score-separator">/</span>
@@ -129,7 +121,7 @@
   <!-- 次のアクション -->
   <div class="card actions-card mb-4">
     <div class="card-header">
-      <h5 class="mb-0"><i class="fas fa-compass"></i> 次のアクション</h5>
+      <h5 class="mb-0">🧭 次のアクション</h5>
     </div>
     <div class="card-body">
       {% if recommended_category %}
@@ -143,27 +135,27 @@
         <div class="row g-2">
           <div class="col-md-6">
             <a href="/review" class="btn btn-success w-100 action-btn btn-accessibility-lg">
-              <i class="fas fa-bookmark"></i> 復習リスト
+              🔖 復習リスト
             </a>
           </div>
           <div class="col-md-6">
             <a href="/exam?reset=1" class="btn btn-primary w-100 action-btn btn-accessibility-lg">
-              <i class="fas fa-redo"></i> もう一度問題を始める
+              🔄 もう一度問題を始める
             </a>
           </div>
           <div class="col-md-6">
             <a href="/statistics" class="btn btn-warning w-100 action-btn btn-accessibility-lg">
-              <i class="fas fa-chart-line"></i> 回答結果分析
+              📊 回答結果分析
             </a>
           </div>
           <div class="col-md-6">
             <a href="/categories" class="btn btn-info w-100 action-btn btn-accessibility-lg">
-              <i class="fas fa-th-list"></i> カテゴリー一覧
+              📋 カテゴリー一覧
             </a>
           </div>
           <div class="col-md-6">
             <a href="/" class="btn btn-outline-primary w-100 action-btn btn-accessibility-lg">
-              <i class="fas fa-home"></i> ホームに戻る
+              🏠 ホームに戻る
             </a>
           </div>
         </div>
@@ -175,13 +167,13 @@
   <!-- 弱点分野対策 -->
   <div class="card weakness-card">
     <div class="card-header bg-warning text-dark">
-      <h5 class="mb-0"><i class="fas fa-exclamation-triangle"></i> 弱点分野対策</h5>
+      <h5 class="mb-0">⚠️ 弱点分野対策</h5>
     </div>
     <div class="card-body">
       <p class="weakness-message">あなたの弱点分野: <strong class="weakness-category">{{ weak_category_details.name }}</strong></p>
       {% if not recommended_category or recommended_category != weak_category_details.name %}
       <a href="/exam?category={{ weak_category_details.name }}" class="btn btn-warning w-100 weakness-action-btn">
-        <i class="fas fa-target"></i> 弱点分野を克服する
+        🎯 弱点分野を克服する
       </a>
       {% endif %}
     </div>

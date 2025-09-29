@@ -2,17 +2,9 @@
 {% block title %}部門別 | RCCM試験問題集{% endblock %}
 {% block content %}
 <div class="container-fluid">
-    <!-- モバイル対応ヘッダー -->
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2><i class="fas fa-th-list text-primary"></i> 部門別問題選択</h2>
-        <div class="mobile-controls">
-            <button type="button" id="voiceBtn" class="btn btn-sm btn-outline-primary me-2" title="音声読み上げ (Space)">
-                <i class="fas fa-volume-up"></i>
-            </button>
-            <button type="button" id="mobileMenuBtn" class="btn btn-sm btn-outline-secondary" title="モバイルメニュー">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
+    <!-- ヘッダー -->
+    <div class="mb-4">
+        <h2>📋 部門別問題選択</h2>
     </div>
 
     <!-- モバイルカードビュー -->
@@ -24,7 +16,7 @@
                 <div class="d-flex justify-content-between align-items-center mb-2">
                     <h5 class="category-name mb-0">{{ category }}</h5>
                     <a href="/exam?category={{ category|urlencode }}" class="btn btn-primary btn-sm study-btn">
-                        <i class="fas fa-play"></i> 学習
+                        ▶️ 学習
                     </a>
                 </div>
                 
@@ -68,7 +60,7 @@
         {% endfor %}
         {% else %}
         <div class="alert alert-info">
-            <i class="fas fa-info-circle"></i> 利用可能なカテゴリデータがありません。
+            ℹ️ 利用可能なカテゴリデータがありません。
         </div>
         {% endif %}
     </div>
@@ -119,14 +111,14 @@
     <!-- グラフカード -->
     <div class="card chart-card mb-4">
         <div class="card-header">
-            <h5 class="mb-0"><i class="fas fa-chart-bar"></i> 部門別正答率グラフ</h5>
+            <h5 class="mb-0">📊 部門別正答率グラフ</h5>
         </div>
         <div class="card-body">
             <div class="chart-container">
                 <canvas id="categoryBarChart" width="400" height="200"></canvas>
             </div>
             <p class="text-muted mt-2">
-                <i class="fas fa-info-circle"></i> グラフは部門ごとの正答率を示します。
+                ℹ️ グラフは部門ごとの正答率を示します。
             </p>
         </div>
     </div>
@@ -136,12 +128,12 @@
         <div class="row g-2">
             <div class="col-md-6">
                 <a href="/" class="btn btn-secondary w-100 nav-btn">
-                    <i class="fas fa-home"></i> ホームに戻る
+                    🏠 ホームに戻る
                 </a>
             </div>
             <div class="col-md-6">
                 <a href="/exam" class="btn btn-primary w-100 nav-btn">
-                    <i class="fas fa-random"></i> ランダム出題
+                    🎲 ランダム出題
                 </a>
             </div>
         </div>

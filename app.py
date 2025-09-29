@@ -1093,6 +1093,29 @@ def index():
         logger.error(f"ホームページエラー: {e}")
         return render_template('error.html', error_message=str(e)), 500
 
+@app.route('/settings', methods=['GET', 'POST'])
+def settings():
+    """設定画面"""
+    try:
+        available_options = [5, 10, 15, 20, 25, 30]
+        current_setting = session.get('questions_per_session', 10)
+
+        if request.method == 'POST':
+            questions_per_session = int(request.form.get('questions_per_session', 10))
+            if questions_per_session in available_options:
+                session['questions_per_session'] = questions_per_session
+                flash(f'問題数を{questions_per_session}問に設定しました', 'success')
+            else:
+                flash('無効な問題数です', 'error')
+            return redirect(url_for('settings'))
+
+        return render_template('settings.html',
+                             available_options=available_options,
+                             current_setting=current_setting)
+    except Exception as e:
+        logger.error(f"設定画面エラー: {e}")
+        return render_template('error.html', error_message=str(e)), 500
+
 @app.route('/set_user', methods=['POST', 'GET'])
 def set_user():
     """ユーザー名を設定（企業環境での個別識別）"""
@@ -1183,10 +1206,14 @@ def exam():
         # POST処理（回答送信）
         if request.method == 'POST':
             answer = sanitize_input(request.form.get('answer'))
-            qid = sanitize_input(request.form.get('qid'))
+            # qidとquestion_idの両方に対応（下位互換性確保）
+            qid = sanitize_input(request.form.get('qid')) or sanitize_input(request.form.get('question_id'))
 
             if answer not in ['A', 'B', 'C', 'D']:
                 return render_template('error.html', error="無効な回答が選択されました。")
+
+            if not qid:
+                return render_template('error.html', error="問題IDが指定されていません。")
 
             try:
                 qid = int(qid)
