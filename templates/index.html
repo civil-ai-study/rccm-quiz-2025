@@ -63,12 +63,44 @@
     </div>
     {% endif %}
   </div>
-  
+
+  <!-- 🎯 アクセシビリティ設定バナー（最優先表示） -->
+  <div class="accessibility-banner mb-4" id="accessibilityBanner">
+    <div class="alert alert-warning" style="border: 2px solid #ffc107; background: linear-gradient(135deg, #fff3cd 0%, #ffe69c 100%); max-width: 900px; margin: 0 auto;">
+      <div class="d-flex align-items-center justify-content-between flex-wrap">
+        <div class="flex-grow-1 mb-2 mb-md-0">
+          <h5 class="mb-2" style="font-size: 1.2rem; font-weight: 600;">
+            ⚙️ アクセシビリティ設定
+          </h5>
+          <p class="mb-0" style="font-size: 0.95rem; color: #856404;">
+            文字が見づらい、屋外で画面が見えにくい場合は以下のボタンをクリックしてください
+          </p>
+        </div>
+        <div class="accessibility-controls d-flex gap-2 flex-wrap">
+          <button class="btn btn-warning" onclick="toggleFontSize()" style="min-width: 140px; min-height: 48px; font-size: 1.05rem; font-weight: 500;">
+            📝 文字を大きく
+          </button>
+          <button class="btn btn-dark" onclick="toggleHighContrast()" style="min-width: 160px; min-height: 48px; font-size: 1.05rem; font-weight: 500;">
+            🌗 ハイコントラスト
+          </button>
+          <button class="btn btn-light" onclick="toggleOutdoorMode()" style="min-width: 140px; min-height: 48px; font-size: 1.05rem; font-weight: 500; border: 2px solid #ffc107;">
+            ☀️ 屋外モード
+          </button>
+        </div>
+      </div>
+      <div class="accessibility-status mt-3" id="accessibilityStatus" style="display: none;">
+        <small class="d-block text-success fw-bold">
+          ✓ 設定を適用しました。元に戻すには再度ボタンをクリックしてください。
+        </small>
+      </div>
+    </div>
+  </div>
+
   <!-- 学習ストリーク表示 -->
   <div class="streak-display mb-3">
     🔥 連続学習: <span id="streak-counter">0</span>日目
   </div>
-  
+
   <!-- 初心者向けガイダンス強化 -->
   <div class="beginner-guide" id="beginnerGuide" style="display: none; margin-bottom: 0 !important;">
     <div class="alert alert-primary d-flex align-items-center mb-3" role="alert">
@@ -897,5 +929,141 @@ function goToDepartment(department) {
     const encodedDept = encodeURIComponent(department);
     window.location.href = '/quiz_department/' + encodedDept;
 }
+
+// 🎯 アクセシビリティ機能（ペルソナテスト対応）
+function toggleFontSize() {
+    const currentSize = localStorage.getItem('rccm_font_size') || 'normal';
+    const statusEl = document.getElementById('accessibilityStatus');
+
+    if (currentSize === 'normal') {
+        // 文字を大きくする（1.2倍）
+        document.body.style.fontSize = '1.2rem';
+        localStorage.setItem('rccm_font_size', 'large');
+        statusEl.style.display = 'block';
+        statusEl.innerHTML = '<small class="d-block text-success fw-bold">✓ 文字サイズを大きくしました（老眼対応）</small>';
+    } else {
+        // 元に戻す
+        document.body.style.fontSize = '';
+        localStorage.setItem('rccm_font_size', 'normal');
+        statusEl.style.display = 'none';
+    }
+}
+
+function toggleHighContrast() {
+    const currentMode = localStorage.getItem('rccm_contrast') || 'normal';
+    const statusEl = document.getElementById('accessibilityStatus');
+
+    if (currentMode === 'normal') {
+        // ハイコントラストモード有効化
+        document.body.classList.add('high-contrast-mode');
+        localStorage.setItem('rccm_contrast', 'high');
+        statusEl.style.display = 'block';
+        statusEl.innerHTML = '<small class="d-block text-success fw-bold">✓ ハイコントラストモードを有効にしました</small>';
+    } else {
+        // 元に戻す
+        document.body.classList.remove('high-contrast-mode');
+        localStorage.setItem('rccm_contrast', 'normal');
+        statusEl.style.display = 'none';
+    }
+}
+
+function toggleOutdoorMode() {
+    const currentMode = localStorage.getItem('rccm_outdoor') || 'normal';
+    const statusEl = document.getElementById('accessibilityStatus');
+
+    if (currentMode === 'normal') {
+        // 屋外モード有効化（超高輝度・強コントラスト）
+        document.body.classList.add('outdoor-mode');
+        localStorage.setItem('rccm_outdoor', 'enabled');
+        statusEl.style.display = 'block';
+        statusEl.innerHTML = '<small class="d-block text-success fw-bold">✓ 屋外モードを有効にしました（強コントラスト・太字）</small>';
+    } else {
+        // 元に戻す
+        document.body.classList.remove('outdoor-mode');
+        localStorage.setItem('rccm_outdoor', 'normal');
+        statusEl.style.display = 'none';
+    }
+}
+
+// ページ読み込み時に保存された設定を復元
+document.addEventListener('DOMContentLoaded', function() {
+    const fontSize = localStorage.getItem('rccm_font_size');
+    const contrast = localStorage.getItem('rccm_contrast');
+    const outdoor = localStorage.getItem('rccm_outdoor');
+
+    if (fontSize === 'large') {
+        document.body.style.fontSize = '1.2rem';
+    }
+
+    if (contrast === 'high') {
+        document.body.classList.add('high-contrast-mode');
+    }
+
+    if (outdoor === 'enabled') {
+        document.body.classList.add('outdoor-mode');
+    }
+});
 </script>
+
+<!-- アクセシビリティモード用CSS -->
+<style>
+/* ハイコントラストモード */
+.high-contrast-mode {
+    background: #000 !important;
+    color: #fff !important;
+}
+
+.high-contrast-mode .card,
+.high-contrast-mode .alert,
+.high-contrast-mode .learning-card {
+    background: #1a1a1a !important;
+    border: 2px solid #fff !important;
+    color: #fff !important;
+}
+
+.high-contrast-mode .btn {
+    border: 2px solid #fff !important;
+    font-weight: 700 !important;
+}
+
+.high-contrast-mode a {
+    color: #4da6ff !important;
+    text-decoration: underline !important;
+}
+
+/* 屋外モード（強コントラスト・太字・大きめ文字） */
+.outdoor-mode {
+    background: #fff !important;
+}
+
+.outdoor-mode * {
+    font-weight: 600 !important;
+    text-shadow: 0 0 1px rgba(0,0,0,0.3) !important;
+}
+
+.outdoor-mode .card,
+.outdoor-mode .alert,
+.outdoor-mode .learning-card {
+    border: 3px solid #333 !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3) !important;
+}
+
+.outdoor-mode .btn {
+    border: 3px solid #333 !important;
+    font-size: 1.1rem !important;
+    padding: 12px 20px !important;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.25) !important;
+}
+
+.outdoor-mode .learning-card h3,
+.outdoor-mode .alert h5 {
+    font-size: 1.3rem !important;
+    color: #000 !important;
+}
+
+.outdoor-mode .option-text {
+    color: #000 !important;
+}
+</style>
+
 {% endblock %} 

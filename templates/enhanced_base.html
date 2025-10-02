@@ -88,7 +88,73 @@
             outline: 3px solid #2563eb !important;
             outline-offset: 2px !important;
         }
-        
+
+        /* Accessibility Modes - High Contrast */
+        .high-contrast-mode {
+            background: #000 !important;
+            color: #fff !important;
+        }
+
+        .high-contrast-mode .card,
+        .high-contrast-mode .alert,
+        .high-contrast-mode .learning-card,
+        .high-contrast-mode .option-item {
+            background: #1a1a1a !important;
+            border: 2px solid #fff !important;
+            color: #fff !important;
+        }
+
+        .high-contrast-mode .btn {
+            border: 2px solid #fff !important;
+            font-weight: 700 !important;
+        }
+
+        .high-contrast-mode a {
+            color: #4da6ff !important;
+            text-decoration: underline !important;
+        }
+
+        /* Accessibility Modes - Outdoor Mode */
+        .outdoor-mode {
+            background: #fff !important;
+        }
+
+        .outdoor-mode * {
+            font-weight: 600 !important;
+            text-shadow: 0 0 1px rgba(0,0,0,0.3) !important;
+        }
+
+        .outdoor-mode .card,
+        .outdoor-mode .alert,
+        .outdoor-mode .learning-card,
+        .outdoor-mode .option-item {
+            border: 3px solid #333 !important;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3) !important;
+        }
+
+        .outdoor-mode .btn {
+            border: 3px solid #333 !important;
+            font-size: 1.1rem !important;
+            padding: 12px 20px !important;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.25) !important;
+        }
+
+        .outdoor-mode .learning-card h3,
+        .outdoor-mode .alert h5,
+        .outdoor-mode h1, .outdoor-mode h2, .outdoor-mode h3 {
+            font-size: 1.3rem !important;
+            color: #000 !important;
+        }
+
+        .outdoor-mode .option-text {
+            color: #000 !important;
+            font-weight: 700 !important;
+        }
+
+        .outdoor-mode .badge {
+            border: 2px solid #000 !important;
+        }
+
         /* Skip to content link */
         .skip-link {
             position: absolute;
@@ -293,9 +359,31 @@
         }
     </script>
     
+    <!-- Accessibility Settings Restoration (Global) -->
+    <script>
+        // アクセシビリティ設定をページ読み込み時に復元（全ページ共通）
+        document.addEventListener('DOMContentLoaded', function() {
+            const fontSize = localStorage.getItem('rccm_font_size');
+            const contrast = localStorage.getItem('rccm_contrast');
+            const outdoor = localStorage.getItem('rccm_outdoor');
+
+            if (fontSize === 'large') {
+                document.body.style.fontSize = '1.2rem';
+            }
+
+            if (contrast === 'high') {
+                document.body.classList.add('high-contrast-mode');
+            }
+
+            if (outdoor === 'enabled') {
+                document.body.classList.add('outdoor-mode');
+            }
+        });
+    </script>
+
     <!-- Custom Scripts -->
     {% block scripts %}{% endblock %}
-    
+
     <!-- Error Tracking for Enhanced UI -->
     <script>
         window.addEventListener('error', function(e) {
