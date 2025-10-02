@@ -3881,10 +3881,10 @@ except Exception as e:
     logger.error(f"[ERROR] Application initialization failed: {e}")
     logger.info("[FALLBACK] Continuing with basic functionality")
 
-# 🔥 CRITICAL FIX: 専門部門クイズルート追加（index.htmlとの整合性確保）
+# 🔥 CRITICAL FIX: 専門部門問題ルート追加（index.htmlとの整合性確保）
 @app.route('/quiz/<department>')
 def quiz_department(department):
-    """専門部門別クイズ開始（index.htmlからの直接リンク対応）"""
+    """専門部門別試験問題開始（index.htmlからの直接リンク対応）"""
     try:
         # 🔥 CRITICAL FIX: 基礎科目と専門科目の分離処理
         if department == 'basic':
@@ -3894,7 +3894,7 @@ def quiz_department(department):
             session['exam_category'] = '4-1 必須科目（基礎技術）'
             session.modified = True
 
-            logger.info(f"基礎科目クイズ開始: {department}")
+            logger.info(f"基礎科目問題開始: {department}")
             return redirect(url_for('exam', question_type='basic', count=10))
         else:
             # 専門科目の場合
@@ -3922,14 +3922,14 @@ def quiz_department(department):
             session['exam_category'] = f'{department_name}部門'
             session.modified = True
 
-            logger.info(f"専門部門クイズ開始: {department} -> {department_name}")
+            logger.info(f"専門部門問題開始: {department} -> {department_name}")
 
         # exam.pyに専門科目パラメータ付きでリダイレクト
         return redirect(f'/exam?question_type=specialist&department={department_name}&count=10')
 
     except Exception as e:
-        logger.error(f"専門部門クイズ開始エラー: {e}")
-        return render_template('error.html', error="専門部門クイズの開始中にエラーが発生しました。")
+        logger.error(f"専門部門問題開始エラー: {e}")
+        return render_template('error.html', error="専門部門試験問題の開始中にエラーが発生しました。")
 
 if __name__ == '__main__':
     # 🔥 本番環境のポート設定: Renderではポート10000を使用
