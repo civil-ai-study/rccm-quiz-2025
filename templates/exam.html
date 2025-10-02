@@ -10,32 +10,58 @@
     </div>
     {% endif %}
 
-    <!-- 進捗表示 - 年度情報強化版 -->
-    <div class="card mb-1" role="banner">
-        <div class="card-body p-1">
-            <div class="d-flex justify-content-between align-items-center">
-                <div class="progress-info d-flex align-items-center gap-2" role="status" aria-live="polite">
-                    <span class="badge bg-primary" style="font-size: 0.8rem;" aria-label="進捗">{{ current_no if current_no is defined and current_no is not none else '1' }}/{{ total_questions if total_questions is defined and total_questions is not none else '10' }}</span>
-                    <!-- 年度表示を左上に配置（4-2専門科目の場合） -->
-                    {% if question.year %}
-                    <span class="badge bg-success text-white fw-bold year-badge" style="font-size: 0.8rem;">📅 {{ question.year }}年度過去問</span>
-                    {% endif %}
+    <!-- 進捗表示 - ビジュアル強化版 -->
+    <div class="card mb-2 border-0 shadow-sm" role="banner">
+        <div class="card-body p-2">
+            <!-- プログレスバー -->
+            <div class="mb-2">
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                    <div class="progress-info d-flex align-items-center gap-2" role="status" aria-live="polite">
+                        <span class="badge bg-primary fs-6" aria-label="進捗">{{ current_no if current_no is defined and current_no is not none else '1' }}/{{ total_questions if total_questions is defined and total_questions is not none else '10' }}</span>
+                        {% if question.year %}
+                        <span class="badge bg-success text-white fw-bold year-badge">📅 {{ question.year }}年度</span>
+                        {% endif %}
+                    </div>
+                    <div class="question-meta d-flex align-items-center gap-1">
+                        {% if is_review_question %}
+                        <span class="badge bg-warning text-dark fw-bold">🔄 復習</span>
+                        {% endif %}
+                        {% if question.question_type == 'specialist' %}
+                        <span class="badge bg-info text-white">
+                            4-2 専門{% if department_name %} ({{ department_name }}){% endif %}
+                        </span>
+                        {% elif question.question_type == 'basic' %}
+                        <span class="badge bg-secondary text-white">4-1 基礎</span>
+                        {% endif %}
+                    </div>
                 </div>
-                <div class="question-meta d-flex align-items-center gap-1">
-                    {% if is_review_question %}
-                    <span class="badge bg-warning text-dark fw-bold" style="font-size: 0.8rem;">🔄 復習問題</span>
-                    {% endif %}
-                    {% if question.question_type == 'specialist' %}
-                    <span class="badge bg-info text-white" style="font-size: 0.7rem;">
-                        4-2 専門{% if department_name %} ({{ department_name }}){% endif %}
+
+                <!-- ビジュアルプログレスバー -->
+                <div class="progress" style="height: 10px; border-radius: 10px;">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-success"
+                         role="progressbar"
+                         style="width: {% if current_no and total_questions %}{{ (current_no / total_questions * 100)|round|int }}{% else %}10{% endif %}%;"
+                         aria-valuenow="{{ current_no if current_no else 1 }}"
+                         aria-valuemin="0"
+                         aria-valuemax="{{ total_questions if total_questions else 10 }}">
+                    </div>
+                </div>
+
+                <!-- マイルストーン表示（25%, 50%, 75%, 100%） -->
+                <div class="d-flex justify-content-between mt-1" style="font-size: 0.7rem;">
+                    {% set progress_pct = ((current_no / total_questions * 100)|round|int) if current_no and total_questions else 10 %}
+                    <span class="{% if progress_pct >= 25 %}text-success fw-bold{% else %}text-muted{% endif %}">
+                        {% if progress_pct >= 25 %}✓{% else %}○{% endif %} 25%
                     </span>
-                    {% elif question.question_type == 'basic' %}
-                    <span class="badge bg-secondary text-white" style="font-size: 0.7rem;">4-1 基礎</span>
-                    {% endif %}
-                    <!-- ULTRA SYNC: User-friendly category display for consistency verification -->
-                    {% if department_name %}
-                    <span class="badge bg-success text-white" style="font-size: 0.65rem;">カテゴリ: {{ department_name }}</span>
-                    {% endif %}
+                    <span class="{% if progress_pct >= 50 %}text-success fw-bold{% else %}text-muted{% endif %}">
+                        {% if progress_pct >= 50 %}✓{% else %}○{% endif %} 50%
+                    </span>
+                    <span class="{% if progress_pct >= 75 %}text-success fw-bold{% else %}text-muted{% endif %}">
+                        {% if progress_pct >= 75 %}✓{% else %}○{% endif %} 75%
+                    </span>
+                    <span class="{% if progress_pct >= 100 %}text-success fw-bold{% else %}text-muted{% endif %}">
+                        {% if progress_pct >= 100 %}✓{% else %}○{% endif %} 100%
+                    </span>
                 </div>
             </div>
         </div>

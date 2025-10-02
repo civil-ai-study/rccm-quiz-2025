@@ -469,11 +469,201 @@
     #themeToggle .fas, #themeToggle .far {
       display: inline !important;
     }
+
+    /* ========================================
+       フォントサイズ切り替え - 全年齢層対応
+       ======================================== */
+
+    /* 標準サイズ（デフォルト） */
+    body[data-font-size="standard"],
+    body:not([data-font-size]) {
+      font-size: 16px;
+    }
+    body[data-font-size="standard"] .question-text,
+    body:not([data-font-size]) .question-text {
+      font-size: 1.1rem !important;
+    }
+    body[data-font-size="standard"] .option-text,
+    body:not([data-font-size]) .option-text {
+      font-size: 1rem !important;
+    }
+    body[data-font-size="standard"] .btn,
+    body:not([data-font-size]) .btn {
+      font-size: 1rem !important;
+    }
+
+    /* 大きめサイズ（40代以上推奨） */
+    body[data-font-size="large"] {
+      font-size: 18px;
+    }
+    body[data-font-size="large"] .question-text {
+      font-size: 1.3rem !important;
+    }
+    body[data-font-size="large"] .option-text {
+      font-size: 1.15rem !important;
+    }
+    body[data-font-size="large"] .btn {
+      font-size: 1.1rem !important;
+      padding: 0.6rem 1.2rem !important;
+    }
+    body[data-font-size="large"] h1 {
+      font-size: 2.2rem !important;
+    }
+    body[data-font-size="large"] h2 {
+      font-size: 1.9rem !important;
+    }
+    body[data-font-size="large"] h3 {
+      font-size: 1.6rem !important;
+    }
+
+    /* 特大サイズ（50代以上・アクセシビリティ） */
+    body[data-font-size="extra-large"] {
+      font-size: 20px;
+    }
+    body[data-font-size="extra-large"] .question-text {
+      font-size: 1.5rem !important;
+    }
+    body[data-font-size="extra-large"] .option-text {
+      font-size: 1.3rem !important;
+    }
+    body[data-font-size="extra-large"] .btn {
+      font-size: 1.25rem !important;
+      padding: 0.75rem 1.5rem !important;
+    }
+    body[data-font-size="extra-large"] h1 {
+      font-size: 2.5rem !important;
+    }
+    body[data-font-size="extra-large"] h2 {
+      font-size: 2.1rem !important;
+    }
+    body[data-font-size="extra-large"] h3 {
+      font-size: 1.8rem !important;
+    }
+
+    /* ========================================
+       スマホ最適化 - モバイルファースト
+       ======================================== */
+
+    /* タッチターゲットサイズの最適化（最低44x44px） */
+    .btn, .form-check-input, .option-item {
+      min-height: 44px;
+      min-width: 44px;
+    }
+
+    /* スマホ用レスポンシブ調整 */
+    @media (max-width: 640px) {
+      /* 問題文を読みやすく */
+      .question-text {
+        font-size: 1.1rem !important;
+        line-height: 1.6 !important;
+      }
+
+      /* 選択肢を大きく、タップしやすく */
+      .option-item {
+        min-height: 60px !important;
+        padding: 15px !important;
+        margin-bottom: 12px !important;
+      }
+
+      .option-text {
+        font-size: 1.05rem !important;
+        line-height: 1.5 !important;
+      }
+
+      /* ボタンを大きく */
+      .btn {
+        font-size: 1.1rem !important;
+        padding: 12px 20px !important;
+        min-height: 48px !important;
+      }
+
+      /* カードの余白を調整 */
+      .card-body {
+        padding: 15px !important;
+      }
+
+      /* 進捗表示を見やすく */
+      .badge {
+        font-size: 0.9rem !important;
+        padding: 6px 12px !important;
+      }
+
+      /* ナビゲーションバーを最適化 */
+      .navbar {
+        padding: 10px 15px !important;
+      }
+
+      .navbar-brand {
+        font-size: 1.1rem !important;
+      }
+
+      /* フォントサイズ別のスマホ調整 */
+      body[data-font-size="large"] .question-text {
+        font-size: 1.25rem !important;
+      }
+      body[data-font-size="large"] .option-text {
+        font-size: 1.15rem !important;
+      }
+
+      body[data-font-size="extra-large"] .question-text {
+        font-size: 1.4rem !important;
+      }
+      body[data-font-size="extra-large"] .option-text {
+        font-size: 1.3rem !important;
+      }
+    }
+
+    /* タブレット用調整 */
+    @media (min-width: 641px) and (max-width: 1024px) {
+      .container {
+        max-width: 95% !important;
+      }
+
+      .question-text {
+        font-size: 1.15rem !important;
+      }
+
+      .option-text {
+        font-size: 1.05rem !important;
+      }
+    }
+
+    /* 横画面スマホ対応 */
+    @media (max-width: 896px) and (orientation: landscape) {
+      .question-container {
+        padding: 10px !important;
+      }
+
+      .option-item {
+        min-height: 50px !important;
+        padding: 10px !important;
+      }
+    }
+
+    /* タッチデバイス用のホバー無効化 */
+    @media (hover: none) {
+      .btn:hover, .option-item:hover {
+        transform: none !important;
+      }
+    }
+
+    /* フォーカス表示の強化（キーボードナビゲーション） */
+    *:focus-visible {
+      outline: 3px solid #fbbf24 !important;
+      outline-offset: 2px !important;
+    }
     </style>
 
     {% block head %}{% endblock %}
 </head>
 <body>
+<script>
+// フォントサイズ設定を即座に復元（チラつき防止）
+(function() {
+  const savedSize = localStorage.getItem('fontSize') || 'standard';
+  document.body.setAttribute('data-font-size', savedSize);
+})();
+</script>
 <nav class="navbar navbar-expand-lg navbar-custom mb-4">
   <div class="container-fluid">
     <a class="navbar-brand" href="/" style="color: white !important;">RCCM試験問題集</a>

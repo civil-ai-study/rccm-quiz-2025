@@ -103,6 +103,54 @@
     </div>
   </div>
 
+  <!-- 表示設定 -->
+  <div class="row justify-content-center mt-4">
+    <div class="col-md-8">
+      <div class="card border-primary">
+        <div class="card-header text-white text-center" style="background-color: var(--primary-color)">
+          <h5 class="mb-0">👁️ 表示設定</h5>
+        </div>
+        <div class="card-body">
+          <!-- 文字サイズ選択 -->
+          <div class="mb-4">
+            <label class="form-label"><strong>文字サイズ</strong></label>
+            <p class="text-muted small">読みやすさに合わせて文字サイズを選択してください</p>
+
+            <div class="btn-group w-100 font-size-selector" role="group" aria-label="文字サイズ選択">
+              <input type="radio" class="btn-check" name="fontSize" id="fs-standard" value="standard" autocomplete="off">
+              <label class="btn btn-outline-primary" for="fs-standard">
+                <div class="text-center">
+                  <div style="font-size: 16px;">A</div>
+                  <small>標準</small>
+                </div>
+              </label>
+
+              <input type="radio" class="btn-check" name="fontSize" id="fs-large" value="large" autocomplete="off">
+              <label class="btn btn-outline-primary" for="fs-large">
+                <div class="text-center">
+                  <div style="font-size: 20px;">A</div>
+                  <small>大きめ</small>
+                </div>
+              </label>
+
+              <input type="radio" class="btn-check" name="fontSize" id="fs-extra-large" value="extra-large" autocomplete="off">
+              <label class="btn btn-outline-primary" for="fs-extra-large">
+                <div class="text-center">
+                  <div style="font-size: 24px;">A</div>
+                  <small>特大</small>
+                </div>
+              </label>
+            </div>
+
+            <div class="alert alert-info mt-3 mb-0">
+              ℹ️ 設定した文字サイズは全てのページに適用されます
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- その他の設定（将来拡張用） -->
   <div class="row justify-content-center mt-4">
     <div class="col-md-8">
@@ -112,13 +160,6 @@
         </div>
         <div class="card-body">
           <div class="row text-center">
-            <div class="col-md-4">
-              <div class="p-3 future-feature">
-                🎨
-                <div><strong>テーマ設定</strong></div>
-                <small>ダークモード・カラーテーマ</small>
-              </div>
-            </div>
             <div class="col-md-4">
               <div class="p-3 future-feature">
                 🔔
@@ -131,6 +172,13 @@
                 📊
                 <div><strong>統計設定</strong></div>
                 <small>詳細レポート表示</small>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="p-3 future-feature">
+                🎯
+                <div><strong>学習プラン</strong></div>
+                <small>個別最適化</small>
               </div>
             </div>
           </div>
@@ -185,7 +233,7 @@ document.querySelectorAll('.form-check-label').forEach(label => {
         card.classList.remove('border-success', 'bg-light');
         card.classList.add('border-secondary');
       });
-      
+
       const checkedInput = document.querySelector('input[name="questions_per_session"]:checked');
       if (checkedInput) {
         const checkedCard = checkedInput.nextElementSibling.querySelector('.card');
@@ -194,6 +242,36 @@ document.querySelectorAll('.form-check-label').forEach(label => {
       }
     }, 10);
   });
+});
+
+// 文字サイズ切り替え機能
+document.querySelectorAll('[name="fontSize"]').forEach(radio => {
+  radio.addEventListener('change', (e) => {
+    const size = e.target.value;
+    document.body.setAttribute('data-font-size', size);
+    localStorage.setItem('fontSize', size);
+
+    // 変更を視覚的にフィードバック
+    const alert = document.createElement('div');
+    alert.className = 'alert alert-success alert-dismissible fade show position-fixed top-0 start-50 translate-middle-x mt-3';
+    alert.style.zIndex = '9999';
+    alert.innerHTML = `
+      ✅ 文字サイズを「${size === 'standard' ? '標準' : size === 'large' ? '大きめ' : '特大'}」に変更しました
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    `;
+    document.body.appendChild(alert);
+    setTimeout(() => alert.remove(), 3000);
+  });
+});
+
+// ページロード時に設定を復元
+window.addEventListener('DOMContentLoaded', () => {
+  const savedSize = localStorage.getItem('fontSize') || 'standard';
+  document.body.setAttribute('data-font-size', savedSize);
+  const savedRadio = document.getElementById('fs-' + savedSize);
+  if (savedRadio) {
+    savedRadio.checked = true;
+  }
 });
 </script>
 {% endblock %}
