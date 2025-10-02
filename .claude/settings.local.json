@@ -23,7 +23,15 @@
       "WebFetch(domain:rccm-quiz-2025.onrender.com)",
       "Bash(gh auth:*)",
       "Bash(taskkill:*)",
-      "Bash(git restore:*)"
+      "Bash(git restore:*)",
+      "Bash(curl:*)",
+      "Bash(powershell:*)",
+      "Bash(for i in {1..5})",
+      "Bash(do echo \"=== 問題$i ===\")",
+      "Bash(done)",
+      "Bash(findstr:*)",
+      "Bash(dir C:UsersABCDesktoprccm-quiz-apptemplates)",
+      "Bash(mkdir:*)"
     ],
     "deny": [],
     "ask": [],

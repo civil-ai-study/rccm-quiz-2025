@@ -44,7 +44,7 @@
                         
                         {% if discussion.related_question %}
                         <div class="alert alert-light border-start border-primary border-4">
-                            <h6><i class="fas fa-question-circle me-2"></i>関連問題</h6>
+                            <h6>❓ 関連問題</h6>
                             <p class="mb-2">{{ discussion.related_question.question|math|safe }}</p>
                             <small class="text-muted">問題ID: {{ discussion.related_question.id }}</small>
                         </div>
@@ -54,7 +54,7 @@
                     <!-- 返信一覧 -->
                     {% if discussion.replies %}
                     <div class="replies-section">
-                        <h6><i class="fas fa-comments me-2"></i>回答・ディスカッション ({{ discussion.replies|length }}件)</h6>
+                        <h6>💬 回答・ディスカッション ({{ discussion.replies|length }}件)</h6>
                         <hr>
                         {% for reply in discussion.replies %}
                         <div class="reply-item mb-3">
@@ -73,11 +73,11 @@
                                     
                                     <div class="reply-actions">
                                         <button class="btn btn-sm btn-outline-primary me-2" onclick="likeReply('{{ reply.id }}')">
-                                            <i class="fas fa-thumbs-up me-1"></i>
+                                            👍
                                             いいね ({{ reply.likes or 0 }})
                                         </button>
                                         <button class="btn btn-sm btn-outline-secondary" onclick="replyToReply('{{ reply.id }}')">
-                                            <i class="fas fa-reply me-1"></i>返信
+                                            ↩️ 返信
                                         </button>
                                     </div>
                                 </div>
@@ -89,7 +89,7 @@
                     
                     <!-- 返信フォーム -->
                     <div class="reply-form mt-4">
-                        <h6><i class="fas fa-edit me-2"></i>返信を投稿</h6>
+                        <h6>✏️ 返信を投稿</h6>
                         <form id="replyForm" onsubmit="submitReply(event)">
                             <div class="mb-3">
                                 <textarea class="form-control" id="replyContent" rows="4" 
@@ -103,7 +103,7 @@
                                     </label>
                                 </div>
                                 <button type="submit" class="btn btn-primary">
-                                    <i class="fas fa-paper-plane me-1"></i>投稿する
+                                    ✈️ 投稿する
                                 </button>
                             </div>
                         </form>
@@ -112,7 +112,7 @@
             </div>
             {% else %}
             <div class="alert alert-warning">
-                <i class="fas fa-exclamation-triangle me-2"></i>
+                ⚠️
                 ディスカッションが見つかりません。
             </div>
             {% endif %}

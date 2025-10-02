@@ -8,9 +8,9 @@
     <div class="row">
         <div class="col-12">
             <div class="d-flex justify-content-between align-items-center mb-4">
-                <h2><i class="fas fa-route text-success"></i> 個人学習プラン</h2>
+                <h2>🗺️ 個人学習プラン</h2>
                 <a href="{{ url_for('ai_analysis') }}" class="btn btn-outline-info">
-                    <i class="fas fa-brain"></i> AI分析に戻る
+                    🧠 AI分析に戻る
                 </a>
             </div>
         </div>
@@ -22,7 +22,7 @@
         <div class="col-12">
             <div class="card border-success">
                 <div class="card-header bg-success text-white">
-                    <h4 class="mb-0"><i class="fas fa-target"></i> あなた専用の学習プラン</h4>
+                    <h4 class="mb-0">🎩 あなた専用の学習プラン</h4>
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -39,13 +39,13 @@
                             
                             {% if plan.motivation_message %}
                             <div class="alert alert-light mt-3">
-                                <i class="fas fa-heart text-danger"></i> {{ plan.motivation_message }}
+                                ❤️ {{ plan.motivation_message }}
                             </div>
                             {% endif %}
                         </div>
                         <div class="col-md-4 text-center">
                             <div class="study-plan-icon">
-                                <i class="fas fa-graduation-cap fa-4x text-success"></i>
+                                🎓
                             </div>
                         </div>
                     </div>
@@ -61,7 +61,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4><i class="fas fa-calendar-week text-primary"></i> 週間学習スケジュール</h4>
+                    <h4>📅 週間学習スケジュール</h4>
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -74,11 +74,11 @@
                                 <div class="card-body text-center">
                                     <div class="day-type-icon mb-2">
                                         {% if day_plan.type == 'intensive' %}
-                                            <i class="fas fa-fire fa-2x text-warning"></i>
+                                            🔥
                                         {% elif day_plan.type == 'balanced' %}
-                                            <i class="fas fa-balance-scale fa-2x text-info"></i>
+                                            ⚖️
                                         {% else %}
-                                            <i class="fas fa-feather-alt fa-2x text-muted"></i>
+                                            🪶
                                         {% endif %}
                                     </div>
                                     <h6>{{ day_plan.description }}</h6>
@@ -94,15 +94,15 @@
                                     </p>
                                     {% if day_plan.type == 'intensive' %}
                                     <a href="{{ url_for('adaptive_quiz', mode='foundation') }}" class="btn btn-sm btn-warning">
-                                        <i class="fas fa-play"></i> 開始
+                                        ▶️ 開始
                                     </a>
                                     {% elif day_plan.type == 'balanced' %}
                                     <a href="{{ url_for('adaptive_quiz', mode='balanced') }}" class="btn btn-sm btn-info">
-                                        <i class="fas fa-play"></i> 開始
+                                        ▶️ 開始
                                     </a>
                                     {% else %}
                                     <a href="{{ url_for('adaptive_quiz', mode='review') }}" class="btn btn-sm btn-outline-secondary">
-                                        <i class="fas fa-play"></i> 開始
+                                        ▶️ 開始
                                     </a>
                                     {% endif %}
                                 </div>
@@ -122,18 +122,18 @@
         <div class="col-md-6">
             <div class="card h-100">
                 <div class="card-header bg-warning text-white">
-                    <h5 class="mb-0"><i class="fas fa-bullseye"></i> 最優先改善分野</h5>
+                    <h5 class="mb-0">🎯 最優先改善分野</h5>
                 </div>
                 <div class="card-body">
                     <h4 class="text-warning">{{ plan.primary_focus.category }}</h4>
                     
                     <div class="strategy-item mb-3">
-                        <h6><i class="fas fa-chart-line"></i> 推奨学習量</h6>
+                        <h6>📈 推奨学習量</h6>
                         <p>1日 <strong>{{ plan.primary_focus.recommended_questions }}問</strong></p>
                     </div>
                     
                     <div class="strategy-item mb-3">
-                        <h6><i class="fas fa-road"></i> 学習アプローチ</h6>
+                        <h6>🛣️ 学習アプローチ</h6>
                         <p>
                             {% if plan.primary_focus.study_approach == 'intensive_study' %}
                                 <span class="badge badge-danger">集中学習</span>
@@ -149,13 +149,13 @@
                     </div>
                     
                     <div class="strategy-item mb-3">
-                        <h6><i class="fas fa-clock"></i> 改善予想期間</h6>
+                        <h6>🕰️ 改善予想期間</h6>
                         <p><strong>{{ plan.primary_focus.expected_improvement_days }}日</strong>で改善が期待できます</p>
                     </div>
                     
                     <div class="text-center mt-3">
                         <a href="{{ url_for('quiz', category=plan.primary_focus.category) }}" class="btn btn-warning">
-                            <i class="fas fa-play-circle"></i> この分野で学習開始
+                            ▶️ この分野で学習開始
                         </a>
                     </div>
                 </div>
@@ -165,11 +165,11 @@
         <div class="col-md-6">
             <div class="card h-100">
                 <div class="card-header bg-info text-white">
-                    <h5 class="mb-0"><i class="fas fa-tips"></i> 学習のコツ</h5>
+                    <h5 class="mb-0">💡 学習のコツ</h5>
                 </div>
                 <div class="card-body">
                     <div class="tip-item mb-3">
-                        <h6><i class="fas fa-lightbulb text-warning"></i> 効果的な学習法</h6>
+                        <h6>💡 効果的な学習法</h6>
                         <ul class="list-unstyled">
                             <li>• 間違えた問題は必ず解説を確認</li>
                             <li>• 時間を意識して解答練習</li>
@@ -178,7 +178,7 @@
                     </div>
                     
                     <div class="tip-item mb-3">
-                        <h6><i class="fas fa-calendar-check text-success"></i> 学習リズム</h6>
+                        <h6>✅ 学習リズム</h6>
                         <ul class="list-unstyled">
                             <li>• 毎日同じ時間に学習</li>
                             <li>• 短時間でも継続を重視</li>
@@ -187,7 +187,7 @@
                     </div>
                     
                     <div class="tip-item">
-                        <h6><i class="fas fa-trophy text-warning"></i> モチベーション維持</h6>
+                        <h6>🏆 モチベーション維持</h6>
                         <ul class="list-unstyled">
                             <li>• 小さな進歩を記録</li>
                             <li>• バッジ獲得を目標に</li>
@@ -205,7 +205,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4><i class="fas fa-chart-bar text-info"></i> 進捗追跡</h4>
+                    <h4>📊 進捗追跡</h4>
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -251,17 +251,17 @@
         <div class="col-12 text-center">
             {% if plan and plan.primary_focus %}
             <a href="{{ url_for('adaptive_quiz', mode='foundation') }}" class="btn btn-lg btn-warning mr-2">
-                <i class="fas fa-rocket"></i> 弱点克服学習を開始
+                🚀 弱点克服学習を開始
             </a>
             {% endif %}
             <a href="{{ url_for('adaptive_quiz', mode='balanced') }}" class="btn btn-lg btn-primary mr-2">
-                <i class="fas fa-brain"></i> AI適応学習を開始
+                🧠 AI適応学習を開始
             </a>
             <a href="{{ url_for('achievements') }}" class="btn btn-lg btn-success mr-2">
-                <i class="fas fa-trophy"></i> 学習記録を確認
+                🏆 学習記録を確認
             </a>
             <a href="{{ url_for('statistics') }}" class="btn btn-lg btn-info">
-                <i class="fas fa-chart-line"></i> 詳細統計
+                📈 詳細統計
             </a>
         </div>
     </div>

@@ -6,12 +6,12 @@
     <!-- ヘッダー -->
     <div class="row mb-4">
         <div class="col-md-8">
-            <h1 class="mb-2"><i class="fas fa-bookmark text-warning me-2"></i>復習リスト</h1>
+            <h1 class="mb-2">🔖 復習リスト</h1>
             <p class="text-muted">間違えた問題を繰り返し学習して完全にマスターしましょう</p>
         </div>
         <div class="col-md-4 text-end">
             <a href="/" class="btn btn-outline-secondary me-2">
-                <i class="fas fa-home me-1"></i>ホーム
+                🏠 ホーム
             </a>
         </div>
     </div>
@@ -20,12 +20,12 @@
     <!-- 復習リストが空の場合 -->
     <div class="alert alert-info text-center">
         <div class="mb-3">
-            <i class="fas fa-check-circle text-success" style="font-size: 3rem;"></i>
+            ✅
         </div>
         <h4 class="alert-heading">素晴らしい！復習リストが空です</h4>
         <p class="mb-3">{{ message }}</p>
         <a href="/exam" class="btn btn-primary btn-lg">
-            <i class="fas fa-play me-2"></i>新しい問題に挑戦
+            ▶️ 新しい問題に挑戦
         </a>
     </div>
     {% else %}
@@ -35,21 +35,21 @@
         <div class="row align-items-center">
             <div class="col-md-8">
                 <h4 class="mb-2">
-                    <i class="fas fa-calendar-check me-2"></i>🎯 今日復習すべき問題: 
+                    📅 今日復習すべき問題: 
                     <span class="badge bg-danger fs-5 ms-2">{{ due_today_count or 0 }}問</span>
                 </h4>
                 <p class="mb-0 text-muted">
-                    <i class="fas fa-brain me-1"></i>科学的な間隔反復システムが最適タイミングで選択した問題です
+                    🧠 科学的な間隔反復システムが最適タイミングで選択した問題です
                 </p>
             </div>
             <div class="col-md-4 text-center">
                 {% if due_today_count and due_today_count > 0 %}
                 <a href="/exam/review" class="btn btn-success btn-lg w-100">
-                    <i class="fas fa-play me-2"></i>復習開始
+                    ▶️ 復習開始
                 </a>
                 {% else %}
                 <div class="text-success">
-                    <i class="fas fa-check-circle" style="font-size: 2rem;"></i>
+                    ✅
                     <div>今日の復習完了！</div>
                 </div>
                 {% endif %}
@@ -110,7 +110,7 @@
     <!-- 🔥 ULTRA SYNC IMPROVEMENT 3: 部門別復習 -->
     <div class="card mb-4">
         <div class="card-header bg-info text-white">
-            <h5 class="mb-0"><i class="fas fa-chart-pie me-2"></i>🎯 部門別弱点分析</h5>
+            <h5 class="mb-0">📊 部門別弱点分析</h5>
         </div>
         <div class="card-body">
             {% if department_stats %}
@@ -126,7 +126,7 @@
                             </div>
                             {% if stats.weak_count > 0 %}
                             <a href="/exam/review?department={{ dept }}" class="btn btn-warning btn-sm">
-                                <i class="fas fa-target me-1"></i>集中復習
+                                🎯 集中復習
                             </a>
                             {% else %}
                             <span class="text-success small">✅ マスター済み</span>
@@ -140,7 +140,7 @@
             
             <div class="text-center mt-3">
                 <a href="/exam/review" class="btn btn-success btn-lg px-5">
-                    <i class="fas fa-play me-2"></i>全部門統合復習
+                    ▶️ 全部門統合復習
                 </a>
             </div>
         </div>
@@ -149,7 +149,7 @@
     <!-- 復習問題リスト -->
     <div class="card">
         <div class="card-header bg-warning text-dark">
-            <h5 class="mb-0"><i class="fas fa-bookmark me-2"></i>復習が必要な問題（{{ total_count }}問）</h5>
+            <h5 class="mb-0">🔖 復習が必要な問題（{{ total_count }}問）</h5>
             <small class="text-muted">間違えた問題を復習して完全マスターを目指しましょう</small>
         </div>
         <div class="card-body">
@@ -182,7 +182,7 @@
                             {% if question.next_review %}
                             <div class="alert alert-info py-1 px-2 mb-2">
                                 <small>
-                                    <i class="fas fa-clock me-1 text-primary"></i>
+                                    🕰️
                                     <strong>次回復習予定:</strong> 
                                     {% if question.get('next_review') %}
                                         {% set next_review_str = question.get('next_review', '') %}
@@ -219,12 +219,12 @@
                     </div>
                     <div class="review-action">
                         <a href="/exam?qid={{ question.id }}" class="btn btn-warning btn-sm fw-bold">
-                            <i class="fas fa-redo me-1"></i>再挑戦
+                            🔄 再挑戦
                         </a>
                         {% if show_srs_details and question.correct_count >= 4 %}
                         <div class="mt-1">
                             <small class="text-success">
-                                <i class="fas fa-star"></i> あと1回正解でマスター！
+                                ⭐ あと1回正解でマスター！
                             </small>
                         </div>
                         {% endif %}
@@ -241,14 +241,14 @@
                         <h6 class="mb-0">
                             <button class="btn btn-link text-white p-0" type="button" data-bs-toggle="collapse" data-bs-target="#masteredQuestions">
                                 🏆 マスター済み問題 ({{ mastered_questions|length }}問) 
-                                <i class="fas fa-chevron-down"></i>
+                                🔽
                             </button>
                         </h6>
                     </div>
                     <div class="collapse" id="masteredQuestions">
                         <div class="card-body">
                             <p class="text-success mb-3">
-                                <i class="fas fa-trophy me-2"></i>
+                                🏆
                                 おめでとうございます！これらの問題は5回連続正解してマスターレベルに到達しました。
                             </p>
                             {% for question in mastered_questions %}
@@ -262,7 +262,7 @@
                                         {% endif %}
                                     </div>
                                     <small class="text-success">
-                                        <i class="fas fa-check-circle"></i> {{ question.correct_count }}回正解
+                                        ✅ {{ question.correct_count }}回正解
                                     </small>
                                 </div>
                             </div>

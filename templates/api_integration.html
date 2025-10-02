@@ -106,11 +106,11 @@
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
                     <div class="container">
                         <a class="navbar-brand" href="/">
-                            <i class="fas fa-plug me-2"></i>API統合・プロフェッショナル機能
+                            🔌 API統合・プロフェッショナル機能
                         </a>
                         <div class="d-flex">
                             <a href="/" class="btn btn-outline-primary">
-                                <i class="fas fa-arrow-left me-2"></i>メインに戻る
+                                ⬅️ メインに戻る
                             </a>
                         </div>
                     </div>
@@ -123,27 +123,27 @@
             <ul class="nav nav-pills justify-content-center mb-4">
                 <li class="nav-item">
                     <a class="nav-link active" href="#api-management" data-bs-toggle="pill">
-                        <i class="fas fa-key me-2"></i>API管理
+                        🔑 API管理
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#certifications" data-bs-toggle="pill">
-                        <i class="fas fa-certificate me-2"></i>認定追跡
+                        🏅 認定追跡
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#reports" data-bs-toggle="pill">
-                        <i class="fas fa-chart-bar me-2"></i>進捗レポート
+                        📊 進捗レポート
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#organizations" data-bs-toggle="pill">
-                        <i class="fas fa-building me-2"></i>組織管理
+                        🏢 組織管理
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#integrations" data-bs-toggle="pill">
-                        <i class="fas fa-link me-2"></i>外部連携
+                        🔗 外部連携
                     </a>
                 </li>
             </ul>
@@ -153,12 +153,12 @@
                 <div class="tab-pane fade show active" id="api-management">
                     <div class="row mb-4">
                         <div class="col-md-8">
-                            <h2><i class="fas fa-key me-2"></i>API管理</h2>
+                            <h2>🔑 API管理</h2>
                             <p class="text-muted">外部システム連携用のAPIキーを管理します</p>
                         </div>
                         <div class="col-md-4 text-end">
                             <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createApiKeyModal">
-                                <i class="fas fa-plus me-2"></i>新規APIキー生成
+                                ➕ 新規APIキー生成
                             </button>
                         </div>
                     </div>
@@ -168,7 +168,7 @@
                         <div class="col-md-3">
                             <div class="card integration-card api-card">
                                 <div class="card-body text-center">
-                                    <i class="fas fa-code fa-3x mb-3"></i>
+                                    💻
                                     <h4>RESTful API</h4>
                                     <p>標準的なHTTP APIエンドポイント</p>
                                 </div>
@@ -177,7 +177,7 @@
                         <div class="col-md-3">
                             <div class="card integration-card">
                                 <div class="card-body text-center">
-                                    <i class="fas fa-shield-alt fa-3x mb-3 text-success"></i>
+                                    🛡️
                                     <h4>認証保護</h4>
                                     <p>APIキーベースの安全な認証</p>
                                 </div>
@@ -186,7 +186,7 @@
                         <div class="col-md-3">
                             <div class="card integration-card">
                                 <div class="card-body text-center">
-                                    <i class="fas fa-tachometer-alt fa-3x mb-3 text-warning"></i>
+                                    ⚡
                                     <h4>レート制限</h4>
                                     <p>1時間あたり1000リクエスト</p>
                                 </div>
@@ -195,7 +195,7 @@
                         <div class="col-md-3">
                             <div class="card integration-card">
                                 <div class="card-body text-center">
-                                    <i class="fas fa-file-code fa-3x mb-3 text-info"></i>
+                                    📄
                                     <h4>JSON形式</h4>
                                     <p>構造化されたデータ交換</p>
                                 </div>
@@ -232,7 +232,7 @@
                                                         <td>
                                                             <code class="small">{{ key_info.api_key[:20] }}...</code>
                                                             <button class="btn btn-sm btn-outline-secondary ms-2" onclick="copyApiKey('{{ key_info.api_key }}')">
-                                                                <i class="fas fa-copy"></i>
+                                                                📋
                                                             </button>
                                                         </td>
                                                         <td>
@@ -250,7 +250,7 @@
                                                         </td>
                                                         <td>
                                                             <button class="btn btn-sm btn-outline-danger" onclick="revokeApiKey('{{ key_info.api_key }}')">
-                                                                <i class="fas fa-ban"></i> 無効化
+                                                                🚫 無効化
                                                             </button>
                                                         </td>
                                                     </tr>
@@ -297,12 +297,12 @@
                 <div class="tab-pane fade" id="certifications">
                     <div class="row mb-4">
                         <div class="col-md-8">
-                            <h2><i class="fas fa-certificate me-2"></i>認定追跡</h2>
+                            <h2>🏅 認定追跡</h2>
                             <p class="text-muted">学習者の認定プログラム進捗を追跡・管理します</p>
                         </div>
                         <div class="col-md-4 text-end">
                             <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createCertificationModal">
-                                <i class="fas fa-plus me-2"></i>認定プログラム作成
+                                ➕ 認定プログラム作成
                             </button>
                         </div>
                     </div>
@@ -372,7 +372,7 @@
                                         {% endfor %}
                                     {% else %}
                                         <div class="alert alert-info">
-                                            <i class="fas fa-info-circle me-2"></i>
+                                            ℹ️
                                             まだ認定プログラムが作成されていません。新しいプログラムを作成してください。
                                         </div>
                                     {% endif %}
@@ -386,13 +386,13 @@
                 <div class="tab-pane fade" id="reports">
                     <div class="row mb-4">
                         <div class="col-md-8">
-                            <h2><i class="fas fa-chart-bar me-2"></i>進捗レポート</h2>
+                            <h2>📊 進捗レポート</h2>
                             <p class="text-muted">詳細な学習進捗レポートを生成・エクスポートします</p>
                         </div>
                         <div class="col-md-4 text-end">
                             <div class="btn-group">
                                 <button class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
-                                    <i class="fas fa-download me-2"></i>レポート生成
+                                    📁 レポート生成
                                 </button>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="#" onclick="generateReport('individual')">個人レポート</a></li>
@@ -408,7 +408,7 @@
                         <div class="col-md-4">
                             <div class="card integration-card reporting-card">
                                 <div class="card-body text-center">
-                                    <i class="fas fa-user fa-3x mb-3"></i>
+                                    👤
                                     <h4>個人レポート</h4>
                                     <p>個別学習者の詳細分析</p>
                                     <button class="btn btn-light btn-sm" onclick="showReportForm('individual')">
@@ -420,7 +420,7 @@
                         <div class="col-md-4">
                             <div class="card integration-card">
                                 <div class="card-body text-center">
-                                    <i class="fas fa-building fa-3x mb-3 text-info"></i>
+                                    🏢
                                     <h4>組織レポート</h4>
                                     <p>組織全体の学習状況</p>
                                     <button class="btn btn-outline-info btn-sm" onclick="showReportForm('organization')">
@@ -432,7 +432,7 @@
                         <div class="col-md-4">
                             <div class="card integration-card">
                                 <div class="card-body text-center">
-                                    <i class="fas fa-chart-line fa-3x mb-3 text-success"></i>
+                                    📈
                                     <h4>分析レポート</h4>
                                     <p>トレンドと改善提案</p>
                                     <button class="btn btn-outline-success btn-sm" onclick="showReportForm('analytics')">
@@ -472,7 +472,7 @@
                                                         <td>{{ report.format }}</td>
                                                         <td>
                                                             <button class="btn btn-sm btn-outline-primary" onclick="downloadReport('{{ report.id }}')">
-                                                                <i class="fas fa-download"></i>
+                                                                📁
                                                             </button>
                                                         </td>
                                                     </tr>
@@ -534,12 +534,12 @@
                 <div class="tab-pane fade" id="organizations">
                     <div class="row mb-4">
                         <div class="col-md-8">
-                            <h2><i class="fas fa-building me-2"></i>組織管理</h2>
+                            <h2>🏢 組織管理</h2>
                             <p class="text-muted">企業・教育機関の学習管理を行います</p>
                         </div>
                         <div class="col-md-4 text-end">
                             <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createOrganizationModal">
-                                <i class="fas fa-plus me-2"></i>組織追加
+                                ➕ 組織追加
                             </button>
                         </div>
                     </div>
@@ -575,7 +575,7 @@
                         {% else %}
                             <div class="col-12">
                                 <div class="alert alert-info">
-                                    <i class="fas fa-info-circle me-2"></i>
+                                    ℹ️
                                     まだ組織が登録されていません。新しい組織を追加してください。
                                 </div>
                             </div>
@@ -587,12 +587,12 @@
                 <div class="tab-pane fade" id="integrations">
                     <div class="row mb-4">
                         <div class="col-md-8">
-                            <h2><i class="fas fa-link me-2"></i>外部システム連携</h2>
+                            <h2>🔗 外部システム連携</h2>
                             <p class="text-muted">LMSや他の学習システムとの連携を設定します</p>
                         </div>
                         <div class="col-md-4 text-end">
                             <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#setupIntegrationModal">
-                                <i class="fas fa-plus me-2"></i>連携設定
+                                ➕ 連携設定
                             </button>
                         </div>
                     </div>
@@ -603,7 +603,7 @@
                             <div class="card integration-card">
                                 <div class="card-body text-center">
                                     <div class="lms-logo bg-primary d-inline-flex align-items-center justify-content-center">
-                                        <i class="fas fa-graduation-cap text-white fa-2x"></i>
+                                        🎓
                                     </div>
                                     <h5>Moodle</h5>
                                     <p class="text-muted">オープンソースLMS</p>
@@ -615,7 +615,7 @@
                             <div class="card integration-card">
                                 <div class="card-body text-center">
                                     <div class="lms-logo bg-info d-inline-flex align-items-center justify-content-center">
-                                        <i class="fas fa-paint-brush text-white fa-2x"></i>
+                                        🎨
                                     </div>
                                     <h5>Canvas</h5>
                                     <p class="text-muted">クラウドベースLMS</p>
@@ -627,7 +627,7 @@
                             <div class="card integration-card">
                                 <div class="card-body text-center">
                                     <div class="lms-logo bg-dark d-inline-flex align-items-center justify-content-center">
-                                        <i class="fas fa-chalkboard text-white fa-2x"></i>
+                                        📚
                                     </div>
                                     <h5>Blackboard</h5>
                                     <p class="text-muted">エンタープライズLMS</p>
@@ -646,19 +646,19 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="integration-step">
-                                        <h6><i class="fas fa-key me-2"></i>ステップ 1: APIキー生成</h6>
+                                        <h6>🔑 ステップ 1: APIキー生成</h6>
                                         <p>連携したい外部システム用のAPIキーを生成し、適切な権限を設定します。</p>
                                     </div>
                                     <div class="integration-step">
-                                        <h6><i class="fas fa-cog me-2"></i>ステップ 2: 連携設定</h6>
+                                        <h6>⚙️ ステップ 2: 連携設定</h6>
                                         <p>外部システムの接続情報を設定し、データ同期の頻度とタイプを指定します。</p>
                                     </div>
                                     <div class="integration-step">
-                                        <h6><i class="fas fa-sync me-2"></i>ステップ 3: 初期同期</h6>
+                                        <h6>🔄 ステップ 3: 初期同期</h6>
                                         <p>設定完了後、初期同期を実行してデータの整合性を確認します。</p>
                                     </div>
                                     <div class="integration-step">
-                                        <h6><i class="fas fa-check me-2"></i>ステップ 4: 動作確認</h6>
+                                        <h6>✅ ステップ 4: 動作確認</h6>
                                         <p>学習進捗データが正しく同期されることを確認し、運用を開始します。</p>
                                     </div>
                                 </div>

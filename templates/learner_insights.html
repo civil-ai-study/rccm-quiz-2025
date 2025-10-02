@@ -10,14 +10,14 @@
             <div class="card border-info mb-4">
                 <div class="card-header bg-info text-white">
                     <h3 class="mb-0">
-                        <i class="fas fa-user-graduate"></i> 学習者レベル・インサイト
+                        🎓 学習者レベル・インサイト
                     </h3>
                     <p class="mb-0 small">動的難易度制御による詳細分析</p>
                 </div>
                 <div class="card-body">
                     {% if department %}
                     <div class="alert alert-info">
-                        <i class="fas fa-building"></i>
+                        🏢
                         <strong>分析対象部門:</strong> {{ departments.get(department, {}).get('name', department) }}
                     </div>
                     {% endif %}
@@ -28,7 +28,7 @@
 
     {% if insights.get('error') %}
     <div class="alert alert-danger">
-        <i class="fas fa-exclamation-triangle"></i>
+        ⚠️
         <strong>エラー:</strong> {{ insights.error }}
     </div>
     {% else %}
@@ -38,7 +38,7 @@
         <div class="col-lg-8">
             <div class="card border-primary">
                 <div class="card-header bg-primary text-white">
-                    <h5 class="mb-0"><i class="fas fa-chart-line"></i> 現在の学習者レベル</h5>
+                    <h5 class="mb-0">📈 現在の学習者レベル</h5>
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -67,7 +67,7 @@
         <div class="col-lg-4">
             <div class="card border-warning">
                 <div class="card-header bg-warning text-dark">
-                    <h6 class="mb-0"><i class="fas fa-clock"></i> 最近のパフォーマンス</h6>
+                    <h6 class="mb-0">🕰️ 最近のパフォーマンス</h6>
                 </div>
                 <div class="card-body">
                     <div class="d-flex justify-content-between">
@@ -100,7 +100,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h5 class="mb-0"><i class="fas fa-microscope"></i> 詳細評価</h5>
+                    <h5 class="mb-0">🔬 詳細評価</h5>
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -149,7 +149,7 @@
         <div class="col-12">
             <div class="card border-success">
                 <div class="card-header bg-success text-white">
-                    <h5 class="mb-0"><i class="fas fa-cogs"></i> 動的セッション設定</h5>
+                    <h5 class="mb-0">⚙️ 動的セッション設定</h5>
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -209,13 +209,13 @@
         <div class="col-12">
             <div class="card border-warning">
                 <div class="card-header bg-warning text-dark">
-                    <h5 class="mb-0"><i class="fas fa-lightbulb"></i> 学習推奨事項</h5>
+                    <h5 class="mb-0">💡 学習推奨事項</h5>
                 </div>
                 <div class="card-body">
                     <ul class="list-group list-group-flush">
                         {% for recommendation in insights.study_recommendations %}
                         <li class="list-group-item">
-                            <i class="fas fa-check-circle text-success"></i>
+                            ✅
                             {{ recommendation }}
                         </li>
                         {% endfor %}
@@ -230,7 +230,7 @@
     <div class="row mb-4">
         <div class="col-12">
             <div class="alert alert-info">
-                <i class="fas fa-info-circle"></i>
+                ℹ️
                 <strong>次回難易度調整まで:</strong> あと{{ insights.next_adjustment_threshold }}問の学習が必要です
             </div>
         </div>
@@ -243,14 +243,14 @@
         <div class="col-12">
             <div class="d-flex justify-content-between">
                 <a href="{{ url_for('index') }}" class="btn btn-secondary">
-                    <i class="fas fa-arrow-left"></i> ホームに戻る
+                    ⬅️ ホームに戻る
                 </a>
                 <div>
                     <a href="{{ url_for('ai_analysis') }}" class="btn btn-outline-warning">
-                        <i class="fas fa-chart-line"></i> AI弱点分析
+                        📈 AI弱点分析
                     </a>
                     <a href="{{ url_for('adaptive_quiz') }}" class="btn btn-outline-success">
-                        <i class="fas fa-brain"></i> AI適応学習開始
+                        🧠 AI適応学習開始
                     </a>
                 </div>
             </div>

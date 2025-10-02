@@ -16,13 +16,13 @@
             <div class="card border-primary mb-4">
                 <div class="card-header bg-primary text-white">
                     <h3 class="mb-0">
-                        <i class="fas fa-building"></i> RCCM専門部門選択
+                        🏢 RCCM専門部門選択
                     </h3>
                     <p class="mb-0 small">学習したい専門部門を選択してください</p>
                 </div>
                 <div class="card-body">
                     <div class="alert alert-info">
-                        <i class="fas fa-info-circle"></i>
+                        ℹ️
                         RCCM（登録建設機械施工技術者）試験の12専門部門から選択できます。<br>
                         各部門で<strong>4-1必須科目（基礎技術）</strong>と<strong>4-2選択科目（専門技術）</strong>の学習が可能です。
                     </div>
@@ -70,19 +70,19 @@
                 <div class="card-footer">
                     <a href="{{ url_for('question_types', department_id=dept_id) }}" 
                        class="btn btn-primary btn-block mb-2">
-                        <i class="fas fa-play"></i> この部門で学習
+                        ▶️ この部門で学習
                     </a>
                     <div class="row">
                         <div class="col-6 pr-1">
                             <a href="{{ url_for('adaptive_questions', department=dept_id, mode='department_mastery') }}" 
                                class="btn btn-outline-success btn-block btn-sm">
-                                <i class="fas fa-brain"></i> AI学習
+                                🧠 AI学習
                             </a>
                         </div>
                         <div class="col-6 pl-1">
                             <a href="{{ url_for('integrated_learning_selection', department=dept_id) }}" 
                                class="btn btn-outline-warning btn-block btn-sm">
-                                <i class="fas fa-link"></i> 連携学習
+                                🔗 連携学習
                             </a>
                         </div>
                     </div>
@@ -97,10 +97,10 @@
         <div class="col-12">
             <div class="d-flex justify-content-between">
                 <a href="{{ url_for('index') }}" class="btn btn-secondary">
-                    <i class="fas fa-arrow-left"></i> ホームに戻る
+                    ⬅️ ホームに戻る
                 </a>
                 <a href="{{ url_for('categories') }}" class="btn btn-outline-primary">
-                    <i class="fas fa-list"></i> 従来のカテゴリ別学習
+                    📋 従来のカテゴリ別学習
                 </a>
             </div>
         </div>

@@ -5,13 +5,13 @@
     <div class="row">
         <div class="col-12">
             <div class="d-flex justify-content-between align-items-center mb-4">
-                <h2><i class="fas fa-building me-2"></i>企業ダッシュボード</h2>
+                <h2>🏢 企業ダッシュボード</h2>
                 <div>
                     <button class="btn btn-primary me-2" onclick="exportReport()">
-                        <i class="fas fa-download me-1"></i>レポート出力
+                        📁 レポート出力
                     </button>
                     <button class="btn btn-outline-secondary" onclick="refreshData()">
-                        <i class="fas fa-sync me-1"></i>更新
+                        🔄 更新
                     </button>
                 </div>
             </div>
@@ -29,7 +29,7 @@
                             <p class="mb-0">総ユーザー数</p>
                         </div>
                         <div class="align-self-center">
-                            <i class="fas fa-users fa-2x"></i>
+                            👥
                         </div>
                     </div>
                 </div>
@@ -44,7 +44,7 @@
                             <p class="mb-0">アクティブユーザー</p>
                         </div>
                         <div class="align-self-center">
-                            <i class="fas fa-user-check fa-2x"></i>
+                            ✅
                         </div>
                     </div>
                 </div>
@@ -59,7 +59,7 @@
                             <p class="mb-0">平均解答数</p>
                         </div>
                         <div class="align-self-center">
-                            <i class="fas fa-chart-line fa-2x"></i>
+                            📈
                         </div>
                     </div>
                 </div>
@@ -74,7 +74,7 @@
                             <p class="mb-0">平均正答率</p>
                         </div>
                         <div class="align-self-center">
-                            <i class="fas fa-percentage fa-2x"></i>
+                            💯
                         </div>
                     </div>
                 </div>
@@ -87,7 +87,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h5><i class="fas fa-table me-2"></i>ユーザー詳細</h5>
+                    <h5>📊 ユーザー詳細</h5>
                 </div>
                 <div class="card-body">
                     {% if users %}
@@ -136,10 +136,10 @@
                                     </td>
                                     <td>
                                         <button class="btn btn-sm btn-outline-info" onclick="viewUserDetail('{{ user.user_id }}')">
-                                            <i class="fas fa-eye"></i>
+                                            👁️
                                         </button>
                                         <button class="btn btn-sm btn-outline-primary" onclick="exportUserReport('{{ user.user_id }}')">
-                                            <i class="fas fa-download"></i>
+                                            📁
                                         </button>
                                     </td>
                                 </tr>
@@ -149,7 +149,7 @@
                     </div>
                     {% else %}
                     <div class="alert alert-info">
-                        <i class="fas fa-info-circle me-2"></i>
+                        ℹ️
                         ユーザーデータがありません。
                     </div>
                     {% endif %}

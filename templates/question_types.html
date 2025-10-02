@@ -26,7 +26,7 @@
                 </div>
                 <div class="card-body">
                     <div class="alert alert-info">
-                        <i class="fas fa-info-circle"></i>
+                        ℹ️
                         <strong>4-1必須科目</strong>は土木工学基礎知識、<strong>4-2選択科目</strong>は各部門の専門技術を学習します。
                     </div>
                 </div>
@@ -96,7 +96,7 @@
                 <div class="card-footer">
                     <a href="{{ url_for('exam', department=department.id, question_type=type_id, category='all') }}" 
                        class="btn btn-primary btn-block">
-                        <i class="fas fa-play"></i> {{ type_info.name }}を学習開始
+                        ▶️ {{ type_info.name }}を学習開始
                     </a>
                 </div>
             </div>
@@ -109,14 +109,14 @@
         <div class="col-12">
             <div class="d-flex justify-content-between">
                 <a href="{{ url_for('departments') }}" class="btn btn-secondary">
-                    <i class="fas fa-arrow-left"></i> 部門選択に戻る
+                    ⬅️ 部門選択に戻る
                 </a>
                 <div>
                     <a href="{{ url_for('statistics') }}" class="btn btn-outline-info">
-                        <i class="fas fa-chart-bar"></i> 学習統計
+                        📊 学習統計
                     </a>
                     <a href="{{ url_for('ai_analysis') }}" class="btn btn-outline-success">
-                        <i class="fas fa-brain"></i> AI分析
+                        🧠 AI分析
                     </a>
                 </div>
             </div>

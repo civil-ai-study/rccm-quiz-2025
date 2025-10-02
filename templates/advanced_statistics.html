@@ -8,13 +8,13 @@
     <div class="row">
         <div class="col-12">
             <div class="d-flex justify-content-between align-items-center mb-4">
-                <h2><i class="fas fa-chart-line text-primary"></i> 高度な統計分析</h2>
+                <h2>📊 高度な統計分析</h2>
                 <div>
                     <button class="btn btn-outline-secondary me-2" onclick="exportReport()">
-                        <i class="fas fa-download"></i> レポート出力
+                        💾 レポート出力
                     </button>
                     <a href="{{ url_for('index') }}" class="btn btn-primary">
-                        <i class="fas fa-home"></i> ホームに戻る
+                        🏠 ホームに戻る
                     </a>
                 </div>
             </div>
@@ -26,11 +26,11 @@
     <div class="row">
         <div class="col-12">
             <div class="alert alert-info text-center py-5">
-                <i class="fas fa-info-circle fa-3x text-info mb-3"></i>
+                ℹ️
                 <h4>データが不足しています</h4>
                 <p class="mb-3">{{ report.message }}</p>
                 <a href="{{ url_for('quiz') }}" class="btn btn-primary btn-lg">
-                    <i class="fas fa-play"></i> 問題を始める
+                    ▶️ 問題を始める
                 </a>
             </div>
         </div>
@@ -44,7 +44,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6">
-                            <h6><i class="fas fa-info-circle text-primary"></i> レポート情報</h6>
+                            <h6>ℹ️ レポート情報</h6>
                             <ul class="list-unstyled">
                                 <li><strong>レポートID:</strong> {{ report.report_id }}</li>
                                 <li><strong>生成日時:</strong> {{ report.generated_at[:19]|replace('T', ' ') }}</li>
@@ -56,7 +56,7 @@
                             </ul>
                         </div>
                         <div class="col-md-6">
-                            <h6><i class="fas fa-chart-bar text-success"></i> 基本統計</h6>
+                            <h6>📊 基本統計</h6>
                             <ul class="list-unstyled">
                                 <li><strong>総問題数:</strong> {{ report.basic_statistics.total_questions }}問</li>
                                 <li><strong>全体正答率:</strong> {{ (report.basic_statistics.overall_accuracy * 100)|round(1) }}%</li>
@@ -76,7 +76,7 @@
             <div class="card performance-overview-card h-100">
                 <div class="card-header bg-primary text-white">
                     <h5 class="mb-0">
-                        <i class="fas fa-tachometer-alt"></i> パフォーマンス概要
+                        🏎️ パフォーマンス概要
                     </h5>
                 </div>
                 <div class="card-body">
@@ -87,11 +87,11 @@
                                 <div class="metric-label">全体正答率</div>
                                 <div class="metric-trend">
                                     {% if report.basic_statistics.improvement_rate > 0 %}
-                                        <i class="fas fa-arrow-up text-success"></i> +{{ (report.basic_statistics.improvement_rate * 100)|round(1) }}%
+                                        ⬆️ +{{ (report.basic_statistics.improvement_rate * 100)|round(1) }}%
                                     {% elif report.basic_statistics.improvement_rate < 0 %}
-                                        <i class="fas fa-arrow-down text-danger"></i> {{ (report.basic_statistics.improvement_rate * 100)|round(1) }}%
+                                        ⬇️ {{ (report.basic_statistics.improvement_rate * 100)|round(1) }}%
                                     {% else %}
-                                        <i class="fas fa-minus text-muted"></i> 変化なし
+                                        ➖ 変化なし
                                     {% endif %}
                                 </div>
                             </div>

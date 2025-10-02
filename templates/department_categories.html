@@ -32,8 +32,7 @@
                     <div class="row">
                         <div class="col-md-8">
                             <div class="alert alert-primary">
-                                <i class="fas fa-info-circle"></i>
-                                <strong>{{ question_type.full_name }}</strong>のカテゴリ別学習<br>
+                                ℹ️ <strong>{{ question_type.full_name }}</strong>のカテゴリ別学習<br>
                                 総問題数: <strong>{{ total_questions }}問</strong>
                             </div>
                         </div>
@@ -41,12 +40,12 @@
                             <div class="text-center">
                                 <a href="{{ url_for('exam', department=department.id, question_type=question_type.id, category='all') }}" 
                                    class="btn btn-success btn-lg mb-2">
-                                    <i class="fas fa-play"></i> すぐに問題を解く
+                                    ▶️ すぐに問題を解く
                                 </a>
                                 {% if question_type.id == 'specialist' %}
                                 <div class="mt-2">
                                     <button class="btn btn-outline-info btn-sm" onclick="toggleYearSelection()">
-                                        <i class="fas fa-calendar"></i> 年度別問題を選択
+                                        📅 年度別問題を選択
                                     </button>
                                 </div>
                                 {% endif %}
@@ -60,7 +59,7 @@
                         <div class="col-12">
                             <div class="card border-info">
                                 <div class="card-header bg-info text-white">
-                                    <h5 class="mb-0"><i class="fas fa-calendar"></i> 年度別問題選択</h5>
+                                    <h5 class="mb-0">📅 年度別問題選択</h5>
                                 </div>
                                 <div class="card-body">
                                     <div class="row">
@@ -68,7 +67,7 @@
                                         <div class="col-lg-3 col-md-4 col-sm-6 mb-2">
                                             <a href="{{ url_for('exam', department=department.id|urlencode, question_type=question_type.id, year=year) }}" 
                                                class="btn btn-outline-primary btn-block year-btn">
-                                                <i class="fas fa-calendar-alt"></i> {{ year }}年度
+                                                📅 {{ year }}年度
                                             </a>
                                         </div>
                                         {% endfor %}
@@ -91,8 +90,7 @@
             <div class="card h-100 category-card" data-category="{{ category }}">
                 <div class="card-header bg-light">
                     <h5 class="mb-0 text-primary">
-                        <i class="fas fa-folder"></i>
-                        {{ category }}
+                        📁 {{ category }}
                     </h5>
                 </div>
                 <div class="card-body">
@@ -168,7 +166,7 @@
                     </div>
                     {% else %}
                     <div class="text-center text-muted mb-3">
-                        <i class="fas fa-question-circle fa-2x"></i>
+                        ❓
                         <div>まだ学習していません</div>
                     </div>
                     {% endif %}
@@ -176,7 +174,7 @@
                 <div class="card-footer">
                     <a href="{{ url_for('exam', department=department.id, question_type=question_type.id, category=category) }}" 
                        class="btn btn-primary btn-block">
-                        <i class="fas fa-play"></i> {{ category }}を学習
+                        ▶️ {{ category }}を学習
                     </a>
                 </div>
             </div>
@@ -187,11 +185,11 @@
     <div class="row">
         <div class="col-12">
             <div class="alert alert-warning text-center">
-                <i class="fas fa-exclamation-triangle fa-2x mb-3"></i>
+                ⚠️
                 <h4>該当する問題が見つかりません</h4>
                 <p>この部門・問題種別の組み合わせではまだ問題が登録されていません。</p>
                 <a href="{{ url_for('question_types', department_id=department.id) }}" class="btn btn-primary">
-                    <i class="fas fa-arrow-left"></i> 問題種別選択に戻る
+                    ⬅️ 問題種別選択に戻る
                 </a>
             </div>
         </div>
@@ -203,14 +201,14 @@
         <div class="col-12">
             <div class="d-flex justify-content-between">
                 <a href="{{ url_for('question_types', department_id=department.id) }}" class="btn btn-secondary">
-                    <i class="fas fa-arrow-left"></i> 問題種別選択に戻る
+                    ⬅️ 問題種別選択に戻る
                 </a>
                 <div>
                     <a href="{{ url_for('review_list') }}" class="btn btn-outline-warning">
-                        <i class="fas fa-bookmark"></i> 復習リスト
+                        🔖 復習リスト
                     </a>
                     <a href="{{ url_for('statistics') }}" class="btn btn-outline-info">
-                        <i class="fas fa-chart-bar"></i> 学習統計
+                        📊 学習統計
                     </a>
                 </div>
             </div>

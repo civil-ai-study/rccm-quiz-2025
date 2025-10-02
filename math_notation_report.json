@@ -1,0 +1,530 @@
+{
+  "timestamp": "2025-09-28",
+  "total_questions": 4259,
+  "total_math_questions": 226,
+  "departments": {
+    "common": {
+      "total_questions": 202,
+      "math_questions": 44,
+      "patterns_found": [
+        "formulas",
+        "exponents",
+        "greek_letters",
+        "units",
+        "fractions",
+        "subscripts"
+      ],
+      "problem_examples": [
+        {
+          "id": 1000000,
+          "question": "焦点距離３０cmのカメラで地上から対地高度３０００mで撮影した鉛直写真の縮尺として、正しいものをa～dのなかから選びなさい。",
+          "patterns": [
+            "fractions"
+          ],
+          "year": null,
+          "type": "basic"
+        },
+        {
+          "id": 1000003,
+          "question": "下図のような矩形断面における中立軸（X-X）廻りの断面二次モーメントとして正しいものをa～dのなかから選びなさい。",
+          "patterns": [
+            "exponents",
+            "units",
+            "formulas",
+            "subscripts"
+          ],
+          "year": null,
+          "type": "basic"
+        },
+        {
+          "id": 1000005,
+          "question": "使用材料の単位重量の軽い順番として、正しいものをa～dのなかから選びなさい。",
+          "patterns": [
+            "exponents",
+            "units",
+            "subscripts"
+          ],
+          "year": null,
+          "type": "basic"
+        }
+      ]
+    },
+    "道路": {
+      "total_questions": 339,
+      "math_questions": 14,
+      "patterns_found": [
+        "greek_letters",
+        "fractions",
+        "formulas",
+        "subscripts"
+      ],
+      "problem_examples": [
+        {
+          "id": 2000000,
+          "question": "自動車の走行抵抗に関する記述のうち、正しいものはどれか。",
+          "patterns": [
+            "greek_letters"
+          ],
+          "year": 2008,
+          "type": "specialist"
+        },
+        {
+          "id": 2000374,
+          "question": "縦断曲線半径と縦断曲線長の関係式で正しいものはどれか。",
+          "patterns": [
+            "greek_letters",
+            "formulas"
+          ],
+          "year": 2009,
+          "type": "specialist"
+        },
+        {
+          "id": 2000379,
+          "question": "防護柵に関する記述のうち、誤っているものはどれか。",
+          "patterns": [
+            "subscripts"
+          ],
+          "year": 2009,
+          "type": "specialist"
+        }
+      ]
+    },
+    "土質及び基礎": {
+      "total_questions": 327,
+      "math_questions": 41,
+      "patterns_found": [
+        "greek_letters",
+        "formulas",
+        "exponents",
+        "scientific_notation",
+        "units",
+        "fractions",
+        "subscripts"
+      ],
+      "problem_examples": [
+        {
+          "id": 2000031,
+          "question": "土粒子の大きさと粒径加積曲線に関する記述のうち、最も不適切なものはどれか。",
+          "patterns": [
+            "subscripts"
+          ],
+          "year": 2008,
+          "type": "specialist"
+        },
+        {
+          "id": 2000032,
+          "question": "土の状態を表す諸量として、誤っているものはどれか。",
+          "patterns": [
+            "subscripts"
+          ],
+          "year": 2008,
+          "type": "specialist"
+        },
+        {
+          "id": 2000042,
+          "question": "土のせん断抵抗角φ＝30°で地表面が水平の場合のランキンの主働土圧係数として、正しいものはどれか。",
+          "patterns": [
+            "greek_letters",
+            "formulas",
+            "fractions",
+            "subscripts"
+          ],
+          "year": 2008,
+          "type": "specialist"
+        }
+      ]
+    },
+    "河川、砂防及び海岸・海洋": {
+      "total_questions": 351,
+      "math_questions": 10,
+      "patterns_found": [
+        "units",
+        "exponents",
+        "fractions",
+        "subscripts"
+      ],
+      "problem_examples": [
+        {
+          "id": 2001998,
+          "question": "渓流の土砂移動形態に関する記述として、誤っているものをa～dのなかから選びなさい。",
+          "patterns": [
+            "fractions"
+          ],
+          "year": 2014,
+          "type": "specialist"
+        },
+        {
+          "id": 2002625,
+          "question": "ダムに関する記述として、誤っているものはどれか",
+          "patterns": [
+            "fractions"
+          ],
+          "year": 2016,
+          "type": "specialist"
+        },
+        {
+          "id": 2003025,
+          "question": "ダム堤体における非越流部高さの設定に関する記述として、誤っているものはどれか。",
+          "patterns": [
+            "fractions"
+          ],
+          "year": 2017,
+          "type": "specialist"
+        }
+      ]
+    },
+    "鋼構造及びコンクリート": {
+      "total_questions": 323,
+      "math_questions": 16,
+      "patterns_found": [
+        "greek_letters",
+        "exponents",
+        "units",
+        "fractions",
+        "subscripts"
+      ],
+      "problem_examples": [
+        {
+          "id": 2000819,
+          "question": "鋳鍛鋼品の記述で、誤っているものを選びなさい。",
+          "patterns": [
+            "subscripts"
+          ],
+          "year": 2010,
+          "type": "specialist"
+        },
+        {
+          "id": 2001415,
+          "question": "耐候性鋼材を示す材質表記として正しいものはどれか。",
+          "patterns": [
+            "subscripts"
+          ],
+          "year": 2012,
+          "type": "specialist"
+        },
+        {
+          "id": 2001926,
+          "question": "コンクリートの塩害に関する記述として、誤っているものはどれか。",
+          "patterns": [
+            "exponents",
+            "units",
+            "subscripts"
+          ],
+          "year": 2013,
+          "type": "specialist"
+        }
+      ]
+    },
+    "農業土木": {
+      "total_questions": 340,
+      "math_questions": 25,
+      "patterns_found": [
+        "greek_letters",
+        "exponents",
+        "formulas",
+        "units",
+        "fractions",
+        "subscripts"
+      ],
+      "problem_examples": [
+        {
+          "id": 2000135,
+          "question": "φ200mmのパイプラインにおいて流速が同じ場合最も損失水頭の大きくなるものはどれか。",
+          "patterns": [
+            "greek_letters"
+          ],
+          "year": 2008,
+          "type": "specialist"
+        },
+        {
+          "id": 2000851,
+          "question": "ポンプ圧送式のパイプラインにおいて、平均流速の組み合わせとして、誤っているものを選びなさい。",
+          "patterns": [
+            "subscripts"
+          ],
+          "year": 2010,
+          "type": "specialist"
+        },
+        {
+          "id": 2001091,
+          "question": "周辺地下水位が地表面付近までと高い場合の水路工の設計において、水抜工を設置する場合に設計地下水位として考えてよいものを選びなさい。",
+          "patterns": [
+            "fractions"
+          ],
+          "year": 2011,
+          "type": "specialist"
+        }
+      ]
+    },
+    "施工計画、施工設備及び積算": {
+      "total_questions": 338,
+      "math_questions": 14,
+      "patterns_found": [
+        "greek_letters",
+        "exponents",
+        "formulas",
+        "units",
+        "subscripts"
+      ],
+      "problem_examples": [
+        {
+          "id": 2000152,
+          "question": "支保工を計画する場合、プレキャストコンクリートの単位重量の数値として正しいものはどれか。",
+          "patterns": [
+            "exponents",
+            "units",
+            "subscripts"
+          ],
+          "year": 2008,
+          "type": "specialist"
+        },
+        {
+          "id": 2000153,
+          "question": "コンクリート橋における鉄筋の直角フックの長さとして曲げ加工する部分の端部からの数値として正しいものはどれか。",
+          "patterns": [
+            "greek_letters"
+          ],
+          "year": 2008,
+          "type": "specialist"
+        },
+        {
+          "id": 2000156,
+          "question": "コンクリートは日平均気温が何度以下になる時寒中コンクリートとして施工するか数値として正しいものはどれか。",
+          "patterns": [
+            "units"
+          ],
+          "year": 2008,
+          "type": "specialist"
+        }
+      ]
+    },
+    "森林土木": {
+      "total_questions": 339,
+      "math_questions": 8,
+      "patterns_found": [
+        "exponents",
+        "fractions",
+        "subscripts"
+      ],
+      "problem_examples": [
+        {
+          "id": 2000185,
+          "question": "林道のうち自動車道の設計速度に関する林道規程の解説のうち、誤っているものはどれか。",
+          "patterns": [
+            "subscripts"
+          ],
+          "year": 2008,
+          "type": "specialist"
+        },
+        {
+          "id": 2000549,
+          "question": "自動車道の設計速度に応じた視距に関する記述のうち、誤っているものはどれか。",
+          "patterns": [
+            "subscripts"
+          ],
+          "year": 2009,
+          "type": "specialist"
+        },
+        {
+          "id": 2001442,
+          "question": "わが国の人工林の適切な施業に関する記述として誤っているものはどれか。",
+          "patterns": [
+            "exponents"
+          ],
+          "year": 2012,
+          "type": "specialist"
+        }
+      ]
+    },
+    "トンネル": {
+      "total_questions": 339,
+      "math_questions": 9,
+      "patterns_found": [
+        "greek_letters",
+        "exponents",
+        "units",
+        "fractions",
+        "subscripts"
+      ],
+      "problem_examples": [
+        {
+          "id": 2000218,
+          "question": "山岳工法の覆工に関する記述のうち、誤っているものはどれか。",
+          "patterns": [
+            "units"
+          ],
+          "year": 2008,
+          "type": "specialist"
+        },
+        {
+          "id": 2000570,
+          "question": "トンネル工法の相互比較のうち、誤っているものはどれか。",
+          "patterns": [
+            "fractions"
+          ],
+          "year": 2009,
+          "type": "specialist"
+        },
+        {
+          "id": 2002007,
+          "question": "片押し延長2,500m以下、設計掘削断面50m2以上95m2以下のトンネル工（NATM）の工事用仮設備の換気設備に関する土木工事積算基準上の記述として、誤っているものをa～dのなかから選びなさい。",
+          "patterns": [
+            "exponents",
+            "subscripts"
+          ],
+          "year": 2014,
+          "type": "specialist"
+        }
+      ]
+    },
+    "建設環境": {
+      "total_questions": 329,
+      "math_questions": 20,
+      "patterns_found": [
+        "greek_letters",
+        "exponents",
+        "subscripts"
+      ],
+      "problem_examples": [
+        {
+          "id": 2000248,
+          "question": "京都議定書で言及している温室効果ガス及びその説明として、誤っているものはどれか。",
+          "patterns": [
+            "subscripts"
+          ],
+          "year": 2008,
+          "type": "specialist"
+        },
+        {
+          "id": 2000251,
+          "question": "建設工事に係る振動において指示値が不規則かつ大幅に変動する場合の振動規制法施行規則に定められている評価値として、正しいものはどれか。",
+          "patterns": [
+            "subscripts"
+          ],
+          "year": 2008,
+          "type": "specialist"
+        },
+        {
+          "id": 2000255,
+          "question": "大気中の粒子状物質のうち長期間浮遊し呼吸で気道や肺に沈着しやすく呼吸系に悪影響を与えるとされる浮遊粒子状物質の粒径について正しいものはどれか。",
+          "patterns": [
+            "greek_letters"
+          ],
+          "year": 2008,
+          "type": "specialist"
+        }
+      ]
+    },
+    "都市計画及び地方計画": {
+      "total_questions": 344,
+      "math_questions": 2,
+      "patterns_found": [
+        "exponents",
+        "subscripts"
+      ],
+      "problem_examples": [
+        {
+          "id": 2001570,
+          "question": "人口集中地区（DID地区）の定義として正しいものはどれか。",
+          "patterns": [
+            "exponents",
+            "subscripts"
+          ],
+          "year": 2012,
+          "type": "specialist"
+        },
+        {
+          "id": 2003206,
+          "question": "人口集中地区の定義として、正しいものはどれか",
+          "patterns": [
+            "exponents",
+            "subscripts"
+          ],
+          "year": 2017,
+          "type": "specialist"
+        }
+      ]
+    },
+    "上水道及び工業用水道": {
+      "total_questions": 348,
+      "math_questions": 14,
+      "patterns_found": [
+        "formulas",
+        "exponents",
+        "units",
+        "subscripts"
+      ],
+      "problem_examples": [
+        {
+          "id": 2000305,
+          "question": "凝集池についての記述のうち、誤っているものはどれか。",
+          "patterns": [
+            "formulas"
+          ],
+          "year": 2008,
+          "type": "specialist"
+        },
+        {
+          "id": 2001269,
+          "question": "排水処理施設についての記述のうち、誤っているものを選びなさい。",
+          "patterns": [
+            "exponents",
+            "subscripts"
+          ],
+          "year": 2011,
+          "type": "specialist"
+        },
+        {
+          "id": 2001273,
+          "question": "ヘーゼン・ウィリアムズ公式で正しいものを選びなさい。なお、H：摩擦損失水頭(m)、C：流速係数、D：管内径（m）、Q：流量（m^{3}/s）、L：延長(m)。",
+          "patterns": [
+            "formulas",
+            "subscripts"
+          ],
+          "year": 2011,
+          "type": "specialist"
+        }
+      ]
+    },
+    "造園": {
+      "total_questions": 340,
+      "math_questions": 9,
+      "patterns_found": [
+        "exponents",
+        "fractions",
+        "subscripts"
+      ],
+      "problem_examples": [
+        {
+          "id": 2000340,
+          "question": "森林レクリエーション空間の植生管理指標として、誤っているものはどれか。",
+          "patterns": [
+            "exponents",
+            "subscripts"
+          ],
+          "year": 2008,
+          "type": "specialist"
+        },
+        {
+          "id": 2000342,
+          "question": "地球環境問題とランドスケープに関する記述のうち、正しいものはどれか。",
+          "patterns": [
+            "subscripts"
+          ],
+          "year": 2008,
+          "type": "specialist"
+        },
+        {
+          "id": 2001297,
+          "question": "広域避難地としてのスペースとして必要となる有効避難単位面積（ ｍ2／人）で正しいものを選びなさい。",
+          "patterns": [
+            "exponents",
+            "subscripts"
+          ],
+          "year": 2011,
+          "type": "specialist"
+        }
+      ]
+    }
+  }
+}

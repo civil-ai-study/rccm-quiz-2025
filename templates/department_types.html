@@ -10,13 +10,13 @@
             <div class="card border-primary mb-4">
                 <div class="card-header bg-primary text-white">
                     <h3 class="mb-0">
-                        <i class="fas fa-book"></i> {{ department.name }}
+                        📚 {{ department.name }}
                     </h3>
                     <p class="mb-0 small">学習開始する問題種別を選択してください</p>
                 </div>
                 <div class="card-body">
                     <div class="alert alert-info">
-                        <i class="fas fa-info-circle"></i>
+                        ℹ️
                         選択した部門での学習方式を決定してください。<br>
                         <strong>4-1基礎科目</strong>または<strong>4-2専門科目</strong>から学習を開始できます。
                     </div>
@@ -29,7 +29,7 @@
                     <div class="card h-100">
                         <div class="card-header bg-success text-white">
                             <h5 class="mb-0">
-                                <i class="fas fa-graduation-cap"></i> 4-1 基礎科目
+                                🎓 4-1 基礎科目
                             </h5>
                         </div>
                         <div class="card-body">
@@ -42,7 +42,7 @@
                         </div>
                         <div class="card-footer">
                             <a href="/exam?department={{ department.id }}&type=basic" class="btn btn-success btn-block">
-                                <i class="fas fa-play"></i> 4-1基礎科目を学習
+                                ▶️ 4-1基礎科目を学習
                             </a>
                         </div>
                     </div>
@@ -52,7 +52,7 @@
                     <div class="card h-100">
                         <div class="card-header bg-primary text-white">
                             <h5 class="mb-0">
-                                <i class="fas fa-cogs"></i> 4-2 専門科目
+                                ⚙️ 4-2 専門科目
                             </h5>
                         </div>
                         <div class="card-body">
@@ -65,7 +65,7 @@
                         </div>
                         <div class="card-footer">
                             <a href="/exam?department={{ department.id }}&type=specialist" class="btn btn-primary btn-block">
-                                <i class="fas fa-play"></i> 4-2専門科目を学習
+                                ▶️ 4-2専門科目を学習
                             </a>
                         </div>
                     </div>
@@ -77,10 +77,10 @@
                 <div class="col-12">
                     <div class="d-flex justify-content-between">
                         <a href="/departments" class="btn btn-secondary">
-                            <i class="fas fa-arrow-left"></i> 部門選択に戻る
+                            ⬅️ 部門選択に戻る
                         </a>
                         <a href="/" class="btn btn-outline-secondary">
-                            <i class="fas fa-home"></i> ホームに戻る
+                            🏠 ホームに戻る
                         </a>
                     </div>
                 </div>

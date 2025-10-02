@@ -1,0 +1,136 @@
+{
+  "test_timestamp": "2025-09-29T08:56:27.099249",
+  "departments_tested": {},
+  "issues_found": [
+    {
+      "timestamp": "2025-09-29T08:56:33.433621",
+      "category": "error",
+      "department": "基礎科目",
+      "issue_type": "アクセスエラー",
+      "description": "基礎科目アクセス失敗: 404",
+      "details": {}
+    },
+    {
+      "timestamp": "2025-09-29T08:56:37.511596",
+      "category": "error",
+      "department": "基礎科目",
+      "issue_type": "アクセスエラー",
+      "description": "基礎科目アクセス失敗: 404",
+      "details": {}
+    },
+    {
+      "timestamp": "2025-09-29T08:56:41.617170",
+      "category": "error",
+      "department": "基礎科目",
+      "issue_type": "アクセスエラー",
+      "description": "基礎科目アクセス失敗: 404",
+      "details": {}
+    },
+    {
+      "timestamp": "2025-09-29T08:56:43.669058",
+      "category": "error",
+      "department": "トンネル",
+      "issue_type": "アクセスエラー",
+      "description": "部門アクセス失敗: 404",
+      "details": {}
+    },
+    {
+      "timestamp": "2025-09-29T08:56:45.718763",
+      "category": "error",
+      "department": "上水道・工業用水道",
+      "issue_type": "アクセスエラー",
+      "description": "部門アクセス失敗: 404",
+      "details": {}
+    },
+    {
+      "timestamp": "2025-09-29T08:56:47.761824",
+      "category": "error",
+      "department": "下水道",
+      "issue_type": "アクセスエラー",
+      "description": "部門アクセス失敗: 404",
+      "details": {}
+    },
+    {
+      "timestamp": "2025-09-29T08:56:49.804047",
+      "category": "error",
+      "department": "土質・基礎",
+      "issue_type": "アクセスエラー",
+      "description": "部門アクセス失敗: 404",
+      "details": {}
+    },
+    {
+      "timestamp": "2025-09-29T08:56:51.859746",
+      "category": "error",
+      "department": "建設環境",
+      "issue_type": "アクセスエラー",
+      "description": "部門アクセス失敗: 404",
+      "details": {}
+    },
+    {
+      "timestamp": "2025-09-29T08:56:53.900615",
+      "category": "error",
+      "department": "施工計画",
+      "issue_type": "アクセスエラー",
+      "description": "部門アクセス失敗: 404",
+      "details": {}
+    },
+    {
+      "timestamp": "2025-09-29T08:56:55.965936",
+      "category": "error",
+      "department": "河川・砂防・海岸・海洋",
+      "issue_type": "アクセスエラー",
+      "description": "部門アクセス失敗: 404",
+      "details": {}
+    },
+    {
+      "timestamp": "2025-09-29T08:56:58.003007",
+      "category": "error",
+      "department": "農業土木",
+      "issue_type": "アクセスエラー",
+      "description": "部門アクセス失敗: 404",
+      "details": {}
+    },
+    {
+      "timestamp": "2025-09-29T08:57:00.063085",
+      "category": "error",
+      "department": "森林土木",
+      "issue_type": "アクセスエラー",
+      "description": "部門アクセス失敗: 404",
+      "details": {}
+    },
+    {
+      "timestamp": "2025-09-29T08:57:02.105713",
+      "category": "error",
+      "department": "道路",
+      "issue_type": "アクセスエラー",
+      "description": "部門アクセス失敗: 404",
+      "details": {}
+    },
+    {
+      "timestamp": "2025-09-29T08:57:04.157858",
+      "category": "error",
+      "department": "都市計画",
+      "issue_type": "アクセスエラー",
+      "description": "部門アクセス失敗: 404",
+      "details": {}
+    },
+    {
+      "timestamp": "2025-09-29T08:57:06.219824",
+      "category": "error",
+      "department": "造園",
+      "issue_type": "アクセスエラー",
+      "description": "部門アクセス失敗: 404",
+      "details": {}
+    },
+    {
+      "timestamp": "2025-09-29T08:57:08.264744",
+      "category": "error",
+      "department": "鋼構造・コンクリート",
+      "issue_type": "アクセスエラー",
+      "description": "部門アクセス失敗: 404",
+      "details": {}
+    }
+  ],
+  "basic_questions_tested": [],
+  "specialist_questions_tested": []
+}

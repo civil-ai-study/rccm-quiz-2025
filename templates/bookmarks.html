@@ -4,14 +4,14 @@
 <div class="container-fluid">
     <!-- ヘッダー -->
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2><i class="fas fa-bookmark text-warning"></i> 復習リスト</h2>
+        <h2>🔖 復習リスト</h2>
         <div class="action-buttons">
             <a href="/" class="btn btn-outline-secondary me-2">
-                <i class="fas fa-home"></i> ホーム
+                🏠 ホーム
             </a>
             {% if questions %}
             <a href="/review" class="btn btn-primary">
-                <i class="fas fa-play"></i> 復習開始
+                ▶️ 復習開始
             </a>
             {% endif %}
         </div>
@@ -51,7 +51,7 @@
     {% if questions %}
     <div class="card">
         <div class="card-header">
-            <h5 class="mb-0"><i class="fas fa-list"></i> 復習問題一覧</h5>
+            <h5 class="mb-0">📋 復習問題一覧</h5>
         </div>
         <div class="card-body p-0">
             <div class="table-responsive">
@@ -94,7 +94,7 @@
                                 <button class="btn btn-sm btn-outline-danger" 
                                         onclick="removeBookmark('{{ question.id }}')" 
                                         title="復習リストから削除">
-                                    <i class="fas fa-trash"></i>
+                                    🗑️
                                 </button>
                             </td>
                         </tr>
@@ -108,13 +108,13 @@
     <!-- 空の状態 -->
     <div class="card">
         <div class="card-body text-center py-5">
-            <i class="fas fa-bookmark fa-3x text-muted mb-3"></i>
+            🔖
             <h4 class="text-muted">復習問題がありません</h4>
             <p class="text-muted">
                 {{ message or "問題を解いて、復習したい問題をブックマークしてください。" }}
             </p>
             <a href="/exam" class="btn btn-primary mt-3">
-                <i class="fas fa-play"></i> 問題を解く
+                ▶️ 問題を解く
             </a>
         </div>
     </div>

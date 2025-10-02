@@ -210,7 +210,7 @@ class SessionTimeoutManager {
                 <div class="modal-content">
                     <div class="modal-header ${options.type === 'critical' ? 'bg-danger text-white' : 'bg-warning'}">
                         <h5 class="modal-title">
-                            <i class="fas fa-clock me-2"></i>${options.title}
+                            🕰️ ${options.title}
                         </h5>
                     </div>
                     <div class="modal-body">
@@ -402,7 +402,7 @@ class SessionTimeoutManager {
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title">
-                            <i class="fas fa-history me-2"></i>セッション復元
+                            🔄 セッション復元
                         </h5>
                     </div>
                     <div class="modal-body">

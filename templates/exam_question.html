@@ -10,7 +10,7 @@
             <!-- 試験情報 -->
             <div class="col-md-3">
                 <h5 class="mb-0">
-                    <i class="fas fa-graduation-cap text-primary"></i> 
+                    🎓 
                     {{ exam_info.exam_name }}
                     {% if year %}
                         <span class="badge bg-info ms-2">{{ year }}年度</span>
@@ -36,7 +36,7 @@
             <!-- 時間情報 -->
             <div class="col-md-3 text-end">
                 <div id="timer" class="exam-timer">
-                    <i class="fas fa-clock text-warning"></i>
+                    🕰️
                     <span id="time-remaining">{{ exam_info.time_remaining }}</span>分
                 </div>
                 <small class="text-muted d-block">残り時間</small>
@@ -51,7 +51,7 @@
             <div class="modal-content border-warning">
                 <div class="modal-header bg-warning text-dark">
                     <h5 class="modal-title">
-                        <i class="fas fa-exclamation-triangle"></i> 時間警告
+                        ⚠️ 時間警告
                     </h5>
                 </div>
                 <div class="modal-body text-center">
@@ -62,7 +62,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-warning" data-bs-dismiss="modal">
-                        <i class="fas fa-check"></i> 了解
+                        ✅ 了解
                     </button>
                 </div>
             </div>
@@ -77,7 +77,7 @@
                 <div class="card-header bg-primary text-white">
                     <div class="d-flex justify-content-between align-items-center">
                         <h6 class="mb-0">
-                            <i class="fas fa-question-circle"></i> 
+                            ❓ 
                             問題 {{ exam_info.current_question_number }}
                             {% if question.category %}
                                 <span class="badge bg-light text-dark ms-2">{{ question.category }}</span>
@@ -89,12 +89,12 @@
                         <div class="exam-controls">
                             <button type="button" id="flagBtn" class="btn btn-sm btn-outline-light me-2"
                                     onclick="toggleFlag({{ exam_info.current_question_number - 1 }})">
-                                <i class="fas fa-flag" id="flagIcon"></i>
+                                🏁
                                 <span id="flagText">フラグ</span>
                             </button>
                             <button type="button" class="btn btn-sm btn-outline-light" 
                                     onclick="showNavigation()">
-                                <i class="fas fa-list"></i> 一覧
+                                📅 一覧
                             </button>
                         </div>
                     </div>
@@ -132,7 +132,7 @@
                         <!-- 回答ボタン -->
                         <div class="text-center mt-4">
                             <button type="submit" id="submitBtn" class="btn btn-primary btn-lg" disabled>
-                                <i class="fas fa-check"></i> 回答を提出
+                                ✅ 回答を提出
                                 {% if exam_info.current_question_number == exam_info.total_questions %}
                                     して試験を終了
                                 {% endif %}
@@ -150,7 +150,7 @@
             <div class="d-flex justify-content-between">
                 <button type="button" class="btn btn-outline-secondary" 
                         onclick="showNavigation()">
-                    <i class="fas fa-th"></i> 問題一覧
+                    📅 問題一覧
                 </button>
                 
                 <div class="question-nav-info text-muted">
@@ -164,7 +164,7 @@
                 
                 {% if exam_info.current_question_number == exam_info.total_questions %}
                 <button type="button" class="btn btn-warning" onclick="finishExam()">
-                    <i class="fas fa-flag-checkered"></i> 試験終了
+                    🏁 試験終了
                 </button>
                 {% endif %}
             </div>
@@ -178,13 +178,13 @@
         <div class="modal-content">
             <div class="modal-header bg-warning text-dark">
                 <h5 class="modal-title">
-                    <i class="fas fa-flag-checkered"></i> 試験終了確認
+                    🏁 試験終了確認
                 </h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body">
                 <div class="alert alert-warning">
-                    <i class="fas fa-exclamation-triangle"></i>
+                    ⚠️
                     <strong>注意：</strong>試験を終了すると、回答の変更はできません。
                 </div>
                 
@@ -203,10 +203,10 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                    <i class="fas fa-times"></i> キャンセル
+                    ❌ キャンセル
                 </button>
                 <button type="button" class="btn btn-warning" onclick="confirmFinishExam()">
-                    <i class="fas fa-flag-checkered"></i> 試験を終了する
+                    🏁 試験を終了する
                 </button>
             </div>
         </div>
@@ -259,7 +259,7 @@ function submitExamAnswer(event) {
     // 提出ボタンを無効化
     const submitBtn = document.getElementById('submitBtn');
     submitBtn.disabled = true;
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 提出中...';
+    submitBtn.innerHTML = '⏳ 提出中...';
     
     // サーバーに送信
     fetch('/submit_exam_answer', {
@@ -278,14 +278,14 @@ function submitExamAnswer(event) {
         } else {
             alert('エラー: ' + data.error);
             submitBtn.disabled = false;
-            submitBtn.innerHTML = '<i class="fas fa-check"></i> 回答を提出';
+            submitBtn.innerHTML = '✅ 回答を提出';
         }
     })
     .catch(error => {
         console.error('Error:', error);
         alert('サーバーとの通信に失敗しました。インターネット接続を確認してください。');
         submitBtn.disabled = false;
-        submitBtn.innerHTML = '<i class="fas fa-check"></i> 回答を提出';
+        submitBtn.innerHTML = '✅ 回答を提出';
     });
 }
 
@@ -317,11 +317,11 @@ function updateFlagButton() {
     const flagBtn = document.getElementById('flagBtn');
     
     if (isFlagged) {
-        flagIcon.className = 'fas fa-flag text-warning';
+        flagIcon.textContent = '🚩';
         flagText.textContent = 'フラグ解除';
         flagBtn.classList.add('active');
     } else {
-        flagIcon.className = 'far fa-flag';
+        flagIcon.textContent = '🏳️';
         flagText.textContent = 'フラグ';
         flagBtn.classList.remove('active');
     }
