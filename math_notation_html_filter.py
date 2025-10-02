@@ -245,6 +245,11 @@ def create_math_notation_filter():
 
             # 【三角関数逆関数】cos-1, sin-1, tan-1 → cos<sup>-1</sup>, sin<sup>-1</sup>, tan<sup>-1</sup>
             (r'(cos|sin|tan)-1', r'\1<sup>-1</sup>'),
+
+            # 【問題文の選択肢表記統一】a～d → A～D（問題文中の選択肢参照）
+            (r'のをa～d', r'のをA～D'),
+            (r'をa～dの', r'をA～Dの'),
+            (r'からa～d', r'からA～D'),
         ]
 
         result = text
