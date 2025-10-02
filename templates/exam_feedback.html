@@ -13,7 +13,7 @@
             </div>
         {% else %}
             <div class="result-box result-box-incorrect">
-                <h1 class="text-white fw-bold result-title mb-2" style="font-size: 2.5rem;">△ 惜しい！</h1>
+                <h1 class="text-white fw-bold result-title mb-2" style="font-size: 2.5rem;">✗ 不正解</h1>
                 <p class="result-subtitle text-white mb-0" style="font-size: 1.1rem;">次回はきっと正解できます！</p>
             </div>
         {% endif %}
@@ -30,6 +30,7 @@
                 <div class="answer-item mb-3">
                     <div class="answer-label-large mb-2">あなたの解答</div>
                     <div class="answer-value {% if is_correct %}answer-correct-large{% else %}answer-incorrect-large{% endif %}">
+                        {% if is_correct %}<span class="answer-icon">✓</span>{% else %}<span class="answer-icon">✗</span>{% endif %}
                         {{ user_answer }} ({{ user_answer_text|math|safe }})
                     </div>
                 </div>
@@ -37,6 +38,7 @@
                 <div class="answer-item">
                     <div class="answer-label-large mb-2">正解</div>
                     <div class="answer-value answer-correct-large">
+                        <span class="answer-icon">✓</span>
                         {{ question.correct_answer }} ({{ correct_answer_text|math|safe }})
                     </div>
                 </div>
@@ -183,6 +185,15 @@
     color: #dc3545;
     border-color: #dc3545;
     background-color: #fcf2f3;
+}
+
+/* 色覚異常対応: 記号による視覚的インジケーター */
+.answer-icon {
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 /* 🎯 UI改善: 解説セクションの大型化 */

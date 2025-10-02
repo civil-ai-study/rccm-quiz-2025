@@ -116,7 +116,7 @@
                          data-option="A"
                          style="cursor: pointer; min-height: 64px; display: flex; align-items: center; transition: all 0.2s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
                         <input class="form-check-input" type="radio" name="answer" value="A" id="optionA"
-                               style="margin: 0 15px 0 0; flex-shrink: 0; width: 20px; height: 20px;">
+                               style="margin: 0 15px 0 0; flex-shrink: 0; width: 24px; height: 24px; min-width: 24px; min-height: 24px;">
                         <label class="form-check-label d-flex align-items-center w-100" for="optionA"
                                onclick="selectOption('A', event); event.stopPropagation();"
                                style="cursor: pointer; margin: 0;">
@@ -131,7 +131,7 @@
                          data-option="B"
                          style="cursor: pointer; min-height: 64px; display: flex; align-items: center; transition: all 0.2s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
                         <input class="form-check-input" type="radio" name="answer" value="B" id="optionB"
-                               style="margin: 0 15px 0 0; flex-shrink: 0; width: 20px; height: 20px;">
+                               style="margin: 0 15px 0 0; flex-shrink: 0; width: 24px; height: 24px; min-width: 24px; min-height: 24px;">
                         <label class="form-check-label d-flex align-items-center w-100" for="optionB"
                                onclick="selectOption('B', event); event.stopPropagation();"
                                style="cursor: pointer; margin: 0;">
@@ -146,7 +146,7 @@
                          data-option="C"
                          style="cursor: pointer; min-height: 64px; display: flex; align-items: center; transition: all 0.2s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
                         <input class="form-check-input" type="radio" name="answer" value="C" id="optionC"
-                               style="margin: 0 15px 0 0; flex-shrink: 0; width: 20px; height: 20px;">
+                               style="margin: 0 15px 0 0; flex-shrink: 0; width: 24px; height: 24px; min-width: 24px; min-height: 24px;">
                         <label class="form-check-label d-flex align-items-center w-100" for="optionC"
                                onclick="selectOption('C', event); event.stopPropagation();"
                                style="cursor: pointer; margin: 0;">
@@ -161,7 +161,7 @@
                          data-option="D"
                          style="cursor: pointer; min-height: 64px; display: flex; align-items: center; transition: all 0.2s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
                         <input class="form-check-input" type="radio" name="answer" value="D" id="optionD"
-                               style="margin: 0 15px 0 0; flex-shrink: 0; width: 20px; height: 20px;">
+                               style="margin: 0 15px 0 0; flex-shrink: 0; width: 24px; height: 24px; min-width: 24px; min-height: 24px;">
                         <label class="form-check-label d-flex align-items-center w-100" for="optionD"
                                onclick="selectOption('D', event); event.stopPropagation();"
                                style="cursor: pointer; margin: 0;">
@@ -188,8 +188,11 @@
         <a href="/" class="btn btn-outline-secondary btn-sm me-1 touch-target" style="font-size: 0.8rem; min-height: 44px; display: inline-flex; align-items: center;">ホーム</a>
         <a href="/categories" class="btn btn-outline-primary btn-sm me-1 touch-target" style="font-size: 0.8rem; min-height: 44px; display: inline-flex; align-items: center;">分野選択</a>
         <!-- CLAUDE.md準拠改善: 問題表示中にも復習登録可能 -->
-        <button class="btn btn-warning btn-sm touch-target" onclick="bookmarkQuestion('{{ question.id }}')" style="font-size: 0.8rem; min-height: 44px; display: inline-flex; align-items: center;">
+        <button class="btn btn-warning btn-sm me-1 touch-target" onclick="bookmarkQuestion('{{ question.id }}')" style="font-size: 0.8rem; min-height: 44px; display: inline-flex; align-items: center;">
             🔖 復習登録
+        </button>
+        <button class="btn btn-outline-info btn-sm touch-target" onclick="window.print()" title="この問題を印刷" style="font-size: 0.8rem; min-height: 44px; display: inline-flex; align-items: center;">
+            🖨️ 印刷
         </button>
   </div>
 </div>
@@ -588,5 +591,76 @@ function bookmarkQuestion(questionId) {
 <!-- 追加のJavaScript（既存の実装と統合） -->
 <script>
 // 既存のスクリプトとの互換性を維持
+
+// キーボードショートカット機能（1-4キーで選択肢選択）
+document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('keydown', function(event) {
+        // 入力フィールドやテキストエリアにフォーカスしている場合は無視
+        if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') {
+            return;
+        }
+
+        const key = event.key;
+        let optionId = null;
+
+        // 1-4キーまたはテンキー1-4に対応
+        switch(key) {
+            case '1':
+                optionId = 'A';
+                break;
+            case '2':
+                optionId = 'B';
+                break;
+            case '3':
+                optionId = 'C';
+                break;
+            case '4':
+                optionId = 'D';
+                break;
+        }
+
+        if (optionId) {
+            event.preventDefault(); // デフォルト動作を防止
+            const optionElement = document.getElementById('option' + optionId);
+            if (optionElement) {
+                optionElement.checked = true;
+                optionElement.dispatchEvent(new Event('change', { bubbles: true }));
+
+                // 視覚的フィードバック
+                const optionItem = optionElement.closest('.option-item');
+                if (optionItem) {
+                    // 一時的にハイライト
+                    optionItem.style.backgroundColor = '#e3f2fd';
+                    optionItem.style.borderColor = '#2196F3';
+                    optionItem.style.borderWidth = '2px';
+
+                    setTimeout(() => {
+                        optionItem.style.backgroundColor = '';
+                        optionItem.style.borderColor = '';
+                        optionItem.style.borderWidth = '';
+                    }, 300);
+                }
+
+                // 解答ボタンを有効化
+                const submitBtn = document.getElementById('submitBtn');
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                }
+            }
+        }
+    });
+
+    // キーボードショートカットのヒント表示を追加
+    const questionCard = document.querySelector('.card');
+    if (questionCard && !document.getElementById('keyboard-hint')) {
+        const hint = document.createElement('div');
+        hint.id = 'keyboard-hint';
+        hint.className = 'alert alert-info mt-2 mb-2';
+        hint.style.fontSize = '0.85rem';
+        hint.style.padding = '0.5rem 0.75rem';
+        hint.innerHTML = '💡 <strong>キーボードショートカット:</strong> 1-4キーで選択肢を選べます';
+        questionCard.insertBefore(hint, questionCard.firstChild);
+    }
+});
 </script>
 {% endblock %}
