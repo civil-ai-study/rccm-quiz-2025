@@ -36,15 +36,20 @@
                     </div>
                 </div>
 
-                <!-- ビジュアルプログレスバー -->
-                <div class="progress" style="height: 10px; border-radius: 10px;">
+                <!-- ビジュアルプログレスバー - 視認性強化版 -->
+                <div class="progress mb-2" style="height: 14px; border-radius: 10px; background-color: #e9ecef; box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);">
                     <div class="progress-bar progress-bar-striped progress-bar-animated bg-success"
                          role="progressbar"
-                         style="width: {% if current_no and total_questions %}{{ (current_no / total_questions * 100)|round|int }}{% else %}10{% endif %}%;"
+                         style="width: {% if current_no and total_questions %}{{ (current_no / total_questions * 100)|round|int }}{% else %}10{% endif %}%; font-size: 0.75rem; font-weight: 700;"
                          aria-valuenow="{{ current_no if current_no else 1 }}"
                          aria-valuemin="0"
                          aria-valuemax="{{ total_questions if total_questions else 10 }}">
+                         <span style="line-height: 14px;">{{ current_no if current_no else 1 }}/{{ total_questions if total_questions else 10 }}</span>
                     </div>
+                </div>
+                <!-- 残り問題数の明確な表示 -->
+                <div class="text-center mb-2" style="font-size: 0.95rem; color: #6c757d;">
+                    あと <strong style="color: #0d6efd; font-size: 1.2rem;">{{ (total_questions - current_no + 1) if (current_no and total_questions) else 9 }}</strong> 問
                 </div>
 
                 <!-- マイルストーン表示（25%, 50%, 75%, 100%） -->
@@ -105,83 +110,63 @@
                 <fieldset class="mb-2">
                     <legend class="visually-hidden">選択肢一覧</legend>
                     
-                    <!-- 選択肢A - ウルトラシンク全面クリック強化版 -->
-                    <div class="form-check option-item p-1 mb-1 border rounded" 
-                         onclick="selectOption('A', event); event.stopPropagation();" 
-                         style="cursor: pointer; min-height: 60px; display: flex; align-items: center; position: relative;">
-                        <input class="form-check-input" type="radio" name="answer" value="A" id="optionA" 
-                               style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); margin: 0;">
-                        <label class="form-check-label w-100" for="optionA" 
+                    <!-- 選択肢A - モバイル最適化版 -->
+                    <div class="form-check option-item p-3 mb-3 border rounded option-enhanced"
+                         onclick="selectOption('A', event); event.stopPropagation();"
+                         data-option="A"
+                         style="cursor: pointer; min-height: 64px; display: flex; align-items: center; transition: all 0.2s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                        <input class="form-check-input" type="radio" name="answer" value="A" id="optionA"
+                               style="margin: 0 15px 0 0; flex-shrink: 0; width: 20px; height: 20px;">
+                        <label class="form-check-label d-flex align-items-center w-100" for="optionA"
                                onclick="selectOption('A', event); event.stopPropagation();"
-                               style="cursor: pointer; width: 100%; height: 100%; display: flex; align-items: center; padding-left: 35px;">
-                            <div class="d-flex align-items-center w-100" onclick="selectOption('A', event); event.stopPropagation();">
-                                <span class="badge bg-primary me-2 option-letter"
-                                      onclick="selectOption('A', event); event.stopPropagation();"
-                                      style="font-size: 0.8rem; cursor: pointer;">a</span>
-                                <span class="option-text"
-                                      onclick="selectOption('A', event); event.stopPropagation();"
-                                      style="font-size: 0.9rem; cursor: pointer; flex: 1;">{{ question.option_a|math|safe }}</span>
-                            </div>
+                               style="cursor: pointer; margin: 0;">
+                            <span class="badge bg-primary me-3 option-letter" style="font-size: 0.9rem; flex-shrink: 0; padding: 8px 12px; font-weight: 700;">A</span>
+                            <span class="option-text" style="font-size: 1.05rem; flex: 1; line-height: 1.6;">{{ question.option_a|math|safe }}</span>
                         </label>
                     </div>
 
-                    <!-- 選択肢B - ウルトラシンク全面クリック強化版 -->
-                    <div class="form-check option-item p-1 mb-1 border rounded" 
-                         onclick="selectOption('B', event); event.stopPropagation();" 
-                         style="cursor: pointer; min-height: 60px; display: flex; align-items: center; position: relative;">
-                        <input class="form-check-input" type="radio" name="answer" value="B" id="optionB" 
-                               style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); margin: 0;">
-                        <label class="form-check-label w-100" for="optionB" 
+                    <!-- 選択肢B - モバイル最適化版 -->
+                    <div class="form-check option-item p-3 mb-3 border rounded option-enhanced"
+                         onclick="selectOption('B', event); event.stopPropagation();"
+                         data-option="B"
+                         style="cursor: pointer; min-height: 64px; display: flex; align-items: center; transition: all 0.2s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                        <input class="form-check-input" type="radio" name="answer" value="B" id="optionB"
+                               style="margin: 0 15px 0 0; flex-shrink: 0; width: 20px; height: 20px;">
+                        <label class="form-check-label d-flex align-items-center w-100" for="optionB"
                                onclick="selectOption('B', event); event.stopPropagation();"
-                               style="cursor: pointer; width: 100%; height: 100%; display: flex; align-items: center; padding-left: 35px;">
-                            <div class="d-flex align-items-center w-100" onclick="selectOption('B', event); event.stopPropagation();">
-                                <span class="badge bg-primary me-2 option-letter"
-                                      onclick="selectOption('B', event); event.stopPropagation();"
-                                      style="font-size: 0.8rem; cursor: pointer;">b</span>
-                                <span class="option-text"
-                                      onclick="selectOption('B', event); event.stopPropagation();"
-                                      style="font-size: 0.9rem; cursor: pointer; flex: 1;">{{ question.option_b|math|safe }}</span>
-                            </div>
+                               style="cursor: pointer; margin: 0;">
+                            <span class="badge bg-primary me-3 option-letter" style="font-size: 0.9rem; flex-shrink: 0; padding: 8px 12px; font-weight: 700;">B</span>
+                            <span class="option-text" style="font-size: 1.05rem; flex: 1; line-height: 1.6;">{{ question.option_b|math|safe }}</span>
                         </label>
                     </div>
 
-                    <!-- 選択肢C - ウルトラシンク全面クリック強化版 -->
-                    <div class="form-check option-item p-1 mb-1 border rounded" 
-                         onclick="selectOption('C', event); event.stopPropagation();" 
-                         style="cursor: pointer; min-height: 60px; display: flex; align-items: center; position: relative;">
-                        <input class="form-check-input" type="radio" name="answer" value="C" id="optionC" 
-                               style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); margin: 0;">
-                        <label class="form-check-label w-100" for="optionC" 
+                    <!-- 選択肢C - モバイル最適化版 -->
+                    <div class="form-check option-item p-3 mb-3 border rounded option-enhanced"
+                         onclick="selectOption('C', event); event.stopPropagation();"
+                         data-option="C"
+                         style="cursor: pointer; min-height: 64px; display: flex; align-items: center; transition: all 0.2s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                        <input class="form-check-input" type="radio" name="answer" value="C" id="optionC"
+                               style="margin: 0 15px 0 0; flex-shrink: 0; width: 20px; height: 20px;">
+                        <label class="form-check-label d-flex align-items-center w-100" for="optionC"
                                onclick="selectOption('C', event); event.stopPropagation();"
-                               style="cursor: pointer; width: 100%; height: 100%; display: flex; align-items: center; padding-left: 35px;">
-                            <div class="d-flex align-items-center w-100" onclick="selectOption('C', event); event.stopPropagation();">
-                                <span class="badge bg-primary me-2 option-letter"
-                                      onclick="selectOption('C', event); event.stopPropagation();"
-                                      style="font-size: 0.8rem; cursor: pointer;">c</span>
-                                <span class="option-text"
-                                      onclick="selectOption('C', event); event.stopPropagation();"
-                                      style="font-size: 0.9rem; cursor: pointer; flex: 1;">{{ question.option_c|math|safe }}</span>
-                            </div>
+                               style="cursor: pointer; margin: 0;">
+                            <span class="badge bg-primary me-3 option-letter" style="font-size: 0.9rem; flex-shrink: 0; padding: 8px 12px; font-weight: 700;">C</span>
+                            <span class="option-text" style="font-size: 1.05rem; flex: 1; line-height: 1.6;">{{ question.option_c|math|safe }}</span>
                         </label>
                     </div>
 
-                    <!-- 選択肢D - ウルトラシンク全面クリック強化版 -->
-                    <div class="form-check option-item p-1 mb-1 border rounded" 
-                         onclick="selectOption('D', event); event.stopPropagation();" 
-                         style="cursor: pointer; min-height: 60px; display: flex; align-items: center; position: relative;">
-                        <input class="form-check-input" type="radio" name="answer" value="D" id="optionD" 
-                               style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); margin: 0;">
-                        <label class="form-check-label w-100" for="optionD" 
+                    <!-- 選択肢D - モバイル最適化版 -->
+                    <div class="form-check option-item p-3 mb-3 border rounded option-enhanced"
+                         onclick="selectOption('D', event); event.stopPropagation();"
+                         data-option="D"
+                         style="cursor: pointer; min-height: 64px; display: flex; align-items: center; transition: all 0.2s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                        <input class="form-check-input" type="radio" name="answer" value="D" id="optionD"
+                               style="margin: 0 15px 0 0; flex-shrink: 0; width: 20px; height: 20px;">
+                        <label class="form-check-label d-flex align-items-center w-100" for="optionD"
                                onclick="selectOption('D', event); event.stopPropagation();"
-                               style="cursor: pointer; width: 100%; height: 100%; display: flex; align-items: center; padding-left: 35px;">
-                            <div class="d-flex align-items-center w-100" onclick="selectOption('D', event); event.stopPropagation();">
-                                <span class="badge bg-primary me-2 option-letter"
-                                      onclick="selectOption('D', event); event.stopPropagation();"
-                                      style="font-size: 0.8rem; cursor: pointer;">d</span>
-                                <span class="option-text"
-                                      onclick="selectOption('D', event); event.stopPropagation();"
-                                      style="font-size: 0.9rem; cursor: pointer; flex: 1;">{{ question.option_d|math|safe }}</span>
-                            </div>
+                               style="cursor: pointer; margin: 0;">
+                            <span class="badge bg-primary me-3 option-letter" style="font-size: 0.9rem; flex-shrink: 0; padding: 8px 12px; font-weight: 700;">D</span>
+                            <span class="option-text" style="font-size: 1.05rem; flex: 1; line-height: 1.6;">{{ question.option_d|math|safe }}</span>
                         </label>
                     </div>
                 </fieldset>
@@ -210,23 +195,37 @@
 </div>
 
 <style>
+/* 🎯 モバイル最適化: 選択肢の強化されたインタラクション */
 .option-item {
     cursor: pointer;
-    transition: all 0.3s ease;
-    background-color: #f8f9fa;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: #ffffff;
+    border: 2px solid #dee2e6;
 }
 
 .option-item:hover {
     background-color: #e3f2fd !important;
     border-color: #2196F3 !important;
-    transform: translateX(3px);
+    transform: translateX(5px) scale(1.01);
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.2) !important;
+}
+
+.option-item:active {
+    transform: scale(0.98);
 }
 
 .option-item.selected {
-    background-color: #e8f5e8 !important;
+    background-color: #e8f5e9 !important;
     border-color: #4caf50 !important;
-    border-width: 2px !important;
-    box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3) !important;
+    border-width: 3px !important;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4) !important;
+    animation: select-pulse 0.4s ease-out;
+}
+
+@keyframes select-pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
 }
 
 .cursor-pointer {
