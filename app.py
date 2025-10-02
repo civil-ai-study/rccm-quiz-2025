@@ -28,6 +28,44 @@ from config import Config, ExamConfig, SRSConfig, DataConfig, LIGHTWEIGHT_DEPART
 from utils import DataLoadError, DataValidationError, get_sample_data_improved, load_rccm_data_files
 from math_notation_html_filter import create_math_notation_filter
 
+# 🎯 REFACTORING PHASE 1: ヘルパー関数のインポート（リスクゼロ）
+from helpers.decorators import (
+    require_questions, require_api_key, handle_errors,
+    track_performance, require_session_data, api_json_response
+)
+from helpers.department_helpers import (
+    get_department_name, get_department_id, validate_department_id,
+    get_all_departments, filter_questions_by_department, get_department_info
+)
+from helpers.error_handlers import (
+    json_error, template_error, api_error,
+    data_not_found_error, session_error, validation_error
+)
+
+# 🎯 REFACTORING PHASE 2: セッションサービスのインポート
+from services.session_service import SessionService
+
+# 🎯 REFACTORING PHASE 3: 問題サービスのインポート
+from services.question_service import QuestionService
+
+# 🎯 REFACTORING PHASE 4: SRSサービスのインポート
+from services.srs_service import SRSService
+
+# 🎯 REFACTORING PHASE 5: 統計サービスのインポート
+from services.statistics_service import StatisticsService
+
+# 🎯 REFACTORING PHASE 6-19: Blueprintのインポート
+from blueprints.api_blueprint import api_bp
+from blueprints.data_blueprint import data_bp
+from blueprints.mobile_blueprint import mobile_bp
+from blueprints.learning_blueprint import learning_bp
+from blueprints.auth_blueprint import auth_bp
+from blueprints.enterprise_blueprint import enterprise_bp
+from blueprints.user_blueprint import user_bp
+from blueprints.certification_blueprint import certification_bp
+from blueprints.personalization_blueprint import personalization_bp
+from blueprints.analytics_blueprint import analytics_bp
+
 # ULTRA SYNC STAGE 6: Parameter Validation (PHASE 1 Task B2) - TEMPORARILY DISABLED
 # from marshmallow import ValidationError
 # from schemas.validation_schemas import validate_exam_parameters, validate_department_parameter
@@ -91,6 +129,18 @@ def math_notation_filter(text):
 # セッション設定を明示的に追加
 app.config['SESSION_PERMANENT'] = False
 app.config['SESSION_USE_SIGNER'] = True
+
+# 🎯 PHASE 6-19 REFACTORING: Blueprint登録
+app.register_blueprint(api_bp)
+app.register_blueprint(data_bp)
+app.register_blueprint(mobile_bp)
+app.register_blueprint(learning_bp)
+app.register_blueprint(auth_bp)
+app.register_blueprint(enterprise_bp)
+app.register_blueprint(user_bp)
+app.register_blueprint(certification_bp)
+app.register_blueprint(personalization_bp)
+app.register_blueprint(analytics_bp)
 
 # 企業環境最適化: 遅延初期化で重複読み込み防止
 data_manager = None
@@ -258,234 +308,47 @@ def sanitize_input(input_string):
 def calculate_next_review_date(correct_count, wrong_count, last_interval=1):
     """
     忘却曲線に基づく次回復習日の計算
-    
-    Args:
-        correct_count: 連続正解回数
-        wrong_count: 間違い回数
-        last_interval: 前回の間隔（日数）
-    
-    Returns:
-        次回復習日時と間隔（日数）
+
+    🎯 PHASE 4 REFACTORING: SRSServiceへのラッパー関数
+    後方互換性のため、既存の関数シグネチャを維持
     """
-    from datetime import datetime, timedelta
-    
-    # 基本間隔設定（エビングハウスの忘却曲線ベース）
-    base_intervals = [1, 3, 7, 14, 30, 90, 180, 365]  # 日数
-    
-    # 難易度係数（間違いが多いほど頻繁に復習）
-    difficulty_factor = max(0.1, 1.0 - (wrong_count * 0.1))
-    
-    # 習熟度レベル（正解回数に基づく）
-    mastery_level = min(correct_count, len(base_intervals) - 1)
-    
-    # 次回間隔を計算
-    base_interval = base_intervals[mastery_level]
-    adjusted_interval = max(1, int(base_interval * difficulty_factor))
-    
-    # 次回復習日を計算
-    next_review = datetime.now() + timedelta(days=adjusted_interval)
-    
-    return next_review, adjusted_interval
+    return SRSService.calculate_next_review_date(correct_count, wrong_count, last_interval)
 
 def update_advanced_srs_data(question_id, is_correct, session):
     """
     高度なSRSデータの更新
-    
-    Args:
-        question_id: 問題ID
-        is_correct: 正解かどうか
-        session: セッションオブジェクト
-    
-    Returns:
-        更新されたSRSデータ
+
+    🎯 PHASE 4 REFACTORING: SRSServiceへのラッパー関数
+    後方互換性のため、既存の関数シグネチャを維持
     """
-    from datetime import datetime
-    
-    # SRSデータの初期化
-    if 'advanced_srs' not in session:
-        session['advanced_srs'] = {}
-    
-    srs_data = session['advanced_srs']
-    qid_str = str(question_id)
-    
-    # 問題のSRSデータを取得または初期化
-    if qid_str not in srs_data:
-        srs_data[qid_str] = {
-            'correct_count': 0,
-            'wrong_count': 0,
-            'total_attempts': 0,
-            'first_attempt': datetime.now().isoformat(),
-            'last_attempt': datetime.now().isoformat(),
-            'mastered': False,
-            'difficulty_level': 5,  # 1-10 (1=易しい, 10=難しい)
-            'next_review': datetime.now().isoformat(),
-            'interval_days': 1
-        }
-    
-    question_data = srs_data[qid_str]
-    
-    # 🔥 CRITICAL: 既存データの後方互換性保証（ウルトラシンク修正）
-    # interval_daysが存在しない古いデータに対する修正
-    if 'interval_days' not in question_data:
-        question_data['interval_days'] = 1
-        logger.info(f"SRS後方互換性修正: 問題ID {qid_str} にinterval_days=1を追加")
-    
-    # 統計更新
-    question_data['total_attempts'] += 1
-    question_data['last_attempt'] = datetime.now().isoformat()
-    
-    if is_correct:
-        question_data['correct_count'] += 1
-        # 難易度を下げる（正解したので少し易しくなったと判定）
-        question_data['difficulty_level'] = max(1, question_data['difficulty_level'] - 0.5)
-        
-        # 5回正解でマスター判定
-        if question_data['correct_count'] >= 5:
-            question_data['mastered'] = True
-            logger.info(f"問題 {question_id} がマスターレベルに到達（5回正解）")
-        
-    else:
-        question_data['wrong_count'] += 1
-        # 難易度を上げる（間違えたので難しいと判定）
-        question_data['difficulty_level'] = min(10, question_data['difficulty_level'] + 1.0)
-        # 間違えた場合はマスター状態を解除
-        question_data['mastered'] = False
-    
-    # 次回復習日の計算
-    if not question_data['mastered']:
-        next_review, interval = calculate_next_review_date(
-            question_data['correct_count'],
-            question_data['wrong_count'],
-            question_data['interval_days']
-        )
-        question_data['next_review'] = next_review.isoformat()
-        question_data['interval_days'] = interval
-    
-    session['advanced_srs'] = srs_data
-    session.modified = True
-    
-    logger.info(f"SRS更新: 問題{question_id} - 正解:{question_data['correct_count']}, "
-               f"間違い:{question_data['wrong_count']}, 難易度:{question_data['difficulty_level']:.1f}, "
-               f"マスター:{question_data['mastered']}")
-    
-    return question_data
+    return SRSService.update_srs_data(question_id, is_correct, session)
 
 def get_due_review_questions(session, max_count=50):
     """
     復習が必要な問題を取得（優先度順）
-    
-    Args:
-        session: セッションオブジェクト
-        max_count: 最大取得数
-    
-    Returns:
-        復習が必要な問題IDのリスト（優先度順）
+
+    🎯 PHASE 4 REFACTORING: SRSServiceへのラッパー関数
+    後方互換性のため、既存の関数シグネチャを維持
     """
-    from datetime import datetime
-    
-    if 'advanced_srs' not in session:
-        return []
-    
-    srs_data = session['advanced_srs']
-    now = datetime.now()
-    due_questions = []
-    
-    for qid, data in srs_data.items():
-        # マスター済みの問題はスキップ
-        if data.get('mastered', False):
-            continue
-        
-        try:
-            next_review = datetime.fromisoformat(data['next_review'])
-            if next_review <= now:
-                # 優先度を計算（間違いが多い＋期限が過ぎているほど高優先度）
-                days_overdue = (now - next_review).days
-                wrong_ratio = data['wrong_count'] / max(1, data['total_attempts'])
-                priority = (wrong_ratio * 100) + days_overdue + data['difficulty_level']
-                
-                due_questions.append((qid, priority, data))
-        except (ValueError, KeyError):
-            # 日時解析エラーの場合は優先度最高で追加
-            due_questions.append((qid, 999, data))
-    
-    # 優先度順（降順）でソートして返す
-    due_questions.sort(key=lambda x: x[1], reverse=True)
-    
-    result = [qid for qid, priority, data in due_questions[:max_count]]
-    logger.info(f"復習対象問題: {len(result)}問（全体: {len(due_questions)}問）")
-    
-    return result
+    return SRSService.get_due_review_questions(session, max_count)
 
 def get_adaptive_review_list(session):
     """
     アダプティブな復習リストを生成
-    間違いが多い問題ほど頻繁に出題される
-    
-    Args:
-        session: セッションオブジェクト
-    
-    Returns:
-        復習問題IDのリスト（頻度調整済み）
+
+    🎯 PHASE 4 REFACTORING: SRSServiceへのラッパー関数
+    後方互換性のため、既存の関数シグネチャを維持
     """
-    if 'advanced_srs' not in session:
-        return []
-    
-    srs_data = session['advanced_srs']
-    weighted_questions = []
-    
-    for qid, data in srs_data.items():
-        # マスター済みの問題はスキップ
-        if data.get('mastered', False):
-            continue
-        
-        # 重み計算（間違いが多いほど高い重み）
-        wrong_count = data.get('wrong_count', 0)
-        total_attempts = data.get('total_attempts', 1)
-        difficulty = data.get('difficulty_level', 5)
-        
-        # 重み = 間違い率 × 難易度レベル × 係数
-        weight = (wrong_count / total_attempts) * difficulty * 2
-        weight = max(1, int(weight))  # 最低でも1回は含める
-        
-        # 重みに応じて複数回追加（重要な問題ほど出現頻度が高くなる）
-        for _ in range(weight):
-            weighted_questions.append(qid)
-    
-    # シャッフルして自然な順序にする
-    import random
-    random.shuffle(weighted_questions)
-    
-    logger.info(f"アダプティブ復習リスト生成: {len(weighted_questions)}問（重み付き）")
-    return weighted_questions
+    return SRSService.get_adaptive_review_list(session)
 
 def cleanup_mastered_questions(session):
     """
     マスター済み問題の旧復習リストからの除去
-    
-    Args:
-        session: セッションオブジェクト
-    
-    Returns:
-        削除された問題数
+
+    🎯 PHASE 4 REFACTORING: SRSServiceへのラッパー関数
+    後方互換性のため、既存の関数シグネチャを維持
     """
-    if 'advanced_srs' not in session:
-        return 0
-    
-    srs_data = session['advanced_srs']
-    bookmarks = session.get('bookmarks', [])
-    removed_count = 0
-    
-    # マスター済み問題を旧復習リストから除去
-    for qid, data in srs_data.items():
-        if data.get('mastered', False) and qid in bookmarks:
-            bookmarks.remove(qid)
-            removed_count += 1
-            logger.info(f"マスター済み問題を復習リストから除去: {qid}")
-    
-    session['bookmarks'] = bookmarks
-    session.modified = True
-    
-    return removed_count
+    return SRSService.cleanup_mastered_questions(session)
 
 # validate_exam_parameters function is imported from schemas.validation_schemas
 # Removing duplicate local function to resolve signature mismatch
@@ -1057,28 +920,9 @@ def after_request_data_save(response):
 def index():
     """ホーム画面（ユーザー識別対応）"""
     try:
-        # 🔥 CRITICAL: セッション完全クリア（ユーザー要求による）
-        # 問題途中でホームに戻った場合、全ての問題関連情報をクリア
-        session_keys_to_clear = [
-            'exam_question_ids', 'exam_current', 'exam_category',
-            'selected_department', 'selected_question_type', 'selected_year',
-            'request_history'  # 古いリクエスト履歴もクリア
-        ]
-        
-        cleared_keys = []
-        for key in session_keys_to_clear:
-            if key in session:
-                del session[key]
-                cleared_keys.append(key)
-        
-        if cleared_keys:
-            logger.info(f"ホーム画面: セッション情報クリア - {cleared_keys}")
-        
-        # 必要最小限のセッション初期化のみ実行
-        if 'history' not in session:
-            session['history'] = []
-        if 'category_stats' not in session:
-            session['category_stats'] = {}
+        # 🎯 PHASE 2 REFACTORING: SessionServiceを使用
+        SessionService.clear_exam_session()
+        SessionService.initialize_user_session()
         
         user_name = session.get('user_name')
         if user_name:
@@ -1136,21 +980,13 @@ def set_user():
         if len(user_name) > 20:
             user_name = user_name[:20]
         
-        # 🔥 CRITICAL: セッション競合回避 - 一意なセッションIDを生成
+        # 🎯 PHASE 2 REFACTORING: SessionServiceを使用
         unique_session_id = generate_unique_session_id()
         base_user_id = f"user_{hash(user_name) % 100000:05d}"
-        session_aware_user_id = f"{base_user_id}_{unique_session_id}"
-        
-        # セッションにユーザー名を保存
-        session['user_name'] = user_name
-        session['user_id'] = session_aware_user_id  # セッション固有の一意ID
-        session['base_user_id'] = base_user_id      # データ永続化用の基本ID
-        session['session_id'] = unique_session_id   # セッション識別用
-        session['login_time'] = datetime.now().isoformat()
-        
-        logger.info(f"🔒 セッション安全性確保: {user_name} (セッションID: {unique_session_id}, ユーザーID: {session_aware_user_id})")
-        
-        logger.info(f"ユーザー設定完了: {user_name} (ID: {session['user_id']})")
+
+        SessionService.set_user(user_name, base_user_id, unique_session_id)
+
+        logger.info(f"🔒 セッション安全性確保: {user_name} (セッションID: {unique_session_id})")
         return redirect(url_for('index'))
         
     except Exception as e:
@@ -1500,69 +1336,26 @@ def result():
 
 @app.route('/statistics')
 def statistics():
-    """統計画面"""
+    """
+    統計画面
+
+    🎯 PHASE 5 REFACTORING: StatisticsServiceを使用
+    """
     try:
         history = session.get('history', [])
-        
-        # 全体統計
-        overall_stats = {
-            'total_quizzes': len(history),
-            'total_accuracy': 0.0,
-            'average_time_per_question': None
-        }
-        
-        if history:
-            total = len(history)
-            correct = sum(1 for h in history if h['is_correct'])
-            total_time = sum(h.get('elapsed', 0) for h in history)
-            overall_stats['total_accuracy'] = correct / total * 100 if total > 0 else 0.0
-            overall_stats['average_time_per_question'] = round(total_time / total, 1) if total > 0 else None
-        
-        # 共通・専門別詳細
-        basic_specialty_details = {
-            'basic': {'total_answered': 0, 'correct_count': 0, 'accuracy': 0.0},
-            'specialty': {'total_answered': 0, 'correct_count': 0, 'accuracy': 0.0}
-        }
-        
-        # 履歴から共通・専門別データを集計
-        for h in history:
-            question_id = h.get('id', h.get('question_id', ''))
-            question_type = h.get('question_type', '')
-            
-            if question_type == 'basic' or '4-1' in str(question_id):
-                score_type = 'basic'
-            else:
-                score_type = 'specialty'
-            
-            basic_specialty_details[score_type]['total_answered'] += 1
-            if h.get('is_correct'):
-                basic_specialty_details[score_type]['correct_count'] += 1
-        
-        # 正答率計算
-        for score_type in ['basic', 'specialty']:
-            total = basic_specialty_details[score_type]['total_answered']
-            correct = basic_specialty_details[score_type]['correct_count']
-            basic_specialty_details[score_type]['accuracy'] = (correct / total * 100) if total > 0 else 0.0
-        
-        # 最近の履歴
-        exam_history = history[-30:] if history else []
-        
-        # 日付別統計
-        daily_stats = defaultdict(lambda: {'total': 0, 'correct': 0})
-        for h in history:
-            date = h.get('date', '')[:10]
-            if date:
-                daily_stats[date]['total'] += 1
-                if h.get('is_correct'):
-                    daily_stats[date]['correct'] += 1
-        
-        daily_accuracy_list = []
-        for date in sorted(daily_stats.keys()):
-            total = daily_stats[date]['total']
-            correct = daily_stats[date]['correct']
-            accuracy = (correct / total * 100) if total > 0 else 0.0
-            daily_accuracy_list.append({'date': date, 'accuracy': round(accuracy, 1)})
-        
+
+        # 全体統計（StatisticsServiceを使用）
+        overall_stats = StatisticsService.get_overall_statistics(history)
+
+        # 基礎・専門別統計（StatisticsServiceを使用）
+        basic_specialty_details = StatisticsService.get_basic_specialty_statistics(history)
+
+        # 最近の履歴（StatisticsServiceを使用）
+        exam_history = StatisticsService.get_recent_history(history, limit=30)
+
+        # 日付別統計（StatisticsServiceを使用）
+        daily_accuracy_list = StatisticsService.get_daily_statistics(history)
+
         return render_template(
             'statistics.html',
             overall_stats=overall_stats,
@@ -1570,7 +1363,7 @@ def statistics():
             exam_history=exam_history,
             daily_accuracy_list=daily_accuracy_list
         )
-        
+
     except Exception as e:
         logger.error(f"statistics関数でエラー: {e}")
         return render_template('error.html', error="統計表示中にエラーが発生しました。")
@@ -1608,7 +1401,7 @@ def departments():
     """RCCM部門選択画面"""
     try:
         # 現在選択されている部門を取得
-        current_department = session.get('selected_department', RCCMConfig.DEFAULT_DEPARTMENT)
+        current_department = session.get('selected_department', 'basic')
         
         # 各部門の学習進捗を計算
         department_progress = {}
@@ -1729,25 +1522,27 @@ def question_types(department_id):
             logger.info(f"🔍 ULTRA SYNC DEBUG: Available departments: {list(LIGHTWEIGHT_DEPARTMENT_MAPPING.keys())}")
             return render_template('error.html', error="指定された部門が見つかりません。")
         
-        department_info = LIGHTWEIGHT_DEPARTMENT_MAPPING[department_id]
-        
+        # 🎯 REFACTORING FIX: helper関数を使用
+        from helpers.department_helpers import get_department_info
+        department_info = get_department_info(department_id)
+
         # 各問題種別の学習進捗を計算
         type_progress = {}
         history = session.get('history', [])
-        
+
         for type_id in ['basic', 'specialist']:
             # この部門・種別での問題数と正答数を集計
-            type_history = [h for h in history 
+            type_history = [h for h in history
                           if h.get('department') == department_id and h.get('question_type') == type_id]
             total_answered = len(type_history)
             correct_count = sum(1 for h in type_history if h.get('is_correct', False))
-            
+
             type_progress[type_id] = {
                 'total_answered': total_answered,
                 'correct_count': correct_count,
                 'accuracy': (correct_count / total_answered * 100) if total_answered > 0 else 0.0
             }
-        
+
         # ULTRA SYNC DEBUG: テンプレート描画前確認
         logger.info(f"✅ ULTRA SYNC DEBUG: Rendering question_types.html for department '{department_id}' ({department_info['name']})")
         logger.info(f"🔍 ULTRA SYNC DEBUG: Available question types: ['basic', 'specialist']")
@@ -2140,87 +1935,11 @@ def review_list():
 
         return render_template('error.html', error=error_details)
 
-@app.route('/api/review/questions', methods=['POST'])
-def get_review_questions():
-    """復習リストの問題詳細を一括取得"""
-    try:
-        data = request.get_json()
-        question_ids = data.get('question_ids', [])
-        
-        if not question_ids:
-            return jsonify({'questions': []})
-        
-        questions = load_questions()
-        review_questions = []
-        
-        for qid in question_ids:
-            question = next((q for q in questions if int(q.get('id', 0)) == int(qid)), None)
-            if question:
-                review_questions.append({
-                    'id': question.get('id'),
-                    'category': question.get('category'),
-                    'question': question.get('question')[:100] + '...' if len(question.get('question', '')) > 100 else question.get('question'),
-                    'difficulty': question.get('difficulty', '標準')
-                })
-        
-        return jsonify({'questions': review_questions})
-        
-    except Exception as e:
-        logger.error(f"復習問題取得エラー: {e}")
-        return jsonify({'error': str(e)}), 500
-
-@app.route('/api/review/remove', methods=['POST'])
-def remove_from_review():
-    """復習リストから問題を削除"""
-    try:
-        data = request.get_json()
-        question_id = str(data.get('question_id', ''))
-        
-        if not question_id:
-            return jsonify({'success': False, 'error': '問題IDが指定されていません'})
-        
-        bookmarks = session.get('bookmarks', [])
-        if question_id in bookmarks:
-            bookmarks.remove(question_id)
-            session['bookmarks'] = bookmarks
-            session.modified = True
-            logger.info(f"復習リストから削除: 問題ID {question_id}")
-            return jsonify({'success': True})
-        else:
-            return jsonify({'success': False, 'error': '復習リストに存在しません'})
-            
-    except Exception as e:
-        logger.error(f"復習問題削除エラー: {e}")
-        return jsonify({'success': False, 'error': str(e)})
-
-@app.route('/api/review/bulk_remove', methods=['POST'])
-def bulk_remove_from_review():
-    """復習リストから複数問題を削除"""
-    try:
-        data = request.get_json()
-        question_ids = data.get('question_ids', [])
-        
-        if not question_ids:
-            return jsonify({'success': False, 'error': '問題IDが指定されていません'})
-        
-        bookmarks = session.get('bookmarks', [])
-        removed_count = 0
-        
-        for qid in question_ids:
-            qid_str = str(qid)
-            if qid_str in bookmarks:
-                bookmarks.remove(qid_str)
-                removed_count += 1
-        
-        session['bookmarks'] = bookmarks
-        session.modified = True
-        
-        logger.info(f"復習リストから一括削除: {removed_count}問")
-        return jsonify({'success': True, 'removed_count': removed_count})
-        
-    except Exception as e:
-        logger.error(f"復習問題一括削除エラー: {e}")
-        return jsonify({'success': False, 'error': str(e)})
+# 🎯 PHASE 7 REFACTORING: 以下の3ルートをapi_blueprintに移動
+# @app.route('/api/review/questions', methods=['POST'])
+# @app.route('/api/review/remove', methods=['POST'])
+# @app.route('/api/review/bulk_remove', methods=['POST'])
+# → blueprints/api_blueprint.py に統合済み
 
 @app.route('/srs')
 def srs_list():
@@ -2336,33 +2055,10 @@ def srs_statistics():
                              srs_data={},
                              error_message="学習統計の読み込み中にエラーが発生しました。問題を続けることで統計が蓄積されます。")
 
-@app.route('/api/data/export')
-def export_data():
-    """学習データのエクスポート"""
-    try:
-        session_id = session.get('session_id')
-        if not session_id:
-            return jsonify({'error': 'セッションが見つかりません'}), 400
-        
-        export_data = data_manager.get_data_export(session_id)
-        if export_data:
-            return jsonify(export_data)
-        else:
-            return jsonify({'error': 'エクスポートデータがありません'}), 404
-            
-    except Exception as e:
-        logger.error(f"データエクスポートエラー: {e}")
-        return jsonify({'error': 'エクスポートに失敗しました'}), 500
-
-@app.route('/api/cache/clear', methods=['POST'])
-def clear_cache():
-    """問題データキャッシュのクリア"""
-    try:
-        clear_questions_cache()
-        return jsonify({'message': 'キャッシュをクリアしました'})
-    except Exception as e:
-        logger.error(f"キャッシュクリアエラー: {e}")
-        return jsonify({'error': 'キャッシュクリアに失敗しました'}), 500
+# 🎯 PHASE 8 REFACTORING: 以下の2ルートをdata_blueprintに移動
+# @app.route('/api/data/export')
+# @app.route('/api/cache/clear', methods=['POST'])
+# → blueprints/data_blueprint.py に統合済み
 
 @app.route('/reset', methods=['GET', 'POST'])
 def reset():
@@ -2445,43 +2141,11 @@ def debug_page():
     session_data_json = json.dumps(session_data, indent=2, default=str)
     return render_template('debug.html', session_data=session_data_json)
 
-@app.route('/api/bookmark', methods=['POST'])
-def bookmark_question():
-    """問題のブックマーク機能"""
-    try:
-        data = request.get_json()
-        question_id = data.get('question_id')
-
-        if not question_id:
-            return jsonify({'success': False, 'error': '問題IDが指定されていません'}), 400
-
-        # セッションにブックマークリストがなければ作成
-        if 'bookmarks' not in session:
-            session['bookmarks'] = []
-
-        # 問題IDがリストになければ追加
-        if question_id not in session['bookmarks']:
-            session['bookmarks'].append(question_id)
-            session.modified = True # セッションの変更を保存するために必要
-            logger.info(f"問題ID {question_id} をブックマークに追加しました")
-
-        return jsonify({'success': True, 'message': '問題をブックマークしました'})
-
-    except Exception as e:
-        logger.error(f"ブックマーク機能でエラー: {e}")
-        return jsonify({'success': False, 'error': str(e)}), 500
-
-@app.route('/api/bookmarks', methods=['GET'])
-def get_bookmarks():
-    """ブックマークされた問題IDのリストを返却"""
-    try:
-        # セッションからブックマークリストを取得。なければ空のリストを返す。
-        bookmarks = session.get('bookmarks', [])
-        return jsonify({'bookmark_ids': bookmarks})
-
-    except Exception as e:
-        logger.error(f"ブックマークリスト取得エラー: {e}")
-        return jsonify({'error': str(e)}), 500
+# 🎯 PHASE 6 REFACTORING: 以下の3ルートをapi_blueprintに移動
+# @app.route('/api/bookmark', methods=['POST'])
+# @app.route('/api/bookmarks', methods=['GET'])
+# @app.route('/api/bookmark', methods=['DELETE'])
+# → blueprints/api_blueprint.py に統合済み
 
 @app.route('/bookmark', methods=['POST'])
 def add_bookmark():
@@ -2553,32 +2217,7 @@ def bookmarks_page():
         logger.error(f"復習リストページエラー: {e}")
         return render_template('error.html', error="復習リストの表示中にエラーが発生しました。")
 
-@app.route('/api/bookmark', methods=['DELETE'])
-def remove_bookmark():
-    """復習リストから問題を除外"""
-    try:
-        data = request.get_json()
-        question_id = data.get('question_id')
-        
-        if not question_id:
-            return jsonify({'success': False, 'error': '問題IDが指定されていません'}), 400
-        
-        # セッションから復習リストを取得
-        bookmarks = session.get('bookmarks', [])
-        
-        # リストから除外
-        if question_id in bookmarks:
-            bookmarks.remove(question_id)
-            session['bookmarks'] = bookmarks
-            session.modified = True
-            logger.info(f"復習リストから除外: 問題ID {question_id}")
-            return jsonify({'success': True, 'message': '復習リストから除外しました'})
-        else:
-            return jsonify({'success': False, 'error': '指定された問題は復習リストに登録されていません'}), 404
-        
-    except Exception as e:
-        logger.error(f"復習除外エラー: {e}")
-        return jsonify({'success': False, 'error': str(e)}), 500
+# 🎯 PHASE 6 REFACTORING: DELETE /api/bookmark → blueprints/api_blueprint.py に移動済み
 
 
 @app.route('/exam/review')
@@ -3115,29 +2754,9 @@ def study_calendar():
         logger.error(f"学習カレンダーエラー: {e}")
         return render_template('error.html', error="学習カレンダーの表示中にエラーが発生しました。")
 
-@app.route('/api/gamification/status')
-def gamification_status():
-    """ゲーミフィケーション状態のAPI"""
-    try:
-        try:
-            insights = gamification_manager.get_study_insights(session) if gamification_manager else {}
-        except Exception as e:
-            logger.error(f"ゲーミフィケーション状態取得エラー: {e}")
-            insights = {}
-        earned_badges = session.get('earned_badges', [])
-        
-        return jsonify({
-            'streak': insights.get('study_streak', 0),
-            'max_streak': insights.get('max_streak', 0),
-            'badges_count': len(earned_badges),
-            'total_questions': insights.get('total_questions', 0),
-            'overall_accuracy': insights.get('overall_accuracy', 0),
-            'recent_accuracy': insights.get('recent_accuracy', 0)
-        })
-        
-    except Exception as e:
-        logger.error(f"ゲーミフィケーション状態取得エラー: {e}")
-        return jsonify({'error': str(e)}), 500
+# 🎯 PHASE 9 REFACTORING: 以下のルートをapi_blueprintに移動
+# @app.route('/api/gamification/status')
+# → blueprints/api_blueprint.py に統合済み
 
 @app.route('/ai_analysis')
 def ai_analysis():
@@ -3352,41 +2971,9 @@ def learner_insights():
         logger.error(f"学習者インサイト画面エラー: {e}")
         return render_template('error.html', error="学習者インサイト画面の表示中にエラーが発生しました。")
 
-@app.route('/api/difficulty/status')
-def api_difficulty_status():
-    """動的難易度制御状態のAPI"""
-    try:
-        department = request.args.get('department')
-        
-        # 学習者レベル評価
-        from difficulty_controller import difficulty_controller
-        learner_assessment = difficulty_controller.assess_learner_level(session, department)
-        
-        # 最近のパフォーマンス
-        recent_history = session.get('history', [])[-10:]
-        if recent_history:
-            recent_performance = difficulty_controller._analyze_current_performance(recent_history)
-        else:
-            recent_performance = {'accuracy': 0, 'avg_time': 0, 'sample_size': 0, 'trend': 'unknown'}
-        
-        # 動的セッション設定
-        dynamic_config = session.get('dynamic_session_config', {})
-        
-        return jsonify({
-            'learner_level': learner_assessment['overall_level'],
-            'level_name': learner_assessment['level_name'],
-            'confidence': learner_assessment['confidence'],
-            'recent_performance': recent_performance,
-            'dynamic_config': dynamic_config,
-            'recommended_difficulty': learner_assessment['recommended_difficulty'],
-            'department_factor': learner_assessment.get('department_factor', 1.0),
-            'next_adjustment_threshold': learner_assessment.get('next_adjustment_threshold', 20),
-            'timestamp': datetime.now().isoformat()
-        })
-        
-    except Exception as e:
-        logger.error(f"難易度制御状態API エラー: {e}")
-        return jsonify({'error': str(e)}), 500
+# 🎯 PHASE 10 REFACTORING: 以下のルートをapi_blueprintに移動
+# @app.route('/api/difficulty/status')
+# → blueprints/api_blueprint.py に統合済み
 
 @app.route('/learning_optimization')
 def learning_optimization():
@@ -3409,120 +2996,15 @@ def learning_optimization():
         logger.error(f"学習効率最適化画面エラー: {e}")
         return render_template('error.html', error="学習効率最適化画面の表示中にエラーが発生しました。")
 
-@app.route('/api/learning/realtime_tracking', methods=['POST'])
-def api_realtime_learning_tracking():
-    """リアルタイム学習効率追跡API"""
-    try:
-        data = request.get_json()
-        session_start_time = data.get('session_start_time')
-        
-        if session_start_time:
-            session_start = datetime.fromisoformat(session_start_time)
-        else:
-            session_start = datetime.now()
-        
-        current_session_data = {
-            'start_time': session_start,
-            'question_count': data.get('question_count', 0)
-        }
-        
-        tracking_result = learning_optimizer.track_real_time_efficiency(session, current_session_data)
-        
-        return jsonify({
-            'success': True,
-            'tracking_data': tracking_result,
-            'timestamp': datetime.now().isoformat()
-        })
-        
-    except Exception as e:
-        logger.error(f"リアルタイム学習追跡API エラー: {e}")
-        return jsonify({'success': False, 'error': str(e)}), 500
+# 🎯 PHASE 13 REFACTORING: 以下の3ルートをlearning_blueprintに移動
+# @app.route('/api/learning/realtime_tracking', methods=['POST'])
+# @app.route('/api/learning/biorhythm', methods=['POST'])
+# @app.route('/api/learning/optimal_schedule', methods=['GET'])
+# → blueprints/learning_blueprint.py に統合済み (Lines 23-148)
 
-@app.route('/api/learning/biorhythm', methods=['POST'])
-def api_biorhythm_calculation():
-    """バイオリズム計算API"""
-    try:
-        data = request.get_json()
-        birth_date = data.get('birth_date')
-        target_date_str = data.get('target_date')
-        
-        if not birth_date:
-            return jsonify({'success': False, 'error': '生年月日が必要です'}), 400
-        
-        # セッションに生年月日を保存
-        session['birth_date'] = birth_date
-        session.modified = True
-        
-        target_date = datetime.now()
-        if target_date_str:
-            target_date = datetime.fromisoformat(target_date_str)
-        
-        biorhythm_scores = learning_optimizer.calculate_biorhythm_score(birth_date, target_date)
-        
-        # 今後7日間のバイオリズム予測
-        future_biorhythms = {}
-        for i in range(7):
-            future_date = target_date + timedelta(days=i)
-            future_scores = learning_optimizer.calculate_biorhythm_score(birth_date, future_date)
-            future_biorhythms[future_date.strftime('%Y-%m-%d')] = future_scores
-        
-        return jsonify({
-            'success': True,
-            'current_biorhythm': biorhythm_scores,
-            'future_biorhythms': future_biorhythms,
-            'birth_date': birth_date,
-            'target_date': target_date.strftime('%Y-%m-%d')
-        })
-        
-    except Exception as e:
-        logger.error(f"バイオリズム計算API エラー: {e}")
-        return jsonify({'success': False, 'error': str(e)}), 500
-
-@app.route('/api/learning/optimal_schedule')
-def api_optimal_schedule():
-    """最適学習スケジュールAPI"""
-    try:
-        target_date = request.args.get('date')
-        if target_date:
-            target_datetime = datetime.strptime(target_date, '%Y-%m-%d')
-        else:
-            target_datetime = datetime.now()
-        
-        recommendation = learning_optimizer.get_optimal_study_time_recommendation(session, target_datetime)
-        
-        return jsonify({
-            'success': True,
-            'recommendation': recommendation,
-            'generated_at': datetime.now().isoformat()
-        })
-        
-    except Exception as e:
-        logger.error(f"最適スケジュールAPI エラー: {e}")
-        return jsonify({'success': False, 'error': str(e)}), 500
-
-@app.route('/api/ai_analysis', methods=['GET'])
-def api_ai_analysis():
-    """AI分析結果のAPI（部門別対応版）"""
-    try:
-        department_filter = request.args.get('department')
-        
-        try:
-            analysis_result = ai_analyzer.analyze_weak_areas(session, department_filter) if ai_analyzer else {}
-        except Exception as e:
-            logger.error(f"AI分析エラー: {e}")
-            analysis_result = {}
-        recommended_mode = adaptive_engine.get_learning_mode_recommendation(session, analysis_result)
-        
-        return jsonify({
-            'analysis': analysis_result,
-            'recommended_mode': recommended_mode,
-            'department_filter': department_filter,
-            'timestamp': datetime.now().isoformat()
-        })
-        
-    except Exception as e:
-        logger.error(f"AI分析API エラー: {e}")
-        return jsonify({'error': str(e)}), 500
+# 🎯 PHASE 19 REFACTORING: AI分析APIをanalytics_blueprintに移動
+# @app.route('/api/ai_analysis', methods=['GET'])
+# → blueprints/analytics_blueprint.py に統合済み (Lines 23-53)
 
 @app.route('/learning_plan')
 def learning_plan():
@@ -3764,136 +3246,19 @@ def api_exam_status():
 
 # モバイル機能のAPI エンドポイント
 
-@app.route('/api/mobile/manifest')
-def mobile_manifest():
-    """PWAマニフェストの動的生成"""
-    try:
-        manifest = mobile_manager.get_pwa_manifest()
-        return jsonify(manifest)
-    except Exception as e:
-        logger.error(f"マニフェスト生成エラー: {e}")
-        return jsonify({'error': str(e)}), 500
+# 🎯 PHASE 11 REFACTORING: 以下の5ルートをmobile_blueprintに移動
+# @app.route('/api/mobile/manifest')
+# @app.route('/api/mobile/offline/save', methods=['POST'])
+# @app.route('/api/mobile/offline/sync', methods=['POST'])
+# @app.route('/api/mobile/question/<int:question_id>')
+# @app.route('/api/mobile/cache/questions')
+# → blueprints/mobile_blueprint.py に統合済み
 
-@app.route('/api/mobile/offline/save', methods=['POST'])
-def save_offline_data():
-    """オフラインデータの保存"""
-    try:
-        data = request.get_json()
-        session_id = session.get('session_id')
-        
-        if not session_id:
-            return jsonify({'success': False, 'error': 'セッションIDが見つかりません'}), 400
-        
-        success = mobile_manager.save_offline_session(session_id, data)
-        
-        if success:
-            return jsonify({'success': True, 'message': 'オフラインデータを保存しました'})
-        else:
-            return jsonify({'success': False, 'error': 'データ保存に失敗しました'}), 500
-            
-    except Exception as e:
-        logger.error(f"オフラインデータ保存エラー: {e}")
-        return jsonify({'success': False, 'error': str(e)}), 500
-
-@app.route('/api/mobile/offline/sync', methods=['POST'])
-def sync_offline_data():
-    """オフラインデータの同期"""
-    try:
-        sync_result = mobile_manager.sync_offline_data(session)
-        session.modified = True
-        
-        mobile_manager.update_last_sync_time()
-        
-        return jsonify({
-            'success': sync_result['success'],
-            'synced_sessions': sync_result['synced_sessions'],
-            'failed_sessions': sync_result['failed_sessions'],
-            'errors': sync_result['errors']
-        })
-        
-    except Exception as e:
-        logger.error(f"オフライン同期エラー: {e}")
-        return jsonify({'success': False, 'error': str(e)}), 500
-
-@app.route('/api/mobile/voice/settings', methods=['GET', 'POST'])
-def voice_settings():
-    """音声設定の取得・更新"""
-    try:
-        if request.method == 'GET':
-            settings = mobile_manager.get_voice_settings()
-            return jsonify(settings)
-        else:
-            data = request.get_json()
-            success = mobile_manager.update_voice_settings(data)
-            
-            if success:
-                return jsonify({'success': True, 'message': '音声設定を更新しました'})
-            else:
-                return jsonify({'success': False, 'error': '設定更新に失敗しました'}), 500
-                
-    except Exception as e:
-        logger.error(f"音声設定エラー: {e}")
-        return jsonify({'error': str(e)}), 500
-
-@app.route('/api/mobile/touch/settings', methods=['GET', 'POST'])
-def touch_settings():
-    """タッチジェスチャー設定の取得・更新"""
-    try:
-        if request.method == 'GET':
-            settings = mobile_manager.get_touch_settings()
-            return jsonify(settings)
-        else:
-            data = request.get_json()
-            success = mobile_manager.update_touch_settings(data)
-            
-            if success:
-                return jsonify({'success': True, 'message': 'タッチ設定を更新しました'})
-            else:
-                return jsonify({'success': False, 'error': '設定更新に失敗しました'}), 500
-                
-    except Exception as e:
-        logger.error(f"タッチ設定エラー: {e}")
-        return jsonify({'error': str(e)}), 500
-
-@app.route('/api/mobile/question/<int:question_id>')
-def mobile_optimized_question(question_id):
-    """モバイル最適化問題データ"""
-    try:
-        questions = load_questions()
-        question = next((q for q in questions if int(q.get('id', 0)) == question_id), None)
-        
-        if not question:
-            return jsonify({'error': '問題が見つかりません'}), 404
-        
-        mobile_question = mobile_manager.get_mobile_optimized_question(question)
-        return jsonify(mobile_question)
-        
-    except Exception as e:
-        logger.error(f"モバイル問題取得エラー: {e}")
-        return jsonify({'error': str(e)}), 500
-
-@app.route('/api/mobile/cache/questions')
-def mobile_cache_questions():
-    """モバイル用問題キャッシュデータ"""
-    try:
-        questions = load_questions()
-        cache_data = mobile_manager.generate_mobile_cache_data(questions)
-        return jsonify(cache_data)
-        
-    except Exception as e:
-        logger.error(f"モバイルキャッシュ生成エラー: {e}")
-        return jsonify({'error': str(e)}), 500
-
-@app.route('/api/mobile/performance')
-def mobile_performance_metrics():
-    """モバイルパフォーマンス指標"""
-    try:
-        metrics = mobile_manager.get_performance_metrics()
-        return jsonify(metrics)
-        
-    except Exception as e:
-        logger.error(f"パフォーマンス指標エラー: {e}")
-        return jsonify({'error': str(e)}), 500
+# 🎯 PHASE 12 REFACTORING: 以下の3ルートをmobile_blueprintに移動
+# @app.route('/api/mobile/voice/settings', methods=['GET', 'POST'])
+# @app.route('/api/mobile/touch/settings', methods=['GET', 'POST'])
+# @app.route('/api/mobile/performance', methods=['GET'])
+# → blueprints/mobile_blueprint.py に統合済み (Lines 155-227)
 
 @app.route('/mobile_settings')
 def mobile_settings():
@@ -4333,449 +3698,44 @@ def api_integration_dashboard():
 
 # === API認証エンドポイント ===
 
-@app.route('/api/auth/generate_key', methods=['POST'])
-def generate_api_key():
-    """APIキー生成"""
-    try:
-        data = request.get_json()
-        organization = data.get('organization')
-        permissions = data.get('permissions', [])
-        expires_in_days = data.get('expires_in_days', 365)
-        
-        if not organization:
-            return jsonify({'success': False, 'error': '組織名が必要です'}), 400
-        
-        result = api_manager.generate_api_key(organization, permissions, expires_in_days)
-        
-        return jsonify(result)
-        
-    except Exception as e:
-        logger.error(f"APIキー生成エラー: {e}")
-        return jsonify({'success': False, 'error': str(e)}), 500
+# 🎯 PHASE 14 REFACTORING: 以下の3ルートをauth_blueprintに移動
+# @app.route('/api/auth/generate_key', methods=['POST'])
+# @app.route('/api/auth/validate_key', methods=['POST'])
+# @app.route('/api/auth/revoke_key', methods=['DELETE'])
+# → blueprints/auth_blueprint.py に統合済み (Lines 23-113)
 
-@app.route('/api/auth/validate_key', methods=['POST'])
-def validate_api_key():
-    """APIキー検証"""
-    try:
-        data = request.get_json()
-        api_key = data.get('api_key')
-        required_permission = data.get('required_permission')
-        
-        if not api_key:
-            return jsonify({'valid': False, 'error': 'APIキーが必要です'}), 400
-        
-        result = api_manager.validate_api_key(api_key, required_permission)
-        
-        return jsonify(result)
-        
-    except Exception as e:
-        logger.error(f"APIキー検証エラー: {e}")
-        return jsonify({'valid': False, 'error': str(e)}), 500
+# 🎯 PHASE 16 REFACTORING: 以下の5ルートをuser_blueprintに移動
+# @app.route('/api/users', methods=['GET'])
+# @app.route('/api/users/<user_id>/progress', methods=['GET'])
+# @app.route('/api/users/<user_id>/certifications', methods=['GET'])
+# @app.route('/api/reports/progress', methods=['GET'])
+# @app.route('/api/reports/organization/<org_id>', methods=['GET'])
+# → blueprints/user_blueprint.py に統合済み (Lines 23-222)
 
-@app.route('/api/auth/revoke_key', methods=['DELETE'])
-def revoke_api_key():
-    """APIキー無効化"""
-    try:
-        data = request.get_json()
-        api_key = data.get('api_key')
-        
-        if not api_key:
-            return jsonify({'success': False, 'error': 'APIキーが必要です'}), 400
-        
-        result = api_manager.revoke_api_key(api_key)
-        
-        return jsonify(result)
-        
-    except Exception as e:
-        logger.error(f"APIキー無効化エラー: {e}")
-        return jsonify({'success': False, 'error': str(e)}), 500
+# 🎯 PHASE 19 REFACTORING: レポートエクスポートAPIをanalytics_blueprintに移動
+# @app.route('/api/reports/export/<format>', methods=['GET'])
+# → blueprints/analytics_blueprint.py に統合済み (Lines 60-88)
 
-# === ユーザー管理API ===
+# 🎯 PHASE 17 REFACTORING: 以下の4ルートをcertification_blueprintに移動
+# @app.route('/api/certifications', methods=['GET', 'POST'])
+# @app.route('/api/certifications/<cert_id>/progress', methods=['GET'])
+# @app.route('/api/organizations', methods=['GET', 'POST'])
+# @app.route('/api/organizations/<org_id>/users', methods=['GET'])
+# → blueprints/certification_blueprint.py に統合済み (Lines 23-168)
 
-@app.route('/api/users', methods=['GET'])
-def api_users_list():
-    """ユーザー一覧API"""
-    try:
-        # API認証チェック
-        api_key = request.headers.get('X-API-Key')
-        if not api_key:
-            return jsonify({'error': 'API key required'}), 401
-        
-        validation = api_manager.validate_api_key(api_key, 'read_users')
-        if not validation['valid']:
-            return jsonify({'error': validation['error']}), 401
-        
-        # 全ユーザーデータ取得（簡略化）
-        all_users = api_manager._load_all_user_data()
-        
-        users_list = []
-        for user_id, user_data in all_users.items():
-            history = user_data.get('history', [])
-            users_list.append({
-                'user_id': user_id,
-                'total_questions': len(history),
-                'accuracy': sum(1 for h in history if h.get('is_correct', False)) / len(history) if history else 0,
-                'last_activity': max([h.get('date', '') for h in history], default=''),
-                'primary_department': api_manager._get_user_primary_departments(user_data)[0] if history else 'unknown'
-            })
-        
-        return jsonify({
-            'users': users_list,
-            'total_count': len(users_list),
-            'timestamp': datetime.now().isoformat()
-        })
-        
-    except Exception as e:
-        logger.error(f"ユーザー一覧API エラー: {e}")
-        return jsonify({'error': str(e)}), 500
+# 🎯 PHASE 18 REFACTORING: 以下の3ルートをpersonalization_blueprintに移動
+# @app.route('/api/personalization/profile/<user_id>')
+# @app.route('/api/personalization/recommendations/<user_id>')
+# @app.route('/api/personalization/ui/<user_id>')
+# → blueprints/personalization_blueprint.py に統合済み (Lines 23-99)
 
-@app.route('/api/users/<user_id>/progress', methods=['GET'])
-def api_user_progress(user_id):
-    """ユーザー進捗API"""
-    try:
-        # API認証チェック
-        api_key = request.headers.get('X-API-Key')
-        if not api_key:
-            return jsonify({'error': 'API key required'}), 401
-        
-        validation = api_manager.validate_api_key(api_key, 'read_progress')
-        if not validation['valid']:
-            return jsonify({'error': validation['error']}), 401
-        
-        # 進捗レポート生成
-        time_period = request.args.get('period', 'month')
-        report_format = request.args.get('format', 'json')
-        
-        report = api_manager.generate_progress_report(user_id, None, time_period, report_format)
-        
-        return jsonify(report)
-        
-    except Exception as e:
-        logger.error(f"ユーザー進捗API エラー: {e}")
-        return jsonify({'error': str(e)}), 500
-
-@app.route('/api/users/<user_id>/certifications', methods=['GET'])
-def api_user_certifications(user_id):
-    """ユーザー認定情報API"""
-    try:
-        # API認証チェック
-        api_key = request.headers.get('X-API-Key')
-        if not api_key:
-            return jsonify({'error': 'API key required'}), 401
-        
-        validation = api_manager.validate_api_key(api_key, 'read_users')
-        if not validation['valid']:
-            return jsonify({'error': validation['error']}), 401
-        
-        user_data = api_manager._load_user_data(user_id)
-        certifications = user_data.get('certifications', {})
-        
-        # 各認定の詳細情報を取得
-        detailed_certifications = []
-        for cert_id, enrollment in certifications.items():
-            cert_progress = api_manager.check_certification_progress(user_id, cert_id)
-            detailed_certifications.append(cert_progress)
-        
-        return jsonify({
-            'user_id': user_id,
-            'certifications': detailed_certifications,
-            'total_certifications': len(detailed_certifications),
-            'completed_certifications': len([c for c in detailed_certifications if c.get('enrollment_status') == 'completed'])
-        })
-        
-    except Exception as e:
-        logger.error(f"ユーザー認定情報API エラー: {e}")
-        return jsonify({'error': str(e)}), 500
-
-# === 進捗レポートAPI ===
-
-@app.route('/api/reports/progress', methods=['GET'])
-def api_progress_reports():
-    """進捗レポートAPI"""
-    try:
-        # API認証チェック
-        api_key = request.headers.get('X-API-Key')
-        if not api_key:
-            return jsonify({'error': 'API key required'}), 401
-        
-        validation = api_manager.validate_api_key(api_key, 'generate_reports')
-        if not validation['valid']:
-            return jsonify({'error': validation['error']}), 401
-        
-        user_id = request.args.get('user_id')
-        organization = request.args.get('organization')
-        time_period = request.args.get('period', 'month')
-        report_format = request.args.get('format', 'json')
-        
-        report = api_manager.generate_progress_report(user_id, organization, time_period, report_format)
-        
-        return jsonify(report)
-        
-    except Exception as e:
-        logger.error(f"進捗レポートAPI エラー: {e}")
-        return jsonify({'error': str(e)}), 500
-
-@app.route('/api/reports/organization/<org_id>', methods=['GET'])
-def api_organization_report(org_id):
-    """組織レポートAPI"""
-    try:
-        # API認証チェック
-        api_key = request.headers.get('X-API-Key')
-        if not api_key:
-            return jsonify({'error': 'API key required'}), 401
-        
-        validation = api_manager.validate_api_key(api_key, 'generate_reports')
-        if not validation['valid']:
-            return jsonify({'error': validation['error']}), 401
-        
-        time_period = request.args.get('period', 'month')
-        report_format = request.args.get('format', 'json')
-        
-        report = api_manager._generate_organization_report(org_id, time_period, report_format)
-        
-        return jsonify(report)
-        
-    except Exception as e:
-        logger.error(f"組織レポートAPI エラー: {e}")
-        return jsonify({'error': str(e)}), 500
-
-@app.route('/api/reports/export/<format>', methods=['GET'])
-def api_export_analytics(format):
-    """学習分析エクスポートAPI"""
-    try:
-        # API認証チェック
-        api_key = request.headers.get('X-API-Key')
-        if not api_key:
-            return jsonify({'error': 'API key required'}), 401
-        
-        validation = api_manager.validate_api_key(api_key, 'generate_reports')
-        if not validation['valid']:
-            return jsonify({'error': validation['error']}), 401
-        
-        include_personal = request.args.get('include_personal_data', 'false').lower() == 'true'
-        
-        result = api_manager.export_learning_analytics(format, include_personal)
-        
-        return jsonify(result)
-        
-    except Exception as e:
-        logger.error(f"学習分析エクスポートAPI エラー: {e}")
-        return jsonify({'error': str(e)}), 500
-
-# === 認定管理API ===
-
-@app.route('/api/certifications', methods=['GET', 'POST'])
-def api_certifications():
-    """認定プログラムAPI"""
-    try:
-        if request.method == 'GET':
-            # 認定プログラム一覧取得
-            certifications = api_manager._load_certifications()
-            return jsonify({
-                'certifications': list(certifications.values()),
-                'total_count': len(certifications)
-            })
-        
-        elif request.method == 'POST':
-            # API認証チェック
-            api_key = request.headers.get('X-API-Key')
-            if not api_key:
-                return jsonify({'error': 'API key required'}), 401
-            
-            validation = api_manager.validate_api_key(api_key, 'manage_certifications')
-            if not validation['valid']:
-                return jsonify({'error': validation['error']}), 401
-            
-            # 認定プログラム作成
-            data = request.get_json()
-            name = data.get('name')
-            description = data.get('description')
-            requirements = data.get('requirements', {})
-            organization = data.get('organization')
-            
-            result = api_manager.create_certification_program(name, description, requirements, organization)
-            
-            return jsonify(result)
-        
-    except Exception as e:
-        logger.error(f"認定プログラムAPI エラー: {e}")
-        return jsonify({'error': str(e)}), 500
-
-@app.route('/api/certifications/<cert_id>/progress', methods=['GET'])
-def api_certification_progress(cert_id):
-    """認定進捗API"""
-    try:
-        user_id = request.args.get('user_id')
-        if not user_id:
-            return jsonify({'error': 'user_id required'}), 400
-        
-        progress = api_manager.check_certification_progress(user_id, cert_id)
-        
-        return jsonify(progress)
-        
-    except Exception as e:
-        logger.error(f"認定進捗API エラー: {e}")
-        return jsonify({'error': str(e)}), 500
-
-# === 組織管理API ===
-
-@app.route('/api/organizations', methods=['GET', 'POST'])
-def api_organizations():
-    """組織管理API"""
-    try:
-        if request.method == 'GET':
-            # 組織一覧取得
-            organizations = api_manager._load_organizations()
-            return jsonify({
-                'organizations': list(organizations.values()),
-                'total_count': len(organizations)
-            })
-        
-        elif request.method == 'POST':
-            # API認証チェック
-            api_key = request.headers.get('X-API-Key')
-            if not api_key:
-                return jsonify({'error': 'API key required'}), 401
-            
-            validation = api_manager.validate_api_key(api_key, 'manage_organizations')
-            if not validation['valid']:
-                return jsonify({'error': validation['error']}), 401
-            
-            # 組織作成
-            data = request.get_json()
-            name = data.get('name')
-            description = data.get('description')
-            settings = data.get('settings', {})
-            
-            result = api_manager.create_organization(name, description, settings)
-            
-            return jsonify(result)
-        
-    except Exception as e:
-        logger.error(f"組織管理API エラー: {e}")
-        return jsonify({'error': str(e)}), 500
-
-@app.route('/api/organizations/<org_id>/users', methods=['GET'])
-def api_organization_users(org_id):
-    """組織ユーザー一覧API"""
-    try:
-        organizations = api_manager._load_organizations()
-        
-        if org_id not in organizations:
-            return jsonify({'error': 'Organization not found'}), 404
-        
-        org_users = organizations[org_id]['users']
-        
-        # ユーザー詳細情報を取得
-        users_details = []
-        for user_id in org_users:
-            user_data = api_manager._load_user_data(user_id)
-            history = user_data.get('history', [])
-            
-            users_details.append({
-                'user_id': user_id,
-                'total_questions': len(history),
-                'accuracy': sum(1 for h in history if h.get('is_correct', False)) / len(history) if history else 0,
-                'last_activity': max([h.get('date', '') for h in history], default='')
-            })
-        
-        return jsonify({
-            'organization_id': org_id,
-            'users': users_details,
-            'total_users': len(users_details)
-        })
-        
-    except Exception as e:
-        logger.error(f"組織ユーザー一覧API エラー: {e}")
-        return jsonify({'error': str(e)}), 500
-
-# === 高度な個人化API ===
-
-@app.route('/api/personalization/profile/<user_id>')
-def api_personalization_profile(user_id):
-    """個人化プロファイルAPI"""
-    try:
-        profile = advanced_personalization.analyze_user_profile(user_id)
-        
-        return jsonify({
-            'user_id': user_id,
-            'profile': profile,
-            'timestamp': datetime.now().isoformat()
-        })
-        
-    except Exception as e:
-        logger.error(f"個人化プロファイルAPI エラー: {e}")
-        return jsonify({'error': str(e)}), 500
-
-@app.route('/api/personalization/recommendations/<user_id>')
-def api_personalization_recommendations(user_id):
-    """ML推薦API"""
-    try:
-        context = request.args.to_dict()
-        recommendations = advanced_personalization.get_ml_recommendations(user_id, context)
-        
-        return jsonify({
-            'user_id': user_id,
-            'recommendations': recommendations,
-            'context': context,
-            'timestamp': datetime.now().isoformat()
-        })
-        
-    except Exception as e:
-        logger.error(f"ML推薦API エラー: {e}")
-        return jsonify({'error': str(e)}), 500
-
-@app.route('/api/personalization/ui/<user_id>')
-def api_personalization_ui(user_id):
-    """UI個人化API"""
-    try:
-        ui_customizations = advanced_personalization.customize_ui(user_id)
-        
-        return jsonify({
-            'user_id': user_id,
-            'ui_customizations': ui_customizations,
-            'timestamp': datetime.now().isoformat()
-        })
-        
-    except Exception as e:
-        logger.error(f"UI個人化API エラー: {e}")
-        return jsonify({'error': str(e)}), 500
-
-# 企業環境用管理API
-@app.route('/api/enterprise/users')
-def api_enterprise_users():
-    """全ユーザー一覧API（企業環境用）"""
-    try:
-        users = enterprise_user_manager.get_all_users()
-        
-        return jsonify({
-            'success': True,
-            'users': users,
-            'total_users': len(users),
-            'generated_at': datetime.now().isoformat()
-        })
-        
-    except Exception as e:
-        logger.error(f"企業ユーザー一覧API エラー: {e}")
-        return jsonify({'error': str(e)}), 500
-
-@app.route('/api/enterprise/user/<user_name>/report')
-def api_enterprise_user_report(user_name):
-    """ユーザー詳細進捗レポートAPI（企業環境用）"""
-    try:
-        report = enterprise_user_manager.get_user_progress_report(user_name)
-        
-        if 'error' in report:
-            return jsonify({'success': False, 'error': report['error']}), 404
-        
-        return jsonify({
-            'success': True,
-            'report': report
-        })
-        
-    except Exception as e:
-        logger.error(f"企業ユーザーレポートAPI エラー: {e}")
-        return jsonify({'error': str(e)}), 500
+# 🎯 PHASE 15 REFACTORING: 以下の5ルートをenterprise_blueprintに移動
+# @app.route('/api/enterprise/users', methods=['GET'])
+# @app.route('/api/enterprise/user/<user_name>/report', methods=['GET'])
+# @app.route('/api/enterprise/data/integrity', methods=['GET'])
+# @app.route('/api/enterprise/cache/stats', methods=['GET'])
+# @app.route('/api/enterprise/cache/clear', methods=['POST'])
+# → blueprints/enterprise_blueprint.py に統合済み (Lines 23-152)
 
 @app.route('/enterprise/dashboard')
 def enterprise_dashboard():
@@ -4783,61 +3743,12 @@ def enterprise_dashboard():
     try:
         # 管理者向けダッシュボード表示
         users = enterprise_user_manager.get_all_users()
-        
+
         return render_template('enterprise_dashboard.html', users=users)
-        
+
     except Exception as e:
         logger.error(f"企業ダッシュボードエラー: {e}")
         return render_template('error.html', error_message=str(e)), 500
-
-@app.route('/api/enterprise/data/integrity')
-def api_enterprise_data_integrity():
-    """データ整合性チェックAPI（企業環境用）"""
-    try:
-        integrity_report = enterprise_data_manager.get_file_integrity_check()
-        
-        return jsonify({
-            'success': True,
-            'integrity_report': integrity_report
-        })
-        
-    except Exception as e:
-        logger.error(f"データ整合性チェックAPI エラー: {e}")
-        return jsonify({'error': str(e)}), 500
-
-@app.route('/api/enterprise/cache/stats')
-def api_enterprise_cache_stats():
-    """キャッシュ統計API（企業環境用）"""
-    try:
-        from utils import cache_manager_instance
-        cache_stats = cache_manager_instance.get_stats()
-        
-        return jsonify({
-            'success': True,
-            'cache_stats': cache_stats,
-            'timestamp': datetime.now().isoformat()
-        })
-        
-    except Exception as e:
-        logger.error(f"キャッシュ統計API エラー: {e}")
-        return jsonify({'error': str(e)}), 500
-
-@app.route('/api/enterprise/cache/clear', methods=['POST'])
-def api_enterprise_cache_clear():
-    """キャッシュクリアAPI（企業環境用）"""
-    try:
-        from utils import cache_manager_instance
-        cache_manager_instance.clear_all()
-        
-        return jsonify({
-            'success': True,
-            'message': 'キャッシュをクリアしました',
-            'timestamp': datetime.now().isoformat()
-        })
-        
-    except Exception as e:
-        logger.error(f"キャッシュクリアAPI エラー: {e}")
-        return jsonify({'error': str(e)}), 500
 
 # 初期化（企業環境最適化 - 重複読み込み解決版）
 try:
