@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>読み込み中... | RCCM試験問題集</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: white;
+        }
+
+        .loading-container {
+            text-align: center;
+            padding: 2rem;
+            max-width: 600px;
+        }
+
+        .logo {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .spinner {
+            width: 60px;
+            height: 60px;
+            margin: 2rem auto;
+            border: 6px solid rgba(255,255,255,0.3);
+            border-top: 6px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .status {
+            font-size: 1.1rem;
+            margin-top: 1.5rem;
+            opacity: 0.8;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        .progress-bar {
+            width: 100%;
+            max-width: 400px;
+            height: 8px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 10px;
+            margin: 2rem auto;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: white;
+            border-radius: 10px;
+            animation: progress 3s ease-in-out infinite;
+        }
+
+        @keyframes progress {
+            0% { width: 0%; }
+            50% { width: 70%; }
+            100% { width: 100%; }
+        }
+
+        .info {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .info p {
+            margin: 0.5rem 0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .timer {
+            font-size: 1rem;
+            margin-top: 1rem;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 3rem;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            .subtitle {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-container">
+        <div class="logo">🎓</div>
+        <h1>RCCM試験問題集</h1>
+        <p class="subtitle">サーバーを起動しています...</p>
+
+        <div class="spinner"></div>
+
+        <div class="progress-bar">
+            <div class="progress-fill"></div>
+        </div>
+
+        <p class="status" id="status">初期化中...</p>
+
+        <div class="info">
+            <p><strong>💡 しばらくお待ちください</strong></p>
+            <p>無料サーバーのため、初回アクセス時は起動に<strong>30秒〜1分</strong>ほどかかります。</p>
+            <p>一度起動すれば、その後はスムーズにご利用いただけます。</p>
+            <p class="timer" id="timer">経過時間: <span id="elapsed">0</span>秒</p>
+        </div>
+    </div>
+
+    <script>
+        let elapsed = 0;
+        const elapsedSpan = document.getElementById('elapsed');
+        const statusEl = document.getElementById('status');
+
+        const messages = [
+            '初期化中...',
+            'データベース接続中...',
+            '問題データ読み込み中...',
+            'もう少しでです...',
+            '起動完了間近...'
+        ];
+
+        let messageIndex = 0;
+
+        // 経過時間カウンター
+        setInterval(() => {
+            elapsed++;
+            elapsedSpan.textContent = elapsed;
+
+            // 5秒ごとにメッセージ変更
+            if (elapsed % 5 === 0 && messageIndex < messages.length - 1) {
+                messageIndex++;
+                statusEl.textContent = messages[messageIndex];
+            }
+        }, 1000);
+
+        // 自動リトライ（1秒ごとにサーバーをチェック）
+        let retryCount = 0;
+        const maxRetries = 60; // 最大60秒待機
+
+        function checkServer() {
+            fetch('/')
+                .then(response => {
+                    if (response.ok) {
+                        statusEl.textContent = '✅ 起動完了！ページを読み込みます...';
+                        setTimeout(() => {
+                            window.location.href = '/';
+                        }, 500);
+                    } else {
+                        retryAfterDelay();
+                    }
+                })
+                .catch(() => {
+                    retryAfterDelay();
+                });
+        }
+
+        function retryAfterDelay() {
+            retryCount++;
+            if (retryCount < maxRetries) {
+                setTimeout(checkServer, 2000); // 2秒ごとにリトライ
+            } else {
+                statusEl.textContent = '⚠️ サーバー起動に時間がかかっています。ページを再読み込みしてください。';
+                statusEl.style.color = '#ffeb3b';
+            }
+        }
+
+        // 初回チェック（5秒後から開始）
+        setTimeout(checkServer, 5000);
+    </script>
+</body>
+</html>

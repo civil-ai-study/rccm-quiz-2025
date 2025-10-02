@@ -9,6 +9,18 @@
 </div>
 <div class="text-center">
   <h1 class="mb-3">🤖 AI搭載 RCCM試験問題集アプリ</h1>
+
+  <!-- 初回アクセス時の注意書き -->
+  <div class="alert alert-warning mb-3" id="firstVisitNotice" style="max-width: 700px; margin: 0 auto; display: none;">
+    <h5 class="alert-heading mb-2">⏱️ 初回アクセスについて</h5>
+    <p class="mb-2">
+      <strong>無料サーバーのため、初回アクセス時は起動に30秒〜1分ほどかかります。</strong>
+    </p>
+    <p class="mb-0">
+      <small>一度起動すれば、その後はスムーズにご利用いただけます。ページが表示されるまでお待ちください。</small>
+    </p>
+  </div>
+
   <div class="alert alert-primary d-inline-block mb-4" style="max-width: 600px;">
     <p class="mb-2"><strong>問題数を選択して学習開始</strong></p>
     <div class="d-flex gap-2 flex-wrap justify-content-center">
@@ -704,14 +716,32 @@ function showBeginnerGuideIfNeeded() {
     }
 }
 
+// 初回アクセス通知表示（コールドスタート対策）
+function showFirstVisitNoticeIfNeeded() {
+    const hasSeenNotice = localStorage.getItem('rccm_coldstart_notice_seen');
+    if (!hasSeenNotice) {
+        const notice = document.getElementById('firstVisitNotice');
+        if (notice) {
+            notice.style.display = 'block';
+            localStorage.setItem('rccm_coldstart_notice_seen', 'true');
+
+            // 5秒後に自動的に非表示
+            setTimeout(() => {
+                notice.style.display = 'none';
+            }, 8000);
+        }
+    }
+}
+
 function dismissGuide() {
     document.getElementById('beginnerGuide').style.display = 'none';
     localStorage.setItem('rccm_guide_dismissed', 'true');
 }
 
-// ページ読み込み時に初心者ガイダンスを表示
+// ページ読み込み時に初心者ガイダンスと初回通知を表示
 document.addEventListener('DOMContentLoaded', function() {
     showBeginnerGuideIfNeeded();
+    showFirstVisitNoticeIfNeeded();
 });
 
 // 部門選択の表示/非表示切り替え
