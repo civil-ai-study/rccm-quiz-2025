@@ -84,14 +84,17 @@ api_manager = None
 advanced_personalization = None
 
 # ログ設定
-# 🚨 ULTRA SYNC FIX: パフォーマンス向上のためログレベル最適化
+# 🚨 PRODUCTION OPTIMIZATION: 本番環境ではFileHandlerを無効化（10万人規模対応）
+# 開発環境のみファイルログを有効化、本番環境はRender.comのログシステムを使用
+handlers = [logging.StreamHandler()]
+if os.environ.get('FLASK_ENV') != 'production' and not os.environ.get('RENDER'):
+    # 開発環境のみファイルログを有効化
+    handlers.append(logging.FileHandler('rccm_app.log'))
+
 logging.basicConfig(
-    level=logging.ERROR,  # INFO→ERROR変更でI/O削減
+    level=logging.ERROR,  # ERROR level for reduced I/O
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.FileHandler('rccm_app.log'),
-        logging.StreamHandler()
-    ]
+    handlers=handlers
 )
 
 # 🔥 CRITICAL: セッション競合状態解決のためのロック管理

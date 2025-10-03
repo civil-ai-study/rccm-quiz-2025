@@ -4,7 +4,7 @@ services:
     env: python
     plan: free
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn --bind 0.0.0.0:$PORT --workers 1 --timeout 180 --preload wsgi:application
+    startCommand: gunicorn --bind 0.0.0.0:$PORT --workers 2 --threads 2 --timeout 180 --preload --max-requests 1000 --max-requests-jitter 50 wsgi:application
     envVars:
       - key: SECRET_KEY
         generateValue: true
