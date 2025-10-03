@@ -7,11 +7,11 @@
         <h2>🔖 復習リスト</h2>
         <div class="action-buttons">
             <a href="/" class="btn btn-outline-secondary me-2">
-                🏠 ホーム
+                ホーム
             </a>
             {% if questions %}
             <a href="/review" class="btn btn-primary">
-                ▶️ 復習開始
+                復習問題を始める
             </a>
             {% endif %}
         </div>
@@ -91,10 +91,10 @@
                             <td>{{ question.category or '未分類' }}</td>
                             <td class="question-preview">{{ question.question|math|safe }}</td>
                             <td>
-                                <button class="btn btn-sm btn-outline-danger" 
-                                        onclick="removeBookmark('{{ question.id }}')" 
+                                <button class="btn btn-sm btn-outline-danger"
+                                        onclick="removeBookmark('{{ question.id }}')"
                                         title="復習リストから削除">
-                                    🗑️
+                                    削除
                                 </button>
                             </td>
                         </tr>
@@ -114,7 +114,7 @@
                 {{ message or "問題を解いて、復習したい問題をブックマークしてください。" }}
             </p>
             <a href="/exam" class="btn btn-primary mt-3">
-                ▶️ 問題を解く
+                問題を始める
             </a>
         </div>
     </div>
