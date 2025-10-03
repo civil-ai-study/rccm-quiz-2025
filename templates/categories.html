@@ -16,7 +16,7 @@
                 <div class="d-flex justify-content-between align-items-center mb-2">
                     <h5 class="category-name mb-0">{{ category }}</h5>
                     <a href="/exam?category={{ category|urlencode }}" class="btn btn-primary btn-sm study-btn">
-                        ▶️ 学習
+                        始める
                     </a>
                 </div>
                 
@@ -87,7 +87,7 @@
                             {% for category, detail in category_details.items() %}
                                 <tr>
                                     <td><a href="/exam?category={{ category|urlencode }}"><strong>{{ category }}</strong></a></td>
-                                    <td><a href="/exam?category={{ category|urlencode }}" class="btn btn-sm btn-primary">学習</a></td>
+                                    <td><a href="/exam?category={{ category|urlencode }}" class="btn btn-sm btn-primary">始める</a></td>
                                     <td>{{ detail.total_questions }}</td>
                                     <td>{{ detail.total_answered }}</td>
                                     <td>{{ detail.correct_count }}</td>
@@ -128,12 +128,12 @@
         <div class="row g-2">
             <div class="col-md-6">
                 <a href="/" class="btn btn-secondary w-100 nav-btn">
-                    🏠 ホームに戻る
+                    ホームに戻る
                 </a>
             </div>
             <div class="col-md-6">
                 <a href="/exam" class="btn btn-primary w-100 nav-btn">
-                    🎲 ランダム出題
+                    ランダム出題
                 </a>
             </div>
         </div>

@@ -68,21 +68,21 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <a href="{{ url_for('question_types', department_id=dept_id) }}" 
+                    <a href="{{ url_for('question_types', department_id=dept_id) }}"
                        class="btn btn-primary btn-block mb-2">
-                        ▶️ この部門で学習
+                        この部門を始める
                     </a>
                     <div class="row">
                         <div class="col-6 pr-1">
-                            <a href="{{ url_for('adaptive_questions', department=dept_id, mode='department_mastery') }}" 
+                            <a href="{{ url_for('adaptive_questions', department=dept_id, mode='department_mastery') }}"
                                class="btn btn-outline-success btn-block btn-sm">
-                                🧠 AI学習
+                                AI学習
                             </a>
                         </div>
                         <div class="col-6 pl-1">
-                            <a href="{{ url_for('integrated_learning_selection', department=dept_id) }}" 
+                            <a href="{{ url_for('integrated_learning_selection', department=dept_id) }}"
                                class="btn btn-outline-warning btn-block btn-sm">
-                                🔗 連携学習
+                                連携学習
                             </a>
                         </div>
                     </div>
@@ -97,10 +97,10 @@
         <div class="col-12">
             <div class="d-flex justify-content-between">
                 <a href="{{ url_for('index') }}" class="btn btn-secondary">
-                    ⬅️ ホームに戻る
+                    ホームに戻る
                 </a>
                 <a href="{{ url_for('categories') }}" class="btn btn-outline-primary">
-                    📋 従来のカテゴリ別学習
+                    科目別学習
                 </a>
             </div>
         </div>
