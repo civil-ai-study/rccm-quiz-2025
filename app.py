@@ -122,9 +122,8 @@ def math_notation_filter(text):
 # 🚫 REMOVED: Mathematical notation filter completely removed to prevent floating character issues
 # Previously caused normal numbers to display as superscript characters
 
-# 🔧 ULTRA SYNC FIX: CSRF保護を慎重に有効化
-# 🔥 EMERGENCY FIX: CSRF無効化（問題回答の不一致修正優先）
-# csrf = CSRFProtect(app)
+# 🔧 SECURITY: CSRF保護を有効化（10万人規模での必須セキュリティ）
+csrf = CSRFProtect(app)
 
 # セッション設定を明示的に追加
 app.config['SESSION_PERMANENT'] = False

@@ -1,0 +1,133 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv
+
+# Flask
+instance/
+.webassets-cache
+
+# Session Files (CRITICAL: Contains user data)
+sessions/
+*.session
+
+# Logs (CRITICAL: May contain personal information)
+*.log
+rccm_app.log
+logs/
+
+# Environment Variables (CRITICAL: Contains secrets)
+.env
+.env.local
+.env.*.local
+.envrc
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# OS
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Backups (CRITICAL: May contain user data)
+backups/
+backup_*/
+*.backup
+*.bak
+session_backup_*/
+
+# Testing Files
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.hypothesis/
+
+# Temporary Files (SECURITY RISK)
+*.tmp
+*.temp
+nul
+test_*.html
+test_*.txt
+*_cookies.txt
+prod_check.html
+verify.html
+debug_*.html
+debug_*.txt
+current_*.html
+exposed_*.html
+actual_*.html
+latest_*.html
+steel_*.html
+
+# Debug/Analysis Files (SECURITY RISK)
+*_test.py
+*_debug.py
+*_checker.py
+*_analysis.py
+*_diagnosis.py
+*_verification.py
+comprehensive_*.py
+comprehensive_*.json
+ultimate_*.py
+ultra_*.py
+manual_*.py
+simple_*.py
+quick_*.py
+final_*.py
+emergency_*.py
+safe_*.py
+corrected_*.py
+detailed_*.py
+deep_*.py
+flow_test_*.html
+session_test_*.html
+
+# Report Files
+*_report.txt
+*_report.json
+*_report.md
+*REPORT*.md
+*VERIFICATION*.md
+*CHECK*.md
+*ISSUES*.md
+
+# CSV Backup Files (Generated during fixes)
+data/*.backup*
+data/*.csv.backup*
+
+# Production Verification Files
+production_verification/
+
+# Render.com
+.render-buildpacks.json
